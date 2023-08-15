@@ -53,7 +53,6 @@ body:
     id: pkg_publication_yn
     attributes:
       label: The package has an associated publication
-      multiple: false
       options:
         - yes
         - no
