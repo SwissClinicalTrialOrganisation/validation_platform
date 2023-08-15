@@ -45,3 +45,15 @@ body:
         - label: well known in the statistical, data-science and R communities
         - label: have "trusted" status
         - label: SCTO member
+  - type: markdown
+    attributes:
+      value: |
+        ### Documentation
+        This section covers the degree of documentation of the package
+  - type: dropdown
+    id: pkg_publication_yn
+    attributes:
+      label: The package has an associated publication
+      options:
+        - yes
+        - no
