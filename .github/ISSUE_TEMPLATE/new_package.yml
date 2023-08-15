@@ -1,50 +1,74 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
+name: New package validation
+description: Add a new package validation report to the repo
+title: "[Package validation]: XXX version YYY"
+labels: ["package", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this validation report!
   - type: input
     id: contact
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
+      label: Name
+      description: What is your name?
       placeholder: ex. email@example.com
     validations:
       required: false
-  - type: textarea
-    id: what-happened
+  - type: input
+    id: package
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: What package have you validated?
+      description: 
+      placeholder: 
+      value: 
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: What version of the package have you validated?
+      description: 
+      placeholder: 
+      value: 
     validations:
       required: true
   - type: dropdown
-    id: version
+    id: purpose
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Package purpose
+      description: What is the purpose of the package?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - Statistical
+        - Non-statistical
       default: 0
     validations:
       required: true
-  - type: dropdown
-    id: browsers
+  - type: checkboxes
+    id: pkg_author
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: Package authors is/are 
       multiple: true
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+        - well known in the statistical, data-science and R communities
+        - have "trusted" status
+  - type: markdown
+    attributes:
+      value: |
+        ### Documentation
+        This section covers the degree of documentation of the package
+  - type: checkboxes
+    id: pkg_publication_yn
+    attributes:
+      label: The package has an associated publication
+      multiple: false
+      options:
+        - yes
+        - no
+  - type: input
+    id: pkg_publication
+    attributes: 
+      label: If available, access to the publication (e.g. DOI, URL):
   - type: textarea
     id: logs
     attributes:
@@ -59,4 +83,13 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
+  - type: checkboxes
+    id: terms2
+    attributes:
+      label: Package validation approach
+      description: By submitting this issue, you agree to follow our [package validation approach](https://example.com)
+      options:
+        - label: I have validated the package according to the SCTO SOP
+          required: true
+
 
