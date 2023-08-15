@@ -33,7 +33,7 @@ body:
       value: 
     validations:
       required: true
-  - type: dropdown
+  - type: checkboxes
     id: purpose
     attributes:
       label: Package purpose
