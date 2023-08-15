@@ -1,4 +1,5 @@
 name: New package validation
+about: New package validation
 title: 'Package validation: XXX version YYY'
 labels: ['Package', 'Validation']
 body:
