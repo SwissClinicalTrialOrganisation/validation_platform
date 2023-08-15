@@ -31,7 +31,6 @@ body:
     id: purpose
     attributes:
       label: Package purpose
-      description: What is the purpose of the package?
       options:
         - Statistical
         - Non-statistical
@@ -42,7 +41,6 @@ body:
     id: pkg_author
     attributes:
       label: Package authors is/are 
-      multiple: true
       options:
         - well known in the statistical, data-science and R communities
         - have "trusted" status
