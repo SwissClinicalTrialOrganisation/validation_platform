@@ -1,5 +1,4 @@
 name: New package validation
-about: Submit a new package validation
 title: 'Package validation: XXX version YYY'
 labels: ['Package', 'Validation']
 body:
