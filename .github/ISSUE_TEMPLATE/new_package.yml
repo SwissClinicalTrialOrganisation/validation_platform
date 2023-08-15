@@ -54,8 +54,8 @@ body:
     attributes:
       label: The package has an associated publication
       options:
-        - yes
-        - no
+        - label: yes
+        - label: no
   - type: input
     id: pkg_publication
     attributes: 
