@@ -42,6 +42,6 @@ body:
     attributes:
       label: Package authors is/are 
       options:
-        - well known in the statistical, data-science and R communities
-        - have "trusted" status
-        - SCTO member
+        - label: well known in the statistical, data-science and R communities
+        - label: have "trusted" status
+        - label: SCTO member
