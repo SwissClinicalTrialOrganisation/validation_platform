@@ -68,7 +68,7 @@ body:
   - type: input
     id: pkg_publication
     attributes: 
-      label: If available, access to the publication (e.g. DOI, URL):
+      label: "If available, access to the publication (e.g. DOI, URL):"
   - type: textarea
     id: logs
     attributes:
