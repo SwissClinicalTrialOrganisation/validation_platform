@@ -55,5 +55,5 @@ body:
     attributes:
       label: The package has an associated publication
       options:
-        - yes
-        - no
+        - "yes"
+        - "no"
