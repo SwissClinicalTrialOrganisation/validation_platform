@@ -27,16 +27,6 @@ body:
       label: What version of the package have you validated?
     validations:
       required: true
-  - type: dropdown
-    id: purpose
-    attributes:
-      label: Package purpose
-      options:
-        - Statistical
-        - Non-statistical
-      default: 0
-    validations:
-      required: true
   - type: checkboxes
     id: pkg_author
     attributes:
@@ -49,13 +39,6 @@ body:
       value: |
         ### Documentation
         This section covers the degree of documentation of the package
-  - type: checkboxes
-    id: pkg_publication_yn
-    attributes:
-      label: The package has an associated publication
-      options:
-        - label: yes
-        - label: no
   - type: input
     id: pkg_publication
     attributes: 
