@@ -50,10 +50,10 @@ body:
       value: |
         ### Documentation
         This section covers the degree of documentation of the package
-  - type: dropdown
+  - type: checkboxes
     id: pkg_publication_yn
     attributes:
       label: The package has an associated publication
       options:
-        - "yes"
-        - "no"
+        - label: "yes"
+        - label: "no"
