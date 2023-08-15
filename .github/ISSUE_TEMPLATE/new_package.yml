@@ -27,7 +27,7 @@ body:
       label: What version of the package have you validated?
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: purpose
     attributes:
       label: Package purpose
