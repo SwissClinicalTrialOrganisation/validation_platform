@@ -19,18 +19,12 @@ body:
     id: package
     attributes:
       label: What package have you validated?
-      description: 
-      placeholder: 
-      value: 
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: What version of the package have you validated?
-      description: 
-      placeholder: 
-      value: 
     validations:
       required: true
   - type: checkboxes
