@@ -24,17 +24,12 @@ VERSION
 FUNCTION
 <!-- TAGEND:function -->
 
-### Test result:
-<!-- TAGSTART:result -->
-FUNCTION
-<!-- TAGEND:result -->
-
 ### Test results:
 Did the function pass or fail?
 <!-- delete as applicable -->
-<!-- TAGSTART:r_result -->
+<!-- TAGSTART:result -->
 'Pass' or 'Fail'
-<!-- TAGEND:r_result -->
+<!-- TAGEND:result -->
 
 ### Test output:
 <!-- TAGSTART:r_output -->
