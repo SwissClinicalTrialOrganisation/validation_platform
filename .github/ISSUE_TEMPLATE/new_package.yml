@@ -18,9 +18,9 @@ body:
   - type: input
     id: package
     attributes:
-      label: | 
-        What package have you validated? \n\n
-        <!-- TAGSTART:package -->
+      label: What package have you validated?
+      description:  <!-- TAGSTART:package -->
+      placeholder: enter package name here
     validations:
       required: true
   - type: markdown
