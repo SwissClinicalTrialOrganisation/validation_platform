@@ -19,7 +19,7 @@ body:
     id: package
     attributes:
       label: | 
-        What package have you validated?
+        What package have you validated? \n\n
         <!-- TAGSTART:package -->
     validations:
       required: true
