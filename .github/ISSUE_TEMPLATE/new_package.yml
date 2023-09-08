@@ -22,7 +22,7 @@ body:
         What package have you validated?
         <!-- TAGSTART:package -->
       validations:
-      required: true
+        required: true
   - type: markdown
     attributes:
       value: | 
