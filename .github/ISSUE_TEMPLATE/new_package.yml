@@ -21,7 +21,7 @@ body:
       label: | 
         What package have you validated?
         <!-- TAGSTART:package -->
-      validations:
+        validations:
         required: true
   - type: markdown
     attributes:
