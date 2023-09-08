@@ -18,9 +18,15 @@ body:
   - type: input
     id: package
     attributes:
-      label: What package have you validated?
-    validations:
+      label: | 
+        What package have you validated?
+        <!-- TAGSTART:package -->
+      validations:
       required: true
+  - type: markdown
+    attributes:
+      value: | 
+        <!-- TAGEND:package -->
   - type: input
     id: version
     attributes:
