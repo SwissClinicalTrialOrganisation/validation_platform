@@ -140,6 +140,8 @@ body:
       options:
         - One or more
         - It does not
+    validations:
+      required: true
   - type: dropdown
     id: has_tests
     attributes: 
@@ -148,6 +150,8 @@ body:
         - Yes, comprehensive
         - Yes, but not comprehensive
         - It does not
+    validations:
+      required: true
   - type: dropdown
     id: final_risk
     attributes: 
@@ -157,3 +161,5 @@ body:
         - low
         - medium
         - high
+    validations:
+      required: true
