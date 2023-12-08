@@ -51,8 +51,8 @@ body:
     attributes:
       label: Is the package maintainer clear?
       options: 
-        - yes
-        - no
+        - "yes"
+        - "no"
     validations:
       required: true
   - type: dropdown
