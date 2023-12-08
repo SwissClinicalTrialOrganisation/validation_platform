@@ -49,10 +49,11 @@ body:
   - type: dropdown
     id: maintainer
     attributes:
-      label: Is the package maintainer clear?
+      label: Package maintainer information available?
+      description: Check the DESCRIPTION file. A name and email address should be available.
       options: 
-        - available
-        - unavailable
+        - Available
+        - Unavailable
     validations:
       required: true
   - type: dropdown
@@ -60,19 +61,25 @@ body:
     attributes:
       label: Package purpose
       options:
-        - Statistical
+        - Statistical peer-reviewer
+        - Statistical non-peer-reviewer
         - Non-statistical
       default: 0
     validations:
       required: true
-  - type: checkboxes
-    id: pkg_author
+  - type: input
+    id: nr_dependencies
+    attributes: 
+      label: Number of dependencies
+    validations:
+      required: true
+  - type: dropdown
+    id: on_cran
     attributes:
-      label: Package authors is/are 
-      options:
-        - label: well known in the statistical, data-science and R communities
-        - label: have "trusted" status
-        - label: SCTO member
+      label: Is the package on CRAN or bioconductor
+      options: 
+        - Yes
+        - No
   - type: markdown
     attributes:
       value: |
