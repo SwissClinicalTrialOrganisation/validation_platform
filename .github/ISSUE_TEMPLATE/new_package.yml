@@ -78,8 +78,10 @@ body:
     attributes:
       label: Is the package on CRAN or bioconductor
       options: 
-        - Yes
-        - No
+        - "Yes"
+        - "No"
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
