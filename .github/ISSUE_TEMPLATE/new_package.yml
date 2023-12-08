@@ -133,3 +133,27 @@ body:
         - non existant
     validations:
       required: true
+  - type: dropdown
+    id: has_vignettes
+    attributes: 
+      label: Does the package have vignettes?
+      options:
+        - One or more
+        - None
+  - type: dropdown
+    id: has_tests
+    attributes: 
+      label: Does the package have tests?
+      options:
+        - Yes, comprehensive
+        - Yes, but not comprehensive
+        - None
+  - type: dropdown
+    id: final_risk
+    attributes: 
+      label: Final risk score
+      description: here it would have to be a manual calculation, but we could have an action that pulls the info from the issue and calculates it
+      options:
+        - low
+        - medium
+        - high
