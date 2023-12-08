@@ -139,7 +139,7 @@ body:
       label: Does the package have vignettes?
       options:
         - One or more
-        - None
+        - It does not
   - type: dropdown
     id: has_tests
     attributes: 
@@ -147,7 +147,7 @@ body:
       options:
         - Yes, comprehensive
         - Yes, but not comprehensive
-        - None
+        - It does not
   - type: dropdown
     id: final_risk
     attributes: 
