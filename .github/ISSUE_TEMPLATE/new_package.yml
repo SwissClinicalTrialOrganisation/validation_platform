@@ -101,6 +101,8 @@ body:
           - well structured code (lines, indentation, readability) is a good sign
           - commented-out 'old' code is a bad sign
           - unavailable code is considered 'non-document'
+    validations:
+      required: true
   - type: dropdown
     id: community_use
     attributes:
@@ -112,4 +114,22 @@ body:
       description: |
           - Serious issues and complaints in the community indicate a high risk
           - Number of reported bugs, and have they been corrected?
-
+    validations:
+      required: true
+  - type: input
+    id: downloads
+    attributes: 
+      label: Number of downloads in the last 12 months
+      description: Using the cranlogs package (TODO: add example code, function in the R package)
+    validations:
+      required: true
+  - type: dropdown
+    id: bug_reporting_active
+    attributes: 
+      label: Bug reporting address is available (in DESCRIPTION) and bugs are resolved quickly
+      options:
+        - yes, fast response
+        - yes, slow response
+        - non existant
+    validations:
+      required: true
