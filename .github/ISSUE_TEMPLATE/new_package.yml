@@ -87,10 +87,18 @@ body:
       value: |
         ### Documentation
         This section covers the degree of documentation of the package
-  - type: checkboxes
-    id: pkg_publication_yn
+  - type: dropdown
+    id: source_code_documented
     attributes:
-      label: The package has an associated publication
+      label: Is package source code available and is it well documented?
       options:
-        - label: "yes"
-        - label: "no"
+        - well documented
+        - documented
+        - not documented
+      description: |
+        - explanatory comments in the code are a good sign
+        - roxygen comments for internal functions is a good sign
+        - well structured code (lines, indentation, readability) is a good sign
+        - commented-out 'old' code is a bad sign
+        - unavailable code is considered 'non-document'
+      
