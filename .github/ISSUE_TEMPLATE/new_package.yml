@@ -12,7 +12,7 @@ body:
     attributes:
       label: Name
       description: What is your name?
-      placeholder: ex. email@example.com
+      placeholder: ex. Joe Bloggs
     validations:
       required: false
   - type: input
@@ -31,6 +31,28 @@ body:
     id: version
     attributes:
       label: What version of the package have you validated?
+    validations:
+      required: true
+  - type: input
+    id: release_date
+    attributes:
+      label: When was this package version released?
+      description: if available
+    validations:
+      required: false
+  - type: input
+    id: package_author
+    attributes:
+      label: Who authored the package
+    validations:
+      required: true
+  - type: dropdown
+    id: maintainer
+    attributes:
+      label: Is the package maintainer clear?
+      options: 
+        - yes
+        - no
     validations:
       required: true
   - type: dropdown
