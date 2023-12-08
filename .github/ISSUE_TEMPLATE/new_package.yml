@@ -76,10 +76,10 @@ body:
   - type: dropdown
     id: on_cran
     attributes:
-      label: Is the package on CRAN or bioconductor
+      label: Package location
       options: 
-        - "Yes"
-        - "No"
+        - CRAN/bioconductor
+        - Other (e.g. github)
     validations:
       required: true
   - type: markdown
