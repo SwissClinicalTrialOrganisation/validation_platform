@@ -96,9 +96,20 @@ body:
         - documented
         - not documented
       description: |
-        - explanatory comments in the code are a good sign
-        - roxygen comments for internal functions is a good sign
-        - well structured code (lines, indentation, readability) is a good sign
-        - commented-out 'old' code is a bad sign
-        - unavailable code is considered 'non-document'
-      
+          - explanatory comments in the code are a good sign
+          - roxygen comments for internal functions is a good sign
+          - well structured code (lines, indentation, readability) is a good sign
+          - commented-out 'old' code is a bad sign
+          - unavailable code is considered 'non-document'
+  - type: dropdown
+    id: community_use
+    attributes:
+      label: Is the package 'known' in the community? are there 'complaints' in the community (stats.exchange / stackoverﬂow / r-blogs...)? Give a general grade as low/med/high
+      options:
+        - low
+        - medium
+        - high
+      description: |
+          - Serious issues and complaints in the community indicate a high risk
+          - Number of reported bugs, and have they been corrected?
+
