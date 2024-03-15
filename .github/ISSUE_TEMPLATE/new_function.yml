@@ -67,3 +67,15 @@ body:
     attributes:
       label: Session info
       description: Run sessionInfo() in R, and copy the output here
+  - type: input
+    id: code_location
+    attributes:
+      label: Where is the test code located for these tests?
+      description: copy the link to the validation_test package directory or other location for the tests
+    validations:
+      required: true
+  - type: input
+    id: code_sha
+    attributes:
+      label: Where the test code is located in a git repository, add the git commit SHA
+      description: This is the random combination of digits and characters that identifies a specific commit. The first six characters is enough. 
