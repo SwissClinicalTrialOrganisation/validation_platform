@@ -1,0 +1,69 @@
+name: Add package/function testing results
+description: Add a new function testing report to the repo
+title: "[Package test]: XXX version YYY"
+labels: ["function", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this package testing report!
+        Please replace XXX in the issue title with the package name, and YYY with the package version.
+  - type: input
+    id: contact
+    attributes:
+      label: Name
+      description: What is your name?
+      placeholder: ex. Joe Bloggs
+    validations:
+      required: false
+  - type: input
+    id: package
+    attributes:
+      label: Name of the package you have validated
+      placeholder: e.g. ggplot2
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: What version of the package have you validated?
+      placeholder: e.g. 1.12.3
+    validations:
+      required: true
+  - type: input
+    id: test_date
+    attributes:
+      label: When was this package tested?
+      description: Please use ODBC format - YYYY-MM-DD
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: test_scrutiny
+    attributes:
+      label: What was tested?
+      description: Copy this from the info.txt file in the package testing directory
+    validations:
+      required: true
+  - type: dropdown
+    id: test_result
+    attributes:
+      label: Test results
+      description: Did all programmed tests pass?
+      options: 
+        - PASS
+        - FAIL
+    validations:
+      required: true
+  - type: textarea
+    id: test_evidence
+    attributes:
+      label: Test results
+      description: Copy output from the R console
+    validations:
+      required: true
+  - type: textarea
+    id: session_info
+    attributes:
+      label: Session info
+      description: Run sessionInfo() in R, and copy the output here
