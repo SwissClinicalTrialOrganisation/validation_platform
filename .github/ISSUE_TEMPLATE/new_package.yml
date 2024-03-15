@@ -42,12 +42,12 @@ body:
     attributes:
       label: The package author is
       description: Credentials here refer to affiliation to a university or similar institution
-    validations:
-      required: true
       options:
         - Well-known or known credentials
         - has credentials
         - no clear credentials or group association
+    validations:
+      required: true
   - type: dropdown
     id: maintainer
     attributes:
