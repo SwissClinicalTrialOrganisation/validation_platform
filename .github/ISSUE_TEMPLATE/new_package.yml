@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this validation report!
+        Please replace XXX in the issue title with the package name, and YYY with the package version.
   - type: input
     id: contact
     attributes:
@@ -40,11 +41,11 @@ body:
   - type: dropdown
     id: package_author
     attributes:
-      label: The package author is
+      label: The package author has...
       description: Credentials here refer to affiliation to a university or similar institution
       options:
-        - Well-known or known credentials
-        - has credentials
+        - well-known or known credentials
+        - credentials
         - no clear credentials or group association
     validations:
       required: true
@@ -73,6 +74,7 @@ body:
     id: nr_dependencies
     attributes: 
       label: Number of dependencies
+      description: Use `validation::get_n_deps(pkgname)` in R
       placeholder: e.g. 15
     validations:
       required: true
@@ -123,7 +125,7 @@ body:
     id: downloads
     attributes: 
       label: Number of downloads in the last 12 months
-      description: "Using the cranlogs package (TODO: add example code, function in the R package)"
+      description: Use `validation::get_12month_download_score(pkgname)` in R
     validations:
       required: true
   - type: dropdown
