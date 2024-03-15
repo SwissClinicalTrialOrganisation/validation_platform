@@ -18,15 +18,10 @@ body:
   - type: input
     id: package
     attributes:
-      label: What package have you validated?
-      description:  <!-- TAGSTART:package -->
+      label: Name of the package you have validated
       placeholder: e.g. ggplot2
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: | 
-        <!-- TAGEND:package -->
   - type: input
     id: version
     attributes:
@@ -42,18 +37,22 @@ body:
       placeholder: YYYY-MM-DD
     validations:
       required: false
-  - type: input
+  - type: dropdown
     id: package_author
     attributes:
-      label: Who authored the package
-      placeholder: e.g. Package Author
+      label: The package author is
+      description: Credentials here refer to affiliation to a university or similar institution
     validations:
       required: true
+      options:
+        - Well-known or known credentials
+        - has credentials
+        - no clear credentials or group association
   - type: dropdown
     id: maintainer
     attributes:
       label: Package maintainer information available?
-      description: Check the DESCRIPTION file. A name and email address should be available.
+      description: Check the DESCRIPTION file (or the package page on CRAN). A name and email address should be available.
       options: 
         - Available
         - Unavailable
