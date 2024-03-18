@@ -8,6 +8,7 @@ body:
       value: |
         Thanks for taking the time to fill out this package testing report!
         Please replace XXX in the issue title with the package name, and YYY with the package version.
+        Remember, the validation::test function prepares the majority of the output for you.
   - type: input
     id: contact
     attributes:
@@ -58,7 +59,7 @@ body:
   - type: textarea
     id: test_evidence
     attributes:
-      label: Test results
+      label: Test output
       description: Copy output from the R console
     validations:
       required: true
@@ -71,11 +72,13 @@ body:
     id: code_location
     attributes:
       label: Where is the test code located for these tests?
-      description: copy the link to the validation_test package directory or other location for the tests
+      description: Copy the link to the validation_test package directory or other location for the tests
     validations:
       required: true
   - type: input
     id: code_sha
     attributes:
       label: Where the test code is located in a git repository, add the git commit SHA
-      description: This is the random combination of digits and characters that identifies a specific commit. The first six characters is enough. 
+      description: | 
+        This is the random combination of digits and characters that identifies a specific commit. The first six characters is enough. 
+        This may also be an SVN commit number, if the code is stored in an SVN repository.
