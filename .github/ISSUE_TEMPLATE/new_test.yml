@@ -1,7 +1,7 @@
 name: Add package/function testing results
 description: Add a new function testing report to the repo
 title: "[Package test]: XXX version YYY"
-labels: ["function", "triage"]
+labels: ["test", "triage"]
 body:
   - type: markdown
     attributes:
