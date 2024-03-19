@@ -111,7 +111,10 @@ body:
   - type: dropdown
     id: community_use
     attributes:
-      label: Is the package 'known' in the community? are there 'complaints' in the community (stats.exchange / stackoverﬂow / r-blogs...)? Give a general grade as low/med/high
+      label: Is the package 'known' in the community? 
+      description: |
+        Are there 'complaints' in the community (stats.exchange / stackoverﬂow / r-blogs...)? 
+        Give a general grade as low/med/high
       options:
         - low
         - medium
@@ -125,9 +128,9 @@ body:
     id: downloads
     attributes: 
       label: Number of downloads in the last 12 months
-      description: Use `validation::get_12month_download_score(pkgname)` in R
-    validations:
-      required: true
+      description: |
+        Use `validation::get_12month_download_score(pkgname)` in R. 
+        Note that download statistics are only available for packages on CRAN.
   - type: dropdown
     id: bug_reporting_active
     attributes: 
