@@ -27,7 +27,6 @@ body:
         - Not SCTO
     validations:
       required: false
-      default: 1
   - type: input
     id: package
     attributes:
