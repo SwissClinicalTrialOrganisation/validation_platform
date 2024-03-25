@@ -94,10 +94,10 @@ body:
   - type: dropdown
     id: on_cran
     attributes:
-      label: Package location
+      label: Is the package on available from CRAN or bioconductor?
       options: 
-        - CRAN/bioconductor
-        - Other (e.g. github)
+        - "Yes"
+        - "No"
     validations:
       required: true
   - type: markdown
