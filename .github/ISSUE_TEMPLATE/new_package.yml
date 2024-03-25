@@ -108,11 +108,12 @@ body:
   - type: dropdown
     id: source_code_documented
     attributes:
-      label: is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.
+      label: Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.
       options:
         - "Yes"
         - "No"
       description: |
+        Source code availability refers to it being in a public repository somewhere. Needing to use R to get to the source code (e.g. by typing a function name without brackets/parentheses) is insufficient.
           - explanatory comments in the code are a good sign
           - roxygen comments for internal functions is a good sign
           - well structured code (lines, indentation, readability) is a good sign
