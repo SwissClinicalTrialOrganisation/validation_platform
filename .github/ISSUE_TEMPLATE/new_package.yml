@@ -8,12 +8,23 @@ body:
       value: |
         Thanks for taking the time to fill out this validation report!
         Please replace XXX in the issue title with the package name, and YYY with the package version.
+        We have developed an R package to assist in filling out this form. It is available via xxxxx
   - type: input
     id: contact
     attributes:
       label: Name
       description: What is your name?
       placeholder: ex. Joe Bloggs
+    validations:
+      required: false
+  - type: dropdown
+    id: contact_type
+    attributes:
+      label: What is your relationship with the SCTO?
+      options:
+        - SCTO Stats and Methodology platform
+        - Other SCTO platform
+        - Not SCTO
     validations:
       required: false
   - type: input
@@ -26,14 +37,14 @@ body:
   - type: input
     id: version
     attributes:
-      label: What version of the package have you validated?
+      label: Version number of the package evaluated
       placeholder: e.g. 1.12.3
     validations:
       required: true
   - type: input
     id: release_date
     attributes:
-      label: When was this package version released?
+      label: Date of release of the evaluated version of the package
       description: If available. Please use ODBC format - YYYY-MM-DD
       placeholder: YYYY-MM-DD
     validations:
@@ -52,7 +63,7 @@ body:
   - type: dropdown
     id: maintainer
     attributes:
-      label: Package maintainer information available?
+      label: Is there a maintainer listed for the package and are their contact details available?
       description: Check the DESCRIPTION file (or the package page on CRAN). A name and email address should be available.
       options: 
         - Available
@@ -63,9 +74,12 @@ body:
     id: purpose
     attributes:
       label: Package purpose
+      description: |
+        Statistical packages implement statistical or machine learning algorithms.
+        Non-statistical packages are used for e.g. reporting.
       options:
-        - Statistical peer-reviewer
-        - Statistical non-peer-reviewer
+        - Statistical; published
+        - Statistical; non-published
         - Non-statistical
       default: 0
     validations:
@@ -74,7 +88,7 @@ body:
     id: nr_dependencies
     attributes: 
       label: Number of dependencies
-      description: Use `validation::get_n_deps(pkgname)` in R
+      description: Use `validation::get_n_deps(pkgname)` in R.
       placeholder: e.g. 15
     validations:
       required: true
@@ -95,33 +109,15 @@ body:
   - type: dropdown
     id: source_code_documented
     attributes:
-      label: Is package source code available and is it well documented?
+      label: is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.
       options:
-        - well documented
-        - documented
-        - not documented
+        - Yes
+        - No
       description: |
           - explanatory comments in the code are a good sign
           - roxygen comments for internal functions is a good sign
           - well structured code (lines, indentation, readability) is a good sign
           - commented-out 'old' code is a bad sign
-          - unavailable code is considered 'non-document'
-    validations:
-      required: true
-  - type: dropdown
-    id: community_use
-    attributes:
-      label: Is the package 'known' in the community? 
-      description: |
-        Are there 'complaints' in the community (stats.exchange / stackoverﬂow / r-blogs...)? 
-        Give a general grade as low/med/high
-      options:
-        - low
-        - medium
-        - high
-      description: |
-          - Serious issues and complaints in the community indicate a high risk
-          - Number of reported bugs, and have they been corrected?
     validations:
       required: true
   - type: input
@@ -130,44 +126,37 @@ body:
       label: Number of downloads in the last 12 months
       description: |
         Use `validation::get_12month_download_score(pkgname)` in R. 
-        Note that download statistics are only available for packages on CRAN.
+        Note that download statistics are only available for packages on CRAN or Bioconductor.
   - type: dropdown
     id: bug_reporting_active
     attributes: 
-      label: Bug reporting address is available (in DESCRIPTION) and bugs are resolved quickly
+      label: Bug reporting address is available (in DESCRIPTION)
       options:
-        - yes, fast response
-        - yes, slow response
-        - non existant
+        - Yes
+        - No
     validations:
       required: true
   - type: dropdown
     id: has_vignettes
     attributes: 
-      label: Does the package have vignettes?
+      label: Does the package have one or more vignettes?
       options:
-        - One or more
-        - It does not
+        - Yes
+        - No
     validations:
       required: true
   - type: dropdown
     id: has_tests
     attributes: 
-      label: Does the package have tests?
+      label: Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?
       options:
         - Yes, comprehensive
         - Yes, but not comprehensive
         - It does not
     validations:
       required: true
-  - type: dropdown
-    id: final_risk
-    attributes: 
-      label: Final risk score
-      description: here it would have to be a manual calculation, but we could have an action that pulls the info from the issue and calculates it
-      options:
-        - low
-        - medium
-        - high
-    validations:
-      required: true
+  - type: markdown
+    attributes:
+      value: |
+        The answers you've provided will be used to create a final risk score for the package. 
+        Thanks for participating in our project. 
