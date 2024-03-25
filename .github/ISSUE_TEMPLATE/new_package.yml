@@ -24,7 +24,6 @@ body:
       options:
         - SCTO Stats and Methodology platform
         - Other SCTO platform
-        - Not SCTO
     validations:
       required: false
   - type: input
