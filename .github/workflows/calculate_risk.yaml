@@ -14,7 +14,7 @@ jobs:
       - name: Install remotes
         run: Rscript -e 'install.packages(c("jsonlite"))'
       - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev")'
+        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
       - name: Run script to calculate risk and post comment
         run: Rscript -e 'jsonlite::read_json("github/workflow/event.json")'
     
