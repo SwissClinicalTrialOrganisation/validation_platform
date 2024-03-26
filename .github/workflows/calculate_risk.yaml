@@ -8,17 +8,4 @@ jobs:
   render:
     name: Environment Printer
     uses: managedkaos/print-env@v1.0
-            
-    name: Render my document
-    runs-on: macOS-latest
-    env:
-      GITHUB_EVENT_PATH: ${{ github.event }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@v2
-      - name: Install remotes
-        run: Rscript -e 'install.packages(c("remotes"))'
-      - name: Install validation
-        run: Rscript -e 'remotes::install_github("SwissClinicalTrialOrganisation/validation")'
-      - name: Run script to calculate risk and post comment
-        run: Rscript -e 'source("resources/calculate_risk.R")'
+    
