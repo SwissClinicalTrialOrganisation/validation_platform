@@ -8,6 +8,8 @@ jobs:
   render:
     name: Environment Printer
     runs-on: ubuntu-latest
+    env: 
+      NUMBER: ${{ github.event.issue.number }}
     steps:
       - uses: managedkaos/print-env@v1.0
       - uses: r-lib/actions/setup-r@v2
