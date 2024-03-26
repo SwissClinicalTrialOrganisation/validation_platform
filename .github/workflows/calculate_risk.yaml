@@ -18,5 +18,5 @@ jobs:
       - name: Install validation
         run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
       - name: Run script to calculate risk and post comment
-        run: Rscript -e 'jsonlite::read_json("github/workflow/event.json")'
+        run: Rscript -e 'validate::get_issue(NUMBER)'
     
