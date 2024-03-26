@@ -152,7 +152,7 @@ body:
       options:
         - Yes, comprehensive
         - Yes, but not comprehensive
-        - It does not
+        - "No"
     validations:
       required: true
   - type: markdown
