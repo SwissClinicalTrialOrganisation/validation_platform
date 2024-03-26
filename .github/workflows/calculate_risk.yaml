@@ -18,5 +18,5 @@ jobs:
       - name: Install validation
         run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
       - name: Run script to calculate risk and post comment
-        run: Rscript -e 'validation::get_pkg_data_score_post(NUMBER)'
+        run: Rscript -e 's <- Sys.getenv(); validation::get_pkg_data_score_post(s$NUMBER)'
     
