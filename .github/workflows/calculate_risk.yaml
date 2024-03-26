@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: managedkaos/print-env@v1.0
+  render:
     name: R stuff
     runs-on: macOS-latest
     steps:
