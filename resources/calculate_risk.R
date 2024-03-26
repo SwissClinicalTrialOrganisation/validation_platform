@@ -4,5 +4,9 @@
 # 
 
 # path to json with info on the triggering issue
-issue <- GITHUB_EVENT_PATH
+issue <- Sys.getenv("NUMBER")
 print(issue)
+
+
+
+
