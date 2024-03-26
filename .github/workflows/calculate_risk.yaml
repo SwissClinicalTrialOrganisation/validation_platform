@@ -6,6 +6,9 @@ name: Calculate risk
 
 jobs:
   render:
+    name: Environment Printer
+    uses: managedkaos/print-env@v1.0
+            
     name: Render my document
     runs-on: macOS-latest
     env:
