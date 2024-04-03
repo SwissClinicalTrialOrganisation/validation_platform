@@ -6,7 +6,7 @@ name: Calculate risk
 
 jobs:
   render:
-    name: Environment Printer
+    name: Reply to issue
     runs-on: macOS-latest
     env: 
       NUMBER: ${{ github.event.issue.number }}
