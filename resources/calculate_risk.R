@@ -6,6 +6,7 @@
 # path to json with info on the triggering issue
 issuenum <- Sys.getenv("NUMBER")
 
+library(validation)
 
 issue <- get_issue(issuenum)
 
