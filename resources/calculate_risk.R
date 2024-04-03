@@ -10,7 +10,7 @@ issuenum <- Sys.getenv("NUMBER")
 
 issue <- validation:::get_issue(issuenum)
 
-if(is_package(list(issue))){
+if(validation:::is_package(list(issue))){
   score <- validation:::calculate_pkg_score(list(issue))
 
   val <- validation:::validate_pkg_issue(score)
