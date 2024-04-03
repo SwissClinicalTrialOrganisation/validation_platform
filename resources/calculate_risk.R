@@ -32,7 +32,7 @@ if(validation:::is_test(list(issue))){
 
   tmp <- issue |>
     list() |>
-    validation:::issues_to_df(extract_elements_test)
+    validation:::issues_to_df(validation:::extract_elements_test)
 
   val <- validation:::validate_test_issue(tmp)
 
