@@ -28,8 +28,26 @@ if(validation:::is_package(list(issue))){
   }
 }
 
+if(validation:::is_test(list(issue))){
+
+  tmp <- issue |>
+    list() |>
+    validation:::issues_to_df(extract_elements_test)
+
+  val <- validation:::validate_test_issue(tmp)
+
+  if(val$ok){
+    gh_message <- ":sparkles: Thank you for your contribution! :sparkles:"
+    can_close <- TRUE
+  } else {
+    gh_message <- val$message
+    can_close <- FALSE
+  }
+}
+
 print(gh_message)
 print(can_close)
 
+validation:::post_comment(issue_num, gh_message)
 
 
