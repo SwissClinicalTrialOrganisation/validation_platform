@@ -48,6 +48,6 @@ if(validation:::is_test(list(issue))){
 print(gh_message)
 print(can_close)
 
-validation:::post_comment(issue_num, gh_message)
+validation:::post_comment(issuenum, gh_message)
 
 
