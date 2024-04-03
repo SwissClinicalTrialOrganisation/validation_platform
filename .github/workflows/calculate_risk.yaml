@@ -13,6 +13,7 @@ jobs:
     runs-on: macOS-latest
     env: 
       NUMBER: ${{ github.event.issue.number }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       # - uses: managedkaos/print-env@v1.0
       - uses: actions/checkout@v4
