@@ -6,14 +6,14 @@
 # path to json with info on the triggering issue
 issuenum <- Sys.getenv("NUMBER")
 
-library(validation)
+#library(validation)
 
-issue <- get_issue(issuenum)
+issue <- validation:::get_issue(issuenum)
 
 if(is_package(list(issue))){
-  score <- calculate_pkg_score(list(issue))
+  score <- validation:::calculate_pkg_score(list(issue))
 
-  val <- validate_pkg_issue(score)
+  val <- validation:::validate_pkg_issue(score)
 
   if(val$score_ok){
     gh_message <- paste0("Package ", score$package, " has a score of ",
