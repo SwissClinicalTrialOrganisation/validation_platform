@@ -11,7 +11,7 @@ jobs:
   render:
     name: Reply to issue
     runs-on: macOS-latest
-    env: 
+    env:
       NUMBER: ${{ github.event.issue.number }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -26,9 +26,7 @@ jobs:
         run: Rscript -e 'source("resources/calculate_risk.R")'
       - name: commit updated CSV
         run: |
-          git config --global user.email "render-action@github.com"
-          git config --global user.name "Render action"
           git add tables/validated_packages.csv
           git commit -m "add new packages" || echo "No changes to commit"
           git push origin main || echo "No changes to commit"
-    
+
