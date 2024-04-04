@@ -4,6 +4,10 @@ on:
 
 name: Calculate risk
 
+permissions:
+  issues: write
+  content: write
+
 jobs:
   render:
     name: Reply to issue
