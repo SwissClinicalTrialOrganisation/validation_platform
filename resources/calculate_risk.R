@@ -1,12 +1,12 @@
-# 
+#
 # SCRIPT TO CALCULATE THE PACKAGE RISK
 # runs via a github action triggered from issue creation or edit.
-# 
+#
 
 # path to json with info on the triggering issue
 issuenum <- Sys.getenv("NUMBER")
 
-#library(validation)
+library(validation)
 
 issue <- validation:::get_issue(issuenum)
 
@@ -22,10 +22,18 @@ if(validation:::is_package(list(issue))){
                          "** risk package.", "\n\n",
                          ":sparkles: Thank you for your contribution! :sparkles:")
     can_close <- TRUE
-	
-	pkgs <- validation::update_pkg_table(pkg = list(issue)) 
-	readr::write_csv(pkgs, "tables/validated_packages.csv")
-	
+
+	  pkgs <- validation::update_pkg_table(pkg = list(issue))
+	  readr::write_csv(pkgs, "tables/validated_packages.csv")
+
+    validation:::add_label(issuenum, paste(as.character(score$final_score_cat), "risk")) |>
+      print()
+    validation:::add_label(issuenum, ":sparkles: approved :sparkles:") |>
+      print()
+    validation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
+      print()
+    # validation:::close_issue(issuenum)
+
   } else {
     gh_message <- val$message
     can_close <- FALSE
