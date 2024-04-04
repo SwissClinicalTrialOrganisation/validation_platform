@@ -24,4 +24,11 @@ jobs:
         run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
       - name: Run script to calculate risk and post comment
         run: Rscript -e 'source("resources/calculate_risk.R")'
+      - name: commit updated CSV
+        run: |
+          git config --global user.email "render-action@github.com"
+          git config --global user.name "Render action"
+          git add tables/validated_packages.csv
+          git commit -m "add new packages" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
     
