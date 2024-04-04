@@ -6,7 +6,7 @@ name: Calculate risk
 
 permissions:
   issues: write
-  content: write
+  contents: write
 
 jobs:
   render:
