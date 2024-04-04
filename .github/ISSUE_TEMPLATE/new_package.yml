@@ -1,7 +1,7 @@
 name: New package validation
 description: Add a new package validation report to the repo
 title: "[Package validation]: XXX version YYY"
-labels: ["package", "triage"]
+labels: ["package", ":alarm_clock: triage :alarm_clock:"]
 body:
   - type: markdown
     attributes:
