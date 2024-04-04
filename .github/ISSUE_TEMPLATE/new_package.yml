@@ -125,7 +125,7 @@ body:
     attributes: 
       label: Number of downloads in the last 12 months
       description: |
-        Use `validation::get_12month_download_score(pkgname)` in R. 
+        Use `validation::get_12month_downloads(pkgname)` in R. 
         Note that download statistics are only available for packages on CRAN or Bioconductor.
   - type: dropdown
     id: bug_reporting_active
