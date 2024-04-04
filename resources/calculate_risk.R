@@ -22,6 +22,10 @@ if(validation:::is_package(list(issue))){
                          "** risk package.", "\n\n",
                          ":sparkles: Thank you for your contribution! :sparkles:")
     can_close <- TRUE
+	
+	pkgs <- validation::update_pkg_table(pkg = list(issue)) 
+	readr::write_csv(pkgs, "tables/validated_packages.csv")
+	
   } else {
     gh_message <- val$message
     can_close <- FALSE
