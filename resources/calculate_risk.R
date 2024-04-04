@@ -27,10 +27,13 @@ if(validation:::is_package(list(issue))){
 	  readr::write_csv(pkgs, "tables/validated_packages.csv")
 
     validation:::add_label(issuenum, paste(as.character(score$final_score_cat), "risk")) |>
+      try() |>
       print()
     validation:::add_label(issuenum, ":sparkles: approved :sparkles:") |>
+      try() |>
       print()
     validation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
+      try() |>
       print()
     # validation:::close_issue(issuenum)
 
