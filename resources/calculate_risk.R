@@ -117,7 +117,7 @@ if(validation:::is_test(list(issue))){
     }
 
     cat("Updating table\n")
-    tests <- validation::update_tests_table(tests = list(issue))
+    tests <- validation::update_tests_table()
     cat("Writing table\n")
     readr::write_csv(tests, "tables/package_tests.csv", na = "")
 
