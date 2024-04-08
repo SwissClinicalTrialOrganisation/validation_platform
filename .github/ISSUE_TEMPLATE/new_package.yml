@@ -26,7 +26,7 @@ body:
         - Other SCTO platform
         - No relationship
     validations:
-      required: false
+      required: true
   - type: input
     id: package
     attributes:
