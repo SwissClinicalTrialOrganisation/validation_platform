@@ -24,6 +24,7 @@ body:
       options:
         - SCTO Stats and Methodology platform
         - Other SCTO platform
+        - None
     validations:
       required: false
   - type: input
@@ -44,7 +45,7 @@ body:
     id: release_date
     attributes:
       label: Date of release of the evaluated version of the package
-      description: If available. Please use ODBC format - YYYY-MM-DD
+      description: If available. Please use ODBC format - YYYY-MM-DD.
       placeholder: YYYY-MM-DD
     validations:
       required: false
@@ -54,9 +55,18 @@ body:
       label: The package author has...
       description: Credentials here refer to affiliation to a university or similar institution
       options:
-        - well-known or known credentials
-        - credentials
-        - no clear credentials or group association
+        - Well-known or known credentials
+        - Credentials
+        - No clear credentials or group association
+      description: |
+        package authors (noted as ‘aut’ in the package description) are
+          - well-known or known credentials: well-known in the statistical, data
+            science and/or R community, and is/was associated with a university or
+            similar institution
+          - credentials: past or present association with a university or similar
+            institution, but not well known in the community
+          - no clear credentials or group association: the author does not fit in
+            the above categories
     validations:
       required: true
   - type: dropdown
@@ -64,7 +74,7 @@ body:
     attributes:
       label: Is there a maintainer listed for the package and are their contact details available?
       description: Check the DESCRIPTION file (or the package page on CRAN). A name and email address should be available.
-      options: 
+      options:
         - Available
         - Unavailable
     validations:
@@ -75,6 +85,7 @@ body:
       label: Package purpose
       description: |
         Statistical packages implement statistical or machine learning algorithms.
+        Published refers to the method being publishin in a peer-reviewed journal.
         Non-statistical packages are used for e.g. reporting.
       options:
         - Statistical; published
@@ -85,17 +96,17 @@ body:
       required: true
   - type: input
     id: nr_dependencies
-    attributes: 
+    attributes:
       label: Number of dependencies
-      description: Use `validation::get_n_deps(pkgname)` in R.
+      description: Use `validation::get_n_deps(pkgname)` in R. If that does not work, check the depends and imports fields of the DESCRIPTION file.
       placeholder: e.g. 15
     validations:
       required: true
   - type: dropdown
     id: on_cran
     attributes:
-      label: Is the package on available from CRAN or bioconductor?
-      options: 
+      label: Is the package available from CRAN or bioconductor?
+      options:
         - "Yes"
         - "No"
     validations:
@@ -113,23 +124,26 @@ body:
         - "Yes"
         - "No"
       description: |
-        Source code availability refers to it being in a public repository somewhere. Needing to use R to get to the source code (e.g. by typing a function name without brackets/parentheses) is insufficient.
+        Source code availability refers to it being in a public repository somewhere.
+        Needing to use R to get to the source code (e.g. by typing a function name without brackets/parentheses) is insufficient.
           - explanatory comments in the code are a good sign
           - roxygen comments for internal functions is a good sign
           - well structured code (lines, indentation, readability) is a good sign
           - commented-out 'old' code is a bad sign
+        Source code that is not commented or difficult to follow is considered not documented (No)
     validations:
       required: true
   - type: input
     id: downloads
-    attributes: 
+    attributes:
       label: Number of downloads in the last 12 months
       description: |
-        Use `validation::get_12month_downloads(pkgname)` in R. 
+        Use `validation::get_12month_downloads(pkgname)` in R.
         Note that download statistics are only available for packages on CRAN or Bioconductor.
+        If download statistics are unavailable, leave it blank.
   - type: dropdown
     id: bug_reporting_active
-    attributes: 
+    attributes:
       label: Bug reporting address is available (in DESCRIPTION)
       options:
         - "Yes"
@@ -138,16 +152,21 @@ body:
       required: true
   - type: dropdown
     id: has_vignettes
-    attributes: 
+    attributes:
       label: Does the package have one or more vignettes?
       options:
         - "Yes"
         - "No"
+      description: |
+        Vignettes are documents that provide a narrative about the package and its use.
+        There is a dedicated section on CRAN which lists them. If source code is available,
+        they are found in the vignettes folder. They are typically listed under Articles on
+        package websites built with pkgdown.
     validations:
       required: true
   - type: dropdown
     id: has_tests
-    attributes: 
+    attributes:
       label: Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?
       options:
         - Yes, comprehensive
@@ -158,5 +177,5 @@ body:
   - type: markdown
     attributes:
       value: |
-        The answers you've provided will be used to create a final risk score for the package. 
-        Thanks for participating in our project. 
+        The answers you've provided will be used to create a final risk score for the package.
+        Thanks for participating in our project.
