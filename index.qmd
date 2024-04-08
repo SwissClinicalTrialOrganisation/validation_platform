@@ -1,0 +1,133 @@
+---
+title: "Welcome"
+editor_options:
+  markdown:
+    wrap: 72
+    
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+This site provides access to the R package validation platform from statisticians of the
+SCTO Statistics & Methodology Platform.
+
+Statisticians of the SCTO take a risk based approach to package utilisation, whereby the risk of the product (e.g. report) defines how validated a package must be to be used in the product.
+
+```{r}
+library(gt)
+library(dplyr)
+data.frame(prod = "Product\nrisk", 
+           prod_risk = c("Low", "Medium", "High"),
+           pkg_low = "Allowed",
+           pkg_medium = c("Allowed", "Allowed", "Needs assessment"),
+           pkg_high = c("Allowed", "Needs assessment", "Needs assessment")) |> 
+  gt(groupname_col = "prod", id = "mygt") |> 
+  tab_spanner(columns  = vars(pkg_low, pkg_medium, pkg_high), 
+              label = "R – package risk (baseline risk)") |> 
+  cols_label(pkg_low = "Low", 
+             pkg_medium = "Medium", 
+             pkg_high = "High",
+             prod_risk = "") |> 
+  cols_width(
+    2:4 ~ px(150),
+  ) |> 
+  tab_options(
+    row_group.as_column = TRUE,
+    quarto.disable_processing = TRUE
+  ) |> 
+  cols_align(
+    align = c("center"),
+    columns = everything()
+  ) |> 
+  data_color(columns = pkg_high, 
+             method = "factor",
+             palette = c("#91cf60", "#fc8d59"),
+             domain = c("Allowed", "Needs assessment"),
+             ) |> 
+  data_color(columns = pkg_medium, 
+             method = "factor",
+             palette = c("#91cf60", "#fc8d59"),
+             domain = c("Allowed", "Needs assessment"),
+             ) |> 
+  data_color(columns = pkg_low, 
+             method = "factor",
+             palette = c("#91cf60", "#fc8d59"),
+             domain = c("Allowed", "Needs assessment"),
+             ) |> 
+  fmt_markdown(columns = TRUE) |> 
+  tab_style(
+    style = "vertical-align:middle; horizontal-align:center",
+    locations = cells_row_groups()
+  ) 
+```
+
+
+
+
+
+## Validated packages
+
+```{r}
+#| output: false
+install.packages('validation', 
+                 repos = c('https://ctu-bern.r-universe.dev', 
+                           'https://cloud.r-project.org'), 
+                 quiet = TRUE, verbose = FALSE)
+library(validation)
+library(DT)
+library(gtExtras)
+pkgs <- load_pkg_table()
+```
+
+`r nrow(pkgs)` packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.
+
+```{r}
+tmp <- pkgs |> 
+  rowwise() |> 
+  mutate(url = gt_hyperlink(text = "View on GitHub", url = issue_url),
+         url = purrr::map(url, html),
+         ) |> 
+  select(package, version, final_score_cat, author, maintainer, purpose, url) # View()
+
+risks <- unique(tmp$final_score_cat)
+full_palette <- c(Low = "#91cf60", Medium = "#ffffbf", High = "#fc8d59")
+observed_palette <- full_palette[risks]
+tmp |> 
+  gt() |> 
+  cols_label(package = "Package",
+             version = "Version",
+             final_score_cat = "Package Risk",
+             author = "Author",
+             maintainer = "Maintainer",
+             purpose = "Purpose",
+             url = "Validation link") |> 
+  opt_interactive(use_filters = TRUE,
+                  use_sorting = FALSE) |>
+  # harmonize table font to quarto default
+  opt_table_font(font = "Source Sans Pro") |> 
+  # data_color(final_score_cat, palette = c("#91cf60", "#ffffbf", "#fc8d59")) |> 
+  gt_badge(final_score_cat, 
+           palette = observed_palette, alpha = 1)
+```
+
+The following packages have newer versions available, which may be an indication that the validation is outdated:
+
+```{r}
+# Check for updates of installed packages
+pkgs <- load_pkg_table()
+# installed_packages <- installed.packages() |> as.data.frame()
+available_packages <- available.packages(contriburl = "https://cran.rstudio.com/") |> 
+  as.data.frame()
+pkgs |> 
+  dplyr::summarize(version = max(version), .by = package) |> 
+  dplyr::left_join(available_packages, by = dplyr::join_by("package" == "Package")) |> #View()
+  dplyr::filter(version < Version) |> 
+  dplyr::select(package, version, Version) |> 
+  dplyr::rename(Package = package,
+         `Validated version` = version,
+         `Available version` = Version
+         )
+```
+

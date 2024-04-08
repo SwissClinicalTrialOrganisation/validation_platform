@@ -1,0 +1,32 @@
+---
+title: "Validating packages"
+editor_options:
+  markdown:
+    wrap: 72
+
+execute:
+  echo: false
+  message: false
+---
+
+This page functions as the standard operating procedure for the validation of R 
+packages within the SCTO Statistics & Methodology Platform framework. 
+
+In order to perform a validation: 
+
+- first check whether the package has already been validated. This can be done by
+  - Check the [home page](index.qmd) to see if the package has already been validated.
+  - check for the package in the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues) by searching for it among the issues (remember to remove the is:open filter).
+  - the `check_session` function from the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/) can be used to check if a package has been validated.
+- if it has, check the associated risk and consider whether the package needs additional testing.
+- if not, go to the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues)
+  - click the green "New issue" button (towards the top right)
+  - select the New package validation template by clicking the green Get started button on the right
+  - fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the [Risk metrics page](risk_metrics.qmd).
+    - Note that the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/) contains various useful functions to help with the validation process. Especially useful are:
+      - `get_n_deps`, which returns the number of dependencies of a package,
+      - `get_12month_downloads` which returns the number of downloads of a package in the last 12 months, and 
+      - `get_release_date` finds the release date of a package.
+  - Once you have completed the form, click the green "Submit new issue" button at the bottom of the page.
+  - Submitting the form will trigger an automated job that will calculate the risk based on the information you entered into the form and post a comment on the issue. 
+

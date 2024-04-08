@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "Statistics and Methodology - R package validation"
+  page-footer: CC-BY SCTO Statistics and Methodology
+  favicon: resources/SCTO_Platforms.png
+  navbar:
+    title: "SCTO Stats and Methodology"
+    right:
+      - text: "Home"
+        href: index.html
+      - text: "GitHub"
+        href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.html
+        title: Home
+      - section: "Documentation"
+        contents:
+          - href: policy.qmd
+          - href: pkg_validation.qmd
+          - href: risk_metrics.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
