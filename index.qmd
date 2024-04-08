@@ -76,7 +76,6 @@ install.packages('validation',
                            'https://cloud.r-project.org'), 
                  quiet = TRUE, verbose = FALSE)
 library(validation)
-library(DT)
 library(gtExtras)
 pkgs <- load_pkg_table()
 ```

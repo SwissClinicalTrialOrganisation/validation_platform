@@ -25,7 +25,7 @@ jobs:
           r-version: '4.3.0'
 
       - name: Install R Dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "gt", "ggplot2", "pkgsearch"))'
+        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "gt", "gtExtras", "ggplot2", "pkgsearch"))'
 
       - name: Install validation
         run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
