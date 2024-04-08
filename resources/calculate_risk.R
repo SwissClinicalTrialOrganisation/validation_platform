@@ -34,13 +34,17 @@ if(validation:::is_package(list(issue))){
       print()
     # validation:::close_issue(issuenum)
 
+    validation:::post_comment(issuenum, gh_message)
+
+    if(can_close) validation:::close_issue(issuenum)
+
     Sys.sleep(10)
 	  pkgs <- validation::update_pkg_table()
 	  readr::write_csv(pkgs, "tables/validated_packages.csv")
 
   } else {
     gh_message <- val$message
-    can_close <- FALSE
+    validation:::post_comment(issuenum, gh_message)
   }
 }
 
@@ -88,7 +92,9 @@ if(validation:::is_test(list(issue))){
       try() |>
       print()
 
+    validation:::post_comment(issuenum, gh_message)
 
+    if(can_close) validation:::close_issue(issuenum)
 
     tests <- validation::update_tests_table(tests = list(issue))
     readr::write_csv(tests, "tables/package_tests.csv")
@@ -96,15 +102,15 @@ if(validation:::is_test(list(issue))){
 
   } else {
     gh_message <- val$message
-    can_close <- FALSE
+    validation:::post_comment(issuenum, gh_message)
   }
 }
 
-if(can_close) validation:::close_issue(issuenum)
+
 
 print(gh_message)
 print(can_close)
 
-validation:::post_comment(issuenum, gh_message)
+
 
 
