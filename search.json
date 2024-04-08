@@ -1,0 +1,106 @@
+[
+  {
+    "objectID": "risk_metrics.html",
+    "href": "risk_metrics.html",
+    "title": "Risk metrics",
+    "section": "",
+    "text": "This document describes the metrics used by members of the Swiss Clinical Trial Organization when evaluating add on packages of the statistical environment, R. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.\nAssessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the SCTO R-validation policy. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.\nFollowing this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific product. The documentation of any actions following the initial risk assessment is listed in a separate table.\nThis document is part of the SCTO’s R validation policy (NAME – LOCATION – VERSION) and refers to the standard operation procedure for Package Testing (NAME – LOCATION) of the SCTO statistics platform.\nThe metrics are written with the aim of assessing R packages; small adaptations may be required for packages of other programs such as Stata or SAS.\nBased on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.",
+    "crumbs": [
+      "Documentation",
+      "Risk metrics"
+    ]
+  },
+  {
+    "objectID": "risk_metrics.html#objective",
+    "href": "risk_metrics.html#objective",
+    "title": "Risk metrics",
+    "section": "",
+    "text": "This document describes the metrics used by members of the Swiss Clinical Trial Organization when evaluating add on packages of the statistical environment, R. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.\nAssessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the SCTO R-validation policy. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.\nFollowing this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific product. The documentation of any actions following the initial risk assessment is listed in a separate table.\nThis document is part of the SCTO’s R validation policy (NAME – LOCATION – VERSION) and refers to the standard operation procedure for Package Testing (NAME – LOCATION) of the SCTO statistics platform.\nThe metrics are written with the aim of assessing R packages; small adaptations may be required for packages of other programs such as Stata or SAS.\nBased on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.",
+    "crumbs": [
+      "Documentation",
+      "Risk metrics"
+    ]
+  },
+  {
+    "objectID": "risk_metrics.html#scope",
+    "href": "risk_metrics.html#scope",
+    "title": "Risk metrics",
+    "section": "Scope",
+    "text": "Scope\nThis document is applicable to all R add-on packages. Out of scope are packages included in the official R-distribution including “Base R” packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document “R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021”. R-base and recommended packages are approved per definition, as stated in the policy document.",
+    "crumbs": [
+      "Documentation",
+      "Risk metrics"
+    ]
+  },
+  {
+    "objectID": "risk_metrics.html#metric-explanation---glossary",
+    "href": "risk_metrics.html#metric-explanation---glossary",
+    "title": "Risk metrics",
+    "section": "Metric explanation - glossary",
+    "text": "Metric explanation - glossary\nThe following metrics are considered when assessing a package. These are listed in Appendix-1 below. Here we provide a precise definition:\n\nPackage name, version, release date\nversion and release date of the specific version assessed at this moment. These are required for identifying the package and for documentation. Packages will be re-assessed upon update and version changes; documentation of older versions remains in the document. These values are not included in the risk calculation.\n\n\nPurpose (statistical_package):\nWe define three risk levels for a package, depending on the package’s purpose and methodology:\n\n“non-statistical” packages: packages that deal only with data-wrangling and manipulation (e.g., dplyr) or with reporting processes (e.g., Sweave, xtable). Such processes are of ‘low risk’ as no statistical calculations are performed, and data-errors are, comparatively, easy to detect. Similarly, packages associated with application interfaces such as Shiny application are considered “non-statistical”.\n“Statistical with published methods”: packages that perform statistical calculations based on known methods, or on methods that have been published in peer reviewed journals. These packages obtain a “medium risk” status.\n“Statistical non-published methods”: packages that perform statistical calculations, but the underlying methods have not been published in a peer reviewed journal. These packages obtain a status “high risk”.\n\n\n\nAuthor (author):\nThe author(s) of a package will be viewed as indicator for its trustworthiness. If package authors (noted as ‘aut’ in the package description, e.g., as listed on CRAN) are well-known within the statistical, data-science and R communities and have credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as low. If package authors have credentials based on their qualifications, education, present and past affiliations, but are not well-known within the statistical, data-science and R communities, the risk of the respective package will be scored as medium.  If package authors are not well-known within the statistical, data-science and R communities and have no clear credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as high.\nNote that whether an author is ‘well-known’ in the community is a subjective assessment and accepted as such; in addition, groups of authors are evaluated as a collective.\n\n\nMaintainer (maintainer) :\nThe package has a named maintainer who’s contact details (email) are available and published. A positive answer provides a “low risk” score. A package with no named maintainer is scored as high. The rationale behind this metric lies in the fact that the indication of name and email is evidence of a package’s active maintenance and availability of contact in case of bugs and/or suggestions.\n\n\nNumber of dependencies (nr_dependencies):\nThis metric assesses the level of risk associated with the number of dependencies a package relies on. Dependencies are other packages or processes that the evaluated package depends on, as listed in CRAN under “depends” and/or “imports”. The risk of unexpected behaviour increases with the number of dependencies, since there is a greater likelihood of issues on a specific routine if updates are performed on a dependent package. Great care should be considered while using packages involving many dependencies.\nThe listed number is converted into a [0, 1] score, with 0 representing low number of dependencies (= low risk) and 1 representing many dependencies (= high risk). Taking a similar approach for the transforming the number to a score as the ‘riskmetric’ package (R validation hub, 2023), we use a simplification of the classic logistic curve as a scoring function. A sigmoid midpoint is 4 reverse dependencies, ie., x[0] = 4 and logistic growth rate of k = 0.5.\n\n\nWarning: package 'ggplot2' was built under R version 4.3.2\n\n\n\n\n\n\n\n\n\n\n\nETC.",
+    "crumbs": [
+      "Documentation",
+      "Risk metrics"
+    ]
+  },
+  {
+    "objectID": "pkg_validation.html",
+    "href": "pkg_validation.html",
+    "title": "Validating packages",
+    "section": "",
+    "text": "This page functions as the standard operating procedure for the validation of R packages within the SCTO Statistics & Methodology Platform framework.\nIn order to perform a validation:\n\nfirst check whether the package has already been validated. This can be done by\n\nCheck the home page to see if the package has already been validated.\ncheck for the package in the package validation GitHub repository by searching for it among the issues (remember to remove the is:open filter).\nthe check_session function from the R package validation can be used to check if a package has been validated.\n\nif it has, check the associated risk and consider whether the package needs additional testing.\nif not, go to the package validation GitHub repository\n\nclick the green “New issue” button (towards the top right)\nselect the New package validation template by clicking the green Get started button on the right\nfill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the Risk metrics page.\n\nNote that the R package validation contains various useful functions to help with the validation process. Especially useful are:\n\nget_n_deps, which returns the number of dependencies of a package,\nget_12month_downloads which returns the number of downloads of a package in the last 12 months, and\nget_release_date finds the release date of a package.\n\n\nOnce you have completed the form, click the green “Submit new issue” button at the bottom of the page.\nSubmitting the form will trigger an automated job that will calculate the risk based on the information you entered into the form and post a comment on the issue.",
+    "crumbs": [
+      "Documentation",
+      "Validating packages"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This site provides access to the R package validation platform from statisticians of the SCTO Statistics & Methodology Platform.\nStatisticians of the SCTO take a risk based approach to package utilisation, whereby the risk of the product (e.g. report) defines how validated a package must be to be used in the product.\nR – package risk (baseline risk)\n      \n    \n    \n      Low\n      Medium\n      High\n    \n  \n  \n    Product\nrisk\nLow\n\nAllowed\n\nAllowed\n\nAllowed\n\n    Medium\n\nAllowed\n\nAllowed\n\nNeeds assessment\n\n    High\n\nAllowed\n\nNeeds assessment\n\nNeeds assessment",
+    "crumbs": []
+  },
+  {
+    "objectID": "index.html#validated-packages",
+    "href": "index.html#validated-packages",
+    "title": "Welcome",
+    "section": "Validated packages",
+    "text": "Validated packages\n15 packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.\n\n\n\n\n\n\n\n\n\nThe following packages have newer versions available, which may be an indication that the validation is outdated:\n\n\n# A tibble: 0 × 3\n# ℹ 3 variables: Package &lt;chr&gt;, Validated version &lt;chr&gt;,\n#   Available version &lt;chr&gt;",
+    "crumbs": []
+  },
+  {
+    "objectID": "policy.html",
+    "href": "policy.html",
+    "title": "SCTO Validation Policy",
+    "section": "",
+    "text": "This document describes the policy recommended by the Swiss Clinical Trial Organization (SCTO) for the use of R in a validated environment for purposes of clinical research. R is a ‘language and environment for statistical computing and graphics’ (source: the R file). R is an official part of the Free Software Foundation’s GNU project and is released under the Free Software Foundation’s GNU Public License.\nGoal is in general to describe the policy, and specifically to define concepts for R. Some principles can be shared also for other software.\nIn scope:\n\nR specific processes\nProcesses shared by the SCTO platform. A baseline level on which individual organizations (CTUs) can go more strict\n\nOut of scope:\n\nValidation of ‘off the shelf’ software (?)\nInternal, organization specific, processes. Necessary processes will be mentioned, but not detailed/defined.",
+    "crumbs": [
+      "Documentation",
+      "SCTO Validation Policy"
+    ]
+  },
+  {
+    "objectID": "policy.html#scope-and-background",
+    "href": "policy.html#scope-and-background",
+    "title": "SCTO Validation Policy",
+    "section": "",
+    "text": "This document describes the policy recommended by the Swiss Clinical Trial Organization (SCTO) for the use of R in a validated environment for purposes of clinical research. R is a ‘language and environment for statistical computing and graphics’ (source: the R file). R is an official part of the Free Software Foundation’s GNU project and is released under the Free Software Foundation’s GNU Public License.\nGoal is in general to describe the policy, and specifically to define concepts for R. Some principles can be shared also for other software.\nIn scope:\n\nR specific processes\nProcesses shared by the SCTO platform. A baseline level on which individual organizations (CTUs) can go more strict\n\nOut of scope:\n\nValidation of ‘off the shelf’ software (?)\nInternal, organization specific, processes. Necessary processes will be mentioned, but not detailed/defined.",
+    "crumbs": [
+      "Documentation",
+      "SCTO Validation Policy"
+    ]
+  },
+  {
+    "objectID": "policy.html#definitions",
+    "href": "policy.html#definitions",
+    "title": "SCTO Validation Policy",
+    "section": "Definitions",
+    "text": "Definitions\n\nDefine validation and verification validation (extract ICH E9 expert working group)\nShort description of “The R environment” including what are the base and recommended packages.\n\nETC",
+    "crumbs": [
+      "Documentation",
+      "SCTO Validation Policy"
+    ]
+  }
+]
