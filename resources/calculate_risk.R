@@ -34,7 +34,7 @@ if(validation:::is_package(list(issue))){
       print()
     # validation:::close_issue(issuenum)
 
-
+    Sys.sleep(10)
     issue <- validation:::get_issue(issuenum)
 	  pkgs <- validation::update_pkg_table(pkg = list(issue))
 	  readr::write_csv(pkgs, "tables/validated_packages.csv")
