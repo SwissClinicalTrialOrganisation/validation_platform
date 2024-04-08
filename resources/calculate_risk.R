@@ -40,7 +40,7 @@ if(validation:::is_package(list(issue))){
 
     Sys.sleep(10)
 	  pkgs <- validation::update_pkg_table()
-	  readr::write_csv(pkgs, "tables/validated_packages.csv")
+	  readr::write_csv(pkgs, "tables/validated_packages.csv", na = "")
 
   } else {
     gh_message <- val$message
@@ -97,7 +97,7 @@ if(validation:::is_test(list(issue))){
     if(can_close) validation:::close_issue(issuenum)
 
     tests <- validation::update_tests_table(tests = list(issue))
-    readr::write_csv(tests, "tables/package_tests.csv")
+    readr::write_csv(tests, "tables/package_tests.csv", na = "")
 
 
   } else {
