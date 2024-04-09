@@ -116,7 +116,7 @@ body:
     attributes:
       label: If not CRAN or bioconductor, where is the package available?
       description: Enter the URL of the package source
-      placeholder: e.g. https://www.githubcom/CTU-Bern/redcaptools
+      placeholder: e.g. https://www.github.com/CTU-Bern/redcaptools
     validations:
       required: false
   - type: markdown
