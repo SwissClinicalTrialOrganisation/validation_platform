@@ -111,6 +111,14 @@ body:
         - "No"
     validations:
       required: true
+  - type: input
+    id: pkg_source
+    attributes:
+      label: If not CRAN or bioconductor, where is the package available?
+      description: Enter the URL of the package source
+      placeholder: e.g. https://www.githubcom/CTU-Bern/redcaptools
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
@@ -130,7 +138,8 @@ body:
           - roxygen comments for internal functions is a good sign
           - well structured code (lines, indentation, readability) is a good sign
           - commented-out 'old' code is a bad sign
-        Source code that is not commented or difficult to follow is considered not documented (No)
+
+        Source code that is not commented or is difficult to follow is considered not documented (No)
     validations:
       required: true
   - type: input
