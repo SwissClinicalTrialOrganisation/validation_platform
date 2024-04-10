@@ -6,7 +6,7 @@ name: print env
 
 jobs:
   render:
-  name: Reply to issue
-  runs-on: ubuntu-latest
-  steps:
-    - uses: managedkaos/print-env@v1.0
+    name: print env
+    runs-on: ubuntu-latest
+    steps:
+      - uses: managedkaos/print-env@v1.0
