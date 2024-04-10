@@ -12,7 +12,7 @@ jobs:
       - uses: managedkaos/print-env@v1.0
 
   sayHi:
-    if: startWith(github.event.issue.name, '[Package validation]')
+    if: startWith(github.event.issue.title, '[Package validation]')
     runs-on: ubuntu-latest
     steps:
       - name: Say Hi
