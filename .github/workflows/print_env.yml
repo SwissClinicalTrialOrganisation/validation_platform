@@ -2,7 +2,7 @@ on:
   issues:
     types: [opened, edited]
 
-name: print env
+name: experiments
 
 jobs:
   render:
@@ -15,5 +15,9 @@ jobs:
     if: startsWith(github.event.issue.title, '[Package validation]')
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hi
-        run: echo "Hello, World!"
+      - name: Say Package validation
+        run: echo "!PACKAGE VALIDATION!"
+
+      - name: Say test
+        if: contains(github.event.issue.title, "TEST")
+        run : echo "!TEST!"
