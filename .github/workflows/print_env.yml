@@ -19,5 +19,5 @@ jobs:
         run: echo "!PACKAGE VALIDATION!"
 
       - name: Say test
-        if: contains(github.event.issue.title, "TEST")
+        if: contains(github.event.issue.title, 'TEST')
         run : echo "!TEST!"
