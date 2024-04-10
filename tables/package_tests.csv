@@ -38,7 +38,7 @@ loaded via a namespace (and not attached):
 [73] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11      
 [79] xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3     presize_0.3.7     rstudioapi_0.15.0
 [85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09
-AH,stats,4.3.3,2024-03-26,"Tests for package stats 
+AH ,stats,4.3.3,2024-03-26,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. ",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
 |test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|
@@ -74,4 +74,4 @@ loaded via a namespace (and not attached):
 [71] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
 [76] gert_2.0.0        Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
 [81] pkgload_1.3.3     vroom_1.6.5       rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
-[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-08,2024-04-08
+[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08
