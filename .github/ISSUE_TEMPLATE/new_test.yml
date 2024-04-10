@@ -1,7 +1,7 @@
 name: Add package/function testing results
 description: Add a new function testing report to the repo
 title: "[Package test]: XXX version YYY"
-labels: ["test", "triage"]
+labels: ["test", ":alarm_clock: triage :alarm_clock:"]
 body:
   - type: markdown
     attributes:
@@ -24,11 +24,39 @@ body:
       placeholder: e.g. ggplot2
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Traceability
+        in order to tell precisely what was tested, we need to know exactly what version of the package was tested, and where it was installed from.
   - type: input
     id: version
     attributes:
       label: What version of the package have you tested?
       placeholder: e.g. 1.12.3
+    validations:
+      required: true
+  - type: input
+    id: package_source
+    attributes:
+      label: Where was the package installed from?
+      description: |
+        CRAN, BioConductor, GitHub, etc. Copy/paste the output from the R console.
+        Note that `validation` will attempt to extract this information for you, but you should verify it.
+        For CRAN and BioConductor, "CRAN" or "BioConductor" is enough.
+        For GitHub, please provide the URL.
+        If installed from an r-universe, the reference should be to the underlying GitHub repository, not the r-universe.
+      placeholder: e.g. CRAN, BioConductor, https://www.github.com/CTU-Bern/...
+    validations:
+      required: true
+  - type: input
+    id: package_ref
+    attributes:
+      label: If the package was installed from GitHub or similar (including r-universe), please provide a commit reference
+      description: |
+        Note that `validation` will attempt to extract this information for you, but you should verify it.
+        If installed from an r-universe, the reference SHA returned by `validation` represents the current version on the r-universe. If you are using an older version, reinstall the package and rerun the tests (recovery of the older reference is difficult).
+      placeholder: e.g. 94065ff4ea9021271d4e8ff5e71011237d97d583
     validations:
       required: true
   - type: input
@@ -51,7 +79,7 @@ body:
     attributes:
       label: Test results
       description: Did all programmed tests pass?
-      options: 
+      options:
         - PASS
         - FAIL
     validations:
@@ -60,14 +88,16 @@ body:
     id: test_evidence
     attributes:
       label: Test output
-      description: Copy output from the R console
+      description: |
+        Copy output from the R console.
+        This should include a table as well as any error or warning messages.
     validations:
       required: true
   - type: textarea
     id: session_info
     attributes:
       label: Session info
-      description: Run sessionInfo() in R, and copy the output here
+      description: Copy output from the R console.
   - type: input
     id: code_location
     attributes:
@@ -79,6 +109,6 @@ body:
     id: code_sha
     attributes:
       label: Where the test code is located in a git repository, add the git commit SHA
-      description: | 
-        This is the random combination of digits and characters that identifies a specific commit. The first six characters is enough. 
+      description: |
+        This is the random combination of digits and characters that identifies a specific commit. The first six characters is enough.
         This may also be an SVN commit number, if the code is stored in an SVN repository.
