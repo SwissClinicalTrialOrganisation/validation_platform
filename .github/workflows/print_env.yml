@@ -20,4 +20,13 @@ jobs:
 
       - name: Say test
         if: contains(github.event.issue.title, 'TEST')
+        id: test
         run : echo "!TEST!"
+
+      - name: Say success
+        if: steps.test.outcome == 'success'
+        run : echo "!SUCCESS!"
+
+      - name: Say fail
+        if: steps.test.outcome != 'success'
+        run : echo "!FAIL!"
