@@ -2,7 +2,7 @@ on:
   issues:
     types: [opened, edited]
 
-name: Calculate risk
+name: Reply to issues
 
 permissions:
   issues: write
@@ -18,18 +18,33 @@ jobs:
     steps:
       # - uses: managedkaos/print-env@v1.0
       - uses: actions/checkout@v4
+
       - uses: r-lib/actions/setup-r@v2
       - name: Install dependencies
         run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch"))'
       - name: Install validation
         run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
+
       - name: Run script to calculate risk and post comment
-        run: Rscript -e 'source("resources/calculate_risk.R")'
-      - name: commit updated CSV
+        if: startsWith(github.event.issue.title, '[Package validation]')
+        id: pkgrisk
+        run: Rscript -e 'source("resources/reply_pkg_validation_issue.R")'
+
+      - name: commit updated validation CSV
+        if: steps.pkgrisk.outcome == 'success'
         run: |
           git add tables/validated_packages.csv
           git commit -m "add new packages" || echo "No changes to commit"
           git push origin main || echo "No changes to commit"
+
+      - name: Run script to calculate risk and post comment
+        if: startsWith(github.event.issue.title, '[Package test]')
+        id: pkgtest
+        run: Rscript -e 'source("resources/reply_test_issue.R")'
+
+      - name: commit updated tests CSV
+        if: steps.pkgtest.outcome == 'success'
+        run: |
           git add tables/package_tests.csv
           git commit -m "add new tests" || echo "No changes to commit"
           git push origin main || echo "No changes to commit"
