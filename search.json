@@ -72,7 +72,15 @@
     "href": "index.html#validated-packages",
     "title": "Welcome",
     "section": "Validated packages",
-    "text": "Validated packages\n15 packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.\n\n\n\n\n\n\n\n\n\nThe following packages have newer versions available, which may be an indication that the validation is outdated:\n\n\n# A tibble: 0 × 3\n# ℹ 3 variables: Package &lt;chr&gt;, Validated version &lt;chr&gt;,\n#   Available version &lt;chr&gt;",
+    "text": "Validated packages\n16 packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.\n\n\n\n\n\n\n\n\n\nThe following packages have newer versions available, which may be an indication that the validation is outdated:\n\n\n# A tibble: 0 × 3\n# ℹ 3 variables: Package &lt;chr&gt;, Validated version &lt;chr&gt;,\n#   Available version &lt;chr&gt;",
+    "crumbs": []
+  },
+  {
+    "objectID": "index.html#function-tests",
+    "href": "index.html#function-tests",
+    "title": "Welcome",
+    "section": "Function tests",
+    "text": "Function tests\n3 packages or package versions have been tested by the SCTO Statistics & Methodology Platform so far.",
     "crumbs": []
   },
   {
