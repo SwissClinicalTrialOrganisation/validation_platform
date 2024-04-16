@@ -60,13 +60,10 @@ body:
         - No clear credentials or group association
       description: |
         package authors (noted as ‘aut’ in the package description) are
-          - well-known or known credentials: well-known in the statistical, data
-            science and/or R community, and is/was associated with a university or
+          - well-known or known credentials: well-known in the statistical, data science and/or R community, and is/was associated with a university or
             similar institution
-          - credentials: past or present association with a university or similar
-            institution, but not well known in the community
-          - no clear credentials or group association: the author does not fit in
-            the above categories
+          - credentials: past or present association with a university or similar institution, but not well known in the community
+          - no clear credentials or group association: the author does not fit in the above categories
     validations:
       required: true
   - type: dropdown
@@ -86,7 +83,7 @@ body:
       description: |
         Statistical packages implement statistical or machine learning algorithms.
         Published refers to the method being publishin in a peer-reviewed journal.
-        Non-statistical packages are used for e.g. reporting.
+        Non-statistical packages are used for e.g. reporting, building shiny applications.
       options:
         - Statistical; published
         - Statistical; non-published
@@ -132,7 +129,7 @@ body:
         - "Yes"
         - "No"
       description: |
-        Source code availability refers to it being in a public repository somewhere.
+        Source code availability refers to it being in a public repository somewhere (e.g. github, R-forge, etc).
         Needing to use R to get to the source code (e.g. by typing a function name without brackets/parentheses) is insufficient.
           - explanatory comments in the code are a good sign
           - roxygen comments for internal functions is a good sign
@@ -181,6 +178,9 @@ body:
         - Yes, comprehensive
         - Yes, but not comprehensive
         - "No"
+      description: |
+        Tests are generally found in the tests folder of the package source code.
+        Most packages make use of the testthat package, but other methods also exist.
     validations:
       required: true
   - type: markdown
