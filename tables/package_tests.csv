@@ -1,4 +1,4 @@
-name,package,version,test_date,tests,test_result,test_evidence,session_info,code_location,code_sha,issue_url,issue_num,user,r_version,os,approved,state,create_date,update_date,close_date
+name,package,version,test_date,tests,test_result,test_evidence,session_info,code_location,code_sha,issue_url,issue_num,user,r_version,os,approved,state,create_date,update_date,close_date,package_source,package_sha
 Alan Haynes,accrualPlot,1.0.7,2024-04-09,"Tests for package accrualPlot 
  - `summary` produces expected results 
  - `accrual_create_df` produces expected results 
@@ -37,7 +37,7 @@ loaded via a namespace (and not attached):
 [67] rmarkdown_2.25    httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [73] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11      
 [79] xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3     presize_0.3.7     rstudioapi_0.15.0
-[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09
+[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09,,
 AH ,stats,4.3.3,2024-03-26,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. ",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -74,4 +74,61 @@ loaded via a namespace (and not attached):
 [71] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
 [76] gert_2.0.0        Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
 [81] pkgload_1.3.3     vroom_1.6.5       rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
-[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08
+[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08,,
+Alan Haynes,statsFail - issue to test machinery,NA,2024-04-15,"Tests for package stats 
+ - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
+|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
+|test-lm.R |lm      |lm returns the expected coefficients |  2|      1|FALSE   |FALSE |       1|
+|test-lm.R |lm      |Standard errors from lm are correct  |  1|      0|FALSE   |FALSE |       0|
+THE FOLLOWING ERRORS AND/OR WARNINGS WERE GENERATED:
+[[1]]
+[[1]][[1]]
+<expectation_warning/expectation/condition>
+`check.attributes` is deprecated; please use `ignore_attr` instead
+Backtrace:
+    ▆
+ 1. └─testthat::expect_equal(coefs[1], means[1], check.attributes = FALSE) at test-lm.R:14:2
+ 2.   └─testthat:::expect_waldo_equal(""equal"", act, exp, info, ..., tolerance = tolerance)
+ 3.     └─testthat:::waldo_compare(...)
+ 4.       └─waldo::compare(x, y, ..., x_arg = x_arg, y_arg = y_arg)
+ 5.         └─waldo:::compare_opts(...)
+ 6.           └─waldo:::old_opts(...)
+[[1]][[2]]
+<expectation_success/expectation/condition>
+As expected
+[[2]]
+[[2]][[1]]
+<expectation_failure/expectation/error/condition>
+summary(fmod)$coefficients[2, 2] (`actual`) not equal to 1 (`expected`).
+  `actual`: 1.6
+`expected`: 1.0","R version 4.3.1 (2023-06-16 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19045)
+Matrix products: default
+locale:
+[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   
+[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       
+[5] LC_TIME=German_Switzerland.utf8    
+time zone: Europe/Zurich
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] testthat_3.2.0   validation_0.3.2
+loaded via a namespace (and not attached):
+ [1] httr2_1.0.0       xfun_0.40         htmlwidgets_1.6.2 devtools_2.4.5    remotes_2.4.2.1  
+ [6] gh_1.4.0          processx_3.8.2    callr_3.7.3       tzdb_0.4.0        vctrs_0.6.4      
+[11] tools_4.3.1       ps_1.7.5          generics_0.1.3    curl_5.1.0        tibble_3.2.1     
+[16] fansi_1.0.5       pkgconfig_2.0.3   desc_1.4.2        lifecycle_1.0.3   compiler_4.3.1   
+[21] stringr_1.5.0     brio_1.1.3        httpuv_1.6.12     htmltools_0.5.6.1 usethis_2.2.3    
+[26] yaml_2.3.7        later_1.3.1       pillar_1.9.0      crayon_1.5.2      urlchecker_1.0.1 
+[31] tidyr_1.3.0       ellipsis_0.3.2    cranlogs_2.1.1    cachem_1.0.8      sessioninfo_1.2.2
+[36] pkgsearch_3.1.3   mime_0.12         tidyselect_1.2.0  digest_0.6.33     stringi_1.7.12   
+[41] rematch2_2.1.2    diffobj_0.3.5     dplyr_1.1.3       purrr_1.0.2       rprojroot_2.0.3  
+[46] fastmap_1.1.1     cli_3.6.1         magrittr_2.0.3    pkgbuild_1.4.2    utf8_1.2.4       
+[51] readr_2.1.4       withr_2.5.2       rappdirs_0.3.3    waldo_0.5.1       prettyunits_1.2.0
+[56] promises_1.2.1    lubridate_1.9.3   timechange_0.2.0  roxygen2_7.3.0    rmarkdown_2.25   
+[61] httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
+[66] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1      
+[71] Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3    
+[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,NA
