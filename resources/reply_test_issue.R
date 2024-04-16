@@ -12,8 +12,7 @@ issue <- validation:::get_issue(issuenum)
 
 cat("Test issue\n")
 tmp <- issue |>
-  list() |>
-  validation:::issues_to_df(validation:::extract_elements_test)
+  validation:::extract_elements_test()
 
 val <- validation:::validate_test_issue(tmp)
 
