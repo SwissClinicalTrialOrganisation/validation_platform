@@ -71,13 +71,33 @@ data.frame(prod = "Product\nrisk",
 
 ```{r}
 #| output: false
-install.packages('validation', 
-                 repos = c('https://ctu-bern.r-universe.dev', 
-                           'https://cloud.r-project.org'), 
-                 quiet = TRUE, verbose = FALSE)
+# install.packages('validation', 
+#                  repos = c('https://ctu-bern.r-universe.dev', 
+#                            'https://cloud.r-project.org'), 
+#                  quiet = TRUE, verbose = FALSE)
 library(validation)
 library(gtExtras)
 pkgs <- load_pkg_table()
+
+tests <- load_tests_table()
+tests |> 
+  mutate(test_tab = NA)
+
+library(purrr)
+
+funs <- map_dfr(1:nrow(tests), function(x) {
+  row <- tests |> slice(x)
+  tab <- row |> pull(test_evidence) |> parse_evidence_tab()
+  tab |>  mutate(issue_num = row$issue_num)
+  
+})
+
+fun_summary <- funs |> 
+  summarize(
+    functions = paste(unique(context), collapse = ", "),
+    .by = c(issue_num)
+  ) |> 
+  left_join(tests)
 ```
 
 `r nrow(pkgs)` packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.
@@ -88,27 +108,75 @@ tmp <- pkgs |>
   mutate(url = gt_hyperlink(text = "View on GitHub", url = issue_url),
          url = purrr::map(url, html),
          ) |> 
-  select(package, version, final_score_cat, author, maintainer, purpose, url) # View()
+  left_join(fun_summary |> #names()
+              mutate(url = purrr::map2(functions, issue_url, 
+                                       ~ gt_hyperlink(text = .x, url = .y)),
+                     functions = purrr::map(url, html)) |> 
+              select(package, version, functions, test_result)) |> # View()
+  select(package, version, final_score, final_score_cat, url, functions, test_result) |> 
+  mutate(test_result = if_else(is.na(test_result), " ", test_result))
 
 risks <- unique(tmp$final_score_cat)
 full_palette <- c(Low = "#91cf60", Medium = "#ffffbf", High = "#fc8d59")
 observed_palette <- full_palette[risks]
+test_res <- unique(tmp$test_result) |> na.omit()
+tests_palette <- c(PASS = "#91cf60", "FAIL" = "#fc8d59", " " = "white")
+tests_observed <- tests_palette[test_res]
+
+library(ggplot2)
+plot_risk <- function(final_score){
+  # tmp |> filter(
+  #   issue_num == issuenum
+  #   ) |> 
+  data.frame(y = as.numeric(final_score), 
+              x = 1) |> 
+    ggplot(aes(y = y, x = 1, fill = y)) + 
+    geom_hline(aes(yintercept = 1)) +
+    geom_hline(aes(yintercept = 0)) +
+    geom_hline(aes(yintercept = .25)) +
+    geom_hline(aes(yintercept = .75)) +
+    geom_bar(stat = "identity") + 
+    coord_flip() +
+    ylim(0, 1) +
+    theme_void() +
+    # theme(axis.text.x = element_text()) +
+    scale_fill_gradientn(colours = c("#91cf60", "#ffffbf", "#fc8d59"), guide = FALSE, limits = c(0, 1))
+}
+
+# plot_risk(.5)
+# plot_risk(.25)
+# plot_risk(.1)
+# plot_risk(.99)
+
 tmp |> 
   gt() |> 
   cols_label(package = "Package",
              version = "Version",
+             final_score = "Package Risk",
              final_score_cat = "Package Risk",
-             author = "Author",
-             maintainer = "Maintainer",
-             purpose = "Purpose",
-             url = "Validation link") |> 
+             url = "Validation link",
+             functions = "Functions tested",
+             test_result = "Test result") |> 
   opt_interactive(use_filters = TRUE,
                   use_sorting = FALSE) |>
   # harmonize table font to quarto default
   opt_table_font(font = "Source Sans Pro") |> 
   # data_color(final_score_cat, palette = c("#91cf60", "#ffffbf", "#fc8d59")) |> 
+  # gt_plt_bar(final_score, scale_type = "number") |> 
   gt_badge(final_score_cat, 
-           palette = observed_palette, alpha = 1)
+           palette = observed_palette, alpha = 1) |> 
+  gt_badge(test_result, 
+           palette = tests_observed, alpha = 1) |> 
+  sub_missing(missing_text = "") |> 
+  cols_align("left") |> 
+  fmt_number(columns = final_score, decimals = 2) #|>
+  # text_transform(
+  #   locations = cells_body(columns = 'final_score'),
+  #   fn = function(column) {
+  #     map(column, plot_risk) |>
+  #       ggplot_image(height = px(40), aspect_ratio = 1)
+  #   }
+  # )
 ```
 
 The following packages have newer versions available, which may be an indication that the validation is outdated:
@@ -128,5 +196,39 @@ pkgs |>
          `Validated version` = version,
          `Available version` = Version
          )
+```
+
+## Function tests
+
+`r nrow(tests)` packages or package versions have been tested by the SCTO Statistics & Methodology Platform so far.
+
+```{r}
+
+test_res <- unique(tests$test_result) |> na.omit()
+tests_palette <- c(PASS = "#91cf60", "FAIL" = "#fc8d59")
+tests_observed <- tests_palette[test_res]
+
+tests |> 
+  mutate(
+    url = purrr::map(issue_url, gt_hyperlink, text = "View on GitHub"),
+    url = purrr::map(url, html)
+  ) |> 
+  select(package, version, test_result, r_version, os, url) |> 
+  gt() |> 
+  opt_table_font(font = "Source Sans Pro") |> 
+  opt_interactive(use_filters = TRUE,
+                  use_sorting = FALSE) |>
+  cols_label(package = "Package",
+             version = "Package version",
+             test_result = "Result",
+             r_version = "R version",
+             os = "Operating system",
+             url = "Test report"
+             ) |> 
+  cols_align("left") |> 
+  sub_missing(missing_text = "") |> 
+  gt_badge(test_result, 
+           palette = tests_observed, alpha = 1)
+  
 ```
 
