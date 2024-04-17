@@ -6,7 +6,7 @@ on:
 name: Test R package
 
 jobs:
-  Test R package:
+  test_r_package:
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
