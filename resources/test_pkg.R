@@ -20,7 +20,7 @@ issue <- post_issue(texts$issue_body, texts$issue_title)
 
 cat("issue posted\n")
 
-lapply(texts$issue_tags, ~ add_label(issue$number, .x))
+lapply(texts$issue_tags, function(x) add_label(issue = issue$number, label = x))
 
 cat("labels set")
 
