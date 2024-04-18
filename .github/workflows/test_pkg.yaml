@@ -65,3 +65,10 @@ jobs:
       - name: Run script to test package
         id: pkgrisk
         run: Rscript -e 'source("resources/test_pkg.R")'
+
+      - name: commit updated tests CSV
+        if: steps.pkgtest.outcome == 'success'
+        run: |
+          git add tables/package_tests.csv
+          git commit -m "add new tests" || echo "No changes to commit"
+          git push origin main || echo "No changes to commit"
