@@ -24,9 +24,4 @@ lapply(texts$issue_tags, function(x) add_label(issue = issue$number, label = x))
 
 cat("labels set")
 
-cat("Updating table\n")
-Sys.sleep(10)
-pkgs <- validation::update_pkg_table()
 
-cat("Writing table\n")
-readr::write_csv(pkgs, "tables/validated_packages.csv", na = "")
