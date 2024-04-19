@@ -49,3 +49,8 @@ jobs:
           git commit -m "add new tests" || echo "No changes to commit"
           git push origin main || echo "No changes to commit"
 
+      - name: auto test
+        if: startsWith(github.event.issue.title, '[Run test]')
+        uses: .github/workflows/test.pkg.yaml
+        with:
+          NUMBER: ${{ github.event.issue.number }}
