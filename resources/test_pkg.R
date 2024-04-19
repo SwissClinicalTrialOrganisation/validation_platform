@@ -11,7 +11,7 @@ library(validation)
 issuenum <- Sys.getenv("NUMBER")
 issue <- get_issue(issuenum)
 title <- issue$title
-pkg <- gsub("^[Run test]", "") |> trimws()
+pkg <- gsub("^[Run test]", "", title) |> trimws()
 
 to_test <- pkg
 
