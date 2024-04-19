@@ -1,4 +1,4 @@
-name,package,version,test_date,tests,test_result,test_evidence,session_info,code_location,code_sha,issue_url,issue_num,user,r_version,os,approved,state,create_date,update_date,close_date,package_source,package_sha
+name,package,version,test_date,tests,test_result,test_evidence,session_info,code_location,code_sha,issue_url,issue_num,user,r_version,os,approved,state,create_date,update_date,close_date,package_source,package_sha,desc(version)
 Alan Haynes,accrualPlot,1.0.7,2024-04-09,"Tests for package accrualPlot 
  - `summary` produces expected results 
  - `accrual_create_df` produces expected results 
@@ -37,7 +37,235 @@ loaded via a namespace (and not attached):
 [67] rmarkdown_2.25    httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [73] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11      
 [79] xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3     presize_0.3.7     rstudioapi_0.15.0
-[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09,,
+[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09,,,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Monterey 12.7.4
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+time zone: UTC
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68,68,github-actions[bot],4.3.3,macOS Monterey 12.7.4,FALSE,open,2024-04-18,2024-04-18,,CRAN (R 4.3.0),NA,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.6 LTS
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+time zone: UTC
+tzcode source: system (glibc)
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69,69,github-actions[bot],4.3.3,Ubuntu 20.04.6 LTS,FALSE,open,2024-04-18,2024-04-18,,Unknown - enter manually,NA,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.4 LTS
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+time zone: UTC
+tzcode source: system (glibc)
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70,70,github-actions[bot],4.3.3,Ubuntu 22.04.4 LTS,FALSE,open,2024-04-18,2024-04-18,,Unknown - enter manually,NA,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Ventura 13.6.6
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+time zone: UTC
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71,71,github-actions[bot],4.3.3,macOS Ventura 13.6.6,FALSE,open,2024-04-18,2024-04-18,,CRAN (R 4.3.0),NA,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows Server 2019 x64 (build 17763)
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+time zone: UTC
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72,72,github-actions[bot],4.3.3,Windows Server 2019 x64 (build 17763),FALSE,open,2024-04-18,2024-04-18,,Unknown - enter manually,NA,-1
+Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
+- `summary` produces expected results
+- `accrual_create_df` produces expected results
+These tests are primarily for testing the validation infrastructure. accrualPlot
+has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|","R version 4.3.3 (2024-02-29 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows Server 2022 x64 (build 20348)
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.utf8    
+time zone: UTC
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] accrualPlot_1.0.7 lubridate_1.9.3   testthat_3.2.1.1  validation_0.3.4 
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.3     hms_1.1.3         magrittr_2.0.3    grid_4.3.3       
+ [9] timechange_0.3.0  pkgload_1.3.4     rprojroot_2.0.4   jsonlite_1.8.8   
+[13] sessioninfo_1.2.2 cranlogs_2.1.1    brio_1.1.4        httr_1.4.7       
+[17] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.1      
+[21] cli_3.6.2         rlang_1.1.3       crayon_1.5.2      gitcreds_0.1.2   
+[25] munsell_0.5.1     withr_3.0.0       tools_4.3.3       tzdb_0.4.0       
+[29] dplyr_1.1.4       colorspace_2.1-0  ggplot2_3.5.0     curl_5.2.1       
+[33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
+[37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
+[41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73,73,github-actions[bot],4.3.3,Windows Server 2022 x64 (build 20348),FALSE,open,2024-04-18,2024-04-18,,Unknown - enter manually,NA,-1
 AH ,stats,4.3.3,2024-03-26,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. ",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -74,7 +302,7 @@ loaded via a namespace (and not attached):
 [71] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
 [76] gert_2.0.0        Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
 [81] pkgload_1.3.3     vroom_1.6.5       rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
-[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08,,
+[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08,,,-9
 aghaynes,statsFail,NA,2024-04-16,"Tests for package stats
 - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -127,7 +355,60 @@ loaded via a namespace (and not attached):
 [50] readr_2.1.4       withr_2.5.2       prettyunits_1.2.0 waldo_0.5.1       promises_1.2.1    rappdirs_0.3.3    lubridate_1.9.3  
 [57] timechange_0.2.0  httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0       knitr_1.45       
 [64] miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        pkgload_1.3.3    
-[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,,Unknown - enter manually,NA
+[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,,Unknown - enter manually,NA,-11
+aghaynes,statsFail,,2024-04-16,"Tests for package stats
+- coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
+|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
+|test-lm.R |lm      |lm returns the expected coefficients |  2|      1|FALSE   |FALSE |       1|
+|test-lm.R |lm      |Standard errors from lm are correct  |  1|      0|FALSE   |FALSE |       0|
+THE FOLLOWING ERRORS AND/OR WARNINGS WERE GENERATED:
+[[1]]
+[[1]][[1]]
+<expectation_warning/expectation/condition>
+`check.attributes` is deprecated; please use `ignore_attr` instead
+Backtrace:
+    ▆
+ 1. └─testthat::expect_equal(coefs[1], means[1], check.attributes = FALSE) at test-lm.R:14:2
+ 2.   └─testthat:::expect_waldo_equal(""equal"", act, exp, info, ..., tolerance = tolerance)
+ 3.     └─testthat:::waldo_compare(...)
+ 4.       └─waldo::compare(x, y, ..., x_arg = x_arg, y_arg = y_arg)
+ 5.         └─waldo:::compare_opts(...)
+ 6.           └─waldo:::old_opts(...)
+[[1]][[2]]
+<expectation_success/expectation/condition>
+As expected
+
+[[2]]
+[[2]][[1]]
+<expectation_failure/expectation/error/condition>
+summary(fmod)$coefficients[2, 2] (`actual`) not equal to 1 (`expected`).
+  `actual`: 1.6
+`expected`: 1.0","R version 4.3.1 (2023-06-16 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19045)
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8    LC_MONETARY=German_Switzerland.utf8
+[4] LC_NUMERIC=C                        LC_TIME=German_Switzerland.utf8    
+time zone: Europe/Zurich
+tzcode source: internal
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+other attached packages:
+[1] validation_0.3.3 testthat_3.2.0  
+loaded via a namespace (and not attached):
+ [1] xfun_0.40         httr2_1.0.0       htmlwidgets_1.6.2 devtools_2.4.5    remotes_2.4.2.1   gh_1.4.0          processx_3.8.2   
+ [8] callr_3.7.3       tzdb_0.4.0        vctrs_0.6.4       tools_4.3.1       ps_1.7.5          generics_0.1.3    curl_5.1.0       
+[15] tibble_3.2.1      fansi_1.0.5       pkgconfig_2.0.3   desc_1.4.2        lifecycle_1.0.3   compiler_4.3.1    stringr_1.5.0    
+[22] brio_1.1.3        httpuv_1.6.12     htmltools_0.5.6.1 usethis_2.2.3     later_1.3.1       pillar_1.9.0      crayon_1.5.2     
+[29] urlchecker_1.0.1  tidyr_1.3.0       ellipsis_0.3.2    cranlogs_2.1.1    cachem_1.0.8      sessioninfo_1.2.2 pkgsearch_3.1.3  
+[36] mime_0.12         tidyselect_1.2.0  digest_0.6.33     stringi_1.7.12    dplyr_1.1.3       diffobj_0.3.5     purrr_1.0.2      
+[43] rematch2_2.1.2    rprojroot_2.0.3   fastmap_1.1.1     cli_3.6.1         magrittr_2.0.3    pkgbuild_1.4.2    utf8_1.2.4       
+[50] readr_2.1.4       withr_2.5.2       prettyunits_1.2.0 waldo_0.5.1       promises_1.2.1    rappdirs_0.3.3    lubridate_1.9.3  
+[57] timechange_0.2.0  httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0       knitr_1.45       
+[64] miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        pkgload_1.3.3    
+[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,,Unknown - enter manually,,
 Alan Haynes,statsFail - issue to test machinery,NA,2024-04-15,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -184,7 +465,7 @@ loaded via a namespace (and not attached):
 [61] httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [66] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1      
 [71] Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3    
-[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,NA
+[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,NA,-11
 Alan Haynes,statsFail - issue to test machinery,,2024-04-15,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -241,4 +522,4 @@ loaded via a namespace (and not attached):
 [61] httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [66] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1      
 [71] Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3    
-[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,
+[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,,
