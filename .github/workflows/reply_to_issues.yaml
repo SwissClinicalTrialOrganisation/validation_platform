@@ -51,6 +51,6 @@ jobs:
 
       - name: auto test
         if: startsWith(github.event.issue.title, '[Run test]')
-        uses: ./.github/workflows/test.pkg.yaml
+        uses: ./.github/workflows/test_pkg.yaml
         with:
           NUMBER: ${{ github.event.issue.number }}
