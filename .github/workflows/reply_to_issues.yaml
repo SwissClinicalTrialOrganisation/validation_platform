@@ -126,6 +126,7 @@ jobs:
   update_tab:
     name: update test table
     runs-on: macOS-latest
+    if: ${{ always() }}
     needs: [test_r_package]
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
