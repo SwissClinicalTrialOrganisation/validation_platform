@@ -28,7 +28,7 @@ jobs:
         if: steps.setupR.outcome == 'success'
 
       - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
+        run: Rscript -e 'install.packages("validation", repos = c("https://ctu-bern.r-universe.dev", "https://cloud.r-project.org"), dependencies = TRUE)'
         if: steps.setupR.outcome == 'success'
 
       - name: Run script to calculate risk and post comment
