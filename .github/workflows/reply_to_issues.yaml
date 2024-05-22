@@ -41,6 +41,7 @@ jobs:
         run: |
           git add tables/validated_packages.csv
           git commit -m "add new packages" || echo "No changes to commit"
+          git pull
           git push origin main || echo "No changes to commit"
 
       - name: Run script to calculate risk and post comment
