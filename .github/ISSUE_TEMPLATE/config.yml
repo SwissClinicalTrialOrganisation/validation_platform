@@ -1,3 +1,4 @@
+blank_issues_enabled: false
 contact_links:
   - name: Anything else:
     url: https://github.com/SwissClinicalTrialOrganisation/pkg_validation/discussions
