@@ -72,7 +72,7 @@
     "href": "index.html#validated-packages",
     "title": "Welcome",
     "section": "Validated packages",
-    "text": "Validated packages\n18 packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.\n\n\n\n\n\n\n\n\n\nThe following packages have newer versions available, which may be an indication that the validation is outdated:\n\n\n# A tibble: 0 × 3\n# ℹ 3 variables: Package &lt;chr&gt;, Validated version &lt;chr&gt;,\n#   Available version &lt;chr&gt;",
+    "text": "Validated packages\n19 packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.\n\n\n\n\n\n\n\n\n\nThe following packages have newer versions available, which may be an indication that the validation is outdated:\n\n\n# A tibble: 0 × 3\n# ℹ 3 variables: Package &lt;chr&gt;, Validated version &lt;chr&gt;,\n#   Available version &lt;chr&gt;",
     "crumbs": []
   },
   {
