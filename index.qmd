@@ -67,7 +67,7 @@ data.frame(prod = "Product\nrisk",
 
 
 
-## Validated packages
+## Packages with risk assessments
 
 ```{r}
 #| output: false
@@ -77,6 +77,8 @@ data.frame(prod = "Product\nrisk",
 #                  quiet = TRUE, verbose = FALSE)
 library(validation)
 library(gtExtras)
+library(purrr)
+library(dplyr)
 pkgs <- load_pkg_table()
 
 tests <- load_tests_table()
@@ -100,7 +102,7 @@ fun_summary <- funs |>
   left_join(tests)
 ```
 
-`r nrow(pkgs)` packages or package versions have been validated by the SCTO Statistics & Methodology Platform so far.
+`r nrow(pkgs)` packages or package versions have been risk assessed within the SCTO Statistics & Methodology Platform so far.
 
 ```{r}
 tmp <- pkgs |> 
@@ -142,6 +144,16 @@ plot_risk <- function(final_score){
     # theme(axis.text.x = element_text()) +
     scale_fill_gradientn(colours = c("#91cf60", "#ffffbf", "#fc8d59"), guide = FALSE, limits = c(0, 1))
 }
+abbrev_text <- function(x) {
+  paste0(
+    "<div style=\"display:table;table-layout:fixed;width:100%;\">",
+    "<div title=\"", x , "\", ", # `<p>` has been changed to `<div>` here
+    "style=\"overflow-x:hidden;text-overflow:ellipsis;white-space:nowrap\">",
+    x,
+    "</div>",
+    "</div>"
+  )
+}
 
 # plot_risk(.5)
 # plot_risk(.25)
@@ -154,11 +166,11 @@ tmp |>
              version = "Version",
              final_score = "Package Risk",
              final_score_cat = "Package Risk",
-             url = "Validation link",
+             url = "Assessment link",
              functions = "Functions tested",
              test_result = "Test result") |> 
   opt_interactive(use_filters = TRUE,
-                  use_sorting = FALSE) |>
+                  use_sorting = TRUE) |>
   # harmonize table font to quarto default
   opt_table_font(font = "Source Sans Pro") |> 
   # data_color(final_score_cat, palette = c("#91cf60", "#ffffbf", "#fc8d59")) |> 
@@ -169,7 +181,7 @@ tmp |>
            palette = tests_observed, alpha = 1) |> 
   sub_missing(missing_text = "") |> 
   cols_align("left") |> 
-  fmt_number(columns = final_score, decimals = 2) #|>
+  fmt_number(columns = final_score, decimals = 2) 
   # text_transform(
   #   locations = cells_body(columns = 'final_score'),
   #   fn = function(column) {
@@ -179,7 +191,7 @@ tmp |>
   # )
 ```
 
-The following packages have newer versions available, which may be an indication that the validation is outdated:
+The following packages have newer versions available, which may be an indication that the risk assessment is outdated:
 
 ```{r}
 # Check for updates of installed packages

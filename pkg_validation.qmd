@@ -1,5 +1,5 @@
 ---
-title: "Validating packages"
+title: "Risk assessing packages"
 editor_options:
   markdown:
     wrap: 72
@@ -9,24 +9,55 @@ execute:
   message: false
 ---
 
-This page functions as the standard operating procedure for the validation of R 
+This page functions as the standard operating procedure for the risk assessment of R 
 packages within the SCTO Statistics & Methodology Platform framework. 
 
-In order to perform a validation: 
+In order to perform a risk assessment: 
 
-- first check whether the package has already been validated. This can be done by
-  - Check the [home page](index.qmd) to see if the package has already been validated.
-  - check for the package in the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues) by searching for it among the issues (remember to remove the is:open filter).
-  - the `check_session` function from the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/) can be used to check if a package has been validated.
-- if it has, check the associated risk and consider whether the package needs additional testing.
-- if not, go to the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues)
+- **first, check whether the package has already been risk assessed**. This can be done by any of the following methods:
+  - the `check_session` function from the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/){target="_blank"} can be used from within your R session to check if a package has been risk assessed.
+  - check the table on the [home page](index.qmd){target="_blank"} of this site
+  - check for the package in the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"} by searching for it among the issues using the search bar towards the top of the page (remember to remove the is:open filter). E.g. to search for dplyr, the search might be `is:issue dplyr`
+- **if it has been risk assessed**, check the associated risk and consider whether any functions within package need additional testing for your use case.
+- **if it has not been risk assessed**, go to the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"}
   - click the green "New issue" button (towards the top right)
   - select the New package validation template by clicking the green Get started button on the right
   - fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the [Risk metrics page](risk_metrics.qmd).
-    - Note that the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/) contains various useful functions to help with the validation process. Especially useful are:
+    - Note that the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/){target="_blank"} contains various useful functions to help with the validation process. Especially useful are:
       - `get_n_deps`, which returns the number of dependencies of a package,
       - `get_12month_downloads` which returns the number of downloads of a package in the last 12 months, and 
       - `get_release_date` finds the release date of a package.
   - Once you have completed the form, click the green "Submit new issue" button at the bottom of the page.
   - Submitting the form will trigger an automated job that will calculate the risk based on the information you entered into the form and post a comment on the issue. 
+  
+```{mermaid}
+flowchart TD
+  A[Identify the package that may need risk assessment] --> B(Check whether the package has already been risk assessed)
+  B --> C1("`Within your R session, load the package and use the function 
+  <span style="font-family:Courier; font-size: 80%">validation::check_session()</span>`")
+  B --> C2(Check whether the package is listed on the <a href='index.html'>home page</a>)
+  B --> C3(Check for an issue on the <a href='https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues'>GitHub</a>)
+  C1 --> D(RA exists?)
+  C2 --> D
+  C3 --> D
+  D --Yes--> E[The associated risk level of the package]
+  D --No--> F(Perform a risk assessment following the instructions on <a href='https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new/choose'>GitHub</a>)
+  F --> G(Open a new issue with the 'New package validation' template)
+  G --> H(Fill out the form following the instructions provided)
+  H --> J(Submit the issue and wait for the automated risk assessment)
+  J --> E
+  E --> K(Considering your use case, do you need to test any functions within the package?)
+  K --No--> N(Use the package)
+  K --Yes--> O(Check the validation_tests repository to see if any functions from the package have been tested)
+  O --> P(Tests are available, and they cover your use case)
+  O --> Q(Tests are available, but they do not cover your use case)
+  O --> R(No tests are available)
+  P --> N
+  Q --> S(Write new tests for the functions you need and submit them to the validation_tests repository)
+  R --> S
+  S --> T(Ensure tests pass)
+  T --> N
+  
+  
+```
 

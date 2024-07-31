@@ -11,26 +11,51 @@ execute:
 
 <!-- Taken from Validation_taskforce\SCTO_Policy_validated_Stats_environments\SCTO_policy_DRAFT.docx -->
 
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name | Date |
+|---------------------|------|------|
+| Authored/Revised by |      |      |
+| Reviewed by         |      |      |
+| Released by         |      |      |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | 2024-04-18 | Alan Haynes | Initial draft      |
+:::
+
 ## Scope and background
 
-This document describes the policy recommended by the Swiss Clinical Trial Organization (SCTO) for the use of R in a validated environment for purposes of clinical research. R is a ‘language and environment for statistical computing and graphics’ (source: the R file). R is an official part of the Free Software Foundation’s GNU project and is released under the Free Software Foundation’s GNU Public License.
+This document describes the policy recommended by the Swiss Clinical
+Trial Organization (SCTO) for the use of R in a validated environment
+for purposes of clinical research. R is a ‘language and environment for
+statistical computing and graphics’ (source: the R file). R is an
+official part of the Free Software Foundation’s GNU project and is
+released under the Free Software Foundation’s GNU Public License.
 
-Goal is in general to describe the policy, and specifically to define concepts for R. Some principles can be shared also for other software.
+Goal is in general to describe the policy, and specifically to define
+concepts for R. Some principles can be shared also for other software.
 
 In scope:
 
--	R specific processes
--	Processes shared by the SCTO platform. A baseline level on which individual organizations (CTUs) can go more strict
-	
+-   R specific processes
+-   Processes shared by the SCTO platform. A baseline level on which
+    individual organizations (CTUs) can go more strict
+
 Out of scope:
 
--	Validation of ‘off the shelf’ software (?) 
--	Internal, organization specific, processes. Necessary processes will be mentioned, but not detailed/defined.
-
+-   Validation of ‘off the shelf’ software (?)
+-   Internal, organization specific, processes. Necessary processes will
+    be mentioned, but not detailed/defined.
 
 ## Definitions
 
--	Define validation and verification validation (extract ICH E9 expert working group)
-- Short description of “The R environment” including what are the base and recommended packages.
+-   Define validation and verification validation (extract ICH E9 expert
+    working group)
+-   Short description of “The R environment” including what are the base
+    and recommended packages.
 
 ETC
