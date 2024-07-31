@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Risk metrics – Statistics and Methodology - R package validation</title>
+<title>Running function tests – Statistics and Methodology - R package validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -112,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./risk_metrics.html">Risk metrics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./running_tests.html">Running function tests</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./risk_metrics.html" class="sidebar-item-text sidebar-link active">
+  <a href="./risk_metrics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk metrics</span></a>
   </div>
 </li>
@@ -167,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./running_tests.html" class="sidebar-item-text sidebar-link">
+  <a href="./running_tests.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Running function tests</span></a>
   </div>
 </li>
@@ -178,30 +212,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
-  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
-  <li><a href="#metric-explanation---glossary" id="toc-metric-explanation---glossary" class="nav-link" data-scroll-target="#metric-explanation---glossary">Metric explanation - glossary</a>
-  <ul class="collapse">
-  <li><a href="#package-name-version-release-date" id="toc-package-name-version-release-date" class="nav-link" data-scroll-target="#package-name-version-release-date">Package name, version, release date</a></li>
-  <li><a href="#purpose-statistical_package" id="toc-purpose-statistical_package" class="nav-link" data-scroll-target="#purpose-statistical_package">Purpose (<code>statistical_package</code>):</a></li>
-  <li><a href="#author-author" id="toc-author-author" class="nav-link" data-scroll-target="#author-author">Author (<code>author</code>):</a></li>
-  <li><a href="#maintainer-maintainer" id="toc-maintainer-maintainer" class="nav-link" data-scroll-target="#maintainer-maintainer">Maintainer (<code>maintainer</code>) :</a></li>
-  <li><a href="#number-of-dependencies-nr_dependencies" id="toc-number-of-dependencies-nr_dependencies" class="nav-link" data-scroll-target="#number-of-dependencies-nr_dependencies">Number of dependencies (<code>nr_dependencies</code>):</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./risk_metrics.html">Risk metrics</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./running_tests.html">Running function tests</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Risk metrics</h1>
+<h1 class="title">Running function tests</h1>
 </div>
 
 
@@ -218,65 +237,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objective" class="level2">
-<h2 class="anchored" data-anchor-id="objective">Objective</h2>
-<p>This document describes the metrics used by members of the Swiss Clinical Trial Organization when evaluating add on packages of the statistical environment, R. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.</p>
-<p>Assessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the SCTO R-validation policy. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.</p>
-<p>Following this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific product. The documentation of any actions following the initial risk assessment is listed in a separate table.</p>
-<p>This document is part of the SCTO’s R validation policy (NAME – LOCATION – VERSION) and refers to the standard operation procedure for Package Testing (NAME – LOCATION) of the SCTO statistics platform.</p>
-<p>The metrics are written with the aim of assessing R packages; small adaptations may be required for packages of other programs such as Stata or SAS.</p>
-<p>Based on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.</p>
-</section>
-<section id="scope" class="level2">
-<h2 class="anchored" data-anchor-id="scope">Scope</h2>
-<p>This document is applicable to all R add-on packages. Out of scope are packages included in the official R-distribution including “Base R” packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document “<strong>R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021</strong>”. R-base and recommended packages are approved per definition, as stated in the policy document.</p>
-</section>
-<section id="metric-explanation---glossary" class="level2">
-<h2 class="anchored" data-anchor-id="metric-explanation---glossary">Metric explanation - glossary</h2>
-<p>The following metrics are considered when assessing a package. These are listed in Appendix-1 below. Here we provide a precise definition:</p>
-<section id="package-name-version-release-date" class="level3">
-<h3 class="anchored" data-anchor-id="package-name-version-release-date">Package name, version, release date</h3>
-<p>version and release date of the specific version assessed at this moment. These are required for identifying the package and for documentation. Packages will be re-assessed upon update and version changes; documentation of older versions remains in the document. <u>These values are not included in the risk calculation.</u></p>
-</section>
-<section id="purpose-statistical_package" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-statistical_package">Purpose (<code>statistical_package</code>):</h3>
-<p>We define three risk levels for a package, depending on the package’s purpose and methodology:</p>
-<ul>
-<li><p>“non-statistical” packages: packages that deal only with data-wrangling and manipulation (e.g., dplyr) or with reporting processes (e.g., Sweave, xtable). Such processes are of ‘low risk’ as no statistical calculations are performed, and data-errors are, comparatively, easy to detect. Similarly, packages associated with application interfaces such as Shiny application are considered “non-statistical”.</p></li>
-<li><p>“Statistical with published methods”: packages that perform statistical calculations based on known methods, or on methods that have been published in peer reviewed journals. These packages obtain a “medium risk” status.</p></li>
-<li><p>“Statistical non-published methods”: packages that perform statistical calculations, but the underlying methods have not been published in a peer reviewed journal. These packages obtain a status “high risk”.</p></li>
-</ul>
-</section>
-<section id="author-author" class="level3">
-<h3 class="anchored" data-anchor-id="author-author">Author (<code>author</code>):</h3>
-<p>The author(s) of a package will be viewed as indicator for its trustworthiness. If package authors (noted as ‘aut’ in the package description, e.g., as listed on CRAN) are well-known within the statistical, data-science and R communities and have credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as low. If package authors have credentials based on their qualifications, education, present and past affiliations, but are not well-known within the statistical, data-science and R communities, the risk of the respective package will be scored as medium. &nbsp;If package authors are not well-known within the statistical, data-science and R communities and have no clear credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as high.<br>
-Note that whether an author is ‘well-known’ in the community is a subjective assessment and accepted as such; in addition, groups of authors are evaluated as a collective.</p>
-</section>
-<section id="maintainer-maintainer" class="level3">
-<h3 class="anchored" data-anchor-id="maintainer-maintainer">Maintainer (<code>maintainer</code>) :</h3>
-<p>The package has a named maintainer who’s contact details (email) are available and published. A positive answer provides a “low risk” score. A package with no named maintainer is scored as high. The rationale behind this metric lies in the fact that the indication of name and email is evidence of a package’s active maintenance and availability of contact in case of bugs and/or suggestions.</p>
-</section>
-<section id="number-of-dependencies-nr_dependencies" class="level3">
-<h3 class="anchored" data-anchor-id="number-of-dependencies-nr_dependencies">Number of dependencies (<code>nr_dependencies</code>):</h3>
-<p>This metric assesses the level of risk associated with the number of dependencies a package relies on. Dependencies are other packages or processes that the evaluated package depends on, as listed in CRAN under “depends” and/or “imports”. The risk of unexpected behaviour increases with the number of dependencies, since there is a greater likelihood of issues on a specific routine if updates are performed on a dependent package. Great care should be considered while using packages involving many dependencies.<br>
-The listed number is converted into a [0, 1] score, with 0 representing low number of dependencies (= low risk) and 1 representing many dependencies (= high risk). Taking a similar approach for the transforming the number to a score as the ‘riskmetric’ package (R validation hub, 2023), we use a simplification of the classic logistic curve as a scoring function. A sigmoid midpoint is 4 reverse dependencies, ie., x[0] = 4 and logistic growth rate of k = 0.5.</p>
+<p>Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.</p>
+<p>Tests are run via the <code>test</code> function in the <code>validation</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"accrualPlot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The function will download the testing files from GitHub, run the tests and format the results for easier copy/pasting into a reporting issue on GitHub.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+<pre><code>Warning: package 'testthat' was built under R version 4.3.3</code></pre>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="risk_metrics_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: accrualPlot</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+logical.return = TRUE, : there is no package called 'accrualPlot'</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into 'D:/a/_temp/Library'
+(as 'lib' is unspecified)</code></pre>
 </div>
-<p>ETC.</p>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'accrualPlot' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\runneradmin\AppData\Local\Temp\RtmpuELsfB\downloaded_packages</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'accrualPlot' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lubridate</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lubridate'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>✔ | F W  S  OK | Context
+
+⠏ |          0 | accrual_create_df                                              
+✔ |          8 | accrual_create_df
+
+⠏ |          0 | summary                                                        
+✔ |         10 | summary
+
+══ Results ═════════════════════════════════════════════════════════════════════
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 18 ]</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in rm(accrualdemo): object 'accrualdemo' not found</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error in gh(endpoint = "/user", .token = .token, .api_url = .api_url,  : 
+  GitHub API error (403): Resource not accessible by integration
+ℹ Read more at
+  &lt;https://docs.github.com/rest/users/users#get-the-authenticated-user&gt;
+Error in Sys.info()$user : $ operator is invalid for atomic vectors</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>## Copy and paste the following output into the indicated sections of a new issue
+
+ISSUE NAME: 
+[Package test]: accrualPlot version 1.0.7 
+
+### Name 
+Unknown (probably GitHub Action bot) 
+
+### Name of the package you have validated 
+accrualPlot 
+
+### What version of the package have you validated? 
+1.0.7 
+
+### Where was the package from? 
+CRAN (R 4.3.3) 
+
+### Package repository version reference
+NA 
+
+### When was this package tested? 
+2024-07-31 
+
+### What was tested? 
+Tests for package accrualPlot 
+ - `summary` produces expected results 
+ - `accrual_create_df` produces expected results 
+  
+ These tests are primarily for testing the validation infrastructure. accrualPlot 
+ has extensive tests 
+ 
+
+### Test results 
+PASS 
+
+### Test output:
 
 
-</section>
-</section>
+|file                     |context           |test                     | nb| passed|skipped |error | warning|
+|:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
+|test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
+|test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |monocentric as expected  |  5|      5|FALSE   |FALSE |       0|
+|test-summary.R           |summary           |multicentric as expected |  5|      5|FALSE   |FALSE |       0|
+
+### SessionInfo:
+R version 4.3.0 (2023-04-21 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows Server 2022 x64 (build 20348)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.utf8    
+
+time zone: UTC
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] lubridate_1.9.3  testthat_3.2.1.1
+
+loaded via a namespace (and not attached):
+ [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+ [5] stringi_1.8.4     hms_1.1.3         digest_0.6.36     magrittr_2.0.3   
+ [9] grid_4.3.0        evaluate_0.24.0   timechange_0.3.0  pkgload_1.4.0    
+[13] fastmap_1.2.0     rprojroot_2.0.4   jsonlite_1.8.8    sessioninfo_1.2.2
+[17] cranlogs_2.1.1    brio_1.1.5        httr_1.4.7        validation_0.3.6 
+[21] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.2      
+[25] cli_3.6.3         rlang_1.1.4       crayon_1.5.3      gitcreds_0.1.2   
+[29] munsell_0.5.1     withr_3.0.0       yaml_2.3.10       tools_4.3.0      
+[33] accrualPlot_1.0.7 tzdb_0.4.0        dplyr_1.1.4       colorspace_2.1-1 
+[37] ggplot2_3.5.1     curl_5.2.1        vctrs_0.6.5       R6_2.5.1         
+[41] lifecycle_1.0.4   stringr_1.5.1     htmlwidgets_1.6.4 waldo_0.5.2      
+[45] pkgconfig_2.0.3   desc_1.4.3        gtable_0.3.5      pillar_1.9.0     
+[49] glue_1.7.0        gh_1.4.1          xfun_0.46         tibble_3.2.1     
+[53] tidyselect_1.2.1  knitr_1.48        htmltools_0.5.8.1 rmarkdown_2.27   
+[57] readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.0   
+
+
+### Where is the test code located for these tests?
+SwissClinicalTrialOrganisation/validation_tests
+
+### Where the test code is located in a git repository, add the git commit SHA
+a696e6b665e9e8ea761c00d4126e86cc3defc816</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It may be that the package being tested, or indeed functions in the testing infrastructure (<code>testthat</code> and <code>waldo</code>) have been updated since the tests were authored. This may lead to tests failing that previously passed. In this case, the tests should be updated to reflect the new behaviour.</p>
+<p>One particular case is a change in attributes. For example, the <code>coef</code> method for a model object returns a named vector, but we might compare the individual coeffients to a vector of expected values. There is thus a potential mismatch in the attributes of the two vectors, which may cause the test to fail with a <code>names for target but not for current</code> message. Use of the third edition of <code>testthat</code> (v3.0.0) should help to avoid this issue.</p>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

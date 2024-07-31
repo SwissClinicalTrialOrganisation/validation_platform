@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.55">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Writing function tests – Statistics and Methodology - R package validation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">SCTO Stats and Methodology - R package validation</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./testing.html">Writing function tests</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SCTO Validation Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pkg_validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk assessing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./risk_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Writing function tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./running_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Running function tests</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#core-principles" id="toc-core-principles" class="nav-link active" data-scroll-target="#core-principles">Core principles</a></li>
+  <li><a href="#test_skeleton-helps-build-the-structure" id="toc-test_skeleton-helps-build-the-structure" class="nav-link" data-scroll-target="#test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</a></li>
+  <li><a href="#writing-tests" id="toc-writing-tests" class="nav-link" data-scroll-target="#writing-tests">Writing tests</a>
+  <ul class="collapse">
+  <li><a href="#compare-computation-to-a-reference-value" id="toc-compare-computation-to-a-reference-value" class="nav-link" data-scroll-target="#compare-computation-to-a-reference-value">Compare computation to a reference value</a></li>
+  <li><a href="#testing-for-errors-warnings-and-other-messages" id="toc-testing-for-errors-warnings-and-other-messages" class="nav-link" data-scroll-target="#testing-for-errors-warnings-and-other-messages">Testing for errors, warnings and other messages</a></li>
+  <li><a href="#testing-booleans" id="toc-testing-booleans" class="nav-link" data-scroll-target="#testing-booleans">Testing booleans</a></li>
+  <li><a href="#testing-for-null" id="toc-testing-for-null" class="nav-link" data-scroll-target="#testing-for-null">Testing for NULL</a></li>
+  <li><a href="#testing-the-type-of-object-returned-base-r" id="toc-testing-the-type-of-object-returned-base-r" class="nav-link" data-scroll-target="#testing-the-type-of-object-returned-base-r">Testing the type of object returned (base R)</a></li>
+  <li><a href="#testing-the-class-s3-of-an-object" id="toc-testing-the-class-s3-of-an-object" class="nav-link" data-scroll-target="#testing-the-class-s3-of-an-object">Testing the class (s3) of an object</a></li>
+  <li><a href="#running-tests-under-certain-conditions" id="toc-running-tests-under-certain-conditions" class="nav-link" data-scroll-target="#running-tests-under-certain-conditions">Running tests under certain conditions</a></li>
+  </ul></li>
+  <li><a href="#submitting-tests-to-the-platform" id="toc-submitting-tests-to-the-platform" class="nav-link" data-scroll-target="#submitting-tests-to-the-platform">Submitting tests to the platform</a></li>
+  <li><a href="#worked-example" id="toc-worked-example" class="nav-link" data-scroll-target="#worked-example">Worked example</a>
+  <ul class="collapse">
+  <li><a href="#test-lm.r" id="toc-test-lm.r" class="nav-link" data-scroll-target="#test-lm.r"><code>test-lm.R</code></a></li>
+  <li><a href="#info.txt" id="toc-info.txt" class="nav-link" data-scroll-target="#info.txt"><code>info.txt</code></a></li>
+  <li><a href="#setup-stats.r" id="toc-setup-stats.r" class="nav-link" data-scroll-target="#setup-stats.r"><code>setup-stats.R</code></a></li>
+  <li><a href="#testing-that-the-tests-work" id="toc-testing-that-the-tests-work" class="nav-link" data-scroll-target="#testing-that-the-tests-work">Testing that the tests work</a></li>
+  </ul></li>
+  <li><a href="#hints-for-working-with-github" id="toc-hints-for-working-with-github" class="nav-link" data-scroll-target="#hints-for-working-with-github">Hints for working with GitHub</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./testing.html">Writing function tests</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Writing function tests</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page is adapted from a <a href="https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html" target="_blank">vignette in the <code>validation</code> package</a></p>
+</div>
+</div>
+<p>The <code>validation</code> package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the <a href="www.github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests</a> repository. The results of the tests are then published as issues in the <a href="www.github.com/SwissClinicalTrialOrganisation/pkg_validation">pkg_validation</a> repository.</p>
+<p>Tests are written using functions from the <a href="https://testthat.r-lib.org/">testthat</a> package, and can be downloaded, run, and reported using the functions in the <code>validation</code> package.</p>
+<section id="core-principles" class="level2">
+<h2 class="anchored" data-anchor-id="core-principles">Core principles</h2>
+<ul>
+<li>the unit of testing is the function, not the package</li>
+<li>it is not necessary to test all functions, only those that are used in the product
+<ul>
+<li>e.g.&nbsp;assuming that the lme4 package is classified as being high risk, it may be that initially only <code>lmer</code> is tested.</li>
+<li>Some time later, <code>glmer</code> is used in a product, and so it is necessary to test this function as well.</li>
+</ul></li>
+<li>tests should be written in a way that they can be run automatically</li>
+<li>tests are written using the <code>testthat</code> package</li>
+<li>tests are documented sufficiently to allow others to understand what is being tested and why (e.g.&nbsp;the documentation establishes the user requirements)
+<ul>
+<li>this principle is not thoroughly applied in this document as it is informative only. See existing examples in the repository.</li>
+</ul></li>
+</ul>
+</section>
+<section id="test_skeleton-helps-build-the-structure" class="level2">
+<h2 class="anchored" data-anchor-id="test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</h2>
+<p>The <code>test_skeleton</code> function can be used to create the relevant folder structure for testing a new package, or adding a file for testing additional functions. In the code below, substitute <code>pkg</code> with the name of the package to be tested and add the names of the function(s) you want to test in the <code>funs</code> argument.</p>
+<p>This will create a set of files in your working directory:</p>
+<pre><code>-- pkg
+   +- info.txt
+   +- setup-pkg.R
+   +- test-fun.R
+   +- test-fun2.R
+   +- test-etc.R</code></pre>
+<ul>
+<li><code>info.txt</code> file will contain the name of the package and a freetext description of what is tested,</li>
+<li><code>setup-pkg.R</code> is for any necessary setup code (e.g.&nbsp;installation of the package),</li>
+<li>for each function in the <code>funs</code> argument, a <code>test-function.R</code> file is created, which will contain the actual testing code.</li>
+</ul>
+<p>In the event that the package already has tests, the <code>test_skeleton</code> function will not overwrite the existing files, only adding any necessary <code>test-function.R</code> files.</p>
+<p>Add the relevant tests to the <code>test-function.R</code> files and check that they work as expected (run <code>devtools::load_all()</code> followed by <code>test("package")</code>).</p>
+</section>
+<section id="writing-tests" class="level2">
+<h2 class="anchored" data-anchor-id="writing-tests">Writing tests</h2>
+<p>Testing is performed via the <a href="https://testthat.r-lib.org/">testthat</a> framework. All tests for a given function should be placed in a dedicated <code>test-function.R</code> file.</p>
+<p>Each test is comprised of one or more expectations and a descriptive name.</p>
+<p>E.g.</p>
+<p>Where multiple tests are to be made on what could be a single object, it is often useful to create the object outside of the <code>test_that</code> function. This is particularly useful when different descriptive texts should be shown for the tests (e.g.&nbsp;perhaps the coefficients and standard errors from a model):</p>
+<p>If objects are only useful to the test, they can be created within the <code>test_that</code> function.</p>
+<p>Making the description of the test meaningful is important, as it will help the user diagnose where the problem is.</p>
+<p><code>testthat</code> supports a large number of expectations, which are documented in the <a href="https://testthat.r-lib.org/reference/index.html">testthat documentation</a>. We demonstrate a few examples below.</p>
+<section id="compare-computation-to-a-reference-value" class="level3">
+<h3 class="anchored" data-anchor-id="compare-computation-to-a-reference-value">Compare computation to a reference value</h3>
+<p>To test the computation of the function, the following code must be added to the testing file, for as many test cases as considered appropriate:</p>
+<p>Where f is the function to be tested, x are the input parameters for the function and y is the expected returned value.</p>
+<p>Note that is/may be necessary/desirable to set a tolerance for floating point comparisons. This can be done with the <code>tolerance</code> argument.</p>
+</section>
+<section id="testing-for-errors-warnings-and-other-messages" class="level3">
+<h3 class="anchored" data-anchor-id="testing-for-errors-warnings-and-other-messages">Testing for errors, warnings and other messages</h3>
+<p>To test whether, under certain conditions, the function returns an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:</p>
+<p>Where f is the function to be tested, x are the arguments that define the conditions. Use the <code>regexp</code> argument to check for a particular error, warning or message.</p>
+<p>In contrast, to test whether the function runs without returning an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:</p>
+</section>
+<section id="testing-booleans" class="level3">
+<h3 class="anchored" data-anchor-id="testing-booleans">Testing booleans</h3>
+<p>To test whether, under certain conditions, the function returns TRUE or FALSE, adapt the following code as appropriate:</p>
+<p>Where f is the function to be tested, x are the arguments that define the conditions.</p>
+</section>
+<section id="testing-for-null" class="level3">
+<h3 class="anchored" data-anchor-id="testing-for-null">Testing for NULL</h3>
+<p>To test whether, under certain conditions, the function returns NULL, the following code can be adapted, for as many test cases as considered appropriate:</p>
+</section>
+<section id="testing-the-type-of-object-returned-base-r" class="level3">
+<h3 class="anchored" data-anchor-id="testing-the-type-of-object-returned-base-r">Testing the type of object returned (base R)</h3>
+<p>To test whether, the function returns an object of a certain type, the following code can be adapted, for as many test cases as considered appropriate:</p>
+<p>Where f is the function to be tested, x are the arguments that define the conditions and type is any of the following: “integer”, “character”, “factor”, “logical”, “double”.</p>
+</section>
+<section id="testing-the-class-s3-of-an-object" class="level3">
+<h3 class="anchored" data-anchor-id="testing-the-class-s3-of-an-object">Testing the class (s3) of an object</h3>
+<p>To test whether, the function returns an object of class s3, the following code can be adapted, for as many cases as considered appropriate:</p>
+<p>Where f is the function to be tested, x are the arguments that define the conditions and class is, among others, any of the following: “data.frame”, “factor”, “Date”, “POSIXct”, etc.</p>
+</section>
+<section id="running-tests-under-certain-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="running-tests-under-certain-conditions">Running tests under certain conditions</h3>
+<p>On occasion, it may be desirable to restrict the tests to specific package versions. This can be done by using the <code>skip_if</code> functions in <code>testthat</code>.</p>
+<p>For example, the pivot functions we introduced to tidyr in version 1.0.0. If we have tests on those functions, we can restrict them to versions 1.0.0 and above with the following code:</p>
+<pre><code>skip_if(packageVersion("tidyr") &lt; "1.0.0")</code></pre>
+<p>This line can be placed at the top of the test file, before any tests are run. The equivalent can be done for versions below a certain version, which might be useful for deprecated functions.</p>
+<p>It might be suitable to stop tests from being run if the internet is not available:</p>
+<pre><code>skip_if_offline()</code></pre>
+<p>Or if a package can only be run on a specific operating system:</p>
+<pre><code>skip_on_os("mac")</code></pre>
+</section>
+</section>
+<section id="submitting-tests-to-the-platform" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-tests-to-the-platform">Submitting tests to the platform</h2>
+<p>Once you have added the necessary tests, add the files to the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests repository</a>. The easiest way is to navigate to the tests folder, click on “Add file” and then “Upload files”. Now you can simply drag the <code>pkg</code> folder into the browser window and commit the change. This will have forked the repository to your own GitHub account, and you can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.</p>
+<p>At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.</p>
+<p>Once merged, the tests can be run via the validation package <code>validation::test("packagename")</code> and documented in the repository at <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation">https://github.com/SwissClinicalTrialOrganisation/pkg_validation</a>.</p>
+</section>
+<section id="worked-example" class="level2">
+<h2 class="anchored" data-anchor-id="worked-example">Worked example</h2>
+<p>Theory is all well and good, but it’s always useful to see how that would be in practice.</p>
+<p>Assume that we want to check that the <code>lm</code> function from the <code>stats</code> package works as expected. We can write a test file that checks that the function returns the expected coefficients and standard errors.</p>
+<p>The following assumes that we have cloned the validation repository to our computer and we are within that project.</p>
+<p>To begin with, we construct the testing files, specifically the <code>test_skeleton</code> function. We only want to test the <code>lm</code> function, so we only pass that to the second argument:</p>
+<p>This will have created a <code>stats</code> folder within inst/tests. Within that folder, there will be files called <code>info.txt</code>, <code>setup-stats.R</code>, and <code>test-lm.R</code>.</p>
+<section id="test-lm.r" class="level3">
+<h3 class="anchored" data-anchor-id="test-lm.r"><code>test-lm.R</code></h3>
+<p>First we will write the actual tests that we want to run. Tests are entered into the <code>test-lm.R</code> file. Opening that file, we see that there are just a few comments at the top of the file, with some reminders.</p>
+<pre><code># Write relevent tests for the function in here
+# Consider the type of function:
+#   - is it deterministic or statistic?
+#   - is it worth checking for errors/warnings under particular conditions?</code></pre>
+<p>We decide that we will use the mtcars dataset as our basis for testing <code>lm</code>, so we can load the dataset. We want to test both the linear effect of the number of cylinders on the miles per gallon, and the effect of the number of cylinders (<code>cyl</code>), as well as when <code>cyl</code> is treated as a factor.</p>
+<pre><code># Write relevent tests for the function in here
+# Consider the type of function:
+#   - is it deterministic or statistic?
+#   - is it worth checking for errors/warnings under particular conditions?
+
+data(mtcars)
+mtcars$cyl_f &lt;- factor(mtcars$cyl)</code></pre>
+<p>Note that if there are multiple functions being tested (each in their own test-function.R file) that require the same data, we can load and prepare the data in the <code>setup-stats.R</code> file.</p>
+<p>We can also define the models that we want to test:</p>
+<pre><code>cmod &lt;- lm(mpg ~ cyl, data = mtcars)
+fmod &lt;- lm(mpg ~ cyl_f, data = mtcars)</code></pre>
+<p>We do not include the model definitions within a test_that call because we will use the same models in multiple tests. Again, if we needed to use those models for testing multiple functions, we could define them in the setup file.</p>
+<section id="testing-coefficients" class="level4">
+<h4 class="anchored" data-anchor-id="testing-coefficients">Testing coefficients</h4>
+<p>Suppose that we know that the coefficient for <code>mpg ~ cyl</code> is known (-2.88 for the linear effect). We can write a test that checks that expectation:</p>
+<pre><code>test_that("lm returns the expected coefficients", {
+  expect_equal(coef(cmod)[2], -2.88)
+})</code></pre>
+<p>Due to floating point precision, this is probably insufficient - R will not return exactly -2.88. We can use the <code>tolerance</code> argument to check that the coefficient is within a certain range (we could also round the coefficient). We also need to tell <code>expect_equal</code> to ignore the names attribute of the vector, otherwise it compares the whole object, attributes and all:</p>
+<pre><code>test_that("lm returns the expected coefficients", {
+  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
+})</code></pre>
+<p>We can do the same for the coefficients from the model with <code>cyl_f</code>. This time, we can derive the values from the <code>tapply</code> function as, in this case, the coefficients are just the means:</p>
+<pre><code>test_that("lm returns the expected coefficients", {
+  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
+  coefs &lt;- coef(fmod)
+  expect_equal(coefs[1], means[1], check.attributes = FALSE)
+  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
+  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
+})</code></pre>
+<p>We have now performed 4 tests (the expectations) in two <code>test_that</code> calls. We can also combine them together:</p>
+<pre><code>test_that("lm returns the expected coefficients", {
+  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
+  
+  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
+  coefs &lt;- coef(fmod)
+  expect_equal(coefs[1], means[1], check.attributes = FALSE)
+  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
+  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
+})</code></pre>
+<p>Whether to put them in one or two calls is up to the author. Distributing them across more calls helps identify which tests fail, but it also makes the file longer.</p>
+<section id="a-note-on-selecting-tolerances" class="level5">
+<h5 class="anchored" data-anchor-id="a-note-on-selecting-tolerances">A note on selecting tolerances</h5>
+<p>The tolerance is a tricky thing to select. It is a balance between being too strict and too lenient. If the tolerance is too strict, then the test will fail when the function is working as expected. If the tolerance is too lenient, then the test will pass when the function is not working as expected.</p>
+<p>Consider the example above. We compared -2.88 with the coefficient which R reports to (at least) 5 decimal places. In this case, it does not make sense to use a tolerance of less than 0.01 because we only know the coefficient to two decimal places (even though we would have access to a far greater precision had we worked for it).</p>
+<p>Generally speaking, values that are easy to calculate should probably have a lower tolerance. Values that are very dependent on specifics of the implementation (e.g.&nbsp;maximisation algorithm, etc) should probably have a higher tolerance. This is especially the case when using external software as a reference (e.g.&nbsp;Stata uses different defaults settings to <code>lme4</code>, causing differences in SEs). Simulation results, may also require a more lenient tolerance.</p>
+</section>
+</section>
+<section id="testing-the-standard-errors-against-stata" class="level4">
+<h4 class="anchored" data-anchor-id="testing-the-standard-errors-against-stata">Testing the standard errors against Stata</h4>
+<p>Suppose that we have used Stata as a reference software for the standard errors. We include the commands used in the reference software in comments in the script, including the output and the information of the version of the reference software.</p>
+<pre><code># write.csv(mtcars, "mtcars.csv", row.names = FALSE)
+# reference software: Stata 17.0 (revision 2024-02-13)
+# import delimited "mtcars.csv"
+# regress mpg cyl
+# [output truncated for brevity]
+# ------------------------------------------------------------------------------
+#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
+# -------------+----------------------------------------------------------------
+#          cyl |   -2.87579   .3224089    -8.92   0.000    -3.534237   -2.217343
+#        _cons |   37.88458   2.073844    18.27   0.000     33.64922    42.11993
+# ------------------------------------------------------------------------------
+# [output truncated for brevity]
+# regress mpg i.cyl
+# [output truncated for brevity]</code></pre>
+<p>We can then use the SE values from Stata in the tests, specifying a suitable tolerance (it’s pretty simple to calculate, so we can be quite stringent):</p>
+<pre><code>test_that("Standard errors from LM are correct", {
+  expect_equal(summary(cmod)$coefficients[2, 2], 0.322408, 
+               tolerance = 0.00001)
+  expect_equal(summary(fmod)$coefficients[2, 2], 1.558348, 
+               tolerance = 0.00001)
+  expect_equal(summary(fmod)$coefficients[3, 2], 1.298623, 
+               tolerance = 0.0001)
+})
+</code></pre>
+</section>
+<section id="the-completed-test-file" class="level4">
+<h4 class="anchored" data-anchor-id="the-completed-test-file">The completed test file</h4>
+<p>The test file including the tests above is then:</p>
+<pre><code># Write relevent tests for the function in here
+# Consider the type of function:
+#   - is it deterministic or statistic?
+#   - is it worth checking for errors/warnings under particular conditions?
+
+data(mtcars)
+mtcars$cyl_f &lt;- factor(mtcars$cyl)
+
+cmod &lt;- lm(mpg ~ cyl, data = mtcars)
+fmod &lt;- lm(mpg ~ cyl_f, data = mtcars)
+
+test_that("lm returns the expected coefficients", {
+  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
+  
+  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
+  coefs &lt;- coef(fmod)
+  expect_equal(coefs[1], means[1], check.attributes = FALSE)
+  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
+  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
+})
+
+# write.csv(mtcars, "mtcars.csv", row.names = FALSE)
+# reference software: Stata 17.0 (revision 2024-02-13)
+# import delimited "mtcars.csv"
+# regress mpg cyl
+# 
+#       Source |       SS           df       MS      Number of obs   =        32
+# -------------+----------------------------------   F(1, 30)        =     79.56
+#        Model |  817.712952         1  817.712952   Prob &gt; F        =    0.0000
+#     Residual |  308.334235        30  10.2778078   R-squared       =    0.7262
+# -------------+----------------------------------   Adj R-squared   =    0.7171
+#        Total |  1126.04719        31  36.3241028   Root MSE        =    3.2059
+# 
+# ------------------------------------------------------------------------------
+#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
+# -------------+----------------------------------------------------------------
+#          cyl |   -2.87579   .3224089    -8.92   0.000    -3.534237   -2.217343
+#        _cons |   37.88458   2.073844    18.27   0.000     33.64922    42.11993
+# ------------------------------------------------------------------------------
+# regress mpg i.cyl
+# 
+#       Source |       SS           df       MS      Number of obs   =        32
+# -------------+----------------------------------   F(2, 29)        =     39.70
+#        Model |   824.78459         2  412.392295   Prob &gt; F        =    0.0000
+#     Residual |  301.262597        29  10.3883654   R-squared       =    0.7325
+# -------------+----------------------------------   Adj R-squared   =    0.7140
+#        Total |  1126.04719        31  36.3241028   Root MSE        =    3.2231
+# 
+# ------------------------------------------------------------------------------
+#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
+# -------------+----------------------------------------------------------------
+#          cyl |
+#           6  |  -6.920779   1.558348    -4.44   0.000    -10.10796   -3.733599
+#           8  |  -11.56364   1.298623    -8.90   0.000    -14.21962   -8.907653
+#              |
+#        _cons |   26.66364   .9718008    27.44   0.000     24.67608    28.65119
+# ------------------------------------------------------------------------------
+
+test_that("Standard errors from lm are correct", {
+  expect_equal(summary(cmod)$coefficients[2, 2], 0.322408, 
+               tolerance = 0.0001)
+  expect_equal(summary(fmod)$coefficients[2, 2], 1.558348, 
+               tolerance = 0.0001)
+  expect_equal(summary(fmod)$coefficients[3, 2], 1.298623, 
+               tolerance = 0.0001)
+})</code></pre>
+<p>For <code>lm</code>, other things that might be tested include the R-squared, the F-statistic, and the p-values. Generally speaking, we might also want to test that the model is of the appropriate class (also <code>lm</code> in this case), or that the model has the expected number of coefficients, that the function issues warnings and/or errors at appropriate times.</p>
+</section>
+</section>
+<section id="info.txt" class="level3">
+<h3 class="anchored" data-anchor-id="info.txt"><code>info.txt</code></h3>
+<p>It is easiest to write the <code>info.txt</code> file once all tests have been written. It provides a listing of what has been tested in prose form and serves as a quick overview of the tests.</p>
+<p>The default text the file contains a single line:</p>
+<pre><code>Tests for package stats</code></pre>
+<p>Extra details on the tests that we have performed should be added. In this case, we might modify it to:</p>
+<pre><code>Tests for package stats
+- coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.</code></pre>
+<p>Where tests are for/from a specific version of the package, as might be the case for newly added or deprecated functions, this should also be noted.</p>
+</section>
+<section id="setup-stats.r" class="level3">
+<h3 class="anchored" data-anchor-id="setup-stats.r"><code>setup-stats.R</code></h3>
+<p>This file should contain the code necessary to load the package and any other packages that are required for the tests. In this case, we need the <code>stats</code> package and the <code>testthat</code> package.</p>
+<p>The testthat package is always needed. In general, loading the package is necessary. As <code>stats</code> is a standard R package, it’s no necessary in this case.</p>
+<p>We also try to leave the environment as we found it, so we detach the packages via the <code>withr::defer</code> function. Again, in this case, we don’t want to detach it, as it is a standard package.</p>
+<pre><code>if(!require(stats)) install.packages("stats")
+library(stats)
+library(testthat)
+withr::defer({
+  # most of the time, we would want to detach packages, in this case we don't
+  # detach(package:stats)
+}, teardown_env())</code></pre>
+</section>
+<section id="testing-that-the-tests-work" class="level3">
+<h3 class="anchored" data-anchor-id="testing-that-the-tests-work">Testing that the tests work</h3>
+<p>Assuming the tests are in a folder called <code>stats</code>, which is within out current working directory, we can run the tests with:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We specify <code>download = FALSE</code> because <code>validation::test</code> will download the files from GitHub and run those tests by default. <code>download = FALSE</code> tells it to use the local copy of the files instead.</p>
+<p>The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after “Copy and paste the following…”) provides summary information that should be copied into a github issue :</p>
+<pre><code>✔ | F W  S  OK | Context
+✔ |          7 | lm                                                                          
+
+══ Results ══════════════════════════════════════════════════════════════════════════════════
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 7 ]
+## Copy and paste the following output into the indicated sections of a new issue
+
+ISSUE NAME: 
+[Package test]: stats version 4.3.1 
+
+### Name of the package you have validated: 
+stats 
+
+### What version of the package have you validated? 
+4.3.1 
+
+### When was this package tested? 
+2024-03-18 
+
+### What was tested? 
+Tests for package stats 
+ - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. 
+ 
+
+### Test results 
+PASS 
+
+### Test output:
+
+
+|file      |context |test                                 | nb| passed|skipped |error | warning|
+|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
+|test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|
+|test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|
+
+### SessionInfo:
+R version 4.3.1 (2023-06-16 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19045)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   
+[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       
+[5] LC_TIME=German_Switzerland.utf8    
+
+time zone: Europe/Zurich
+tzcode source: internal
+
+attached base packages:
+[1] graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] gh_1.4.0         validation_0.1.0 testthat_3.2.0  
+
+loaded via a namespace (and not attached):
+ [1] xfun_0.40         httr2_0.2.3       htmlwidgets_1.6.2 devtools_2.4.5   
+ [5] remotes_2.4.2.1   processx_3.8.2    callr_3.7.3       vctrs_0.6.5      
+ [9] tools_4.3.1       ps_1.7.5          generics_0.1.3    curl_5.1.0       
+[13] tibble_3.2.1      fansi_1.0.6       pkgconfig_2.0.3   desc_1.4.2       
+[17] lifecycle_1.0.4   compiler_4.3.1    stringr_1.5.1     brio_1.1.3       
+[21] httpuv_1.6.12     htmltools_0.5.6.1 usethis_2.2.2     yaml_2.3.8       
+[25] pkgdown_2.0.7     tidyr_1.3.0       later_1.3.1       pillar_1.9.0     
+[29] crayon_1.5.2      urlchecker_1.0.1  ellipsis_0.3.2    cranlogs_2.1.1   
+[33] rsconnect_1.1.1   cachem_1.0.8      sessioninfo_1.2.2 mime_0.12        
+[37] tidyselect_1.2.0  digest_0.6.33     stringi_1.8.3     dplyr_1.1.4      
+[41] purrr_1.0.2       rprojroot_2.0.3   fastmap_1.1.1     cli_3.6.2        
+[45] magrittr_2.0.3    pkgbuild_1.4.2    utf8_1.2.4        withr_3.0.0      
+[49] waldo_0.5.1       prettyunits_1.2.0 promises_1.2.1    rappdirs_0.3.3   
+[53] roxygen2_7.3.0    rmarkdown_2.25    httr_1.4.7        gitcreds_0.1.2   
+[57] stats_4.3.1       memoise_2.0.1     shiny_1.8.0       evaluate_0.22    
+[61] knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
+[65] Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
+[69] pkgload_1.3.3     rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
+[73] fs_1.6.3         
+
+
+### Where is the test code located for these tests?
+please enter manually
+
+### Where the test code is located in a git repository, add the git commit SHA
+please enter manually, if relevant</code></pre>
+</section>
+</section>
+<section id="hints-for-working-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="hints-for-working-with-github">Hints for working with GitHub</h2>
+<p>RStudio has a built-in git interface, which is a good way to manage your git repositories if you use RStudio.</p>
+<p>The <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> book is a comprehensive guide to working with git and GitHub. Of particular use are chapters 9 to 12 on connecting your computer with GitHub.</p>
+<p>The GitHub desktop app is a good way to manage your git repositories if you are not comfortable with the command line. This is also an easy way to connect your computer with your GitHub account. There are many other GUIs for working with git repositories. See <a href="https://git-scm.com/downloads/guis">here for a listing of some of them</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/SwissClinicalTrialOrganisation\.github\.io\/pkg_validation\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>CC-BY SCTO Statistics and Methodology</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

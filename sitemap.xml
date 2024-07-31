@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/testing.html</loc>
+    <lastmod>2024-07-31T11:39:47.491Z</lastmod>
+  </url>
+  <url>
     <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/risk_metrics.html</loc>
-    <lastmod>2024-07-17T07:29:22.539Z</lastmod>
+    <lastmod>2024-07-31T11:39:47.491Z</lastmod>
   </url>
   <url>
     <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/pkg_validation.html</loc>
-    <lastmod>2024-07-17T07:29:22.539Z</lastmod>
+    <lastmod>2024-07-31T11:39:47.476Z</lastmod>
   </url>
   <url>
     <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/index.html</loc>
-    <lastmod>2024-07-17T07:29:22.539Z</lastmod>
+    <lastmod>2024-07-31T11:39:47.476Z</lastmod>
   </url>
   <url>
     <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/policy.html</loc>
-    <lastmod>2024-07-17T07:29:22.539Z</lastmod>
+    <lastmod>2024-07-31T11:39:47.476Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/running_tests.html</loc>
+    <lastmod>2024-07-31T11:39:47.491Z</lastmod>
   </url>
 </urlset>
