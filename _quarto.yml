@@ -24,6 +24,9 @@ website:
           - href: policy.qmd
           - href: pkg_validation.qmd
           - href: risk_metrics.qmd
+          - href: flow.qmd
+          - href: testing.qmd
+          - href: running_tests.qmd
     # logo: SCTO_Platforms.png
 
 format:

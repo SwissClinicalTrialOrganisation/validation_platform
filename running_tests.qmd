@@ -7,6 +7,14 @@ Although the unit of testing is the function, for organisational purposes, the t
 Tests are run via the `test` function in the `validation` package:
 
 ```{r}
+#| echo: false
+options(repos = c(
+  CRAN = "https://cloud.r-project.org"
+))
+```
+
+
+```{r}
 #| eval: false
 #| label: test
 validation::test("accrualPlot")
