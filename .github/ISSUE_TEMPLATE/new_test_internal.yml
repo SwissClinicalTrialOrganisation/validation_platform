@@ -1,5 +1,5 @@
-name: Add package/function testing results
-description: Add a new function testing report based on tests stored within the package itself
+name: Add package/function testing results from within a package
+description: E.g. for packages that already contain sufficient tests and do not require additional testing within the SCTO framework
 title: "[Package selftest]: XXX version YYY"
 labels: ["test", ":alarm_clock: triage :alarm_clock:"]
 body:
