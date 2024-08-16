@@ -103,12 +103,5 @@ body:
     attributes:
       label: Session info
       description: Copy output from the R console.
-  - type: input
-    id: code_location
-    attributes:
-      label: Where is the test code located for these tests?
-      description: You do not need to change this
-      default: the package itself
-    validations:
-      required: true
+
 
