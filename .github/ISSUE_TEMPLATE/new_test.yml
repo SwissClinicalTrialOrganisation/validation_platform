@@ -1,5 +1,5 @@
 name: Add package/function testing results for tests within the SCTO framework
-description: I.e. for tests that are programmed by an SCTO-assiciated statistician and stored within the `valiudation_tests` repository
+description: I.e. for tests that are programmed by an SCTO-associated statistician and stored within the `valiudation_tests` repository
 title: "[Package test]: XXX version YYY"
 labels: ["test", ":alarm_clock: triage :alarm_clock:"]
 body:
