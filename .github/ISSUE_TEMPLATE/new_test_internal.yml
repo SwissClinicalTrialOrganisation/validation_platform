@@ -1,0 +1,114 @@
+name: Add package/function testing results
+description: Add a new function testing report based on tests stored within the package itself
+title: "[Package selftest]: XXX version YYY"
+labels: ["test", ":alarm_clock: triage :alarm_clock:"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this package testing report!
+        Please replace XXX in the issue title with the package name, and YYY with the package version.
+        *This form is for documenting cases where the tests within a package itself provide sufficient tests for one or more of its functions*
+        If you are reporting tests from within the SCTO platform, use the [other template](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test.yml&title=%5BPackage+test%5D%3A+XXX+version+YYY).
+        Note that the easiest way to test a package is to do so as if you were the developer
+          1) download the source code from the repository (e.g. GitHub)
+          2) in R, navigate to the package directory you just downloaded (e.g. `setwd` to the location of the `DESCRIPTION` file, or open the `.Rproj` file that most package contain)
+          3) use `devtools::test()` to run the tests 
+  - type: input
+    id: contact
+    attributes:
+      label: Name
+      description: What is your name?
+      placeholder: ex. Joe Bloggs
+    validations:
+      required: false
+  - type: input
+    id: package
+    attributes:
+      label: Name of the package you have tested
+      placeholder: e.g. ggplot2
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Traceability
+        in order to tell precisely what was tested, we need to know exactly what version of the package was tested, and where it was installed from.
+  - type: input
+    id: version
+    attributes:
+      label: What version of the package have you tested?
+      placeholder: e.g. 1.12.3
+    validations:
+      required: true
+  - type: input
+    id: package_source
+    attributes:
+      label: Where was the package installed from?
+      description: |
+        CRAN, BioConductor, GitHub, etc. Copy/paste the output from the R console.
+        Note that `validation` will attempt to extract this information for you, but you should verify it.
+        For CRAN and BioConductor, "CRAN" or "BioConductor" is enough.
+        For GitHub, please provide the URL.
+        If installed from an r-universe, the reference should be to the underlying GitHub repository, not the r-universe.
+      placeholder: e.g. CRAN, BioConductor, https://www.github.com/CTU-Bern/...
+    validations:
+      required: true
+  - type: input
+    id: package_ref
+    attributes:
+      label: If the package was installed from GitHub or similar (including r-universe), please provide a commit reference
+      description: |
+        E.g. click the history button in GitHub, the first 7 characters of the commit reference are shown on the right hand side of the top-most commit.
+        On an r-universe, the commit reference is shown just after the number of exports, dependencies etc.
+      placeholder: e.g. 94065ff
+    validations:
+      required: true
+  - type: input
+    id: test_date
+    attributes:
+      label: When was this package tested?
+      description: Please use ODBC format - YYYY-MM-DD
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: test_scrutiny
+    attributes:
+      label: What was tested?
+      description: Provide a detailed description of the tests that are relevant to your use case.
+    validations:
+      required: true
+  - type: dropdown
+    id: test_result
+    attributes:
+      label: Test results
+      description: Did all programmed tests pass?
+      options:
+        - PASS
+        - FAIL
+    validations:
+      required: true
+  - type: textarea
+    id: test_evidence
+    attributes:
+      label: Test output
+      description: |
+        Copy output from the R console.
+        This should include a table as well as any error or warning messages.
+    validations:
+      required: true
+  - type: textarea
+    id: session_info
+    attributes:
+      label: Session info
+      description: Copy output from the R console.
+  - type: input
+    id: code_location
+    attributes:
+      label: Where is the test code located for these tests?
+      description: You do not need to change this
+      default: the package itself
+    validations:
+      required: true
+
