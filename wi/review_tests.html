@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Risk assessing packages – Statistics and Methodology - R package validation</title>
+<title>Reviewing tests – Statistics and Methodology - R package validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./SCTO_Platforms.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../fig/SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,12 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">SCTO Stats and Methodology - R package validation</span>
     </a>
   </div>
@@ -94,10 +94,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation"> <i class="bi bi-github" role="img">
 </i> 
@@ -115,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./pkg_validation.html">Risk assessing packages</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wi/pkg_validation.html">Work Intructions</a></li><li class="breadcrumb-item"><a href="../wi/review_tests.html">Reviewing tests</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,10 +131,16 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SCTO Validation Policy</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Documentation</span></a>
+ <span class="menu-text">SOPs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -146,31 +148,48 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./policy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SCTO Validation Policy</span></a>
+  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function testing SOP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pkg_validation.html" class="sidebar-item-text sidebar-link active">
+  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk metrics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Work Intructions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./testing.html" class="sidebar-item-text sidebar-link">
+  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./running_tests.html" class="sidebar-item-text sidebar-link">
+  <a href="../wi/review_tests.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Reviewing tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/running_tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Running function tests</span></a>
   </div>
 </li>
@@ -181,15 +200,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#who-reviews" id="toc-who-reviews" class="nav-link active" data-scroll-target="#who-reviews">Who reviews?</a></li>
+  <li><a href="#performing-the-review" id="toc-performing-the-review" class="nav-link" data-scroll-target="#performing-the-review">Performing the review</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./policy.html">Documentation</a></li><li class="breadcrumb-item"><a href="./pkg_validation.html">Risk assessing packages</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wi/pkg_validation.html">Work Intructions</a></li><li class="breadcrumb-item"><a href="../wi/review_tests.html">Reviewing tests</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Risk assessing packages</h1>
+<h1 class="title">Reviewing tests</h1>
 </div>
 
 
@@ -206,74 +232,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page functions as the standard operating procedure for the risk assessment of R packages within the SCTO Statistics &amp; Methodology Platform framework.</p>
-<p>In order to perform a risk assessment:</p>
-<ul>
-<li><strong>first, check whether the package has already been risk assessed</strong>. This can be done by any of the following methods:
-<ul>
-<li>the <code>check_session</code> function from the <a href="https://swissclinicaltrialorganisation.github.io/validation/" target="_blank">R package <code>validation</code></a> can be used from within your R session to check if a package has been risk assessed.</li>
-<li>check the table on the <a href="./index.html" target="_blank">home page</a> of this site</li>
-<li>check for the package in the <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" target="_blank">package validation GitHub repository</a> by searching for it among the issues using the search bar towards the top of the page (remember to remove the is:open filter). E.g. to search for dplyr, the search might be <code>is:issue dplyr</code></li>
-</ul></li>
-<li><strong>if it has been risk assessed</strong>, check the associated risk and consider whether any functions within package need additional testing for your use case.</li>
-<li><strong>if it has not been risk assessed</strong>, go to the <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" target="_blank">package validation GitHub repository</a>
-<ul>
-<li>click the green “New issue” button (towards the top right)</li>
-<li>select the New package validation template by clicking the green Get started button on the right</li>
-<li>fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the <a href="./risk_metrics.html">Risk metrics page</a>.
-<ul>
-<li>Note that the <a href="https://swissclinicaltrialorganisation.github.io/validation/" target="_blank">R package <code>validation</code></a> contains various useful functions to help with the validation process. Especially useful are:
-<ul>
-<li><code>get_n_deps</code>, which returns the number of dependencies of a package,</li>
-<li><code>get_12month_downloads</code> which returns the number of downloads of a package in the last 12 months, and</li>
-<li><code>get_release_date</code> finds the release date of a package.</li>
-</ul></li>
-</ul></li>
-<li>Once you have completed the form, click the green “Submit new issue” button at the bottom of the page.</li>
-<li>Submitting the form will trigger an automated job that will calculate the risk based on the information you entered into the form and post a comment on the issue.</li>
-</ul></li>
-</ul>
+<p>Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A[Identify the package that may need risk assessment] --&gt; B(Check whether the package has already been risk assessed)
-  B --&gt; C1("`Within your R session, load the package and use the function 
-  &lt;span style="font-family:Courier; font-size: 80%"&gt;validation::check_session()&lt;/span&gt;`")
-  B --&gt; C2(Check whether the package is listed on the &lt;a href='index.html'&gt;home page&lt;/a&gt;)
-  B --&gt; C3(Check for an issue on the &lt;a href='https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues'&gt;GitHub&lt;/a&gt;)
-  C1 --&gt; D(RA exists?)
-  C2 --&gt; D
-  C3 --&gt; D
-  D --Yes--&gt; E[The associated risk level of the package]
-  D --No--&gt; F(Perform a risk assessment following the instructions on &lt;a href='https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new/choose'&gt;GitHub&lt;/a&gt;)
-  F --&gt; G(Open a new issue with the 'New package validation' template)
-  G --&gt; H(Fill out the form following the instructions provided)
-  H --&gt; J(Submit the issue and wait for the automated risk assessment)
-  J --&gt; E
-  E --&gt; K(Considering your use case, do you need to test any functions within the package?)
-  K --No--&gt; N(Use the package)
-  K --Yes--&gt; O(Check the validation_tests repository to see if any functions from the package have been tested)
-  O --&gt; P(Tests are available, and they cover your use case)
-  O --&gt; Q(Tests are available, but they do not cover your use case)
-  O --&gt; R(No tests are available)
-  P --&gt; N
-  Q --&gt; S(Write new tests for the functions you need and submit them to the validation_tests repository)
-  R --&gt; S
-  S --&gt; T(Ensure tests pass)
-  T --&gt; N
-  
-  
+<pre class="mermaid mermaid-js">flowchart LR
+  a[Tests written] --&gt; b[Pull request to incorporate]
+  b --&gt; c[Reviewers chosen] 
+  c --&gt; d[Code reviewed]
+  d --&gt; e[Review approved]
+  d --&gt; f[Suggested improvements]
+  f --&gt; g[Author improves tests]
+  g --&gt; d
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
+<section id="who-reviews" class="level2">
+<h2 class="anchored" data-anchor-id="who-reviews">Who reviews?</h2>
+<p>All pull requests are by default automatically assigned to one individual per unit. These individuals should agree among themselves who can perform the review, potentially nominating someone else from their unit. Those that will not be performing the review can be removed from the list of assignees.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you need a review urgently, reach out to someone by other means (e.g.&nbsp;email) and arrange that they perform the review for you.</p>
+</div>
+</div>
+</section>
+<section id="performing-the-review" class="level2">
+<h2 class="anchored" data-anchor-id="performing-the-review">Performing the review</h2>
+<p>The review is performed within the pull request on GitHub. There are four main tabs the pull request screen on GitHub:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/gh_tabs.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>The conversation tab is for discussions of general points about the pull request.</li>
+<li>The commits tab lists the individual commits that make up the pull request. For our purposes, this is rarely of use.</li>
+<li>The checks tab shows the results of automated checks that are run on the pull request. As we have no automated checks running for this repository, this tab is also not useful.</li>
+<li>The files changed tab shows the changes that have been made in the pull request. This is where the review is performed.</li>
+</ul>
+<p>The files changes lists all changes in all files modified during the pull request. The reviewer should look at each file in turn, checking that the changes are appropriate and that the code is well written and documented. The reviewer should also check that the tests are appropriate and that they test the correct things. Also, ensure that the details of the test in <code>info.txt</code> match the tests that were actually performed.</p>
+<p>Where there are general points to be made, these should be made in the conversation tab. For specific points, the reviewer can comment on the specific line of code in the files tab.</p>
+<ol type="1">
+<li>hover over the line to be commented on</li>
+<li>click on the <code>+</code> that appears</li>
+<li>type the comment in the box that appears</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/gh_linecomment.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>click on <code>Start a review</code> to submit the comment</li>
+</ol>
+<p>To indicate that you have checked a particular file and that it is suitable, you can click on the Viewed box on the top right of each file.</p>
+<p>The very top of the page has a box for finalising the review.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/gh_review.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>If there are no issues, the review can be marked with approve. If you have suggestions or require modifications, you can mark it as request changes. If you have questions, you can mark it as comment or request changes, whichever is most appropriate, and enter your questions in the box.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

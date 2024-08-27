@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SCTO Validation Policy – Statistics and Methodology - R package validation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../fig/SCTO_Platforms.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">SCTO Stats and Methodology - R package validation</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/policy.html">SCTO Validation Policy</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/policy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">SCTO Validation Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">SOPs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function testing SOP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk metrics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Work Intructions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk assessing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing function tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/review_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reviewing tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/running_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Running function tests</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a>
+  <ul class="collapse">
+  <li><a href="#sec-in-scope" id="toc-sec-in-scope" class="nav-link" data-scroll-target="#sec-in-scope">In Scope</a></li>
+  <li><a href="#sec-out-of-scope" id="toc-sec-out-of-scope" class="nav-link" data-scroll-target="#sec-out-of-scope">Out of Scope</a></li>
+  </ul></li>
+  <li><a href="#abbreviations-definitions" id="toc-abbreviations-definitions" class="nav-link" data-scroll-target="#abbreviations-definitions">Abbreviations &amp; Definitions</a></li>
+  <li><a href="#sec-generalapproach" id="toc-sec-generalapproach" class="nav-link" data-scroll-target="#sec-generalapproach">General R Validation Approach</a>
+  <ul class="collapse">
+  <li><a href="#sec-it-inf" id="toc-sec-it-inf" class="nav-link" data-scroll-target="#sec-it-inf">IT Infrastructure Qualification</a></li>
+  <li><a href="#sec-r-base-installation-validation" id="toc-sec-r-base-installation-validation" class="nav-link" data-scroll-target="#sec-r-base-installation-validation">R Base Installation Validation</a></li>
+  <li><a href="#sec-pkgvalidation" id="toc-sec-pkgvalidation" class="nav-link" data-scroll-target="#sec-pkgvalidation">R Add-on Package Validation</a></li>
+  <li><a href="#sec-r-product-validation" id="toc-sec-r-product-validation" class="nav-link" data-scroll-target="#sec-r-product-validation">R Product Validation</a></li>
+  </ul></li>
+  <li><a href="#sec-risk-management" id="toc-sec-risk-management" class="nav-link" data-scroll-target="#sec-risk-management">Risk Management</a></li>
+  <li><a href="#user-training" id="toc-user-training" class="nav-link" data-scroll-target="#user-training">User Training</a></li>
+  <li><a href="#periodic-review" id="toc-periodic-review" class="nav-link" data-scroll-target="#periodic-review">Periodic Review</a></li>
+  <li><a href="#associated-documents" id="toc-associated-documents" class="nav-link" data-scroll-target="#associated-documents">Associated Documents</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SCTO Validation Policy</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Taken from Validation_taskforce\Documents_For_Review/SCTO_CSV policy R_DRAFT_20240724.docx -->
+<!-- quarto pandoc -s -o "sop/policy.md" "sop/SCTO_CSV policy R_DRAFT_20240724.docx" -->
+<div class="callout callout-style-default callout-note callout-titled" title="Document development, review and version history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Document development, review and version history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><em>Development and Review</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Name</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Authored/Revised by</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Reviewed by</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Released by</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Version History</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.1</td>
+<td>2024-04-18</td>
+<td>Alan Haynes</td>
+<td>Initial draft</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This policy provides the framework for validating R and R add-on packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO network members<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for the purpose of creating R products in the context of clinical research. Validation may be executed on SCTO or CTU level, where the SCTO provides</p>
+<ul>
+<li>recommendations for R base installation validation,</li>
+<li>processes for R add-on package validation and</li>
+<li>a platform to serve as an inventory for documentation of all R add-on package validation performed by the SCTO and its network members according to this policy.</li>
+</ul>
+<p>Validation activities in general ensure that computerised systems (CS) can be relied upon to consistently produce a product that meets predetermined specifications of accuracy. The formal process of validation results in a validation (documentation) package<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>The validation of a computerised system consists of the following elements:</p>
+<ul>
+<li>Infrastructure</li>
+<li>Hardware</li>
+<li>Software</li>
+<li>Processes</li>
+<li>Training</li>
+</ul>
+<p>The validation activities focus on verifying that the software consistently fulfills the specified requirements. Processes must be in place to ensure that the infrastructure and hardware required for the functionality of the software are qualified and changes controlled. Additionally, all users and (if applicable) support personnel must be trained to use the software and follow related business processes.</p>
+<p>Any GxP critical system supporting activities such as statistical analysis (e.g., in the context of clinical trials) should be validated according to the following international standards and guidelines:</p>
+<ul>
+<li><a href="https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf">ICH E6: Guideline for Good Clinical Practice</a></li>
+<li><a href="http://www.ispe.org/gamp-5">GAMP 5: A Risk Based Approach to Compliant GxP Computerized systems</a></li>
+<li><a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=bb609049963efdb7e40b991244ba59e1&amp;mc=true&amp;tpl=/ecfrbrowse/Title21/21cfr11_main_02.tpl">FDA 21 CFR part 11: Electronic Records; Electronic Signatures</a></li>
+<li><a href="http://www.fda.gov/downloads/RegulatoryInformation/Guidances/ucm125125.pdf">FDA 21 CFR part 11: Guidance for Industry</a></li>
+<li><a href="https://www.fda.gov/media/73141/download">FDA: General Principles of Software Validation</a></li>
+<li><a href="https://ec.europa.eu/health/sites/health/files/files/eudralex/vol-4/annex11_01-2011_en.pdf">Eudralex 4 Good Manufacturing Practice Guidelines, Annex 11: Computerised Systems</a></li>
+</ul>
+<p>This SCTO policy is based on the ICH E6 guideline for Good Clinical Practice. FDA regulations and guidelines (US) and Eudralex 4 (EU) represent additional best practices for validation of computerised systems in the industry and may serve as a guideline for academical purposes.</p>
+</section>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>R is a ‘language and environment for statistical computing and graphics’ (source: the R file). It is an official part of the Free Software Foundation’s GNU project and is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">Free Software Foundation’s GNU Public License</a> . CTUs use R primarily, but not exclusively, in the preparation and analysis of data from supported studies. Internal use for other reporting, visualisation and business management might also take place, according to individual CTU needs, but is not the focus of this policy.</p>
+<p>Installation and use of R is based on several levels and sources:</p>
+<ol type="1">
+<li>The “official R distribution” (referred to as ‘R base installation’ in this document), which includes the R base and recommended packages (as defined in the R-foundation declaration with regards to validation and compliance, 2021) and is available via the Central R Archive Network (CRAN).</li>
+<li>Distribution of contributed R add-on packages provided by the community and available via CRAN.</li>
+<li>Distribution of R add-on packages provided by the community via other sources than CRAN (e.g., Bioconductor, Github, and various websites).</li>
+</ol>
+<p>Additionally, R packages may be developed in-house for internal use only and not distributed via any of the channels mentioned above. If such packages or some of their functions are used in the GxP context (e.g., clinical trials), they must also be validated. This validation should, whenever feasible, follow the process outlined in this document and associated SOPs even if the R package is not shared with the SCTO community.</p>
+</section>
+<section id="scope" class="level1">
+<h1>Scope</h1>
+<section id="sec-in-scope" class="level2">
+<h2 class="anchored" data-anchor-id="sec-in-scope">In Scope</h2>
+<ul>
+<li>Recommendations for R base installation validation (the final process and all documentation has to be defined and prepared by each CTU according to their local processes)</li>
+<li>Processes for R add-on "intended for use” packages validation (incl.&nbsp;package risk assessment &amp; functional testing)</li>
+</ul>
+<pre class="callout-note"><code>Processes for R add-on package validation described in this document are to be 
+considered minimum requirements as shared by the SCTO platform. Individual 
+organizations (CTUs) can define stricter processes.</code></pre>
+</section>
+<section id="sec-out-of-scope" class="level2">
+<h2 class="anchored" data-anchor-id="sec-out-of-scope">Out of Scope</h2>
+<ul>
+<li>Standards for IT infrastructure (<em>to be defined on local level by the CTUs, see <a href="#sec-generalapproach" class="quarto-xref">Section&nbsp;5</a></em>)</li>
+<li>R add-on package management to ensure traceability and reproducibility on R product level (<em>to be defined on local level by the CTUs, see <a href="#sec-pkgvalidation" class="quarto-xref">Section&nbsp;5.3</a>)</em></li>
+<li>Risk assessment and management of R products (<em>to be defined on local level by the CTUs, see <a href="#sec-r-product-validation" class="quarto-xref">Section&nbsp;5.4</a>):</em> Products are always CTU and clinical trial specific – a high-risk product may result in the need for additional validation activities for an R package, even if that package/ required function is available as “validated” on the SCTO platform.</li>
+<li>In general: any additional internal, organization specific, processes of CTUs.</li>
+</ul>
+</section>
+</section>
+<section id="abbreviations-definitions" class="level1">
+<h1>Abbreviations &amp; Definitions</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Terminology</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CTU</td>
+<td><p>Clinical Trial Unit.</p>
+<p>For purposes of this document: all SCTO network members.</p></td>
+</tr>
+<tr class="even">
+<td>CRAN</td>
+<td>Comprehensive R Archive Network</td>
+</tr>
+<tr class="odd">
+<td>EMA</td>
+<td>European Medicine Agency</td>
+</tr>
+<tr class="even">
+<td>FDA</td>
+<td>Food and Drug Administration</td>
+</tr>
+<tr class="odd">
+<td>HLRA</td>
+<td>High-Level Risk Assessment</td>
+</tr>
+<tr class="even">
+<td>HRA</td>
+<td>(Swiss) Human Research Act</td>
+</tr>
+<tr class="odd">
+<td>Intended for use package</td>
+<td>"Intended for use” packages are add-on packages that comprise the functions required for a specific product and are typically loaded directly by the user during an R session.</td>
+</tr>
+<tr class="even">
+<td>Product</td>
+<td>Any deliverable produced using R via the processes below. Typical statistical products include sample size estimation, statistical analysis plan, an analysis report etc.</td>
+</tr>
+<tr class="odd">
+<td>QMS</td>
+<td>Quality Management System</td>
+</tr>
+<tr class="even">
+<td>R add-on package</td>
+<td><ul>
+<li>Provided by members of the R community</li>
+<li>available via CRAN and other distribution repositories</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>R Base Installation</td>
+<td><ul>
+<li>Provided as part of the official R distribution released by the R Foundation</li>
+<li>available via CRAN</li>
+<li>includes Base R and recommended packages</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>SCTO</td>
+<td>Swiss Clinical Trial Organization</td>
+</tr>
+<tr class="odd">
+<td>SOP</td>
+<td>Standard Operation Procedure</td>
+</tr>
+<tr class="even">
+<td>Validation Package</td>
+<td>A set of documents that is prepared for documentation of the validation process.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-generalapproach" class="level1">
+<h1>General R Validation Approach</h1>
+<p>The SCTO follows a risk-based approach to the validation of R. For the validation and assessment of risks, we differentiate between the following levels:</p>
+<ul>
+<li>IT infrastructure qualification (<em>according to local CTU processes, see <a href="#sec-it-inf" class="quarto-xref">Section&nbsp;5.1</a></em>)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>System level (R base installation, incl.&nbsp;recommended packages, <em>according to local CTU processes, recommendations and examples provided by SCTO, see <a href="#sec-r-base-installation-validation" class="quarto-xref">Section&nbsp;5.2</a></em>)</li>
+<li>Package level (R add-on packages/ functions used within those packages, <em>according to SCTO processes, see <a href="#sec-pkgvalidation" class="quarto-xref">Section&nbsp;5.3</a></em>)</li>
+<li>Product level (“intended use”/ outcome, <em>according to by local CTU processes, see <a href="#sec-r-product-validation" class="quarto-xref">Section&nbsp;5.4</a></em>)</li>
+</ul>
+<p><strong>Important:</strong> To produce a product in R, under a <u>validated environment</u>, it must be ensured that R is running using a validated base installation version and qualified IT infrastructure with proper documentation, to ensure consistent and reliable results on all levels. The different levels build on each other:</p>
+<ul>
+<li><strong>Qualified infrastructure</strong> provides the basis for the validation of the R base installation and any packages running on that installation.</li>
+<li><strong>R base installation validation</strong> ensures that the basic installation of R (including recommended packages) provides a reliable framework on which additional packages can be installed (add-on packages) and functions from those packages executed.</li>
+<li><strong>R add-on package validation</strong> ensures that all functions within an add-on package required for a specific product are sufficiently tested in relation to the package and product risk (see R Product Risk Assessment Metrics for details). This takes place by evaluating the base risk associated with an R package, and, upon necessity, performing specific function tests to ensure that functions required for a specific product (within an add-on package) produce consistent and reliable results from a statistical perspective (see <strong>R Function Testing SOP</strong> for details).</li>
+</ul>
+<section id="sec-it-inf" class="level2">
+<h2 class="anchored" data-anchor-id="sec-it-inf">IT Infrastructure Qualification</h2>
+<p>The IT infrastructure qualification is managed at CTU level according to local IT processes. The risk associated with IT infrastructure components is usually low.</p>
+<p>For the reliable use of R and statistical traceability it is important to note which IT infrastructure (specifically which operating system software and version) R is installed on and to ensure that the infrastructure on which R is running is qualified.</p>
+</section>
+<section id="sec-r-base-installation-validation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-r-base-installation-validation">R Base Installation Validation</h2>
+<p>Every CTU must define:</p>
+<ul>
+<li>The minimal (validated) software version of the R Base Installation to be used at the CTU and a process of handling version changes.</li>
+<li>The R base installation validation package documenting the validation activities (see table below for recommendations).</li>
+</ul>
+<p>The R base installation validation package is a set of documents that should be prepared to document the validation process. The following table lists all documentation that is typically prepared during a computerised system validation process according to global standards and guidelines. It additionally provides recommendations how this documentation may be covered when preparing an R base installation validation package. The exact content of the R base installation validation package (i.e., the required documentation) at a CTU should follow the local processes and all documentation must be prepared and approved by the CTU. For some of the documents listed below, the SCTO provides examples (as indicated under “Detailed Description”).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Document</strong></th>
+<th><strong>Detailed Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R Base installation High-Level Risk Assessment (HLRA; also known as System Risk Assessment, SRA)</td>
+<td><p>The HLRA is usually created once, with the first validation of an R base installation version and is valid for all future validated versions. It must be updated in case the scope/ intended use/ content of the software changes.</p>
+<p>The HLRA usually also documents the GxP relevance of the system and therefore the need to validate the system.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Vendor Assessment</td>
+<td><p>Vendor assessments are usually conducted with the first validation of a software version. Since R is an open-source software managed by a consortium, a traditional vendor assessment/ audit approach is not feasible. A critical review of “R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments” may suffice as vendor assessment and should be documented together with any gaps identified that may require attention during the validation of R and its packages.</p>
+<p>The assessment of this document should be repeated with a publication of a new article version, or in case the R consortium replaces the existing document, or periodically according to each CTU’s local periodic review processes.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Validation Plan &amp; Test Plan</td>
+<td><p>The Validation Plan describes the details of the planned validation process, including required documentation and acceptance criteria for productive use.</p>
+<p>The Test Plan describes the testing strategy and testing process and may contain details on the tests to be executed.</p>
+<p>The exact content of both documents depends on the CTU’s local processes. The content of the two documents may also be covered in one “Validation &amp; Test Plan”.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>(User) Requirements Specification</td>
+<td><p>This document is usually created for the first validation of an R base installation version and should be reviewed, and if required updated, for future validated versions.</p>
+<p>It specifies the user requirements and intended use for the R base installation. It may also contain any compliance (e.g., data integrity), regulatory (e.g., personal data protection) and safety requirements (e.g., controlled access).</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Base installation (Functional) Risk Assessment</td>
+<td><p>This document is usually created with the first validation of an R base installation version based on the user requirements or system functions supporting these requirements and should be reviewed and, if required, updated for future validated version.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Software installation plan/ instruction</td>
+<td><p>Typically, either the vendor or the local IT department provides a software installation plan/ instructions to follow when installing new software.</p>
+<p>In case of R, a specific “R software installation plan/ instruction” is <strong>not</strong> required. It should be sufficient to follow the instructions on CRAN when downloading and installing the new R base installation version.</p>
+<p>Important is that the installation of the R base installation and version management follow the CTU’s local processes for validated systems and that all versions installed are documented, including the date/ time of installation (see Installation Verification Document below).</p></td>
+</tr>
+<tr class="odd">
+<td>Test scripts (“User Acceptance Tests”)</td>
+<td><p>Test scripts are usually created with the first validated R base installation version and should be reviewed, and if required updated and/or new test scripts created, for future validated version.</p>
+<p>The tests must verify the functions of the R base installation supporting the user requirements. Test scripts provided by R may be used as-is or adapted/ extended as required. The scope of testing must be defined according to the CTU’s local processes and defined user requirements.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Installation Verification document (TEST)</td>
+<td><p>The purpose of this document is to provide evidence of the installation of a specific system version on an environment/ machine that is used for testing purposes before the new system version is released to production.</p>
+<p>In case of R this may be a separate document or an entry in an R repository or other “version tracker” (depending on your local IT processes). The following information should be captured:</p>
+<ul>
+<li>R base installation version installed</li>
+<li>Date and time of installation</li>
+<li>Person performing the installation (may be someone from your local IT department)</li>
+<li>Outcome of installation: successful, successful with deviations, not successful</li>
+<li>If applicable: Any actions taken in addition to the regular “download and install from CRAN” process (e.g., uninstalling an older version)</li>
+</ul>
+<p><strong>Note:</strong> depending on your local processes it may not be feasible or even possible to do a preliminary “test installation” and perform tests before productive use of the new R base installation version (e.g., if R is distributed remotely by your local IT department). In this case, we recommend you still execute the tests after the installation and document the test execution. Should any issues be detected during testing, please inform your local IT department immediately. Ideally you implement a process that would ensure nobody is using the new R version for productive use before the tests are completed successfully (i.e., without major issues) and the validation &amp; test report is approved (see “Validation &amp; Test Report” below).</p></td>
+</tr>
+<tr class="odd">
+<td>Executed test scripts (“User Acceptance Tests”)</td>
+<td><p>Execute the pre-defined test scripts for each new R base installation version (i.e., follow the steps described in the test scripts) and document the outcome according to the CTU’s local processes.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Traceability Matrix</td>
+<td>Traceability between requirements and tests can be achieved by creating a separate document (traceability matrix) or by linking requirements and tests within the requirements and tests themselves. It is important, that whatever means is used, it is feasible to proof that all requirements are verified with a test (or if not tested formally, a rationale why the test is not required, e.g., low risk requirements which can be considered “verified” based on the experience by the user community).</td>
+</tr>
+<tr class="odd">
+<td>Test Report and Validation Report</td>
+<td><p>The Test Report and Validation Report are usually created (or at least updated to a new version) with every new R base installation version to be released for productive use. The main purpose is</p>
+<ol type="1">
+<li>to summarize the testing activities and results, including any deviations from the expected results</li>
+<li>to document all completed validation activities, including any deviations from the original plan (see Validation &amp; Test Plan). Deviations should be justified and assessed for criticality.</li>
+<li>to document the acceptance for productive use (with or without restrictions)</li>
+</ol>
+<p>The exact content of this report/ these reports depends on the CTU’s local processes.</p>
+<ul>
+<li>Example available on the SCTO platform</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Installation Verification document (PROD)</td>
+<td><p>The purpose of this document is to provide evidence of the installation of a specific system version on an environment/ machine that is used for productive purposes.</p>
+<p>In case of R, this may be a separate document or an entry in an R repository or other “version tracker” (depending on your local IT processes). The following information should be captured:</p>
+<ul>
+<li>R base installation version installed</li>
+<li>Date and time of installation</li>
+<li>Person performing the installation (may be someone from your local IT department)</li>
+<li>Outcome of installation: successful, successful with deviations, not successful</li>
+<li>If applicable: Any actions taken in addition to the regular “download and install from CRAN” process (e.g., uninstalling an older version)</li>
+</ul>
+<p>See also <strong>note</strong> under “Installation Verification document (TEST)”: In case of R base installation, the installation may only be documented once and not separately on “TEST” and “PROD”. <strong>Important</strong> is, that any version changes of the R base installation are managed and documented according to your CTU’s local IT change management processes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-pkgvalidation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pkgvalidation">R Add-on Package Validation</h2>
+<p>The R Add-on Package validation package is a set of documents that should be prepared for the documentation of the validation process of an R add-on package following this policy and associated SOPs. The following table lists all documentation that is typically prepared during a computerised system validation process. It additionally provides details on how this documentation is covered for an R add-on package validation according to this policy.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 73%">
+<col style="width: 1%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Document/ Activity</strong></th>
+<th><strong>Detailed Description</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Validation &amp; Test Plan</td>
+<td><p><strong>No separate document is created.</strong></p>
+<p><strong>Rationale:</strong> The content typically contained in a Validation &amp; Test Plan is determined, with respect to R add on packages, in the various steps of this policy and the associated SOPs and its documentation is specified therein as follows:</p>
+<ol type="1">
+<li>Determine the product associated risk (local CTU SOP)</li>
+<li>Determine the package associated risk (based on SCTO Risk Metrics)</li>
+<li>Determine, if testing is required (see
+<ol class="example" type="1">
+<li></li>
+</ol></li>
+<li>Perform and document testing, if required (SCTO Function Testing SOP)</li>
+<li>Document compliance with this policy and above-mentioned SOPs (local CTU process, e.g., in metadata or in a document)</li>
+</ol></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Package High-Level Risk Assessment</td>
+<td><p>The add-on package risk depends on factors described in the <strong>SCTO Risk metrics</strong>.</p>
+<p>The R add-on package high-level risk assessment should be documented according to the <strong>SCTO R-Package Risk Metrics</strong> on the SCTO designated platform<strong>.</strong></p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>(User) Requirements Specification</td>
+<td><p><strong>No dedicated (User) Requirements document is created.</strong></p>
+<p><strong>Rationale:</strong> The requirements and intended use of an R package and its functions can only be defined in relation to a product and the required outcome (“intended use”) of a specific function for that product. Therefore, the requirements can only be documented when planning the R product.</p>
+<p><strong>Requirements shall be documented in</strong> the Statistical Analysis Plan or a Statistical Protocol or in other, similar documentation<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. It is important that this “plan” indicates the intended use and what is required of the functions planned to be used within the R package.</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Function Risk Assessment</td>
+<td colspan="2">The risk of separate functions within a package can | only be assessed in relation to a product and the | required outcome (“intended use”) of a specific | function for that product (see 1).</td>
+</tr>
+<tr class="odd">
+<td>Package installation plan/ instruction</td>
+<td><p>There is <strong>no</strong> need for a separate installation plan or instruction. The installation follows a standard procedure using R base installation functions.</p>
+<p>One of the following procedures is followed:</p>
+<ul>
+<li>R add-on packages may be installed for functional testing after the high-level package risk and the product related requirements and functional risk are documented and the testing is planned, if the initial assessment shows that the required package is not yet sufficiently tested by one of the SCTO members providing input to the R add-on validation package repository.</li>
+<li>R add-on packages may be installed for productive use/ used to create R products after the functional tests are completed and no deviations were detected that would raise concerns against using the tested package functions for a given R product OR if the initial assessment shows that the required package was already sufficiently tested and the respective validation package is available in the SCTO R add-on package validation repository.</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Test scripts</td>
+<td>The process of writing and executing tests for the R add-on packages is covered in the <strong>SCTO Function Testing SOP</strong>.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Software installation verification (TEST)</td>
+<td><p><strong>No separate document is created.</strong></p>
+<p><strong>Rationale:</strong></p>
+<p>The purpose of this document would be to provide evidence of the installation of a specific add-on package (version) for testing purposes. In the context of R add-on package validation it is <strong>not</strong> feasible to create a separate document. The tested R add-on package (version) functions are documented when following the <strong>SCTO Function Testing SOP</strong>.</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Executed test scripts</td>
+<td>Execute the pre-defined test scripts and document the outcome of each step as well as the overall outcome of the test script (see <strong>SCTO Function Testing SOP</strong>).</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Validation &amp; Test Report</td>
+<td>The purpose of this document is to summarize all executed validation activities and their outcome, including testing and any defects found and/or any deviations from the original plan with a rationale. It documents the decision, if specific functions from an R add-on package (version) can be accepted for productive use or not and if there are any restrictions, specifies these restrictions (see <strong>SCTO Function Testing SOP</strong>).</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Software installation verification (PROD)</td>
+<td><p><strong>No separate document is created.</strong></p>
+<p><strong>Rationale:</strong></p>
+<p>The purpose of this document would be to provide evidence of the installation of a specific add-on package (version) for productive use. In case of an R add-on package and its functions the “productive use” is determined by the product upon calling library(). Therefore, it is <strong>not</strong> feasible to create a separate installation verification document.</p>
+<p>What needs to be ensured when using a specific function within an R add-on package:</p>
+<ul>
+<li>Documentation of package risk assessment based on the <strong>SCTO risk metrics</strong>, and of function testing according to <strong>SCTO Function Testing SOP</strong></li>
+<li>Documentation of package use (meta-data/session info)</li>
+</ul></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-r-product-validation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-r-product-validation">R Product Validation</h2>
+<p>To be covered by local SOPs for statistical analysis execution at the CTUs. The R product validation should cover at minimum:</p>
+<ul>
+<li>Assessment of risk associated with the R product</li>
+<li>Assess the tools used within the R product</li>
+<li>Documentation for reproducibility and traceability</li>
+</ul>
+</section>
+</section>
+<section id="sec-risk-management" class="level1">
+<h1>Risk Management</h1>
+<p>Given the different validation levels, also the risk needs to be assessed and managed on all those levels, specifically on:</p>
+<ul>
+<li>System level (R base installation, <em>recommendations provided in this policy, documentation according to local CTU processes, see <a href="#sec-r-base-installation-validation" class="quarto-xref">Section&nbsp;5.2</a></em>)</li>
+<li>Package level (R add-on packages, <em>see R Package Risk Assessment</em>)</li>
+<li>Product level (<em>according to local CTU processes, see <a href="#sec-r-product-validation" class="quarto-xref">Section&nbsp;5.4</a></em>)</li>
+</ul>
+<p>Depending on the outcome of the R add-on package risk assessment, the validation activities are adapted to be stricter for high-risk, or more high-level for low-risk packages. Thus, the testing of specific functions required for a specific product will be adapted depending on the combined risks from the package risk and product risk (defined on a local level):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th style="text-align: left;"><strong>R – Package Risk (Baseline)</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td style="text-align: left;">Low</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td><strong>Product Risk</strong></td>
+<td>Low</td>
+<td style="text-align: left;"><strong>No</strong> function testing required</td>
+<td><strong>No</strong> function testing required</td>
+<td><strong>No</strong> function testing required</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Medium</td>
+<td style="text-align: left;"><strong>No</strong> function testing required</td>
+<td><strong>No</strong> function testing required</td>
+<td>Function testing required</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>High</td>
+<td style="text-align: left;"><strong>No</strong> function testing required</td>
+<td>Function testing required</td>
+<td>Function testing required</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="user-training" class="level1">
+<h1>User Training</h1>
+<p>All users performing statistical analysis and/or developing packages and creating products with R need to be qualified and trained according to their CTU’s guidelines.</p>
+<p>All users (potentially) involved in validation activities (e.g., risk assessments, testing) must additionally be trained on this policy and the associated SOPs.</p>
+</section>
+<section id="periodic-review" class="level1">
+<h1>Periodic Review</h1>
+<p>Every 3 years the validation status of the R add-on packages in the SCTO validated package inventory should be reviewed if packages and/or functions were not updated and re-tested within that period. The review needs to be documented, even if no updates are required.</p>
+<p>The periodic review of the R base installation validation package has to be defined and managed according to the CTU’s processes.</p>
+</section>
+<section id="associated-documents" class="level1">
+<h1>Associated Documents</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Reference Title</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&amp;csf=1&amp;web=1&amp;e=hPIyUc">R Package Risk Metrics</a></td>
+<td style="text-align: left;">This document describes the metrics defining the risk of R add-on packages.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&amp;csf=1&amp;web=1&amp;e=DccKtz">R Function Testing SOP</a></td>
+<td style="text-align: left;">This document describes the standard process for testing specific functions within an R add-on package.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Reference Title</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://database.ich.org/sites/%20default/files/E6_R2_Addendum.pdf">ICH E6: Guideline for Good Clinical Practice</a></td>
+<td>International Council for Harmonisation, E6 Good Clinical Practice (1997) and Integrated Addendum to Good Clinical Practice (GCP) (2016)</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.ispe.org/gamp-5">The Good Automated Manufacturing Practice (GAMP) Guide 5: A Risk Based Approach to Compliant GxP Computerized Systems (ISPE/GAMP, 2 008)</a></td>
+<td><p>Guideline for computerised systems validation in regulated environments issued by the International Society for Pharmaceutical Engineering (ISPE).</p>
+<p>Note that the content of GAMP 5 is not available online.</p></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.ecfr.gov/cgi-bin%20/text-idx?SID=bb609049963efdb7e40%20b991244ba59e1&amp;mc=true&amp;tpl=/ecfrbr%20owse/Title21/21cfr11_main_02.tpl">FDA 21 CFR part 11: Electronic Records; Electronic Signatu res</a></td>
+<td>FDA regulation: Title 21—Food and Drugs, Chapter I - Food and Drug Administration, Department of Health and Human Services, Subchapter A - General, Part 11 — Electronic Records; Electronic Signatures (1997)</td>
+</tr>
+<tr class="even">
+<td><a href="http://ww%20w.fda.gov/downloads/RegulatoryInf%20ormation/Guidances/ucm125125.pdf">FDA 21 CFR part 11: Guidance for Industry</a></td>
+<td>FDA guidance for Industry, Part 11, Electronic Records; Electronic Signatures - Scope and Application (2003)</td>
+</tr>
+<tr class="odd">
+<td><a href="http://ww%20w.fda.gov/downloads/RegulatoryInf%20ormation/Guidances/ucm125125.pdf">General Principles of Software Validation; Final Guidance for Industry and FDA Staff (2002)</a></td>
+<td>FDA guidance paper for computerised system validation.</td>
+</tr>
+<tr class="even">
+<td><a href="https://ec.europa.eu/health/%20sites/health/files/files/eudralex%20/vol-4/annex11_01-%202011_en.pdf">EudraLex Volume 4: Good Manufacturing Practice (GMP) guidelines, Annex 11: Computerised Syst ems</a></td>
+<td>European standard for comupterised systems validation.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://unibe365-my.sharepo%20int.com/:b:/r/personal/marie_roum%20et_unibe_ch/Documents/SCTO_platfo%20rm/Validation_taskforce/Reference%20s/R-FDA.pdf?csf=1&amp;web=1&amp;e=84DLAN">R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environm ents</a></td>
+<td>R Foundation for Statistical Computing guidance document for the validation of R for the use in regulated environments.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>for purposes of this document referred to as CTUs = Clinical Trial Units<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A validation package is a set of documents prepared for the documentation of the validation process itself.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For example, standards set by the local IT department.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>User requirements for sample size estimation or power analyses are inherently the sample size or the power or a combination of both and do not need to be documented in a separate plan.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/SwissClinicalTrialOrganisation\.github\.io\/pkg_validation\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>CC-BY SCTO Statistics and Methodology</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

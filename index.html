@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./SCTO_Platforms.png" rel="icon" type="image/png">
+<link href="./fig/SCTO_Platforms.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,10 +105,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation"> <i class="bi bi-github" role="img">
 </i> 
@@ -146,10 +142,16 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sop/policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SCTO Validation Policy</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Documentation</span></a>
+ <span class="menu-text">SOPs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -157,31 +159,48 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./policy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SCTO Validation Policy</span></a>
+  <a href="./sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function testing SOP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pkg_validation.html" class="sidebar-item-text sidebar-link">
+  <a href="./sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk metrics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Work Intructions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./testing.html" class="sidebar-item-text sidebar-link">
+  <a href="./wi/testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./running_tests.html" class="sidebar-item-text sidebar-link">
+  <a href="./wi/review_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reviewing tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wi/running_tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Running function tests</span></a>
   </div>
 </li>
@@ -748,26 +767,26 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
 </div>
 <section id="packages-with-risk-assessments" class="level2">
 <h2 class="anchored" data-anchor-id="packages-with-risk-assessments">Packages with risk assessments</h2>
-<p>19 packages or package versions have been risk assessed within the SCTO Statistics &amp; Methodology Platform so far.</p>
+<p>20 packages or package versions have been risk assessed within the SCTO Statistics &amp; Methodology Platform so far.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="jnqqofzbpj" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jnqqofzbpj table {
+<div id="iellyrevvn" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iellyrevvn table {
   font-family: 'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jnqqofzbpj thead, #jnqqofzbpj tbody, #jnqqofzbpj tfoot, #jnqqofzbpj tr, #jnqqofzbpj td, #jnqqofzbpj th {
+#iellyrevvn thead, #iellyrevvn tbody, #iellyrevvn tfoot, #iellyrevvn tr, #iellyrevvn td, #iellyrevvn th {
   border-style: none;
 }
 
-#jnqqofzbpj p {
+#iellyrevvn p {
   margin: 0;
   padding: 0;
 }
 
-#jnqqofzbpj .gt_table {
+#iellyrevvn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -793,12 +812,12 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-left-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_caption {
+#iellyrevvn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jnqqofzbpj .gt_title {
+#iellyrevvn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -810,7 +829,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-width: 0;
 }
 
-#jnqqofzbpj .gt_subtitle {
+#iellyrevvn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -822,7 +841,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-top-width: 0;
 }
 
-#jnqqofzbpj .gt_heading {
+#iellyrevvn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -834,13 +853,13 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_bottom_border {
+#iellyrevvn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_col_headings {
+#iellyrevvn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -855,7 +874,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_col_heading {
+#iellyrevvn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -875,7 +894,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   overflow-x: hidden;
 }
 
-#jnqqofzbpj .gt_column_spanner_outer {
+#iellyrevvn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -887,15 +906,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 4px;
 }
 
-#jnqqofzbpj .gt_column_spanner_outer:first-child {
+#iellyrevvn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jnqqofzbpj .gt_column_spanner_outer:last-child {
+#iellyrevvn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jnqqofzbpj .gt_column_spanner {
+#iellyrevvn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -907,11 +926,11 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   width: 100%;
 }
 
-#jnqqofzbpj .gt_spanner_row {
+#iellyrevvn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jnqqofzbpj .gt_group_heading {
+#iellyrevvn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -937,7 +956,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   text-align: left;
 }
 
-#jnqqofzbpj .gt_empty_group_heading {
+#iellyrevvn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -952,15 +971,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   vertical-align: middle;
 }
 
-#jnqqofzbpj .gt_from_md > :first-child {
+#iellyrevvn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jnqqofzbpj .gt_from_md > :last-child {
+#iellyrevvn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jnqqofzbpj .gt_row {
+#iellyrevvn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -979,7 +998,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   overflow-x: hidden;
 }
 
-#jnqqofzbpj .gt_stub {
+#iellyrevvn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -992,7 +1011,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#jnqqofzbpj .gt_stub_row_group {
+#iellyrevvn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1006,15 +1025,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   vertical-align: top;
 }
 
-#jnqqofzbpj .gt_row_group_first td {
+#iellyrevvn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jnqqofzbpj .gt_row_group_first th {
+#iellyrevvn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jnqqofzbpj .gt_summary_row {
+#iellyrevvn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1024,16 +1043,16 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#jnqqofzbpj .gt_first_summary_row {
+#iellyrevvn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_first_summary_row.thick {
+#iellyrevvn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jnqqofzbpj .gt_last_summary_row {
+#iellyrevvn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1043,7 +1062,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_grand_summary_row {
+#iellyrevvn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1053,7 +1072,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#jnqqofzbpj .gt_first_grand_summary_row {
+#iellyrevvn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1063,7 +1082,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-top-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_last_grand_summary_row_top {
+#iellyrevvn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1073,11 +1092,11 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_striped {
+#iellyrevvn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jnqqofzbpj .gt_table_body {
+#iellyrevvn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1086,7 +1105,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_footnotes {
+#iellyrevvn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1100,7 +1119,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_footnote {
+#iellyrevvn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1109,7 +1128,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#jnqqofzbpj .gt_sourcenotes {
+#iellyrevvn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1123,7 +1142,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#jnqqofzbpj .gt_sourcenote {
+#iellyrevvn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1131,77 +1150,77 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#jnqqofzbpj .gt_left {
+#iellyrevvn .gt_left {
   text-align: left;
 }
 
-#jnqqofzbpj .gt_center {
+#iellyrevvn .gt_center {
   text-align: center;
 }
 
-#jnqqofzbpj .gt_right {
+#iellyrevvn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jnqqofzbpj .gt_font_normal {
+#iellyrevvn .gt_font_normal {
   font-weight: normal;
 }
 
-#jnqqofzbpj .gt_font_bold {
+#iellyrevvn .gt_font_bold {
   font-weight: bold;
 }
 
-#jnqqofzbpj .gt_font_italic {
+#iellyrevvn .gt_font_italic {
   font-style: italic;
 }
 
-#jnqqofzbpj .gt_super {
+#iellyrevvn .gt_super {
   font-size: 65%;
 }
 
-#jnqqofzbpj .gt_footnote_marks {
+#iellyrevvn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jnqqofzbpj .gt_asterisk {
+#iellyrevvn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jnqqofzbpj .gt_indent_1 {
+#iellyrevvn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jnqqofzbpj .gt_indent_2 {
+#iellyrevvn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jnqqofzbpj .gt_indent_3 {
+#iellyrevvn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jnqqofzbpj .gt_indent_4 {
+#iellyrevvn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jnqqofzbpj .gt_indent_5 {
+#iellyrevvn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jnqqofzbpj .katex-display {
+#iellyrevvn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jnqqofzbpj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iellyrevvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<div id="jnqqofzbpj" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="jnqqofzbpj">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["CTUtemplate","ExtrPatt","WinRatio","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","cowplot","dplyr","dplyr","gsDesign","gtsummary","haven","lme4","netmeta","pROC","pmcalibration","presize","readxl","rstpm2","tableone","tables"],"version":["0.5.0","0.1-4","1.0","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.1.3","1.1.4","1.1.0","3.6.0","1.7.2","2.5.4","1.1-35.1","2.9-0","1.18.5","0.1.0","0.3.7","1.4.3","1.6.3","0.13.2","0.9.17"],"final_score":[0.341374221614184,0.728657922573823,0.605637293342457,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.135532085582684,0.0995364124534332,0.0995364124534332,0.28698427468691,0.224929569359421,0.102222219917698,0.149484050896293,0.28151024861842,0.236608832092104,0.496813218255802,0.213297397318788,0.058749094635681,0.27043374273647,0.327166784490605,0.293469177309948],"final_score_cat":["Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Low","Low","Low","Medium","Low","Low","Low","Medium","Low","Medium","Low","Low","Medium","Medium","Medium"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/26\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/30\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/29\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/24\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/20\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/31\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/22\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/76\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/77\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/27\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/25\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/33\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/17\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/23\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/28\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/75\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/18\" target=\"_blank\">View on GitHub<\/a>"],"functions":[null,null,null,"<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">accrual_create_df, summary<\/a>",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"test_result":[" "," "," ","PASS","PASS","PASS","PASS","PASS","PASS","PASS"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score","name":"Package Risk","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0.34","0.73","0.61","0.32","0.32","0.32","0.32","0.32","0.32","0.32","0.14","0.10","0.10","0.29","0.22","0.10","0.15","0.28","0.24","0.50","0.21","0.06","0.27","0.33","0.29"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score_cat","name":"Package Risk","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Assessment link","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"functions","name":"Functions tested","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Test result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"jnqqofzbpj","dataKey":"154340687a1d992008a51d8899c02205"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
+<div id="iellyrevvn" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="iellyrevvn">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["CTUtemplate","ExtrPatt","WinRatio","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","cowplot","dplyr","dplyr","gsDesign","gtsummary","haven","lme4","netmeta","pROC","pmcalibration","presize","readxl","rstpm2","survSAKK","tableone","tables"],"version":["0.5.0","0.1-4","1.0","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.1.3","1.1.4","1.1.0","3.6.0","1.7.2","2.5.4","1.1-35.1","2.9-0","1.18.5","0.1.0","0.3.7","1.4.3","1.6.3","1.2.0","0.13.2","0.9.17"],"final_score":[0.341374221614184,0.728657922573823,0.605637293342457,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.135532085582684,0.0995364124534332,0.0995364124534332,0.28698427468691,0.224929569359421,0.102222219917698,0.149484050896293,0.28151024861842,0.236608832092104,0.496813218255802,0.213297397318788,0.058749094635681,0.27043374273647,0.329329995890667,0.327166784490605,0.293469177309948],"final_score_cat":["Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Low","Low","Low","Medium","Low","Low","Low","Medium","Low","Medium","Low","Low","Medium","Medium","Medium","Medium"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/26\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/30\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/29\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/24\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/20\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/31\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/22\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/76\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/77\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/27\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/25\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/33\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/17\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/23\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/28\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/83\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/75\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/18\" target=\"_blank\">View on GitHub<\/a>"],"functions":[null,null,null,"<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">accrual_create_df, summary<\/a>",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"test_result":[" "," "," ","PASS","PASS","PASS","PASS","PASS","PASS","PASS"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score","name":"Package Risk","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0.34","0.73","0.61","0.32","0.32","0.32","0.32","0.32","0.32","0.32","0.14","0.10","0.10","0.29","0.22","0.10","0.15","0.28","0.24","0.50","0.21","0.06","0.27","0.33","0.33","0.29"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score_cat","name":"Package Risk","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Assessment link","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"functions","name":"Functions tested","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Test result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"iellyrevvn","dataKey":"c114a2e20efd31c4e1b2032329c71680"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1219,23 +1238,23 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
 <p>12 packages or package versions have been tested by the SCTO Statistics &amp; Methodology Platform so far.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ovzohzqyvs" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ovzohzqyvs table {
+<div id="spzwcwmgzn" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#spzwcwmgzn table {
   font-family: 'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ovzohzqyvs thead, #ovzohzqyvs tbody, #ovzohzqyvs tfoot, #ovzohzqyvs tr, #ovzohzqyvs td, #ovzohzqyvs th {
+#spzwcwmgzn thead, #spzwcwmgzn tbody, #spzwcwmgzn tfoot, #spzwcwmgzn tr, #spzwcwmgzn td, #spzwcwmgzn th {
   border-style: none;
 }
 
-#ovzohzqyvs p {
+#spzwcwmgzn p {
   margin: 0;
   padding: 0;
 }
 
-#ovzohzqyvs .gt_table {
+#spzwcwmgzn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1261,12 +1280,12 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-left-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_caption {
+#spzwcwmgzn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ovzohzqyvs .gt_title {
+#spzwcwmgzn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1278,7 +1297,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-width: 0;
 }
 
-#ovzohzqyvs .gt_subtitle {
+#spzwcwmgzn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1290,7 +1309,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-top-width: 0;
 }
 
-#ovzohzqyvs .gt_heading {
+#spzwcwmgzn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1302,13 +1321,13 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_bottom_border {
+#spzwcwmgzn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_col_headings {
+#spzwcwmgzn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1323,7 +1342,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_col_heading {
+#spzwcwmgzn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1343,7 +1362,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   overflow-x: hidden;
 }
 
-#ovzohzqyvs .gt_column_spanner_outer {
+#spzwcwmgzn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1355,15 +1374,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 4px;
 }
 
-#ovzohzqyvs .gt_column_spanner_outer:first-child {
+#spzwcwmgzn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ovzohzqyvs .gt_column_spanner_outer:last-child {
+#spzwcwmgzn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ovzohzqyvs .gt_column_spanner {
+#spzwcwmgzn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1375,11 +1394,11 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   width: 100%;
 }
 
-#ovzohzqyvs .gt_spanner_row {
+#spzwcwmgzn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ovzohzqyvs .gt_group_heading {
+#spzwcwmgzn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1405,7 +1424,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   text-align: left;
 }
 
-#ovzohzqyvs .gt_empty_group_heading {
+#spzwcwmgzn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1420,15 +1439,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   vertical-align: middle;
 }
 
-#ovzohzqyvs .gt_from_md > :first-child {
+#spzwcwmgzn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ovzohzqyvs .gt_from_md > :last-child {
+#spzwcwmgzn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ovzohzqyvs .gt_row {
+#spzwcwmgzn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1447,7 +1466,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   overflow-x: hidden;
 }
 
-#ovzohzqyvs .gt_stub {
+#spzwcwmgzn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1460,7 +1479,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#ovzohzqyvs .gt_stub_row_group {
+#spzwcwmgzn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1474,15 +1493,15 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   vertical-align: top;
 }
 
-#ovzohzqyvs .gt_row_group_first td {
+#spzwcwmgzn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ovzohzqyvs .gt_row_group_first th {
+#spzwcwmgzn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ovzohzqyvs .gt_summary_row {
+#spzwcwmgzn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1492,16 +1511,16 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#ovzohzqyvs .gt_first_summary_row {
+#spzwcwmgzn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_first_summary_row.thick {
+#spzwcwmgzn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ovzohzqyvs .gt_last_summary_row {
+#spzwcwmgzn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1511,7 +1530,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_grand_summary_row {
+#spzwcwmgzn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1521,7 +1540,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#ovzohzqyvs .gt_first_grand_summary_row {
+#spzwcwmgzn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1531,7 +1550,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-top-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_last_grand_summary_row_top {
+#spzwcwmgzn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1541,11 +1560,11 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_striped {
+#spzwcwmgzn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ovzohzqyvs .gt_table_body {
+#spzwcwmgzn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1554,7 +1573,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-bottom-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_footnotes {
+#spzwcwmgzn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1568,7 +1587,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_footnote {
+#spzwcwmgzn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1577,7 +1596,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#ovzohzqyvs .gt_sourcenotes {
+#spzwcwmgzn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1591,7 +1610,7 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   border-right-color: #D3D3D3;
 }
 
-#ovzohzqyvs .gt_sourcenote {
+#spzwcwmgzn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1599,77 +1618,77 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
   padding-right: 5px;
 }
 
-#ovzohzqyvs .gt_left {
+#spzwcwmgzn .gt_left {
   text-align: left;
 }
 
-#ovzohzqyvs .gt_center {
+#spzwcwmgzn .gt_center {
   text-align: center;
 }
 
-#ovzohzqyvs .gt_right {
+#spzwcwmgzn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ovzohzqyvs .gt_font_normal {
+#spzwcwmgzn .gt_font_normal {
   font-weight: normal;
 }
 
-#ovzohzqyvs .gt_font_bold {
+#spzwcwmgzn .gt_font_bold {
   font-weight: bold;
 }
 
-#ovzohzqyvs .gt_font_italic {
+#spzwcwmgzn .gt_font_italic {
   font-style: italic;
 }
 
-#ovzohzqyvs .gt_super {
+#spzwcwmgzn .gt_super {
   font-size: 65%;
 }
 
-#ovzohzqyvs .gt_footnote_marks {
+#spzwcwmgzn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ovzohzqyvs .gt_asterisk {
+#spzwcwmgzn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ovzohzqyvs .gt_indent_1 {
+#spzwcwmgzn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ovzohzqyvs .gt_indent_2 {
+#spzwcwmgzn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ovzohzqyvs .gt_indent_3 {
+#spzwcwmgzn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ovzohzqyvs .gt_indent_4 {
+#spzwcwmgzn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ovzohzqyvs .gt_indent_5 {
+#spzwcwmgzn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ovzohzqyvs .katex-display {
+#spzwcwmgzn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ovzohzqyvs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#spzwcwmgzn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<div id="ovzohzqyvs" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="ovzohzqyvs">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","stats","statsFail","statsFail","statsFail - issue to test machinery","statsFail - issue to test machinery"],"version":["1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","4.3.3",null,null,null,null],"test_result":["PASS","PASS","PASS","PASS","PASS","PASS","PASS","PASS","FAIL","FAIL","FAIL","FAIL"],"r_version":["4.3.1","4.3.3","4.3.3","4.3.3","4.3.3","4.3.3","4.3.3","4.3.1","4.3.1","4.3.1","4.3.1","4.3.1"],"os":["Windows 10 x64 (build 19045)","macOS Monterey 12.7.4","Ubuntu 20.04.6 LTS","Ubuntu 22.04.4 LTS","macOS Ventura 13.6.6","Windows Server 2019 x64 (build 17763)","Windows Server 2022 x64 (build 20348)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35\" target=\"_blank\">View on GitHub<\/a>"]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Package version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"r_version","name":"R version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"os","name":"Operating system","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Test report","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"sortable":false,"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"ovzohzqyvs","dataKey":"8e4592f082fb25e8bdec9e227b7ed74a"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
+<div id="spzwcwmgzn" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="spzwcwmgzn">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","stats","statsFail","statsFail","statsFail - issue to test machinery","statsFail - issue to test machinery"],"version":["1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","4.3.3",null,null,null,null],"test_result":["PASS","PASS","PASS","PASS","PASS","PASS","PASS","PASS","FAIL","FAIL","FAIL","FAIL"],"r_version":["4.3.1","4.3.3","4.3.3","4.3.3","4.3.3","4.3.3","4.3.3","4.3.1","4.3.1","4.3.1","4.3.1","4.3.1"],"os":["Windows 10 x64 (build 19045)","macOS Monterey 12.7.4","Ubuntu 20.04.6 LTS","Ubuntu 22.04.4 LTS","macOS Ventura 13.6.6","Windows Server 2019 x64 (build 17763)","Windows Server 2022 x64 (build 20348)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)","Windows 10 x64 (build 19045)"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35\" target=\"_blank\">View on GitHub<\/a>"]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Package version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"r_version","name":"R version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"os","name":"Operating system","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Test report","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"sortable":false,"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"spzwcwmgzn","dataKey":"8e4592f082fb25e8bdec9e227b7ed74a"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
