@@ -1,5 +1,5 @@
 name: Add package/function testing results
-description: Add a new function testing report to the repo
+description: Add a new function testing report based on tests stored within the SCTO framework
 title: "[Package test]: XXX version YYY"
 labels: ["test", ":alarm_clock: triage :alarm_clock:"]
 body:

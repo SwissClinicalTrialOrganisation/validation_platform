@@ -14,9 +14,9 @@ execute:
 This page is adapted from a [vignette in the `validation` package](https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html){target="_blank"}
 :::
 
-The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [pkg_validation](www.github.com/SwissClinicalTrialOrganisation/pkg_validation) repository.
+The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](https://www.github.com/SwissClinicalTrialOrganisation/validation_tests){target="_blank"} repository. The results of the tests are then published as issues in the [pkg_validation](https://www.github.com/SwissClinicalTrialOrganisation/pkg_validation){target="_blank"} repository.
 
-Tests are written using functions from the [testthat](https://testthat.r-lib.org/) package, and can be downloaded, run, and reported using the functions in the `validation` package.
+Tests are written using functions from the [testthat](https://testthat.r-lib.org/){target="_blank"} package, and can be downloaded, run, and reported using the functions in the `validation` package.
 
 ## Core principles
 
@@ -234,11 +234,11 @@ skip_on_os("mac")
 
 ## Submitting tests to the platform
 
-Once you have added the necessary tests, add the files to the [validation_tests repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests). The easiest way is to navigate to the tests folder, click on "Add file" and then "Upload files". Now you can simply drag the `pkg` folder into the browser window and commit the change. This will have forked the repository to your own GitHub account, and you can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.
+Once you have added the necessary tests, add the files to the [validation_tests repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests). The easiest way is to fork the repository to your own account, navigate to the tests folder, click on "Add file" and then "Upload files". Now you can simply drag the `pkg` folder into the browser window and commit the change. You can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.
 
 At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
 
-Once merged, the tests can be run via the validation package `validation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/pkg_validation](https://github.com/SwissClinicalTrialOrganisation/pkg_validation).
+Once merged, the tests can be run via the validation package `validation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/pkg_validation](https://github.com/SwissClinicalTrialOrganisation/pkg_validation). You can now also delete your fork of the validation_tests repository, which makes it easier to ensure that you have the most up-to-date version of the repository next time you want to add a test to it.
 
 
 ## Worked example

@@ -17,9 +17,9 @@ In order to perform a risk assessment:
 - **first, check whether the package has already been risk assessed**. This can be done by any of the following methods:
   - the `check_session` function from the [R package `validation`](https://swissclinicaltrialorganisation.github.io/validation/){target="_blank"} can be used from within your R session to check if a package has been risk assessed.
   - check the table on the [home page](index.qmd){target="_blank"} of this site
-  - check for the package in the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"} by searching for it among the issues using the search bar towards the top of the page (remember to remove the is:open filter). E.g. to search for dplyr, the search might be `is:issue dplyr`
+  - check for the package in the [package validation GitHub repository](https://www.github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"} by searching for it among the issues using the search bar towards the top of the page (remember to remove the is:open filter). E.g. to search for dplyr, the search might be `is:issue dplyr`
 - **if it has been risk assessed**, check the associated risk and consider whether any functions within package need additional testing for your use case.
-- **if it has not been risk assessed**, go to the [package validation GitHub repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"}
+- **if it has not been risk assessed**, go to the [package validation GitHub repository](https://www.github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"}
   - click the green "New issue" button (towards the top right)
   - select the New package validation template by clicking the green Get started button on the right
   - fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the [Risk metrics page](risk_metrics.qmd).

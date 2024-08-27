@@ -4,12 +4,12 @@ project:
 website:
   title: "Statistics and Methodology - R package validation"
   page-footer: CC-BY SCTO Statistics and Methodology
-  favicon: SCTO_Platforms.png
+  favicon: fig/SCTO_Platforms.png
   navbar:
     title: "SCTO Stats and Methodology - R package validation"
     right:
-      - text: "Home"
-        href: index.html
+      # - text: "Home"
+      #   href: index.html
       - icon: github
         href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation"
     background: white
@@ -19,15 +19,23 @@ website:
     contents:
       - href: index.html
         title: Home
-      - section: "Documentation"
+      - href: sop/policy.qmd
+      - section: "SOPs"
         contents:
-          - href: policy.qmd
-          - href: pkg_validation.qmd
-          - href: risk_metrics.qmd
-          - href: flow.qmd
-          - href: testing.qmd
-          - href: running_tests.qmd
+         - href:
+         - href: sop/sop_fn_tests.qmd
+         - href: sop/risk_metrics.qmd
+      - section: "Work Intructions"
+        contents:
+          - href: wi/pkg_validation.qmd
+          - href: wi/testing.qmd
+          - href: wi/review_tests.qmd
+          - href: wi/running_tests.qmd
+      - href: sop/highlevel_ra.qmd
     # logo: SCTO_Platforms.png
+
+resources:
+  - fig/*
 
 format:
   html:

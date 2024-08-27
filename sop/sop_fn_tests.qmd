@@ -1,0 +1,64 @@
+---
+title: "Function testing SOP"
+---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name | Date |
+|---------------------|------|------|
+| Authored/Revised by |      |      |
+| Reviewed by         |      |      |
+| Released by         |      |      |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | 2024-07-31 | Alan Haynes, Elio Carreras, Lisa Hofer, Michael Coslovsky, Christina Huf, Christine Otieno | Initial draft      |
+:::
+
+## Purpose 
+
+This SOP defines the process and steps that need to be followed when testing the performance of specific program functions within the SCTO-Statistics’ platform computer system validation. The process is written to serve as a standardized approach for function testing. A standardized process will allow different organizations to rely on results of tests performed also outside of the internal unit, improving efficiency overall. The centralized process can then be implemented in all associated units as the minimal procedure. Organizations may go beyond the process described herein, as long as they do not contradict the central process.
+
+In lay words, the process should allow a member (with focus on statisticians and data-scientists) of any participating institution (SCTO associated organization, including SAKK, the biostatistics’ department of the university of Zurich etc.) to understand and reproduce function tests saved and documented on the designated SCTO platform infrastructure. In addition, the process ensures that updates of packages or functions can rerun the tests in a fast and straightforward manner, so that package updates can be validated easily.
+
+## Abbreviations and definitions
+
+SOP
+: Standard operating procedure
+
+R 
+: The R computer program 
+
+Unit testing
+: The testing one one particular element of a program
+
+Function
+: A specific program within the R language
+
+Test author
+: Any employee of an SCTO associated organization writing a function test according to this SOP 
+
+Tester
+: Any employee of an SCTO associated organization executing and documenting a function test according to this SOP
+
+Reviewer
+: Any employee of an SCTO associated organization reviewing a function test from a different test author according to this SOP
+
+## Scope
+
+This SOP defines the process for:
+
+1. Unit testing
+2. Self-written functions stored on the SCTO platform infrastructure.
+3. Specific functions from software used in the institutes that have been determined as requiring testing.
+
+In scope are functions of the R computing environment, written within or out of the organization, for which the necessity of unit functional testing was determined by a member of a participating institute according to the SCTO R-validation policy. The process may be adapted for other statistical packages. The SOP focuses primarily on functions used for statistical reporting and data-wrangling.
+
+
+The appropriate level of testing required is determined within the SOP, but the decision to test the function is out of scope. According to the SCTO R validation policy, this decision is determined from the risk associated with the intended use of the function within a specific product or project, future use and the software packages being used for the product. The SCTO statistics’ platform’s high level risk assessment as well as the SCTO policy for the use of R in a validated environment describe the processes to follow in assessing this risk and in determining whether specific function testing should be performed.
+
+ETC.
+
