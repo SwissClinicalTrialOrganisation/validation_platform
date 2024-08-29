@@ -13,25 +13,40 @@ website:
       - icon: github
         href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation"
     background: white
+
   sidebar:
     style: "docked"
     search: true
+    collapse-level: 1
     contents:
-      - href: index.html
-        title: Home
+      - href: index.qmd
+        title: "Policy"
       - href: sop/policy.qmd
       - section: "SOPs"
         contents:
-         - href:
          - href: sop/sop_fn_tests.qmd
          - href: sop/risk_metrics.qmd
+
       - section: "Work Intructions"
         contents:
           - href: wi/pkg_validation.qmd
-          - href: wi/testing.qmd
+          - href: wi/testing2.qmd
           - href: wi/review_tests.qmd
           - href: wi/running_tests.qmd
       - href: sop/highlevel_ra.qmd
+      - href: results/pkgassessment.qmd
+      - href: results/pkgtesting.qmd
+      - section: "Useful links"
+        contents:
+         - text: "Report an assessment or test"
+           href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues"
+           target: "_blank"
+         - href: "https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues"
+           text: "Tests repository"
+           target: "_blank"
+         - href: "https://swissclinicaltrialorganisation.github.io/validation/"
+           text: "Validation R package"
+           target: "_blank"
     # logo: SCTO_Platforms.png
 
 resources:

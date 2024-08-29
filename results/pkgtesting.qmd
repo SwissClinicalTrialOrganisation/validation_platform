@@ -1,0 +1,75 @@
+---
+title: "Package tests"
+editor_options:
+  markdown:
+    wrap: 72
+    
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+
+
+```{r}
+#| output: false
+# install.packages('validation', 
+#                  repos = c('https://ctu-bern.r-universe.dev', 
+#                            'https://cloud.r-project.org'), 
+#                  quiet = TRUE, verbose = FALSE)
+library(validation)
+library(gtExtras)
+library(purrr)
+library(dplyr)
+pkgs <- load_pkg_table()
+
+tests <- load_tests_table() |> 
+  mutate(
+         tested_funs = lapply(test_evidence, 
+                              function(x) parse_evidence_tab(x) |> 
+                                pull(context) |> 
+                                unique() |> 
+                                paste(collapse = ", ")) |> 
+           unlist()
+    
+  )
+tests |> 
+  mutate(test_tab = NA,
+         )
+
+
+```
+
+`r nrow(tests)` packages or package versions have been tested by the SCTO Statistics & Methodology Platform so far.
+
+```{r}
+
+test_res <- unique(tests$test_result) |> na.omit()
+tests_palette <- c(PASS = "#91cf60", "FAIL" = "#fc8d59")
+tests_observed <- tests_palette[test_res]
+
+tests |> 
+  mutate(
+    url = purrr::map(issue_url, gt_hyperlink, text = "View on GitHub"),
+    url = purrr::map(url, html)
+  ) |> 
+  select(package, version, test_result, r_version, os, url) |> 
+  gt() |> 
+  opt_table_font(font = "Source Sans Pro") |> 
+  opt_interactive(use_filters = TRUE,
+                  use_sorting = FALSE) |>
+  cols_label(package = "Package",
+             version = "Package version",
+             test_result = "Result",
+             r_version = "R version",
+             os = "Operating system",
+             url = "Test report"
+             ) |> 
+  cols_align("left") |> 
+  sub_missing(missing_text = "") |> 
+  gt_badge(test_result, 
+           palette = tests_observed, alpha = 1)
+  
+```
+

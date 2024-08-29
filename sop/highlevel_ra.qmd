@@ -1,0 +1,58 @@
+---
+title: "High level risk assessment"
+downloads: pdf
+---
+
+
+This is an explanation and ‘dictionary’ for the High Level Risk Assessment tool of the platform.
+
+The file is structured as a process following the steps below:
+
+![](fig/hl_ra.png)
+
+The variables of decision are:
+
+::: {style="color:#5b9bd5;"}
+-	Risk area:
+-	Risk Subarea
+-	Impact of risk (A): 
+  -	Minor (1 point)
+  -	Major (3 points)
+  -	Critical (6 points)
+-	Likelihood (A): how likely is the event to take place (before mitigating actions are in place):
+  -	Unlikely (1 points)
+  -	Possible (2 points)
+  -	Likely (3 points)
+-	Risk A = multiplication of impact x likelihood
+-	Risk A category: categorization of Risk according to points received in Risk A
+  -	1-2: Low (green)
+  -	3-8: Medium (yellow)
+  -	≥9 High (red)
+-	Detectability A: how fast and easily is the risk effect detected, potentially before consequences (before mitigating actions are in place):
+  -	High (easy to detect, ‘jumps’ to the eye immediately)
+  -	Medium (is detectable if one pays attention or examines this point specifically with a critical eye)
+  -	Low (hard to detect, only detectable if rigorously and specifically looking for problems)
+-	Priority A: The ‘final’ risk category and priority in need for handling (i.e., before mitigating actions). Is conditional on the Risk-A category and on the Detectability A according to the PharmaSUG suggestion (Figure 2) using for “risk class” the defined Risk Category A 
+:::
+
+::: {style="color:#ed7d31;"}
+-	Risk treatment: the mitigating actions that can be implemented. Examples of possibilities are provided. Mitigating actions may:
+  -	Reduce the likelihood of a risk to occur
+  -	Increase the likelihood of detection of the risk occurring
+
+:::
+
+::: {style="color:#70ad47;"}
+-	Risk analysis after treatment:
+-	Impact = the same as the impact in the risk assessment (does not change)
+-	Likelihood B: The likelihood of the risk to happen (Once mitigating actions are in place)
+-	Risk B: the calculated risk based on impact and the new likelihood
+-	Detectability B: the new detectability (Once mitigating actions are in place)
+-	Priority B: Final, residual, priority of the risk (once mitigating actions are in place)
+:::
+
+::: {style="color:#cc66ff;"}
+-	Risk monitoring: TO BE FILLED per CTU according to local SOPs and guidelines (local QM) 
+:::
+
+The high level risk assessment is available [here](fig/placeholder.txt){target="blank"}.

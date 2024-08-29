@@ -54,3 +54,6 @@ The very top of the page has a box for finalising the review.
 
 If there are no issues, the review can be marked with approve. If you have suggestions or require modifications, you can mark it as request changes. If you have questions, you can mark it as comment or request changes, whichever is most appropriate, and enter your questions in the box.
 
+## Incorporating the tests in the repository
+
+Once the tests have been reviewed and found to be suitable and appropriately documented, the pull request needs to be merged into the repository. Each CTU has at least one nominated individual that can perform a merge (typically the same individuals distributing reviews). This individual should check that the review has been approved and then merge the pull request using the green button at the bottom of the conversation tab, followed by the "confirm merge" button that appears afterwards.
