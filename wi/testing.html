@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -142,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wi/pkg_validation.html">Work Intructions</a></li><li class="breadcrumb-item"><a href="../wi/testing.html">Writing function tests</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Writing function tests</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,19 +130,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/policy.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SCTO Validation Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">SOPs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
@@ -193,23 +159,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Work Intructions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -226,6 +186,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/highlevel_ra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">High level risk assessment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../results/pkgassessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Package assessments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../results/pkgtesting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Package tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Useful links</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report an assessment or test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Tests repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://swissclinicaltrialorganisation.github.io/validation/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Validation R package</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -236,34 +243,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#core-principles" id="toc-core-principles" class="nav-link active" data-scroll-target="#core-principles">Core principles</a></li>
-  <li><a href="#test_skeleton-helps-build-the-structure" id="toc-test_skeleton-helps-build-the-structure" class="nav-link" data-scroll-target="#test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</a></li>
-  <li><a href="#writing-tests" id="toc-writing-tests" class="nav-link" data-scroll-target="#writing-tests">Writing tests</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#abbreviations-definitions" id="toc-abbreviations-definitions" class="nav-link" data-scroll-target="#abbreviations-definitions">Abbreviations &amp; Definitions</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">Process</a></li>
+  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline">Guideline</a>
   <ul class="collapse">
-  <li><a href="#compare-computation-to-a-reference-value" id="toc-compare-computation-to-a-reference-value" class="nav-link" data-scroll-target="#compare-computation-to-a-reference-value">Compare computation to a reference value</a></li>
-  <li><a href="#testing-for-errors-warnings-and-other-messages" id="toc-testing-for-errors-warnings-and-other-messages" class="nav-link" data-scroll-target="#testing-for-errors-warnings-and-other-messages">Testing for errors, warnings and other messages</a></li>
-  <li><a href="#testing-booleans" id="toc-testing-booleans" class="nav-link" data-scroll-target="#testing-booleans">Testing booleans</a></li>
-  <li><a href="#testing-for-null" id="toc-testing-for-null" class="nav-link" data-scroll-target="#testing-for-null">Testing for NULL</a></li>
-  <li><a href="#testing-the-type-of-object-returned-base-r" id="toc-testing-the-type-of-object-returned-base-r" class="nav-link" data-scroll-target="#testing-the-type-of-object-returned-base-r">Testing the type of object returned (base R)</a></li>
-  <li><a href="#testing-the-class-s3-of-an-object" id="toc-testing-the-class-s3-of-an-object" class="nav-link" data-scroll-target="#testing-the-class-s3-of-an-object">Testing the class (s3) of an object</a></li>
-  <li><a href="#running-tests-under-certain-conditions" id="toc-running-tests-under-certain-conditions" class="nav-link" data-scroll-target="#running-tests-under-certain-conditions">Running tests under certain conditions</a></li>
-  </ul></li>
-  <li><a href="#submitting-tests-to-the-platform" id="toc-submitting-tests-to-the-platform" class="nav-link" data-scroll-target="#submitting-tests-to-the-platform">Submitting tests to the platform</a></li>
-  <li><a href="#worked-example" id="toc-worked-example" class="nav-link" data-scroll-target="#worked-example">Worked example</a>
+  <li><a href="#working-instructions" id="toc-working-instructions" class="nav-link" data-scroll-target="#working-instructions">Working instructions</a>
   <ul class="collapse">
-  <li><a href="#test-lm.r" id="toc-test-lm.r" class="nav-link" data-scroll-target="#test-lm.r"><code>test-lm.R</code></a></li>
-  <li><a href="#info.txt" id="toc-info.txt" class="nav-link" data-scroll-target="#info.txt"><code>info.txt</code></a></li>
-  <li><a href="#setup-stats.r" id="toc-setup-stats.r" class="nav-link" data-scroll-target="#setup-stats.r"><code>setup-stats.R</code></a></li>
-  <li><a href="#testing-that-the-tests-work" id="toc-testing-that-the-tests-work" class="nav-link" data-scroll-target="#testing-that-the-tests-work">Testing that the tests work</a></li>
+  <li><a href="#submitting-the-test-for-incorporation-into-the-framework" id="toc-submitting-the-test-for-incorporation-into-the-framework" class="nav-link" data-scroll-target="#submitting-the-test-for-incorporation-into-the-framework">Submitting the test for incorporation into the framework</a></li>
+  <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests">Running tests</a></li>
   </ul></li>
-  <li><a href="#hints-for-working-with-github" id="toc-hints-for-working-with-github" class="nav-link" data-scroll-target="#hints-for-working-with-github">Hints for working with GitHub</a></li>
+  <li><a href="#approving-the-test" id="toc-approving-the-test" class="nav-link" data-scroll-target="#approving-the-test">Approving the test</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation:</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wi/pkg_validation.html">Work Intructions</a></li><li class="breadcrumb-item"><a href="../wi/testing.html">Writing function tests</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Writing function tests</h1>
 </div>
@@ -282,397 +283,284 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-note callout-titled" title="Document development, review and version history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Document development, review and version history
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This page is adapted from a <a href="https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html" target="_blank">vignette in the <code>validation</code> package</a></p>
+<p><strong><em>Development and Review</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Name</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Authored/Revised by</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Reviewed by</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Released by</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Version History</em></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.1</td>
+<td>2024-08-24</td>
+<td>Alan Haynes, Elio Carreras, Lisa Hofer, Michael Coslovsky, Christina</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Huf, Christine Otieno</td>
+<td>Initial draft</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p>The <code>validation</code> package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the <a href="https://www.github.com/SwissClinicalTrialOrganisation/validation_tests" target="_blank">validation_tests</a> repository. The results of the tests are then published as issues in the <a href="https://www.github.com/SwissClinicalTrialOrganisation/pkg_validation" target="_blank">pkg_validation</a> repository.</p>
-<p>Tests are written using functions from the <a href="https://testthat.r-lib.org/" target="_blank">testthat</a> package, and can be downloaded, run, and reported using the functions in the <code>validation</code> package.</p>
-<section id="core-principles" class="level2">
-<h2 class="anchored" data-anchor-id="core-principles">Core principles</h2>
+</div>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>This SOP defines the process and steps that need to be followed when testing the performance of specific program functions within the SCTO-Statistics’ platform computer system validation. The process is written to serve as a standardized approach for function testing. A standardized process will allow different organizations to rely on results of tests performed also outside of the internal unit, improving efficiency overall. The centralized process can then be implemented in all associated units as the minimal procedure. Organizations may go beyond the process described herein, as long as they do not contradict the central process.</p>
+<p>In lay words, the process should allow a member (with focus on statisticians and data-scientists) of any participating institution (SCTO associated organization, including SAKK, the biostatistics’ department of the university of Zurich etc.) to understand and reproduce function tests saved and documented on the designated SCTO platform infrastructure. In addition, the process ensures that updates of packages or functions can re-run the tests in a fast and straightforward manner, so that package updates can be validated easily.</p>
+</section>
+<section id="abbreviations-definitions" class="level1">
+<h1>Abbreviations &amp; Definitions</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Abbreviation or term</strong></th>
+<th style="text-align: left;"><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>SOP</em></td>
+<td style="text-align: left;">Standard operating procedure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>R</em></td>
+<td style="text-align: left;">The R computer program</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Unit testing</em></td>
+<td style="text-align: left;">definition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Function</em></td>
+<td style="text-align: left;">definition</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Test author</em></td>
+<td style="text-align: left;">any employee of an SCTO associated organization writing a function test according to this SOP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Tester</em></td>
+<td style="text-align: left;">any employee of an SCTO associated organization executing and documenting a function test according to this SOP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Reviewer</em></td>
+<td style="text-align: left;">any employee of an SCTO associated organization reviewing a function test from a different test author according to this SOP</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scope" class="level1">
+<h1>Scope</h1>
+<p>This SOP defines the process for:</p>
+<ol type="1">
+<li><p>Unit testing</p></li>
+<li><p>Self-written functions stored on the SCTO platform infrastructure.</p></li>
+<li><p>Specific functions from software used in the institutes that have been determined as requiring testing.</p></li>
+</ol>
+<p>In scope are functions of the R computing environment, written within or out of the organization, for which the necessity of unit functional testing was determined by a member of a participating institute according to the SCTO R-validation policy. The process may be adapted for other statistical packages. The SOP focuses primarily on functions used for statistical reporting and data-wrangling.</p>
+<p>The appropriate level of testing required is determined within the SOP, but the decision to test the function is out of scope. According to the SCTO R validation policy, this decision is determined from the risk associated with the intended use of the function within a specific product or project, future use and the software packages being used for the product. The SCTO statistics’ platform’s high level risk assessment as well as the SCTO policy for the use of R in a validated environment describe the processes to follow in assessing this risk and in determining whether specific function testing should be performed.</p>
+</section>
+<section id="process" class="level1">
+<h1>Process</h1>
+<p>The decision tree below describes the process a test author undergoes when testing a function output. The process starts after the test author determined that a function requires testing. More specifically, the test author determines which outputs of the function require testing. A function test is performed on output level. This means that each output requires its own test.</p>
+<p>The decision tree has five levels of complexity:</p>
+<ol type="1">
+<li><p>The function output of interest has already been tested on the SCTO platform.</p></li>
+<li><p>There is already test code available in the function package.</p></li>
+<li><p>The function output can be compared to a known result.</p></li>
+<li><p>The function output can be compared to the output of another implementation/program.</p></li>
+<li><p>The function output needs to be validated based on simulations.</p></li>
+</ol>
+<p>In all complexity levels, the test author must decide when a test is appropriate and sufficient. Since this depends on the purpose of the function output and on the risk level of the project, an existing function test might still need to be extended.</p>
+<p>Starting at level 1 Box (A), the test author goes through the decision tree as described in figure <mark>XX</mark> below. At level 1 it is examined whether the specific function output has already been appropriately tested on the SCTO platform, while ensuring that the tests are always updated on the newest package versions (Box B). All test code, written by the test author or external package test code used in level 2 (Box C), should follow standard guidelines for good programming practice, such as the <em>tidyverse</em> style guide (https://style.tidyverse.org/index.html). If a comparison to a known result in level 3 is needed (Box D), we can either use the solution from our ‘hands-on’ calculation within the test script or the result from a published dataset or analysis. If we compare with output from another implementation or another program, a prerequisite is that this other implementation or program has already been tested (E). Finally, in case simulations are used in the testing in level 5 (Box F), make sure to set a seed, to explain the simulation steps with suitable comments and to submit the simulation code together with the final test. The source of the data frame used for the test is irrelevant, i.e., could be simulated or published, as long as the source is documented. To this end, all datasets used for tests are required to be stored in a designated folder in the <em>validation_tests</em> package on GitHub. Published datasets can be stored directly (e.g., as .csv files) while simulated datasets require uploading the script that generated the data. To facilitate generating new tests, these stored datasets can be reused if they have the appropriate properties.</p>
+<p>Function tests need to be reviewed by another SCTO member based on the 4-eye principle (Box G). Once the function (output) test is accepted by the reviewer, it will be added to the SCTO list of tested function outputs with the necessary documentation of meta-data (Box H).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/test_flow.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="guideline" class="level1">
+<h1>Guideline</h1>
+<section id="working-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="working-instructions">Working instructions</h2>
+<p>The working instructions for the testing process are found under the relevant SCTO GitHub page (https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html). A copy of the vignette is an associated document to this SOP. Below we provide only a bullet-point description of the relevant steps:</p>
 <ul>
-<li>the unit of testing is the function, not the package</li>
-<li>it is not necessary to test all functions, only those that are used in the product
+<li><p>Function tests are performed and stored on the SCTO’s statistics platform’s validation_tests repository</p></li>
+<li><p>The repository contains both the test script and the data frames used for the tests when relevant</p></li>
+<li><p>Approving the test is conditional on a review by a second SCTO statistician from a different CTU than the test author. Reviews are based on the “four eyes” principle.</p></li>
+<li><p>The SCTO function-tests platform collects relevant meta-data for the tests including:</p>
 <ul>
-<li>e.g.&nbsp;assuming that the lme4 package is classified as being high risk, it may be that initially only <code>lmer</code> is tested.</li>
-<li>Some time later, <code>glmer</code> is used in a product, and so it is necessary to test this function as well.</li>
+<li><p>Test author</p></li>
+<li><p>Test timing (time of submitting the test to the repository)</p></li>
+<li><p>Who reviewed the test code</p></li>
+<li><p>When was the review performed</p></li>
+<li><p>Which function was tested: function name within package and package version</p></li>
+<li><p>Which output of the function was tested</p></li>
+<li><p>What type of testing was performed</p></li>
+<li><p>Test result (pass/fail)</p></li>
+<li><p>Evidence of test (copy of console output)</p></li>
+<li><p>Session information of the testing environment</p></li>
 </ul></li>
-<li>tests should be written in a way that they can be run automatically</li>
-<li>tests are written using the <code>testthat</code> package</li>
-<li>tests are documented sufficiently to allow others to understand what is being tested and why (e.g.&nbsp;the documentation establishes the user requirements)
-<ul>
-<li>this principle is not thoroughly applied in this document as it is informative only. See existing examples in the repository.</li>
-</ul></li>
+<li><p>The SCTO develops a package that allows easy rerun of package tests upon change of R or package version, as well as generating a report for testing.</p></li>
 </ul>
+<p>Function tests are stored in the validation_tests repository at <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" target="_blank">https://github.com/SwissClinicalTrialOrganisation/validation_tests</a>. Tools to create the testing structure for each tested package and run the tests are provided in the validation R package.</p>
+<section id="submitting-the-test-for-incorporation-into-the-framework" class="level3">
+<h3 class="anchored" data-anchor-id="submitting-the-test-for-incorporation-into-the-framework">Submitting the test for incorporation into the framework</h3>
+<p>Instructions for writing tests and incorporating them into the validation_tests repository are provided <a href="https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html" target="_blank">here</a>. Prior to incorporation, the test(s) will be reviewed according to the criteria below.</p>
 </section>
-<section id="test_skeleton-helps-build-the-structure" class="level2">
-<h2 class="anchored" data-anchor-id="test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</h2>
-<p>The <code>test_skeleton</code> function can be used to create the relevant folder structure for testing a new package, or adding a file for testing additional functions. In the code below, substitute <code>pkg</code> with the name of the package to be tested and add the names of the function(s) you want to test in the <code>funs</code> argument.</p>
-<p>This will create a set of files in your working directory:</p>
-<pre><code>-- pkg
-   +- info.txt
-   +- setup-pkg.R
-   +- test-fun.R
-   +- test-fun2.R
-   +- test-etc.R</code></pre>
+<section id="running-tests" class="level3">
+<h3 class="anchored" data-anchor-id="running-tests">Running tests</h3>
+<p>The output from test can then be used to complete the function test issue form on GitHub. All functions from a particular package can be reported together in a single report.</p>
+<p>Here, we distinguish between tests that are already implemented within a package, and those that have been developed as part of the SCTO framework.</p>
+</section>
+</section>
+<section id="approving-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="approving-the-test">Approving the test</h2>
+<p>A consistency review is performed based on the “four eyes” principle where the reviewer should be chosen from a different participating institution than the author of the test. The review should address the following points:</p>
 <ul>
-<li><code>info.txt</code> file will contain the name of the package and a freetext description of what is tested,</li>
-<li><code>setup-pkg.R</code> is for any necessary setup code (e.g.&nbsp;installation of the package),</li>
-<li>for each function in the <code>funs</code> argument, a <code>test-function.R</code> file is created, which will contain the actual testing code.</li>
+<li><p>Is the listed meta-data complete?</p></li>
+<li><p>Is the level of testing specified appropriately?</p></li>
+<li><p>Does the test follow the procedure described in this guideline?</p></li>
 </ul>
-<p>In the event that the package already has tests, the <code>test_skeleton</code> function will not overwrite the existing files, only adding any necessary <code>test-function.R</code> files.</p>
-<p>Add the relevant tests to the <code>test-function.R</code> files and check that they work as expected (run <code>devtools::load_all()</code> followed by <code>test("package")</code>).</p>
+<p>This review is done in effect by approving the ‘pull request’ on GitHub.</p>
+<p>The reviewer comments the function test. Only after approval by the reviewer, the function will be listed as tested on the SCTO platform.</p>
 </section>
-<section id="writing-tests" class="level2">
-<h2 class="anchored" data-anchor-id="writing-tests">Writing tests</h2>
-<p>Testing is performed via the <a href="https://testthat.r-lib.org/">testthat</a> framework. All tests for a given function should be placed in a dedicated <code>test-function.R</code> file.</p>
-<p>Each test is comprised of one or more expectations and a descriptive name.</p>
-<p>E.g.</p>
-<p>Where multiple tests are to be made on what could be a single object, it is often useful to create the object outside of the <code>test_that</code> function. This is particularly useful when different descriptive texts should be shown for the tests (e.g.&nbsp;perhaps the coefficients and standard errors from a model):</p>
-<p>If objects are only useful to the test, they can be created within the <code>test_that</code> function.</p>
-<p>Making the description of the test meaningful is important, as it will help the user diagnose where the problem is.</p>
-<p><code>testthat</code> supports a large number of expectations, which are documented in the <a href="https://testthat.r-lib.org/reference/index.html">testthat documentation</a>. We demonstrate a few examples below.</p>
-<section id="compare-computation-to-a-reference-value" class="level3">
-<h3 class="anchored" data-anchor-id="compare-computation-to-a-reference-value">Compare computation to a reference value</h3>
-<p>To test the computation of the function, the following code must be added to the testing file, for as many test cases as considered appropriate:</p>
-<p>Where f is the function to be tested, x are the input parameters for the function and y is the expected returned value.</p>
-<p>Note that is/may be necessary/desirable to set a tolerance for floating point comparisons. This can be done with the <code>tolerance</code> argument.</p>
-</section>
-<section id="testing-for-errors-warnings-and-other-messages" class="level3">
-<h3 class="anchored" data-anchor-id="testing-for-errors-warnings-and-other-messages">Testing for errors, warnings and other messages</h3>
-<p>To test whether, under certain conditions, the function returns an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:</p>
-<p>Where f is the function to be tested, x are the arguments that define the conditions. Use the <code>regexp</code> argument to check for a particular error, warning or message.</p>
-<p>In contrast, to test whether the function runs without returning an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:</p>
-</section>
-<section id="testing-booleans" class="level3">
-<h3 class="anchored" data-anchor-id="testing-booleans">Testing booleans</h3>
-<p>To test whether, under certain conditions, the function returns TRUE or FALSE, adapt the following code as appropriate:</p>
-<p>Where f is the function to be tested, x are the arguments that define the conditions.</p>
-</section>
-<section id="testing-for-null" class="level3">
-<h3 class="anchored" data-anchor-id="testing-for-null">Testing for NULL</h3>
-<p>To test whether, under certain conditions, the function returns NULL, the following code can be adapted, for as many test cases as considered appropriate:</p>
-</section>
-<section id="testing-the-type-of-object-returned-base-r" class="level3">
-<h3 class="anchored" data-anchor-id="testing-the-type-of-object-returned-base-r">Testing the type of object returned (base R)</h3>
-<p>To test whether, the function returns an object of a certain type, the following code can be adapted, for as many test cases as considered appropriate:</p>
-<p>Where f is the function to be tested, x are the arguments that define the conditions and type is any of the following: “integer”, “character”, “factor”, “logical”, “double”.</p>
-</section>
-<section id="testing-the-class-s3-of-an-object" class="level3">
-<h3 class="anchored" data-anchor-id="testing-the-class-s3-of-an-object">Testing the class (s3) of an object</h3>
-<p>To test whether, the function returns an object of class s3, the following code can be adapted, for as many cases as considered appropriate:</p>
-<p>Where f is the function to be tested, x are the arguments that define the conditions and class is, among others, any of the following: “data.frame”, “factor”, “Date”, “POSIXct”, etc.</p>
-</section>
-<section id="running-tests-under-certain-conditions" class="level3">
-<h3 class="anchored" data-anchor-id="running-tests-under-certain-conditions">Running tests under certain conditions</h3>
-<p>On occasion, it may be desirable to restrict the tests to specific package versions. This can be done by using the <code>skip_if</code> functions in <code>testthat</code>.</p>
-<p>For example, the pivot functions we introduced to tidyr in version 1.0.0. If we have tests on those functions, we can restrict them to versions 1.0.0 and above with the following code:</p>
-<pre><code>skip_if(packageVersion("tidyr") &lt; "1.0.0")</code></pre>
-<p>This line can be placed at the top of the test file, before any tests are run. The equivalent can be done for versions below a certain version, which might be useful for deprecated functions.</p>
-<p>It might be suitable to stop tests from being run if the internet is not available:</p>
-<pre><code>skip_if_offline()</code></pre>
-<p>Or if a package can only be run on a specific operating system:</p>
-<pre><code>skip_on_os("mac")</code></pre>
-</section>
-</section>
-<section id="submitting-tests-to-the-platform" class="level2">
-<h2 class="anchored" data-anchor-id="submitting-tests-to-the-platform">Submitting tests to the platform</h2>
-<p>Once you have added the necessary tests, add the files to the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests repository</a>. The easiest way is to fork the repository to your own account, navigate to the tests folder, click on “Add file” and then “Upload files”. Now you can simply drag the <code>pkg</code> folder into the browser window and commit the change. You can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.</p>
-<p>At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.</p>
-<p>Once merged, the tests can be run via the validation package <code>validation::test("packagename")</code> and documented in the repository at <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation">https://github.com/SwissClinicalTrialOrganisation/pkg_validation</a>. You can now also delete your fork of the validation_tests repository, which makes it easier to ensure that you have the most up-to-date version of the repository next time you want to add a test to it.</p>
-</section>
-<section id="worked-example" class="level2">
-<h2 class="anchored" data-anchor-id="worked-example">Worked example</h2>
-<p>Theory is all well and good, but it’s always useful to see how that would be in practice.</p>
-<p>Assume that we want to check that the <code>lm</code> function from the <code>stats</code> package works as expected. We can write a test file that checks that the function returns the expected coefficients and standard errors.</p>
-<p>The following assumes that we have cloned the validation repository to our computer and we are within that project.</p>
-<p>To begin with, we construct the testing files, specifically the <code>test_skeleton</code> function. We only want to test the <code>lm</code> function, so we only pass that to the second argument:</p>
-<p>This will have created a <code>stats</code> folder within inst/tests. Within that folder, there will be files called <code>info.txt</code>, <code>setup-stats.R</code>, and <code>test-lm.R</code>.</p>
-<section id="test-lm.r" class="level3">
-<h3 class="anchored" data-anchor-id="test-lm.r"><code>test-lm.R</code></h3>
-<p>First we will write the actual tests that we want to run. Tests are entered into the <code>test-lm.R</code> file. Opening that file, we see that there are just a few comments at the top of the file, with some reminders.</p>
-<pre><code># Write relevent tests for the function in here
-# Consider the type of function:
-#   - is it deterministic or statistic?
-#   - is it worth checking for errors/warnings under particular conditions?</code></pre>
-<p>We decide that we will use the mtcars dataset as our basis for testing <code>lm</code>, so we can load the dataset. We want to test both the linear effect of the number of cylinders on the miles per gallon, and the effect of the number of cylinders (<code>cyl</code>), as well as when <code>cyl</code> is treated as a factor.</p>
-<pre><code># Write relevent tests for the function in here
-# Consider the type of function:
-#   - is it deterministic or statistic?
-#   - is it worth checking for errors/warnings under particular conditions?
-
-data(mtcars)
-mtcars$cyl_f &lt;- factor(mtcars$cyl)</code></pre>
-<p>Note that if there are multiple functions being tested (each in their own test-function.R file) that require the same data, we can load and prepare the data in the <code>setup-stats.R</code> file.</p>
-<p>We can also define the models that we want to test:</p>
-<pre><code>cmod &lt;- lm(mpg ~ cyl, data = mtcars)
-fmod &lt;- lm(mpg ~ cyl_f, data = mtcars)</code></pre>
-<p>We do not include the model definitions within a test_that call because we will use the same models in multiple tests. Again, if we needed to use those models for testing multiple functions, we could define them in the setup file.</p>
-<section id="testing-coefficients" class="level4">
-<h4 class="anchored" data-anchor-id="testing-coefficients">Testing coefficients</h4>
-<p>Suppose that we know that the coefficient for <code>mpg ~ cyl</code> is known (-2.88 for the linear effect). We can write a test that checks that expectation:</p>
-<pre><code>test_that("lm returns the expected coefficients", {
-  expect_equal(coef(cmod)[2], -2.88)
-})</code></pre>
-<p>Due to floating point precision, this is probably insufficient - R will not return exactly -2.88. We can use the <code>tolerance</code> argument to check that the coefficient is within a certain range (we could also round the coefficient). We also need to tell <code>expect_equal</code> to ignore the names attribute of the vector, otherwise it compares the whole object, attributes and all:</p>
-<pre><code>test_that("lm returns the expected coefficients", {
-  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
-})</code></pre>
-<p>We can do the same for the coefficients from the model with <code>cyl_f</code>. This time, we can derive the values from the <code>tapply</code> function as, in this case, the coefficients are just the means:</p>
-<pre><code>test_that("lm returns the expected coefficients", {
-  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
-  coefs &lt;- coef(fmod)
-  expect_equal(coefs[1], means[1], check.attributes = FALSE)
-  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
-  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
-})</code></pre>
-<p>We have now performed 4 tests (the expectations) in two <code>test_that</code> calls. We can also combine them together:</p>
-<pre><code>test_that("lm returns the expected coefficients", {
-  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
-  
-  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
-  coefs &lt;- coef(fmod)
-  expect_equal(coefs[1], means[1], check.attributes = FALSE)
-  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
-  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
-})</code></pre>
-<p>Whether to put them in one or two calls is up to the author. Distributing them across more calls helps identify which tests fail, but it also makes the file longer.</p>
-<section id="a-note-on-selecting-tolerances" class="level5">
-<h5 class="anchored" data-anchor-id="a-note-on-selecting-tolerances">A note on selecting tolerances</h5>
-<p>The tolerance is a tricky thing to select. It is a balance between being too strict and too lenient. If the tolerance is too strict, then the test will fail when the function is working as expected. If the tolerance is too lenient, then the test will pass when the function is not working as expected.</p>
-<p>Consider the example above. We compared -2.88 with the coefficient which R reports to (at least) 5 decimal places. In this case, it does not make sense to use a tolerance of less than 0.01 because we only know the coefficient to two decimal places (even though we would have access to a far greater precision had we worked for it).</p>
-<p>Generally speaking, values that are easy to calculate should probably have a lower tolerance. Values that are very dependent on specifics of the implementation (e.g.&nbsp;maximisation algorithm, etc) should probably have a higher tolerance. This is especially the case when using external software as a reference (e.g.&nbsp;Stata uses different defaults settings to <code>lme4</code>, causing differences in SEs). Simulation results, may also require a more lenient tolerance.</p>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation:</h2>
+<p>Test reports are made on the pkg_validation repository at <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" target="_blank">https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues</a> . Select “New issue”. Select the “Add package/function testing results”. Fill out the predefined form, using the output from R (validation::test(“packagename”)).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What to report</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Who</td>
+<td>Who performed the test?</td>
+</tr>
+<tr class="even">
+<td>When</td>
+<td>When was the test performed (date)</td>
+</tr>
+<tr class="odd">
+<td>What</td>
+<td>Which function from which package and package version. If the function does not come from a package (e.g.&nbsp;it’s a script that is stored as a GitHub Gist), the link to the code should be provided.</td>
+</tr>
+<tr class="even">
+<td>Test details</td>
+<td>What precisely was tested? This could be a link to the tests or a reference to the package and function containing the tests together with that packages version number.</td>
+</tr>
+<tr class="odd">
+<td>Degree Type of testing</td>
+<td><p>Which pathway in the decision tree was followed:</p>
+<ol type="1">
+<li>“re-run prior test”</li>
+</ol>
+<!-- -->
+<ol start="2" type="1">
+<li>Review existing package test code</li>
+</ol>
+<!-- -->
+<ol start="3" type="1">
+<li>Deterministic process</li>
+</ol>
+<!-- -->
+<ol start="4" type="1">
+<li>Comparison to other implementation</li>
+</ol>
+<!-- -->
+<ol start="5" type="1">
+<li>Simulation Was the testing comprehensive, superficial, or something in between?</li>
+</ol></td>
+</tr>
+<tr class="even">
+<td>Test result</td>
+<td>Pass/fail</td>
+</tr>
+<tr class="odd">
+<td>Evidence of test</td>
+<td>Copy/paste of the console output.</td>
+</tr>
+<tr class="even">
+<td>SessionInfo</td>
+<td><p>Relevant parts of <code>sessionInfo</code>:</p>
+<ul>
+<li>R version</li>
+<li>OS</li>
+<li>Which other packages and versions were loaded?</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>Failed tests should also be reported. When a test fails, a bug report should be posted via the appropriate route for that package (e.g.&nbsp;a github issue to the package repository, an email to a specific address). The bug report should also be noted alongside the test results, where possible providing a link to the report (e.g.&nbsp;to the GitHub issue), and followed up on by the individual discovering the bug. When the bug has been fixed, the tests can be run again and the successful test result recorded as above.</p>
 </section>
 </section>
-<section id="testing-the-standard-errors-against-stata" class="level4">
-<h4 class="anchored" data-anchor-id="testing-the-standard-errors-against-stata">Testing the standard errors against Stata</h4>
-<p>Suppose that we have used Stata as a reference software for the standard errors. We include the commands used in the reference software in comments in the script, including the output and the information of the version of the reference software.</p>
-<pre><code># write.csv(mtcars, "mtcars.csv", row.names = FALSE)
-# reference software: Stata 17.0 (revision 2024-02-13)
-# import delimited "mtcars.csv"
-# regress mpg cyl
-# [output truncated for brevity]
-# ------------------------------------------------------------------------------
-#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
-# -------------+----------------------------------------------------------------
-#          cyl |   -2.87579   .3224089    -8.92   0.000    -3.534237   -2.217343
-#        _cons |   37.88458   2.073844    18.27   0.000     33.64922    42.11993
-# ------------------------------------------------------------------------------
-# [output truncated for brevity]
-# regress mpg i.cyl
-# [output truncated for brevity]</code></pre>
-<p>We can then use the SE values from Stata in the tests, specifying a suitable tolerance (it’s pretty simple to calculate, so we can be quite stringent):</p>
-<pre><code>test_that("Standard errors from LM are correct", {
-  expect_equal(summary(cmod)$coefficients[2, 2], 0.322408, 
-               tolerance = 0.00001)
-  expect_equal(summary(fmod)$coefficients[2, 2], 1.558348, 
-               tolerance = 0.00001)
-  expect_equal(summary(fmod)$coefficients[3, 2], 1.298623, 
-               tolerance = 0.0001)
-})
-</code></pre>
-</section>
-<section id="the-completed-test-file" class="level4">
-<h4 class="anchored" data-anchor-id="the-completed-test-file">The completed test file</h4>
-<p>The test file including the tests above is then:</p>
-<pre><code># Write relevent tests for the function in here
-# Consider the type of function:
-#   - is it deterministic or statistic?
-#   - is it worth checking for errors/warnings under particular conditions?
-
-data(mtcars)
-mtcars$cyl_f &lt;- factor(mtcars$cyl)
-
-cmod &lt;- lm(mpg ~ cyl, data = mtcars)
-fmod &lt;- lm(mpg ~ cyl_f, data = mtcars)
-
-test_that("lm returns the expected coefficients", {
-  expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
-  
-  means &lt;- tapply(mtcars$mpg, mtcars$cyl, mean)
-  coefs &lt;- coef(fmod)
-  expect_equal(coefs[1], means[1], check.attributes = FALSE)
-  expect_equal(coefs[2], means[2] - means[1], check.attributes = FALSE)
-  expect_equal(coefs[3], means[3] - means[1], check.attributes = FALSE)
-})
-
-# write.csv(mtcars, "mtcars.csv", row.names = FALSE)
-# reference software: Stata 17.0 (revision 2024-02-13)
-# import delimited "mtcars.csv"
-# regress mpg cyl
-# 
-#       Source |       SS           df       MS      Number of obs   =        32
-# -------------+----------------------------------   F(1, 30)        =     79.56
-#        Model |  817.712952         1  817.712952   Prob &gt; F        =    0.0000
-#     Residual |  308.334235        30  10.2778078   R-squared       =    0.7262
-# -------------+----------------------------------   Adj R-squared   =    0.7171
-#        Total |  1126.04719        31  36.3241028   Root MSE        =    3.2059
-# 
-# ------------------------------------------------------------------------------
-#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
-# -------------+----------------------------------------------------------------
-#          cyl |   -2.87579   .3224089    -8.92   0.000    -3.534237   -2.217343
-#        _cons |   37.88458   2.073844    18.27   0.000     33.64922    42.11993
-# ------------------------------------------------------------------------------
-# regress mpg i.cyl
-# 
-#       Source |       SS           df       MS      Number of obs   =        32
-# -------------+----------------------------------   F(2, 29)        =     39.70
-#        Model |   824.78459         2  412.392295   Prob &gt; F        =    0.0000
-#     Residual |  301.262597        29  10.3883654   R-squared       =    0.7325
-# -------------+----------------------------------   Adj R-squared   =    0.7140
-#        Total |  1126.04719        31  36.3241028   Root MSE        =    3.2231
-# 
-# ------------------------------------------------------------------------------
-#          mpg | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
-# -------------+----------------------------------------------------------------
-#          cyl |
-#           6  |  -6.920779   1.558348    -4.44   0.000    -10.10796   -3.733599
-#           8  |  -11.56364   1.298623    -8.90   0.000    -14.21962   -8.907653
-#              |
-#        _cons |   26.66364   .9718008    27.44   0.000     24.67608    28.65119
-# ------------------------------------------------------------------------------
-
-test_that("Standard errors from lm are correct", {
-  expect_equal(summary(cmod)$coefficients[2, 2], 0.322408, 
-               tolerance = 0.0001)
-  expect_equal(summary(fmod)$coefficients[2, 2], 1.558348, 
-               tolerance = 0.0001)
-  expect_equal(summary(fmod)$coefficients[3, 2], 1.298623, 
-               tolerance = 0.0001)
-})</code></pre>
-<p>For <code>lm</code>, other things that might be tested include the R-squared, the F-statistic, and the p-values. Generally speaking, we might also want to test that the model is of the appropriate class (also <code>lm</code> in this case), or that the model has the expected number of coefficients, that the function issues warnings and/or errors at appropriate times.</p>
-</section>
-</section>
-<section id="info.txt" class="level3">
-<h3 class="anchored" data-anchor-id="info.txt"><code>info.txt</code></h3>
-<p>It is easiest to write the <code>info.txt</code> file once all tests have been written. It provides a listing of what has been tested in prose form and serves as a quick overview of the tests.</p>
-<p>The default text the file contains a single line:</p>
-<pre><code>Tests for package stats</code></pre>
-<p>Extra details on the tests that we have performed should be added. In this case, we might modify it to:</p>
-<pre><code>Tests for package stats
-- coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.</code></pre>
-<p>Where tests are for/from a specific version of the package, as might be the case for newly added or deprecated functions, this should also be noted.</p>
-</section>
-<section id="setup-stats.r" class="level3">
-<h3 class="anchored" data-anchor-id="setup-stats.r"><code>setup-stats.R</code></h3>
-<p>This file should contain the code necessary to load the package and any other packages that are required for the tests. In this case, we need the <code>stats</code> package and the <code>testthat</code> package.</p>
-<p>The testthat package is always needed. In general, loading the package is necessary. As <code>stats</code> is a standard R package, it’s no necessary in this case.</p>
-<p>We also try to leave the environment as we found it, so we detach the packages via the <code>withr::defer</code> function. Again, in this case, we don’t want to detach it, as it is a standard package.</p>
-<pre><code>if(!require(stats)) install.packages("stats")
-library(stats)
-library(testthat)
-withr::defer({
-  # most of the time, we would want to detach packages, in this case we don't
-  # detach(package:stats)
-}, teardown_env())</code></pre>
-</section>
-<section id="testing-that-the-tests-work" class="level3">
-<h3 class="anchored" data-anchor-id="testing-that-the-tests-work">Testing that the tests work</h3>
-<p>Assuming the tests are in a folder called <code>stats</code>, which is within out current working directory, we can run the tests with:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We specify <code>download = FALSE</code> because <code>validation::test</code> will download the files from GitHub and run those tests by default. <code>download = FALSE</code> tells it to use the local copy of the files instead.</p>
-<p>The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after “Copy and paste the following…”) provides summary information that should be copied into a github issue :</p>
-<pre><code>✔ | F W  S  OK | Context
-✔ |          7 | lm                                                                          
-
-══ Results ══════════════════════════════════════════════════════════════════════════════════
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 7 ]
-## Copy and paste the following output into the indicated sections of a new issue
-
-ISSUE NAME: 
-[Package test]: stats version 4.3.1 
-
-### Name of the package you have validated: 
-stats 
-
-### What version of the package have you validated? 
-4.3.1 
-
-### When was this package tested? 
-2024-03-18 
-
-### What was tested? 
-Tests for package stats 
- - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. 
- 
-
-### Test results 
-PASS 
-
-### Test output:
-
-
-|file      |context |test                                 | nb| passed|skipped |error | warning|
-|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
-|test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|
-|test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|
-
-### SessionInfo:
-R version 4.3.1 (2023-06-16 ucrt)
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19045)
-
-Matrix products: default
-
-
-locale:
-[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   
-[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       
-[5] LC_TIME=German_Switzerland.utf8    
-
-time zone: Europe/Zurich
-tzcode source: internal
-
-attached base packages:
-[1] graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
-[1] gh_1.4.0         validation_0.1.0 testthat_3.2.0  
-
-loaded via a namespace (and not attached):
- [1] xfun_0.40         httr2_0.2.3       htmlwidgets_1.6.2 devtools_2.4.5   
- [5] remotes_2.4.2.1   processx_3.8.2    callr_3.7.3       vctrs_0.6.5      
- [9] tools_4.3.1       ps_1.7.5          generics_0.1.3    curl_5.1.0       
-[13] tibble_3.2.1      fansi_1.0.6       pkgconfig_2.0.3   desc_1.4.2       
-[17] lifecycle_1.0.4   compiler_4.3.1    stringr_1.5.1     brio_1.1.3       
-[21] httpuv_1.6.12     htmltools_0.5.6.1 usethis_2.2.2     yaml_2.3.8       
-[25] pkgdown_2.0.7     tidyr_1.3.0       later_1.3.1       pillar_1.9.0     
-[29] crayon_1.5.2      urlchecker_1.0.1  ellipsis_0.3.2    cranlogs_2.1.1   
-[33] rsconnect_1.1.1   cachem_1.0.8      sessioninfo_1.2.2 mime_0.12        
-[37] tidyselect_1.2.0  digest_0.6.33     stringi_1.8.3     dplyr_1.1.4      
-[41] purrr_1.0.2       rprojroot_2.0.3   fastmap_1.1.1     cli_3.6.2        
-[45] magrittr_2.0.3    pkgbuild_1.4.2    utf8_1.2.4        withr_3.0.0      
-[49] waldo_0.5.1       prettyunits_1.2.0 promises_1.2.1    rappdirs_0.3.3   
-[53] roxygen2_7.3.0    rmarkdown_2.25    httr_1.4.7        gitcreds_0.1.2   
-[57] stats_4.3.1       memoise_2.0.1     shiny_1.8.0       evaluate_0.22    
-[61] knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
-[65] Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
-[69] pkgload_1.3.3     rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
-[73] fs_1.6.3         
-
-
-### Where is the test code located for these tests?
-please enter manually
-
-### Where the test code is located in a git repository, add the git commit SHA
-please enter manually, if relevant</code></pre>
-</section>
-</section>
-<section id="hints-for-working-with-github" class="level2">
-<h2 class="anchored" data-anchor-id="hints-for-working-with-github">Hints for working with GitHub</h2>
-<p>RStudio has a built-in git interface, which is a good way to manage your git repositories if you use RStudio.</p>
-<p>The <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> book is a comprehensive guide to working with git and GitHub. Of particular use are chapters 9 to 12 on connecting your computer with GitHub.</p>
-<p>The GitHub desktop app is a good way to manage your git repositories if you are not comfortable with the command line. This is also an easy way to connect your computer with your GitHub account. There are many other GUIs for working with git repositories. See <a href="https://git-scm.com/downloads/guis">here for a listing of some of them</a>.</p>
+<section id="references" class="level1">
+<h1>References</h1>
 
 
 </section>

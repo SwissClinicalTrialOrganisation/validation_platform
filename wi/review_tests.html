@@ -133,19 +133,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/policy.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SCTO Validation Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">SOPs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
@@ -177,12 +177,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing function tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../wi/review_tests.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Reviewing tests</span></a>
   </div>
@@ -191,6 +185,53 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../wi/running_tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Running function tests</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sop/highlevel_ra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">High level risk assessment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../results/pkgassessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Package assessments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../results/pkgtesting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Package tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Useful links</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report an assessment or test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Tests repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://swissclinicaltrialorganisation.github.io/validation/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Validation R package</span></a>
   </div>
 </li>
       </ul>
@@ -207,6 +248,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#who-reviews" id="toc-who-reviews" class="nav-link active" data-scroll-target="#who-reviews">Who reviews?</a></li>
   <li><a href="#performing-the-review" id="toc-performing-the-review" class="nav-link" data-scroll-target="#performing-the-review">Performing the review</a></li>
+  <li><a href="#incorporating-the-tests-in-the-repository" id="toc-incorporating-the-tests-in-the-repository" class="nav-link" data-scroll-target="#incorporating-the-tests-in-the-repository">Incorporating the tests in the repository</a></li>
   </ul>
 </nav>
     </div>
@@ -306,6 +348,10 @@ Note
 </figure>
 </div>
 <p>If there are no issues, the review can be marked with approve. If you have suggestions or require modifications, you can mark it as request changes. If you have questions, you can mark it as comment or request changes, whichever is most appropriate, and enter your questions in the box.</p>
+</section>
+<section id="incorporating-the-tests-in-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="incorporating-the-tests-in-the-repository">Incorporating the tests in the repository</h2>
+<p>Once the tests have been reviewed and found to be suitable and appropriately documented, the pull request needs to be merged into the repository. Each CTU has at least one nominated individual that can perform a merge (typically the same individuals distributing reviews). This individual should check that the review has been approved and then merge the pull request using the green button at the bottom of the conversation tab, followed by the “confirm merge” button that appears afterwards.</p>
 
 
 </section>
