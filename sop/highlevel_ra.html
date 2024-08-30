@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,6 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,12 +146,6 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing SOP</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk metrics</span></a>
   </div>
@@ -170,6 +165,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,23 +272,31 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Risk area:</li>
 <li>Risk Subarea</li>
-<li>Impact of risk (A):</li>
+<li>Impact of risk (A):
+<ul>
 <li>Minor (1 point)</li>
 <li>Major (3 points)</li>
 <li>Critical (6 points)</li>
-<li>Likelihood (A): how likely is the event to take place (before mitigating actions are in place):</li>
+</ul></li>
+<li>Likelihood (A): how likely is the event to take place (before mitigating actions are in place):
+<ul>
 <li>Unlikely (1 points)</li>
 <li>Possible (2 points)</li>
 <li>Likely (3 points)</li>
+</ul></li>
 <li>Risk A = multiplication of impact x likelihood</li>
-<li>Risk A category: categorization of Risk according to points received in Risk A</li>
+<li>Risk A category: categorization of Risk according to points received in Risk A
+<ul>
 <li>1-2: Low (green)</li>
 <li>3-8: Medium (yellow)</li>
 <li>≥9 High (red)</li>
-<li>Detectability A: how fast and easily is the risk effect detected, potentially before consequences (before mitigating actions are in place):</li>
+</ul></li>
+<li>Detectability A: how fast and easily is the risk effect detected, potentially before consequences (before mitigating actions are in place):
+<ul>
 <li>High (easy to detect, ‘jumps’ to the eye immediately)</li>
 <li>Medium (is detectable if one pays attention or examines this point specifically with a critical eye)</li>
 <li>Low (hard to detect, only detectable if rigorously and specifically looking for problems)</li>
+</ul></li>
 <li>Priority A: The ‘final’ risk category and priority in need for handling (i.e., before mitigating actions). Is conditional on the Risk-A category and on the Detectability A according to the PharmaSUG suggestion (Figure 2) using for “risk class” the defined Risk Category A</li>
 </ul>
 </div>
@@ -313,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Risk monitoring: TO BE FILLED per CTU according to local SOPs and guidelines (local QM)</li>
 </ul>
 </div>
-<p>The high level risk assessment is available <a href="fig/placeholder.txt" target="blank">here</a>.</p>
+<p>The high level risk assessment is available <a href="fig/placeholder.txt" target="blank">here <iconify-icon role="img" inline="" icon="material-symbols:download" aria-label="Icon download from material-symbols Iconify.design set." title="Icon download from material-symbols Iconify.design set."></iconify-icon></a>.</p>
 
 
 

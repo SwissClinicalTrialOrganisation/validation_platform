@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -179,12 +179,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing SOP</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk metrics</span></a>
   </div>
@@ -204,6 +198,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,8 +272,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#running-tests-from-within-a-package" id="toc-running-tests-from-within-a-package" class="nav-link active" data-scroll-target="#running-tests-from-within-a-package">Running tests from within a package</a></li>
+  <li><a href="#running-tests-from-within-the-scto-framework" id="toc-running-tests-from-within-the-scto-framework" class="nav-link" data-scroll-target="#running-tests-from-within-the-scto-framework">Running tests from within the SCTO framework</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -298,6 +305,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.</p>
+<p>We distinguish between two types of tests:</p>
+<ul>
+<li>those that are incorporated into a package as unit tests, and<br>
+</li>
+<li>those that have been written by members of the SCTO platform as part of this framework.</li>
+</ul>
+<p>The two methods require slightly different approaches to running the tests.</p>
+<section id="running-tests-from-within-a-package" class="level2">
+<h2 class="anchored" data-anchor-id="running-tests-from-within-a-package">Running tests from within a package</h2>
+<p>The easiest way to run tests from within a package is by using the same approach that the package developer uses. In the majority of cases (especially those using the testthat package), this involves downloading the package to your local machine and running the tests using the <code>devtools</code> package.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Downloading from GitHub">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Downloading from GitHub
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>On the package GitHub page, click on the green “Code” button and select “Download ZIP”. Unpack the ZIP file.</p>
+<p>If you have git installed, you could clone the repository to your computer instead of downloading the ZIP file.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Downloading from CRAN">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Downloading from CRAN
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the downloads section of the package CRAN page, download the package source (<code>.tar.gz</code> file) and unpack it using 7zip. Open the file in 7zip and you should see a .tar folder, go into that and extract the contents to a folder.</p>
+</div>
+</div>
+</div>
+<p>Once you have the source code, in an R session, set the working directory to the package directory (e.g.&nbsp;open the .Rproj from the package, if it has one, or use <code>setwd</code>) if it does not.</p>
+<p>Where packages use the testthat framework, all tests can be run via <code>devtools::test()</code>. Specific test files can be run using the filter argument, e.g.&nbsp;<code>devtools::test(filter = "...")</code>, where <code>...</code> depends on the test file name (tests are typically stored in the <code>tests/testthat</code> folder.</p>
+<p>If they do not use testthat, you will need to explore the package to find how it’s tests are run.</p>
+<p>Test results should be reported <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test_internal.yml&amp;title=%5BPackage+selftest%5D%3A+XXX+version+YYY" target="blank">on the platform repository</a>. Fill out the form with the appropriate information.</p>
+</section>
+<section id="running-tests-from-within-the-scto-framework" class="level2">
+<h2 class="anchored" data-anchor-id="running-tests-from-within-the-scto-framework">Running tests from within the SCTO framework</h2>
 <p>Tests are run via the <code>test</code> function in the <code>validation</code> package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"accrualPlot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -322,7 +379,7 @@ logical.return = TRUE, : there is no package called 'accrualPlot'</code></pre>
 <pre><code>package 'accrualPlot' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\runneradmin\AppData\Local\Temp\RtmpwvQ113\downloaded_packages</code></pre>
+    C:\Users\runneradmin\AppData\Local\Temp\RtmpYlHuNU\downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'accrualPlot' was built under R version 4.3.3</code></pre>
@@ -385,7 +442,7 @@ CRAN (R 4.3.3)
 NA 
 
 ### When was this package tested? 
-2024-08-29 
+2024-08-30 
 
 ### What was tested? 
 Tests for package accrualPlot 
@@ -472,8 +529,10 @@ Note
 <p>One particular case is a change in attributes. For example, the <code>coef</code> method for a model object returns a named vector, but we might compare the individual coeffients to a vector of expected values. There is thus a potential mismatch in the attributes of the two vectors, which may cause the test to fail with a <code>names for target but not for current</code> message. Use of the third edition of <code>testthat</code> (v3.0.0) should help to avoid this issue.</p>
 </div>
 </div>
+<p>The results of the tests should be reported <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test.yml&amp;title=%5BPackage+test%5D%3A+XXX+version+YYY" target="blank">on the platform repository</a>. Copy the information returned by R to the appropriate field on the report form.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

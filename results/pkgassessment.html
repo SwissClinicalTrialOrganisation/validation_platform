@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -159,12 +159,6 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing SOP</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk metrics</span></a>
   </div>
@@ -184,6 +178,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../wi/pkg_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk assessing packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wi/testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing function tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -280,23 +280,23 @@ ul.task-list li input[type="checkbox"] {
 <p>20 packages or package versions have been risk assessed within the SCTO Statistics &amp; Methodology Platform so far.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="mugnwlxbza" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mugnwlxbza table {
+<div id="yqqcztxrms" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yqqcztxrms table {
   font-family: 'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mugnwlxbza thead, #mugnwlxbza tbody, #mugnwlxbza tfoot, #mugnwlxbza tr, #mugnwlxbza td, #mugnwlxbza th {
+#yqqcztxrms thead, #yqqcztxrms tbody, #yqqcztxrms tfoot, #yqqcztxrms tr, #yqqcztxrms td, #yqqcztxrms th {
   border-style: none;
 }
 
-#mugnwlxbza p {
+#yqqcztxrms p {
   margin: 0;
   padding: 0;
 }
 
-#mugnwlxbza .gt_table {
+#yqqcztxrms .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -322,12 +322,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_caption {
+#yqqcztxrms .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mugnwlxbza .gt_title {
+#yqqcztxrms .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -339,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#mugnwlxbza .gt_subtitle {
+#yqqcztxrms .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -351,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#mugnwlxbza .gt_heading {
+#yqqcztxrms .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -363,13 +363,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_bottom_border {
+#yqqcztxrms .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_col_headings {
+#yqqcztxrms .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -384,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_col_heading {
+#yqqcztxrms .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -404,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#mugnwlxbza .gt_column_spanner_outer {
+#yqqcztxrms .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,15 +416,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#mugnwlxbza .gt_column_spanner_outer:first-child {
+#yqqcztxrms .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mugnwlxbza .gt_column_spanner_outer:last-child {
+#yqqcztxrms .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mugnwlxbza .gt_column_spanner {
+#yqqcztxrms .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -436,11 +436,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#mugnwlxbza .gt_spanner_row {
+#yqqcztxrms .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mugnwlxbza .gt_group_heading {
+#yqqcztxrms .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -466,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#mugnwlxbza .gt_empty_group_heading {
+#yqqcztxrms .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -481,15 +481,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#mugnwlxbza .gt_from_md > :first-child {
+#yqqcztxrms .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mugnwlxbza .gt_from_md > :last-child {
+#yqqcztxrms .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mugnwlxbza .gt_row {
+#yqqcztxrms .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -508,7 +508,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#mugnwlxbza .gt_stub {
+#yqqcztxrms .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -521,7 +521,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#mugnwlxbza .gt_stub_row_group {
+#yqqcztxrms .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +535,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#mugnwlxbza .gt_row_group_first td {
+#yqqcztxrms .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mugnwlxbza .gt_row_group_first th {
+#yqqcztxrms .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mugnwlxbza .gt_summary_row {
+#yqqcztxrms .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,16 +553,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#mugnwlxbza .gt_first_summary_row {
+#yqqcztxrms .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_first_summary_row.thick {
+#yqqcztxrms .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mugnwlxbza .gt_last_summary_row {
+#yqqcztxrms .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -572,7 +572,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_grand_summary_row {
+#yqqcztxrms .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -582,7 +582,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#mugnwlxbza .gt_first_grand_summary_row {
+#yqqcztxrms .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -592,7 +592,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_last_grand_summary_row_top {
+#yqqcztxrms .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,11 +602,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_striped {
+#yqqcztxrms .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mugnwlxbza .gt_table_body {
+#yqqcztxrms .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -615,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_footnotes {
+#yqqcztxrms .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_footnote {
+#yqqcztxrms .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -638,7 +638,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#mugnwlxbza .gt_sourcenotes {
+#yqqcztxrms .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +652,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#mugnwlxbza .gt_sourcenote {
+#yqqcztxrms .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -660,77 +660,77 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#mugnwlxbza .gt_left {
+#yqqcztxrms .gt_left {
   text-align: left;
 }
 
-#mugnwlxbza .gt_center {
+#yqqcztxrms .gt_center {
   text-align: center;
 }
 
-#mugnwlxbza .gt_right {
+#yqqcztxrms .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mugnwlxbza .gt_font_normal {
+#yqqcztxrms .gt_font_normal {
   font-weight: normal;
 }
 
-#mugnwlxbza .gt_font_bold {
+#yqqcztxrms .gt_font_bold {
   font-weight: bold;
 }
 
-#mugnwlxbza .gt_font_italic {
+#yqqcztxrms .gt_font_italic {
   font-style: italic;
 }
 
-#mugnwlxbza .gt_super {
+#yqqcztxrms .gt_super {
   font-size: 65%;
 }
 
-#mugnwlxbza .gt_footnote_marks {
+#yqqcztxrms .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mugnwlxbza .gt_asterisk {
+#yqqcztxrms .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mugnwlxbza .gt_indent_1 {
+#yqqcztxrms .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mugnwlxbza .gt_indent_2 {
+#yqqcztxrms .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mugnwlxbza .gt_indent_3 {
+#yqqcztxrms .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mugnwlxbza .gt_indent_4 {
+#yqqcztxrms .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mugnwlxbza .gt_indent_5 {
+#yqqcztxrms .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mugnwlxbza .katex-display {
+#yqqcztxrms .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mugnwlxbza div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yqqcztxrms div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<div id="mugnwlxbza" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="mugnwlxbza">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["CTUtemplate","ExtrPatt","WinRatio","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","cowplot","dplyr","dplyr","gsDesign","gtsummary","haven","lme4","netmeta","pROC","pmcalibration","presize","readxl","rstpm2","survSAKK","tableone","tables"],"version":["0.5.0","0.1-4","1.0","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.1.3","1.1.4","1.1.0","3.6.0","1.7.2","2.5.4","1.1-35.1","2.9-0","1.18.5","0.1.0","0.3.7","1.4.3","1.6.3","1.2.0","0.13.2","0.9.17"],"final_score":[0.341374221614184,0.728657922573823,0.605637293342457,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.135532085582684,0.0995364124534332,0.0995364124534332,0.28698427468691,0.224929569359421,0.102222219917698,0.149484050896293,0.28151024861842,0.236608832092104,0.496813218255802,0.213297397318788,0.058749094635681,0.27043374273647,0.329329995890667,0.327166784490605,0.293469177309948],"final_score_cat":["Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Low","Low","Low","Medium","Low","Low","Low","Medium","Low","Medium","Low","Low","Medium","Medium","Medium","Medium"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/26\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/30\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/29\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/24\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/20\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/31\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/22\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/76\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/77\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/27\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/25\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/33\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/17\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/23\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/28\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/83\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/75\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/18\" target=\"_blank\">View on GitHub<\/a>"],"functions":[null,null,null,"<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">accrual_create_df, summary<\/a>",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"test_result":[" "," "," ","PASS","PASS","PASS","PASS","PASS","PASS","PASS"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score","name":"Package Risk","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0.34","0.73","0.61","0.32","0.32","0.32","0.32","0.32","0.32","0.32","0.14","0.10","0.10","0.29","0.22","0.10","0.15","0.28","0.24","0.50","0.21","0.06","0.27","0.33","0.33","0.29"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score_cat","name":"Package Risk","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Assessment link","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"functions","name":"Functions tested","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Test result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"mugnwlxbza","dataKey":"c114a2e20efd31c4e1b2032329c71680"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
+<div id="yqqcztxrms" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="yqqcztxrms">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"package":["CTUtemplate","ExtrPatt","WinRatio","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","accrualPlot","cowplot","dplyr","dplyr","gsDesign","gtsummary","haven","lme4","netmeta","pROC","pmcalibration","presize","readxl","rstpm2","survSAKK","tableone","tables"],"version":["0.5.0","0.1-4","1.0","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.0.7","1.1.3","1.1.4","1.1.0","3.6.0","1.7.2","2.5.4","1.1-35.1","2.9-0","1.18.5","0.1.0","0.3.7","1.4.3","1.6.3","1.2.0","0.13.2","0.9.17"],"final_score":[0.341374221614184,0.728657922573823,0.605637293342457,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.316951021361558,0.135532085582684,0.0995364124534332,0.0995364124534332,0.28698427468691,0.224929569359421,0.102222219917698,0.149484050896293,0.28151024861842,0.236608832092104,0.496813218255802,0.213297397318788,0.058749094635681,0.27043374273647,0.329329995890667,0.327166784490605,0.293469177309948],"final_score_cat":["Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Medium","Low","Low","Low","Medium","Low","Low","Low","Medium","Low","Medium","Low","Low","Medium","Medium","Medium","Medium"],"url":["<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/26\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/30\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/29\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/32\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/24\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/20\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/31\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/22\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/76\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/77\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/27\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/25\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/33\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/17\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/23\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/28\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/83\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/75\" target=\"_blank\">View on GitHub<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/18\" target=\"_blank\">View on GitHub<\/a>"],"functions":[null,null,null,"<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72\" target=\"_blank\">accrual_create_df, summary<\/a>","<a href=\"https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73\" target=\"_blank\">accrual_create_df, summary<\/a>",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"test_result":[" "," "," ","PASS","PASS","PASS","PASS","PASS","PASS","PASS"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]},"columns":[{"id":"package","name":"Package","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"version","name":"Version","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score","name":"Package Risk","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0.34","0.73","0.61","0.32","0.32","0.32","0.32","0.32","0.32","0.32","0.14","0.10","0.10","0.29","0.22","0.10","0.15","0.28","0.24","0.50","0.21","0.06","0.27","0.33","0.33","0.29"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"final_score_cat","name":"Package Risk","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"url","name":"Assessment link","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"functions","name":"Functions tested","type":"list","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"test_result","name":"Test result","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}}],"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Source Sans Pro', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"yqqcztxrms","dataKey":"c114a2e20efd31c4e1b2032329c71680"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
