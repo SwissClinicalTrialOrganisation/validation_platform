@@ -1,6 +1,0 @@
-Tests for package accrualPlot
-- `summary` produces expected results
-- `accrual_create_df` produces expected results
-
-These tests are primarily for testing the validation infrastructure. accrualPlot
-has extensive tests
