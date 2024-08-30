@@ -4,6 +4,37 @@ title: "Running function tests"
 
 Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.
 
+We distinguish between two types of tests:
+
+- those that are incorporated into a package as unit tests, and  
+- those that have been written by members of the SCTO platform as part of this framework.
+
+The two methods require slightly different approaches to running the tests.
+
+## Running tests from within a package
+
+The easiest way to run tests from within a package is by using the same approach that the package developer uses. In the majority of cases (especially those using the testthat package), this involves downloading the package to your local machine and running the tests using the `devtools` package. 
+
+:::{.callout-tip title="Downloading from GitHub" collapse="true"}
+On the package GitHub page, click on the green "Code" button and select "Download ZIP". Unpack the ZIP file.
+
+If you have git installed, you could clone the repository to your computer instead of downloading the ZIP file. 
+:::
+
+:::{.callout-tip title="Downloading from CRAN" collapse="true"}
+In the downloads section of the package CRAN page, download the package source (`.tar.gz` file) and unpack it using 7zip. Open the file in 7zip and you should see a .tar folder, go into that and extract the contents to a folder. 
+:::
+
+Once you have the source code, in an R session, set the working directory to the package directory (e.g. open the .Rproj from the package, if it has one, or use `setwd`) if it does not.
+
+Where packages use the testthat framework, all tests can be run via `devtools::test()`. Specific test files can be run using the filter argument, e.g. `devtools::test(filter = "...")`, where `...` depends on the test file name (tests are typically stored in the `tests/testthat` folder.
+
+If they do not use testthat, you will need to explore the package to find how it's tests are run.
+
+Test results should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test_internal.yml&title=%5BPackage+selftest%5D%3A+XXX+version+YYY){target="blank"}. Fill out the form with the appropriate information. 
+
+## Running tests from within the SCTO framework
+
 Tests are run via the `test` function in the `validation` package:
 
 ```{r}
@@ -26,6 +57,7 @@ The function will download the testing files from GitHub, run the tests and form
 #| label: test
 #| eval: true
 #| echo: false
+#| results: markup
 ```
 
 :::{.callout-note}
@@ -34,3 +66,4 @@ It may be that the package being tested, or indeed functions in the testing infr
 One particular case is a change in attributes. For example, the `coef` method for a model object returns a named vector, but we might compare the individual coeffients to a vector of expected values. There is thus a potential mismatch in the attributes of the two vectors, which may cause the test to fail with a `names for target but not for current` message. Use of the third edition of `testthat` (v3.0.0) should help to avoid this issue.
 :::
 
+The results of the tests should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test.yml&title=%5BPackage+test%5D%3A+XXX+version+YYY){target="blank"}. Copy the information returned by R to the appropriate field on the report form. 
