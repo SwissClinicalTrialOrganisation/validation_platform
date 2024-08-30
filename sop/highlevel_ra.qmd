@@ -16,22 +16,22 @@ The variables of decision are:
 -	Risk area:
 -	Risk Subarea
 -	Impact of risk (A): 
-  -	Minor (1 point)
-  -	Major (3 points)
-  -	Critical (6 points)
+    -	Minor (1 point)
+    -	Major (3 points)
+    -	Critical (6 points)
 -	Likelihood (A): how likely is the event to take place (before mitigating actions are in place):
-  -	Unlikely (1 points)
-  -	Possible (2 points)
-  -	Likely (3 points)
+    -	Unlikely (1 points)
+    -	Possible (2 points)
+    -	Likely (3 points)
 -	Risk A = multiplication of impact x likelihood
 -	Risk A category: categorization of Risk according to points received in Risk A
-  -	1-2: Low (green)
-  -	3-8: Medium (yellow)
-  -	≥9 High (red)
+    -	1-2: Low (green)
+    -	3-8: Medium (yellow)
+    -	≥9 High (red)
 -	Detectability A: how fast and easily is the risk effect detected, potentially before consequences (before mitigating actions are in place):
-  -	High (easy to detect, ‘jumps’ to the eye immediately)
-  -	Medium (is detectable if one pays attention or examines this point specifically with a critical eye)
-  -	Low (hard to detect, only detectable if rigorously and specifically looking for problems)
+    -	High (easy to detect, ‘jumps’ to the eye immediately)
+    -	Medium (is detectable if one pays attention or examines this point specifically with a critical eye)
+    -	Low (hard to detect, only detectable if rigorously and specifically looking for problems)
 -	Priority A: The ‘final’ risk category and priority in need for handling (i.e., before mitigating actions). Is conditional on the Risk-A category and on the Detectability A according to the PharmaSUG suggestion (Figure 2) using for “risk class” the defined Risk Category A 
 :::
 
@@ -55,4 +55,4 @@ The variables of decision are:
 -	Risk monitoring: TO BE FILLED per CTU according to local SOPs and guidelines (local QM) 
 :::
 
-The high level risk assessment is available [here](fig/placeholder.txt){target="blank"}.
+The high level risk assessment is available [here {{< iconify material-symbols:download >}} ](fig/placeholder.txt){target="blank"}.
