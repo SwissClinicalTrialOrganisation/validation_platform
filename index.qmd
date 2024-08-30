@@ -130,11 +130,11 @@ community.
 -   Processes for R add-on \"intended for use" packages validation
     (incl. package risk assessment & functional testing)
 
-```{.callout-note}
+:::{.callout-note}
 Processes for R add-on package validation described in this document are to be 
 considered minimum requirements as shared by the SCTO platform. Individual 
 organizations (CTUs) can define stricter processes.
-```
+:::
 
 ### Out of Scope {#sec-out-of-scope}
 
@@ -494,6 +494,7 @@ during a computerised system validation process. It additionally
 provides details on how this documentation is covered for an R add-on
 package validation according to this policy.
 
+
 +----------------+-----------------------------------------------------+
 | **Document/    | **Detailed Description**                            |
 | Activity**     |                                                     |
@@ -510,8 +511,7 @@ package validation according to this policy.
 |                |     CTU SOP)                                        |
 |                | 2.  Determine the package associated risk (based on |
 |                |     SCTO Risk Metrics)                              |
-|                | 3.  Determine, if testing is required (see          |
-|                |     @sec-risk-management)                           |
+|                | 3.  Determine, if testing is required (see @sec-rm) |
 |                | 4.  Perform and document testing, if required (SCTO |
 |                |     Function Testing SOP)                           |
 |                | 5.  Document compliance with this policy and        |
@@ -519,12 +519,13 @@ package validation according to this policy.
 |                |     in metadata or in a document)                   |
 +----------------+-----------------------------------------------------+
 | Package        | The add-on package risk depends on factors          |
-| High-Level     | described in the **SCTO Risk metrics**.             |
-| Risk           |                                                     |
-| Assessment     | The R add-on package high-level risk assessment     |
+| High-Level     | described in the                                    |
+| Risk           |[**SCTO Risk metrics**](sop/risk_metrics.qmd).       |
+| Assessment     |                                                     |
+|                | The R add-on package high-level risk assessment     |
 |                | should be documented according to the **SCTO        |
 |                | R-Package Risk Metrics** on the SCTO designated     |
-|                | platform**.**                                       |
+|                | platform.                                           |
 +----------------+-----------------------------------------------------+
 | (User)         | **No dedicated (User) Requirements document is      |
 | Requirements   | created.**                                          |
@@ -546,7 +547,7 @@ package validation according to this policy.
 | Function Risk  | The risk of separate functions within a package can |
 | Assessment     | only be assessed in relation to a product and the   |
 |                | required outcome ("intended use") of a specific     |
-|                | function for that product (see @sec-risk-management).|
+|                | function for that product (see @sec-rm).            |
 +----------------+-----------------------------------------------------+
 | Package        | There is **no** need for a separate installation    |
 | installation   | plan or instruction. The installation follows a     |
@@ -641,7 +642,7 @@ CTUs. The R product validation should cover at minimum:
 -   Assess the tools used within the R product
 -   Documentation for reproducibility and traceability
 
-##  Risk Management {#sec-risk-management}
+##  Risk Management {#sec-rm}
 
 Given the different validation levels, also the risk needs to be
 assessed and managed on all those levels, specifically on:
@@ -738,11 +739,11 @@ be defined and managed according to the CTU's processes.
 
 ## Associated Documents
 
-[R Package Risk Metrics](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&csf=1&web=1&e=hPIyUc)
-: This document describes the metrics defining the risk of R add-on packages.
+[R Package Risk Metrics](sop/risk_metrics.qmd)
+: This document describes the metrics defining the risk of R add-on packages ([development version](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&csf=1&web=1&e=hPIyUc)).
 
-[R Function Testing SOP](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&csf=1&web=1&e=DccKtz)
-: This document describes the standard process for testing specific functions within an R add-on package.
+[R Function Testing SOP](sop/sop_fn_tests.qmd)
+: This document describes the standard process for testing specific functions within an R add-on package ([development version](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&csf=1&web=1&e=DccKtz)).
 
 
 ## References
