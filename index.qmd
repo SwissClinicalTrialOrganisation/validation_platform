@@ -28,7 +28,7 @@ execute:
 | 0.1     | 2024-04-18 | Alan Haynes | Initial draft      |
 :::
 
-# Introduction
+## Introduction
 
 This policy provides the framework for validating R and R add-on
 packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO
@@ -87,7 +87,7 @@ represent additional best practices for validation of computerised
 systems in the industry and may serve as a guideline for academical
 purposes.
 
-# Background
+## Background
 
 R is a 'language and environment for statistical computing and graphics'
 (source: the R file). It is an official part of the Free Software
@@ -120,9 +120,9 @@ whenever feasible, follow the process outlined in this document and
 associated SOPs even if the R package is not shared with the SCTO
 community.
 
-# Scope
+## Scope
 
-## In Scope {#sec-in-scope}
+### In Scope {#sec-in-scope}
 
 -   Recommendations for R base installation validation (the final
     process and all documentation has to be defined and prepared by each
@@ -136,7 +136,7 @@ considered minimum requirements as shared by the SCTO platform. Individual
 organizations (CTUs) can define stricter processes.
 ```
 
-## Out of Scope {#sec-out-of-scope}
+### Out of Scope {#sec-out-of-scope}
 
 -   Standards for IT infrastructure (*to be defined on local level by
     the CTUs, see @sec-generalapproach*)
@@ -152,7 +152,7 @@ organizations (CTUs) can define stricter processes.
 -   In general: any additional internal, organization specific,
     processes of CTUs.
 
-# Abbreviations & Definitions
+## Abbreviations & Definitions
 
 +--------------------+-------------------------------------------------+
 | **Terminology**    | **Definition**                                  |
@@ -201,7 +201,7 @@ organizations (CTUs) can define stricter processes.
 |                    | documentation of the validation process.        |
 +--------------------+-------------------------------------------------+
 
-# General R Validation Approach {#sec-generalapproach}
+## General R Validation Approach {#sec-generalapproach}
 
 The SCTO follows a risk-based approach to the validation of R. For the
 validation and assessment of risks, we differentiate between the
@@ -240,7 +240,7 @@ levels. The different levels build on each other:
     and reliable results from a statistical perspective (see **R
     Function Testing SOP** for details).
 
-## IT Infrastructure Qualification {#sec-it-inf}
+### IT Infrastructure Qualification {#sec-it-inf}
 
 The IT infrastructure qualification is managed at CTU level according to
 local IT processes. The risk associated with IT infrastructure
@@ -251,7 +251,7 @@ to note which IT infrastructure (specifically which operating system
 software and version) R is installed on and to ensure that the
 infrastructure on which R is running is qualified.
 
-## R Base Installation Validation {#sec-r-base-installation-validation}
+### R Base Installation Validation {#sec-r-base-installation-validation}
 
 Every CTU must define:
 
@@ -484,7 +484,7 @@ provides examples (as indicated under "Detailed Description").
 |                | to your CTU's local IT change management processes. |
 +----------------+-----------------------------------------------------+
 
-## R Add-on Package Validation {#sec-pkgvalidation}
+### R Add-on Package Validation {#sec-pkgvalidation}
 
 The R Add-on Package validation package is a set of documents that
 should be prepared for the documentation of the validation process of an
@@ -632,7 +632,7 @@ package validation according to this policy.
 |                |     info)                                           |
 +----------------+-----------------------------------------------------+
 
-## R Product Validation {#sec-r-product-validation}
+### R Product Validation {#sec-r-product-validation}
 
 To be covered by local SOPs for statistical analysis execution at the
 CTUs. The R product validation should cover at minimum:
@@ -641,7 +641,7 @@ CTUs. The R product validation should cover at minimum:
 -   Assess the tools used within the R product
 -   Documentation for reproducibility and traceability
 
-# Risk Management {#sec-risk-management}
+##  Risk Management {#sec-risk-management}
 
 Given the different validation levels, also the risk needs to be
 assessed and managed on all those levels, specifically on:
@@ -716,7 +716,7 @@ d |>
 
 
 
-# User Training
+##  User Training
 
 All users performing statistical analysis and/or developing packages and
 creating products with R need to be qualified and trained according to
@@ -726,7 +726,7 @@ All users (potentially) involved in validation activities (e.g., risk
 assessments, testing) must additionally be trained on this policy and
 the associated SOPs.
 
-# Periodic Review
+##  Periodic Review
 
 Every 3 years the validation status of the R add-on packages in the SCTO
 validated package inventory should be reviewed if packages and/or
@@ -736,22 +736,16 @@ needs to be documented, even if no updates are required.
 The periodic review of the R base installation validation package has to
 be defined and managed according to the CTU's processes.
 
-# Associated Documents
+## Associated Documents
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Reference Title**                                                                                                                                                                                                                                               **Description**
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
-  [R Package Risk                                                                                                                                                                                                                                                   This document describes the metrics
-  Metrics](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&csf=1&web=1&e=hPIyUc)   defining the risk of R add-on
-                                                                                                                                                                                                                                                                    packages.
+[R Package Risk Metrics](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&csf=1&web=1&e=hPIyUc)
+: This document describes the metrics defining the risk of R add-on packages.
 
-  [R Function Testing                                                                                                                                                                                                                                               This document describes the
-  SOP](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&csf=1&web=1&e=DccKtz)            standard process for testing
-                                                                                                                                                                                                                                                                    specific functions within an R
-                                                                                                                                                                                                                                                                    add-on package.
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[R Function Testing SOP](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&csf=1&web=1&e=DccKtz)
+: This document describes the standard process for testing specific functions within an R add-on package.
 
-# References
+
+## References
 
 +-----------------------------------+-----------------------------------+
 | **Reference Title**               | **Description**                   |
