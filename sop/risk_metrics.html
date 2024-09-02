@@ -278,14 +278,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-objective" id="toc-sec-objective" class="nav-link active" data-scroll-target="#sec-objective">Objective</a></li>
-  <li><a href="#sec-scope" id="toc-sec-scope" class="nav-link" data-scroll-target="#sec-scope">SCOPE</a></li>
-  <li><a href="#metric-explanation---glossary" id="toc-metric-explanation---glossary" class="nav-link" data-scroll-target="#metric-explanation---glossary">METRIC EXPLANATION - glossary</a></li>
+  <li><a href="#sec-objective" id="toc-sec-objective" class="nav-link active" data-scroll-target="#sec-objective">Purpose</a></li>
+  <li><a href="#abbreviations-and-definitions" id="toc-abbreviations-and-definitions" class="nav-link" data-scroll-target="#abbreviations-and-definitions">Abbreviations and definitions</a></li>
+  <li><a href="#sec-scope" id="toc-sec-scope" class="nav-link" data-scroll-target="#sec-scope">Scope</a></li>
+  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline">Guideline</a>
+  <ul class="collapse">
+  <li><a href="#the-r-package-risk-metrics-explained" id="toc-the-r-package-risk-metrics-explained" class="nav-link" data-scroll-target="#the-r-package-risk-metrics-explained">The R package risk metrics explained</a></li>
+  </ul></li>
   <li><a href="#sec-calculation-of-the-final-risk-score" id="toc-sec-calculation-of-the-final-risk-score" class="nav-link" data-scroll-target="#sec-calculation-of-the-final-risk-score">Calculation of the final risk score:</a></li>
   <li><a href="#sec-documentation" id="toc-sec-documentation" class="nav-link" data-scroll-target="#sec-documentation">Documentation</a></li>
   <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
-  <li><a href="#sec-appendix-1-the-scto-r-package-risk-metrics" id="toc-sec-appendix-1-the-scto-r-package-risk-metrics" class="nav-link" data-scroll-target="#sec-appendix-1-the-scto-r-package-risk-metrics">Appendix 1. The SCTO R package risk metrics</a></li>
-  <li><a href="#sec-appendix-2-the-scto-r-package-documentation" id="toc-sec-appendix-2-the-scto-r-package-documentation" class="nav-link" data-scroll-target="#sec-appendix-2-the-scto-r-package-documentation">Appendix 2. The SCTO R package documentation</a></li>
+  <li><a href="#appendix-1-the-scto-r-package-risk-metrics" id="toc-appendix-1-the-scto-r-package-risk-metrics" class="nav-link" data-scroll-target="#appendix-1-the-scto-r-package-risk-metrics">Appendix 1: The SCTO R package risk metrics</a></li>
+  <li><a href="#appendix-2-the-scto-r-package-documentation" id="toc-appendix-2-the-scto-r-package-documentation" class="nav-link" data-scroll-target="#appendix-2-the-scto-r-package-documentation">Appendix 2: The SCTO R package documentation</a></li>
   </ul>
 </nav>
     </div>
@@ -418,44 +422,77 @@ Document development, review and version history
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.1</td>
-<td>2024-04-18</td>
-<td>Alan Haynes</td>
-<td>Initial draft</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<section id="sec-objective" class="level1">
-<h1>Objective</h1>
-<p>This document describes the metrics used by members of the Swiss Clinical Trial Organization when evaluating add on packages of the statistical environment, R. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.</p>
+<section id="sec-objective" class="level2">
+<h2 class="anchored" data-anchor-id="sec-objective">Purpose</h2>
+<p>This document describes the metrics used by members of the Swiss Clinical Trial Organization for the evaluation of add-on packages for the statistical software R and provides guidelines for their application. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.</p>
 <p>Assessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the <strong>SCTO R-validation policy</strong>. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.</p>
-<p>Following this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific product. The documentation of any actions following the initial risk assessment is listed in a separate table.</p>
-<p>This document is part of the <strong>SCTO Computerized Systems Validation Policy for R</strong> <mark>(NAME – LOCATION – VERSION)</mark> and refers to the standard operation procedure for Function testing <mark>(NAME – LOCATION)</mark> of the SCTO statistics platform.</p>
-<p>The metrics are written with the aim of assessing R packages.</p>
+<p>Following this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific R product. The documentation of any actions following the initial risk assessment is listed separately.</p>
+<p>This document is part of the <strong>SCTO Computerized Systems Validation Policy for R</strong> <mark>(LOCATION – VERSION)</mark> and refers to the standard operation procedure for Function testing (SCTO SOP – Function testing (in the SCTO statistics’ platform; <mark>LOCATION)</mark> of the SCTO statistics platform.</p>
 <p>Based on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.</p>
 </section>
-<section id="sec-scope" class="level1">
-<h1>SCOPE</h1>
-<p>This document is applicable to all R add-on packages. Out of scope are packages included in the official R-distribution including “Base R” packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document <strong>“R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021”</strong>. R-base and recommended packages are approved per definition, as stated in the policy document.</p>
+<section id="abbreviations-and-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="abbreviations-and-definitions">Abbreviations and definitions</h2>
+<dl>
+<dt>SOP</dt>
+<dd>
+Standard operating procedure
+</dd>
+<dt>R</dt>
+<dd>
+The R statistical programming language and environment
+</dd>
+<dt>R Package</dt>
+<dd>
+A collection of code and functions providing an extension to base R installation, provided by members of the R community, available via CRAN and other distribution repositories
+</dd>
+<dt>R Product</dt>
+<dd>
+Any deliverable produced using R via the processes below. Typical statistical products include sample size estimation, statistical analysis plan, an analysis report etc.
+</dd>
+<dt>Risk</dt>
+<dd>
+As per ISO 31073 risk is defined as
+</dd>
+</dl>
+<p>The effect of uncertainty on objectives, where:</p>
+<ol type="1">
+<li>An effect is a deviation from the expected. It can be positive, negative or both, and can address, create or result in opportunities and threats.</li>
+<li>Objectives can have different aspects and categories, and can be applied at different levels.</li>
+<li>Risk is usually expressed in terms of risk sources, potential events, their consequences and their likelihood. In the context of risk assessments and risk metrics the focus is usually on negative effects.</li>
+</ol>
 </section>
-<section id="metric-explanation---glossary" class="level1">
-<h1>METRIC EXPLANATION - glossary</h1>
+<section id="sec-scope" class="level2">
+<h2 class="anchored" data-anchor-id="sec-scope">Scope</h2>
+<p>This document describes the metrics to be used for assessing the risk of an R add-on package according to the <strong>SCTO</strong> <strong>Computerized Systems Validation Policy for R</strong> guidelines on R package validation. It is applicable to all R add-on packages.</p>
+<p>Out of scope are packages included in the official R-distribution including “Base R” packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document <strong>“R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021”</strong>. R-base and recommended packages are approved per definition, as stated in the policy document.</p>
+</section>
+<section id="guideline" class="level2">
+<h2 class="anchored" data-anchor-id="guideline">Guideline</h2>
+<section id="the-r-package-risk-metrics-explained" class="level3">
+<h3 class="anchored" data-anchor-id="the-r-package-risk-metrics-explained">The R package risk metrics explained</h3>
 <p>The following metrics are considered when assessing a package. These are listed in Appendix-1 below. Here we provide a precise definition:</p>
 <ol type="1">
 <li><p><strong>Package name, version, release date</strong>: version and release date of the specific version assessed at this moment. These are required for identifying the package and for documentation. Packages will be re-assessed upon update and version changes; documentation of older versions remains in the document. <u>These values are not included in the risk calculation.</u></p></li>
-<li><p><strong>Purpose</strong> (<strong>statistical_package</strong>) We define three risk levels for a package, depending on the package’s purpose and methodology:</p>
+<li><p><strong>Purpose</strong> (<code>statistical_package</code>) We define three risk levels for a package, depending on the package’s purpose and methodology:</p>
 <ol type="a">
 <li><p>“non-statistical” packages: packages that deal only with data-wrangling and manipulation (e.g., dplyr) or with reporting processes (e.g., Sweave, xtable). Such processes are of ‘low risk’ as no statistical calculations are performed, and data-errors are, comparatively, easy to detect. Similarly, packages associated with application interfaces such as Shiny application are considered “non-statistical”.</p></li>
 <li><p>“Statistical with published methods”: packages that perform statistical calculations based on known methods, or on methods that have been published in peer reviewed journals. These packages obtain a “medium risk” status.</p></li>
 <li><p>“Statistical non-published methods”: packages that perform statistical calculations, but the underlying methods have not been published in a peer reviewed journal. These packages obtain a status “high risk”.</p></li>
 </ol></li>
-<li><p><strong>Author</strong> (author): The author(s) of a package will be viewed as indicator for its trustworthiness. If package authors (noted as ‘aut’ in the package description, e.g., as listed on CRAN) are well-known within the statistical, data-science and R communities and have credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as low. If package authors have credentials based on their qualifications, education, present and past affiliations, but are not well-known within the statistical, data-science and R communities, the risk of the respective package will be scored as medium. If package authors are not well-known within the statistical, data-science and R communities and have no clear credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as high.<br>
+<li><p><strong>Author</strong> (<code>author</code>): The author(s) of a package will be viewed as indicator for its trustworthiness. If package authors (noted as ‘aut’ in the package description, e.g., as listed on CRAN) are well-known within the statistical, data-science and R communities and have credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as low. If package authors have credentials based on their qualifications, education, present and past affiliations, but are not well-known within the statistical, data-science and R communities, the risk of the respective package will be scored as medium. If package authors are not well-known within the statistical, data-science and R communities and have no clear credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as high.<br>
 Note that whether an author is ‘well-known’ in the community is a subjective assessment and accepted as such; in addition, groups of authors are evaluated as a collective.</p></li>
-<li><p><strong>Maintainer</strong> (maintainer)<strong>:</strong> The package has a named maintainer who’s contact details (email) are available and published. A positive answer provides a “low risk” score. A package with no named maintainer is scored as high. The rationale behind this metric lies in the fact that the indication of name and email is evidence of a package’s active maintenance and availability of contact in case of bugs and/or suggestions.</p></li>
-<li><p><strong>Number of dependencies (nr_dependencies</strong>): This metric assesses the level of risk associated with the number of dependencies a package relies on. Dependencies are other packages or processes that the evaluated package depends on, as listed in CRAN under “depends” and/or “imports”. The risk of unexpected behaviour increases with the number of dependencies, since there is a greater likelihood of issues on a specific routine if updates are performed on a dependent package. Great care should be considered while using packages involving many dependencies.<br>
+<li><p><strong>Maintainer</strong> (<code>maintainer</code>): The package has a named maintainer who’s contact details (email) are available and published. A positive answer provides a “low risk” score. A package with no named maintainer is scored as high. The rationale behind this metric lies in the fact that the indication of name and email is evidence of a package’s active maintenance and availability of contact in case of bugs and/or suggestions.</p></li>
+<li><p><strong>Number of dependencies</strong> (<code>n_dependencies</code>): This metric assesses the level of risk associated with the number of dependencies a package relies on. Dependencies are other packages or processes that the evaluated package depends on, as listed in CRAN under “depends” and/or “imports”. The risk of unexpected behaviour increases with the number of dependencies, since there is a greater likelihood of issues on a specific routine if updates are performed on a dependent package. Great care should be considered while using packages involving many dependencies.<br>
 The listed number is converted into a [0, 1] score, with 0 representing low number of dependencies (= low risk) and 1 representing many dependencies (= high risk). Taking a similar approach for the transforming the number to a score as the ‘riskmetric’ package (R validation hub, 2023), we use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> as a scoring function. A sigmoid midpoint is 4 dependencies, ie., x[0] = 4 and logistic growth rate of k = 0.5.</p></li>
 </ol>
 <div class="cell">
@@ -474,9 +511,9 @@ The listed number is converted into a [0, 1] score, with 0 representing low numb
 </div>
 </div>
 <ol start="6" type="1">
-<li><p><strong>CRAN or Bioconductor (on_cran)</strong>: CRAN and Bioconductor provide a procedure for evaluating the appropriateness and minimal requirements for a package to be released on their official platform. Having passed the tests implemented should guarantee, despite not statistical, a minimal quality. This metric assesses whether the package is on CRAN or Bioconductor. Being on CRAN/Bioconductor provides low risk (yes = 0) while not being on them represents high risk (no = 1).</p></li>
-<li><p><strong>Documentation of source code (source_code_documented)</strong>: Ideally, the source code is available (for example, on github) for examination and commented (yes = 0). Source code that is not commented or difficult to follow, or is not available, is considered not documented (no = 1).</p></li>
-<li><p><strong>Number of downloads in the last year (nr_downloads_12_months):</strong> More downloads suggest more extensive community and user testing and greater chances of bugs or errors being identified and reported. To fill in check the logs of CRAN’s or Bioconductor’s reporting systems and report the number of downloads for the package in the last 12 months. Using the cranlogs::cran_downloads() function to this end is acceptable.<br>
+<li><p><strong>CRAN or Bioconductor</strong> (<code>on_cran</code>): CRAN and Bioconductor provide a procedure for evaluating the appropriateness and minimal requirements for a package to be released on their official platform. Having passed the tests implemented should guarantee, despite not statistical, a minimal quality. This metric assesses whether the package is on CRAN or Bioconductor. Being on CRAN/Bioconductor provides low risk (yes = 0) while not being on them represents high risk (no = 1).</p></li>
+<li><p><strong>Documentation of source code</strong> (<code>source_code_documented</code>): Ideally, the source code is available (for example, on github) for examination and commented (yes = 0). Source code that is not commented or difficult to follow, or is not available, is considered not documented (no = 1).</p></li>
+<li><p><strong>Number of downloads in the last year</strong> (<code>nr_downloads_12_months</code>): More downloads suggest more extensive community and user testing and greater chances of bugs or errors being identified and reported. To fill in check the logs of CRAN’s or Bioconductor’s reporting systems and report the number of downloads for the package in the last 12 months. Using the cranlogs::cran_downloads() function to this end is acceptable.<br>
 The number of downloaded packages is converted to a score [0,1], with 0 representing low risk (many downloads) and 1 high risk (few downloads). For the conversion of the number into a score we follow a similar approach as approach taken by the ‘riskmetric’ package (R validation hub, 2023) and use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> with the logistic growth rate k = 0.5 and a log-scale for the number of downloads (log(x)). The midpoint lying at log(100,000 downloads).</p></li>
 </ol>
 <div class="cell">
@@ -489,14 +526,15 @@ The number of downloaded packages is converted to a score [0,1], with 0 represen
 </div>
 </div>
 <ol start="9" type="1">
-<li><p><strong>Bug reporting (</strong>bug_reporting_active<strong>):</strong> Available option for reporting bugs suggests higher chance that errors have been corrected. Check whether there is an option to report bugs – ideally via url or email. Yes = 0 (low risk); no = 1 (high risk).</p></li>
-<li><p><strong>Vignettes (</strong>has_vignettes<strong>):</strong> Does the package have one/more available vignettes? Vignettes provide an explanation of the use of the package, increasing its trustworthiness and correct use. Having at least one vignette suggests a “low” risk for this category (yes = 0); having no vignettes suggests a “high” risk score (no = 1).</p></li>
-<li><p><strong>Tested functions (</strong>has_tests<strong>):</strong> Perform a search and give a general grade of low/medium/high based on the answers to the following questions: does the package have unit and/or function tests performed by the authors? are they comprehensive? are they well documented? Assess the above to determine whether tests were conducted sufficiently and documented. Accordingly, you can classify into low risk (=0); insufficient testing could be medium risk (=0.5); no documented testing at all are categorized as high risk (=1).<br>
+<li><p><strong>Bug reporting</strong> (<code>bug_reporting_active</code>): Available option for reporting bugs suggests higher chance that errors have been corrected. Check whether there is an option to report bugs – ideally via url or email. Yes = 0 (low risk); no = 1 (high risk).</p></li>
+<li><p><strong>Vignettes</strong> (<code>has_vignettes</code>): Does the package have one/more available vignettes? Vignettes provide an explanation of the use of the package, increasing its trustworthiness and correct use. Having at least one vignette suggests a “low” risk for this category (yes = 0); having no vignettes suggests a “high” risk score (no = 1).</p></li>
+<li><p><strong>Tested functions</strong> (<code>has_tests</code>): Perform a search and give a general grade of low/medium/high based on the answers to the following questions: does the package have unit and/or function tests performed by the authors? are they comprehensive? are they well documented? Assess the above to determine whether tests were conducted sufficiently and documented. Accordingly, you can classify into low risk (=0); insufficient testing could be medium risk (=0.5); no documented testing at all are categorized as high risk (=1).<br>
 Note that test functions are often listed in ‘test’ folder in the package’s source files, e.g., on github.</p></li>
 </ol>
 </section>
-<section id="sec-calculation-of-the-final-risk-score" class="level1">
-<h1>Calculation of the final risk score:</h1>
+</section>
+<section id="sec-calculation-of-the-final-risk-score" class="level2">
+<h2 class="anchored" data-anchor-id="sec-calculation-of-the-final-risk-score">Calculation of the final risk score:</h2>
 <p>The final score is a weighted summary of all the measures above in the range [0, 1], with lower scores representing lower risk and higher scores higher risk. In this version of the guideline all measures are considered equally important, and the score is a simple arithmetic mean of the measures.</p>
 <p>The [0, 1] score is then categorized to low, medium and high-risk packages:</p>
 <ul>
@@ -504,21 +542,23 @@ Note that test functions are often listed in ‘test’ folder in the package’
 <li><p>0.25 &lt; score ≤ 0.75: medium risk</p></li>
 <li><p>Score &gt;0.75: high risk</p></li>
 </ul>
-<p>As described in the SCTO validation policy, the risk associated with the package is evaluated alongside the risk associated with a specific project to determine which actions may be required in order to use the package. High risk packages, or medium risk packages in high-risk projects, for example, may need (project-) specific function testing.</p>
+<p>As described in the SCTO validation policy, the risk associated with the package is evaluated alongside the risk associated with a specific project to determine which actions may be required to use the package. High risk packages, or medium risk packages in high-risk projects, for example, may need (project-) specific function testing.</p>
 </section>
-<section id="sec-documentation" class="level1">
-<h1>Documentation</h1>
+<section id="sec-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-documentation">Documentation</h2>
 <p>The assessment of risk associated with a package should be documented and may be updated with time.</p>
-<p>The SCTO has developed a platform on which the risk assessment can be performed (https://github.com/SwissClinicalTrialOrganisation/pkg_validation). Apart from calculating the risk based on the above metrics, the platform also records the assessment itself for documentation and further use. The meta-data recorded, apart from the metrics themselves, is listed in Appendix 2.</p>
+<p>The SCTO has developed a platform on GitHub, on which the risk assessment can be performed (<a href="https://swissclinicaltrialorganisation.github.io/pkg_validation/results/pkgassessment.html" class="uri">https://swissclinicaltrialorganisation.github.io/pkg_validation/results/pkgassessment.html</a>). Package assessments are done as “issues” on the GitHub platform (<a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" class="uri">https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues</a>).</p>
+<p>The platform allows performing the assessment and calculating the final risk based on the above metrics, while recording and documenting the assessment. Apart from the metrics themselves (Appendix 1), the additional points listed in Appendix 2 are collected and documented while performing the assessment on the platform.</p>
 </section>
-<section id="sec-references" class="level1">
-<h1>References</h1>
+<section id="sec-references" class="level2">
+<h2 class="anchored" data-anchor-id="sec-references">References</h2>
 <ul>
-<li>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, &lt;https://CRAN.R-project.org/package=riskmetric&gt;.</li>
+<li><p>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, &lt;https://CRAN.R-project.org/package=riskmetric&gt;.</p></li>
+<li><p>ISO 31073:2022(en) Risk management — Vocabulary: https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3</p></li>
 </ul>
 </section>
-<section id="sec-appendix-1-the-scto-r-package-risk-metrics" class="level1">
-<h1>Appendix 1. The SCTO R package risk metrics</h1>
+<section id="appendix-1-the-scto-r-package-risk-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-1-the-scto-r-package-risk-metrics">Appendix 1: The SCTO R package risk metrics</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
@@ -528,7 +568,7 @@ Note that test functions are often listed in ‘test’ folder in the package’
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>­­-­­­­‑</strong></th>
+<th></th>
 <th style="text-align: left;"><strong>explanation</strong></th>
 <th style="text-align: left;"><strong>possible values</strong></th>
 <th style="text-align: left;"><strong>risk level*</strong></th>
@@ -536,97 +576,95 @@ Note that test functions are often listed in ‘test’ folder in the package’
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">package_name</td>
+<td>package</td>
 <td style="text-align: left;">name of the package as called for installation</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">version</td>
+<td>version</td>
 <td style="text-align: left;">Version number of the package evaluated</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">release_date</td>
+<td>release_date</td>
 <td style="text-align: left;">Date of release of the current evaluated version of the package</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">statistical_package</td>
-<td style="text-align: left;">statistical packages implement statistical or machine learning algorithms. Non-statistical packages are used for reporting for example</td>
-<td style="text-align: left;">non-statistical / statistical-published / statistical non-published</td>
-<td style="text-align: left;">low / med / high</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">author</td>
+<td>author</td>
 <td style="text-align: left;">name of the main author or developing group</td>
 <td style="text-align: left;">well-known or known credentials / has credentials / no clear credentials or group association</td>
 <td style="text-align: left;">low / med / high</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">maintainer</td>
+<tr class="odd">
+<td>maintainer</td>
 <td style="text-align: left;">Is there a maintainer listed for the package and are their contact details available?</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low/high</td>
 </tr>
+<tr class="even">
+<td>package_purpose</td>
+<td style="text-align: left;">Statistical packages implement statistical or machine learning algorithms. Non-statistical packages are used for reporting for example</td>
+<td style="text-align: left;">non-statistical / statistical-published / statistical non-published</td>
+<td style="text-align: left;">low / med / high</td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">nr_dependencies</td>
+<td>n_dependencies</td>
 <td style="text-align: left;">The more packages a package depends on the more chance for errors/bugs to be found</td>
 <td style="text-align: left;">Nr of dependencies (transformed to [0-1])</td>
 <td style="text-align: left;">0-1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">on_cran</td>
+<td>on_cran</td>
 <td style="text-align: left;">is the package on available from CRAN or bioconductor</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">source_code_documented</td>
+<td>source_code_documented</td>
 <td style="text-align: left;">is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">nr_downloads_12_months</td>
+<td>nr_downloads_12_months</td>
 <td style="text-align: left;">Checked using the CRAN logs package’s implementation– potentially the CRAN (/Bioconductor) reporting system</td>
 <td style="text-align: left;">Nr of downloads (transformed to [0-1])</td>
 <td style="text-align: left;">0-1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">bug_reporting_active</td>
+<td>bug_reporting_active</td>
 <td style="text-align: left;">address for bug reporting exists</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">has_vignettes</td>
+<td>has_vignettes</td>
 <td style="text-align: left;">does the package have one/more vignettes</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">has_tests</td>
+<td>has_tests</td>
 <td style="text-align: left;">does the package have unit and/or function tests performed by the authors? are they comprehensive? are they well documented?</td>
 <td style="text-align: left;">yes-comprehensive / yes-not-comprehensive / no</td>
 <td style="text-align: left;">low / med / high</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">final_risk</td>
+<td>final_risk</td>
 <td style="text-align: left;">a global risk, based on and weighing in all the grading metrics. At version one, the weight of all metrics is the same, and the global risk is the average of all metrics.</td>
 <td style="text-align: left;">[0 – 1] with 0 = low risk and 1 = high risk. Cutpoints categorize into low / med / high</td>
 <td style="text-align: left;">Low / med / high</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="blockquote">
 <p>* Risk level is always a value [0, 1]. For binary metrics low = 0 and high = 1. ‘medium risk’ takes a value of 0.5. Continuous metrics such as ‘nr of downloads’ are transformed to a value [0, 1].</p>
-</blockquote>
 </section>
-<section id="sec-appendix-2-the-scto-r-package-documentation" class="level1">
-<h1>Appendix 2. The SCTO R package documentation</h1>
+<section id="appendix-2-the-scto-r-package-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-2-the-scto-r-package-documentation">Appendix 2: The SCTO R package documentation</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 47%">
@@ -635,69 +673,49 @@ Note that test functions are often listed in ‘test’ folder in the package’
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">------------------------</th>
+<th></th>
 <th style="text-align: left;">Explanation</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">package_name</td>
+<td>package_name</td>
 <td style="text-align: left;">name of the package as called for installation</td>
 <td></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">version</td>
+<td>version</td>
 <td style="text-align: left;">Version number of the package evaluated</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">release_date</td>
+<td>release_date</td>
 <td style="text-align: left;">Date of release of the current package</td>
 <td></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">date_of_risk_assessment</td>
-<td style="text-align: left;">The date on which the package risk was performed. Testing probably happens after.</td>
+<td>date_of_risk_assessment</td>
+<td style="text-align: left;">The date on which the package risk was performed. Testing probably happens after (create_date).</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">final_risk</td>
+<td>final_risk</td>
 <td style="text-align: left;">As calculated from the SCTO risk measures (table above)</td>
 <td></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">license</td>
-<td style="text-align: left;">does the package have a license speciﬁcation?</td>
-<td>package license speciﬁcation</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">tested_functions</td>
-<td style="text-align: left;">which functions of the package were tested by an SCTO (or associated organizations) member</td>
-<td>list of functions tested</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">all_tests_passed</td>
-<td style="text-align: left;">all the tests defined as necessary by the SCTO (or associated organizations) assessor have been performed and passed</td>
-<td>yes / no</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">testing_date</td>
-<td style="text-align: left;">Date on which all tests have been completed</td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">test_documentation_location</td>
-<td style="text-align: left;">where are the testing procedures and results saved</td>
-<td>path to ﬁles</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">assessor_name</td>
+<td>assessor_name</td>
 <td style="text-align: left;">Who did the risk assessment</td>
 <td></td>
 </tr>
+<tr class="odd">
+<td>scto_relationship</td>
+<td style="text-align: left;">SCTO association</td>
+<td></td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">comments</td>
+<td>comments</td>
 <td style="text-align: left;">for example, speciﬁc functions that are not recommended or speciﬁc issues</td>
 <td></td>
 </tr>
