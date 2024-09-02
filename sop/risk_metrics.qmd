@@ -58,15 +58,16 @@ execute:
 
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
-| 0.1     | 2024-04-18 | Alan Haynes | Initial draft      |
+|     |  |  |       |
 :::
 
-# Objective {#sec-objective}
+## Purpose {#sec-objective}
 
 This document describes the metrics used by members of the Swiss
-Clinical Trial Organization when evaluating add on packages of the
-statistical environment, R. It provides a table of the metrics and a
-short explanation of the considerations behind each of the metrics.
+Clinical Trial Organization for the evaluation of add-on packages for
+the statistical software R and provides guidelines for their
+application. It provides a table of the metrics and a short explanation
+of the considerations behind each of the metrics.
 
 Assessing the risk associated with using a software package is one of
 the steps required for working under a validated environment, as
@@ -79,15 +80,14 @@ on a weighting scheme including these metrics.
 
 Following this assessment, the assessor determines whether any parts of
 the package need to be tested (function/unit testing) for the package's
-intended use in a specific product. The documentation of any actions
-following the initial risk assessment is listed in a separate table.
+intended use in a specific R product. The documentation of any actions
+following the initial risk assessment is listed separately.
 
 This document is part of the **SCTO Computerized Systems Validation
-Policy for R** [(NAME -- LOCATION -- VERSION)]{.mark} and refers to the
-standard operation procedure for Function testing [(NAME --
-LOCATION)]{.mark} of the SCTO statistics platform.
-
-The metrics are written with the aim of assessing R packages.
+Policy for R** [(LOCATION -- VERSION)]{.mark} and refers to the standard
+operation procedure for Function testing (SCTO SOP -- Function testing
+(in the SCTO statistics' platform; [LOCATION)]{.mark} of the SCTO
+statistics platform.
 
 Based on the principals below, the table in the addendum provides the
 metrics' values to be documented upon package evaluation for the SCTO
@@ -95,18 +95,49 @@ platform statistics. Note that the evaluation is per package with a
 specific version number. Package version changes and updates require
 re-assessment of the metrics for the new version.
 
-# SCOPE {#sec-scope}
+## Abbreviations and definitions
 
-This document is applicable to all R add-on packages. Out of scope are
-packages included in the official R-distribution including "Base R"
-packages. Also out of scope is the collection of "recommended packages",
-developed and validated by members of the R Development Core Team, as
-listed in the document **"R: Regulatory Compliance and Validation
-Issues, The R Foundation for Statistical Computing, 2021"**. R-base and
-recommended packages are approved per definition, as stated in the
-policy document.
+SOP
+: Standard operating procedure
 
-# METRIC EXPLANATION - glossary
+R
+: The R statistical programming language and environment
+
+R Package
+: A collection of code and functions providing an extension to base R installation, provided by members of the R community, available via CRAN and other distribution repositories
+
+R Product
+: Any deliverable produced using R via the processes below. Typical statistical products include sample size estimation, statistical analysis plan, an analysis report etc.
+
+Risk
+: As per ISO 31073 risk is defined as
+
+The effect of uncertainty on objectives, where:
+
+1. An effect is a deviation from the expected. It can be positive, negative or both, and can address, create or result in opportunities and threats. 
+2. Objectives can have different aspects and categories, and can be applied at different levels.
+3. Risk is usually expressed in terms of risk sources, potential events, their consequences and their likelihood.
+In the context of risk assessments and risk metrics the focus is usually on negative effects. 
+
+## Scope {#sec-scope}
+
+This document describes the metrics to be used for assessing the risk of
+an R add-on package according to the **SCTO** **Computerized Systems
+Validation Policy for R** guidelines on R package validation. It is
+applicable to all R add-on packages.
+
+Out of scope are packages included in the official R-distribution
+including "Base R" packages. Also out of scope is the collection of
+"recommended packages", developed and validated by members of the R
+Development Core Team, as listed in the document **"R: Regulatory
+Compliance and Validation Issues, The R Foundation for Statistical
+Computing, 2021"**. R-base and recommended packages are approved per
+definition, as stated in the policy document.
+
+
+## Guideline
+
+### The R package risk metrics explained
 
 The following metrics are considered when assessing a package. These are
 listed in Appendix-1 below. Here we provide a precise definition:
@@ -118,7 +149,7 @@ listed in Appendix-1 below. Here we provide a precise definition:
     versions remains in the document. [These values are not included in
     the risk calculation.]{.underline}
 
-2.  **Purpose** (**statistical_package**) We define three risk levels
+2.  **Purpose** (`statistical_package`) We define three risk levels
     for a package, depending on the package's purpose and methodology:
 
     a.  "non-statistical" packages: packages that deal only with
@@ -139,7 +170,7 @@ listed in Appendix-1 below. Here we provide a precise definition:
         been published in a peer reviewed journal. These packages obtain
         a status "high risk".
 
-3.  **Author** (author): The author(s) of a package will be viewed as
+  3.  **Author** (`author`): The author(s) of a package will be viewed as
     indicator for its trustworthiness. If package authors (noted as
     'aut' in the package description, e.g., as listed on CRAN) are
     well-known within the statistical, data-science and R communities
@@ -158,7 +189,7 @@ listed in Appendix-1 below. Here we provide a precise definition:
     subjective assessment and accepted as such; in addition, groups of
     authors are evaluated as a collective.
 
-4.  **Maintainer** (maintainer)**:** The package has a named maintainer
+4.  **Maintainer** (`maintainer`): The package has a named maintainer
     who's contact details (email) are available and published. A
     positive answer provides a "low risk" score. A package with no named
     maintainer is scored as high. The rationale behind this metric lies
@@ -166,7 +197,7 @@ listed in Appendix-1 below. Here we provide a precise definition:
     package's active maintenance and availability of contact in case of
     bugs and/or suggestions.
 
-5.  **Number of dependencies (nr_dependencies**): This metric assesses
+  5.  **Number of dependencies** (`n_dependencies`): This metric assesses
     the level of risk associated with the number of dependencies a
     package relies on. Dependencies are other packages or processes that
     the evaluated package depends on, as listed in CRAN under "depends"
@@ -200,7 +231,7 @@ data.frame(n = n, score = validation:::convert_deps_to_score(n)) |>
 ```
 
 
-6.  **CRAN or Bioconductor (on_cran)**: CRAN and Bioconductor provide a
+6.  **CRAN or Bioconductor** (`on_cran`): CRAN and Bioconductor provide a
     procedure for evaluating the appropriateness and minimal
     requirements for a package to be released on their official
     platform. Having passed the tests implemented should guarantee,
@@ -209,13 +240,13 @@ data.frame(n = n, score = validation:::convert_deps_to_score(n)) |>
     CRAN/Bioconductor provides low risk (yes = 0) while not being on
     them represents high risk (no = 1).
 
-7.  **Documentation of source code (source_code_documented)**: Ideally,
+  7.  **Documentation of source code** (`source_code_documented`): Ideally,
     the source code is available (for example, on github) for
     examination and commented (yes = 0). Source code that is not
     commented or difficult to follow, or is not available, is considered
     not documented (no = 1).
 
-8.  **Number of downloads in the last year (nr_downloads_12_months):**
+8.  **Number of downloads in the last year** (`nr_downloads_12_months`):
     More downloads suggest more extensive community and user testing and
     greater chances of bugs or errors being identified and reported. To
     fill in check the logs of CRAN's or Bioconductor's reporting systems
@@ -244,18 +275,18 @@ data.frame(n = n, score = validation:::convert_downloads_to_score(n)) |>
        y = "Score (0-1)")
 ```
 
-9.  **Bug reporting (**bug_reporting_active**):** Available option for
+9.  **Bug reporting** (`bug_reporting_active`): Available option for
     reporting bugs suggests higher chance that errors have been
     corrected. Check whether there is an option to report bugs --
     ideally via url or email. Yes = 0 (low risk); no = 1 (high risk).
 
-10. **Vignettes (**has_vignettes**):** Does the package have one/more
+10. **Vignettes** (`has_vignettes`): Does the package have one/more
     available vignettes? Vignettes provide an explanation of the use of
     the package, increasing its trustworthiness and correct use. Having
     at least one vignette suggests a "low" risk for this category (yes =
     0); having no vignettes suggests a "high" risk score (no = 1).
 
-11. **Tested functions (**has_tests**):** Perform a search and give a
+11. **Tested functions** (`has_tests`): Perform a search and give a
     general grade of low/medium/high based on the answers to the
     following questions: does the package have unit and/or function
     tests performed by the authors? are they comprehensive? are they
@@ -267,7 +298,7 @@ data.frame(n = n, score = validation:::convert_downloads_to_score(n)) |>
     Note that test functions are often listed in 'test' folder in the
     package's source files, e.g., on github.
 
-# Calculation of the final risk score: {#sec-calculation-of-the-final-risk-score}
+## Calculation of the final risk score: {#sec-calculation-of-the-final-risk-score}
 
 The final score is a weighted summary of all the measures above in the
 range \[0, 1\], with lower scores representing lower risk and higher
@@ -286,37 +317,44 @@ packages:
 
 As described in the SCTO validation policy, the risk associated with the
 package is evaluated alongside the risk associated with a specific
-project to determine which actions may be required in order to use the
-package. High risk packages, or medium risk packages in high-risk
-projects, for example, may need (project-) specific function testing.
+project to determine which actions may be required to use the package.
+High risk packages, or medium risk packages in high-risk projects, for
+example, may need (project-) specific function testing.
 
-# Documentation {#sec-documentation}
+## Documentation {#sec-documentation}
 
 The assessment of risk associated with a package should be documented
 and may be updated with time.
 
-The SCTO has developed a platform on which the risk assessment can be
-performed
-(https://github.com/SwissClinicalTrialOrganisation/pkg_validation).
-Apart from calculating the risk based on the above metrics, the platform
-also records the assessment itself for documentation and further use.
-The meta-data recorded, apart from the metrics themselves, is listed in
-Appendix 2.
+The SCTO has developed a platform on GitHub, on which the risk
+assessment can be performed
+(<https://swissclinicaltrialorganisation.github.io/pkg_validation/results/pkgassessment.html>).
+Package assessments are done as "issues" on the GitHub platform
+(<https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues>).
 
-# References {#sec-references}
+The platform allows performing the assessment and calculating the final
+risk based on the above metrics, while recording and documenting the
+assessment. Apart from the metrics themselves (Appendix 1), the
+additional points listed in Appendix 2 are collected and documented
+while performing the assessment on the platform.
+
+## References {#sec-references}
 
 -   R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y,
     Milliman E, Manitz J (2023). \_riskmetric: Risk Metrics to
     Evaluating R Packages\_. R package version 0.2.3,
     \<https://CRAN.R-project.org/package=riskmetric\>.
 
-# Appendix 1. The SCTO R package risk metrics {#sec-appendix-1-the-scto-r-package-risk-metrics}
+-   ISO 31073:2022(en) Risk management --- Vocabulary:
+    https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3
+
+## Appendix 1: The SCTO R package risk metrics
 
   ----------------------------------------------------------------------------------------
-  **­­-­­­­‑**                   **explanation**             **possible values**     **risk
+                           **explanation**             **possible values**     **risk
                                                                                level\***
   ------------------------ --------------------------- ----------------------- -----------
-  package_name             name of the package as                              
+  package                  name of the package as                              
                            called for installation                             
 
   version                  Version number of the                               
@@ -325,13 +363,6 @@ Appendix 2.
   release_date             Date of release of the                              
                            current evaluated version                           
                            of the package                                      
-
-  statistical_package      statistical packages        non-statistical /       low / med /
-                           implement statistical or    statistical-published / high
-                           machine learning            statistical             
-                           algorithms. Non-statistical non-published           
-                           packages are used for                               
-                           reporting for example                               
 
   author                   name of the main author or  well-known or known     low / med /
                            developing group            credentials / has       high
@@ -344,7 +375,14 @@ Appendix 2.
                            are their contact details                           
                            available?                                          
 
-  nr_dependencies          The more packages a package Nr of dependencies      0-1
+  package_purpose          Statistical packages        non-statistical /       low / med /
+                           implement statistical or    statistical-published / high
+                           machine learning            statistical             
+                           algorithms. Non-statistical non-published           
+                           packages are used for                               
+                           reporting for example                               
+
+  n_dependencies           The more packages a package Nr of dependencies      0-1
                            depends on the more chance  (transformed to         
                            for errors/bugs to be found \[0-1\])                
 
@@ -385,14 +423,14 @@ Appendix 2.
                            metrics.                                            
   ----------------------------------------------------------------------------------------
 
-> \* Risk level is always a value \[0, 1\]. For binary metrics low = 0
-> and high = 1. 'medium risk' takes a value of 0.5. Continuous metrics
-> such as 'nr of downloads' are transformed to a value \[0, 1\].
+\* Risk level is always a value \[0, 1\]. For binary metrics low = 0
+and high = 1. 'medium risk' takes a value of 0.5. Continuous metrics
+such as 'nr of downloads' are transformed to a value \[0, 1\].
 
-#  Appendix 2. The SCTO R package documentation {#sec-appendix-2-the-scto-r-package-documentation}
+##  Appendix 2: The SCTO R package documentation
 
   ------------------------------------------------------------------------------------------------------
-  \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--   Explanation                     
+                                                    Explanation                     
   ------------------------------------------------- ------------------------------- --------------------
   package_name                                      name of the package as called   
                                                     for installation                
@@ -407,32 +445,15 @@ Appendix 2.
 
   date_of_risk_assessment                           The date on which the package   
                                                     risk was performed. Testing     
-                                                    probably happens after.         
+                                                    probably happens after          
+                                                    (create_date).                  
 
   final_risk                                        As calculated from the SCTO     
                                                     risk measures (table above)     
 
-  license                                           does the package have a license package license
-                                                    speciﬁcation?                   speciﬁcation
-
-  tested_functions                                  which functions of the package  list of functions
-                                                    were tested by an SCTO (or      tested
-                                                    associated organizations)       
-                                                    member                          
-
-  all_tests_passed                                  all the tests defined as        yes / no
-                                                    necessary by the SCTO (or       
-                                                    associated organizations)       
-                                                    assessor have been performed    
-                                                    and passed                      
-
-  testing_date                                      Date on which all tests have    
-                                                    been completed                  
-
-  test_documentation_location                       where are the testing           path to ﬁles
-                                                    procedures and results saved    
-
   assessor_name                                     Who did the risk assessment     
+
+  scto_relationship                                 SCTO association                
 
   comments                                          for example, speciﬁc functions  
                                                     that are not recommended or     
