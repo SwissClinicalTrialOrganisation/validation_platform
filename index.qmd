@@ -672,8 +672,7 @@ d <- data.frame(prod = "Product\nrisk",
                           "Function testing required"),
            pkg_high = c("No function testing required", 
                         "Function testing required", 
-                        "Function testing required")) |> 
-  mutate(across(starts_with("pkg"), ~factor(.x, levels = c("No function testing required", "Function testing required")))) 
+                        "Function testing required")) 
 d |> 
   gt(groupname_col = "prod", id = "mygt") |> 
   tab_spanner(columns  = c(pkg_low, pkg_medium, pkg_high), 
@@ -693,21 +692,26 @@ d |>
     align = c("center"),
     columns = everything()
   ) |> 
-  data_color(columns = pkg_high, 
-             method = "factor",
-             palette = rev(c("#91cf60", "#fc8d59")),
-             domain = levels(d$pkg_high),
-             ) |> 
-  data_color(columns = pkg_medium, 
-             method = "factor",
-             palette = rev(c("#91cf60", "#fc8d59")),
-             domain = levels(d$pkg_high),
-             ) |> 
-  data_color(columns = pkg_low, 
-             method = "factor",
-             palette = rev(c("#91cf60", "#fc8d59")),
-             domain = levels(d$pkg_high),
-             ) |> 
+  tab_style(
+    style = cell_fill(color = "#91cf60"),
+    locations = cells_body(columns = pkg_low
+  )) |> 
+  tab_style(
+    style = cell_fill(color = "#91cf60"),
+    locations = cells_body(columns = pkg_medium, 
+                           rows = pkg_medium == "No function testing required")) |> 
+  tab_style(
+    style = cell_fill(color = "#91cf60"),
+    locations = cells_body(columns = pkg_high, 
+                           rows = pkg_high == "No function testing required")) |> 
+  tab_style(
+    style = cell_fill(color = "#fc8d59"),
+    locations = cells_body(columns = pkg_medium, 
+                           rows = pkg_medium == "Function testing required")) |> 
+  tab_style(
+    style = cell_fill(color = "#fc8d59"),
+    locations = cells_body(columns = pkg_high, 
+                           rows = pkg_high == "Function testing required")) |> 
   fmt_markdown(columns = TRUE) |> 
   tab_style(
     style = "vertical-align:middle; horizontal-align:center",
