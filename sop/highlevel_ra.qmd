@@ -55,4 +55,4 @@ The variables of decision are:
 -	Risk monitoring: TO BE FILLED per CTU according to local SOPs and guidelines (local QM) 
 :::
 
-The high level risk assessment is available [here {{< iconify material-symbols:download >}} ](fig/placeholder.txt){target="blank"}.
+The high level risk assessment is available [here {{< iconify material-symbols:download >}} ](fig/RiskAssessment_SCTO_Statistics_20230502.xlsx){target="blank"}.
