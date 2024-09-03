@@ -1,5 +1,5 @@
 ---
-title: "SCTO Validation Policy"
+title: "SCTO Computerized Systems Validation Policy for R"
 editor_options:
   markdown:
     wrap: 72

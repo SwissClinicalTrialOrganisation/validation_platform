@@ -20,7 +20,7 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        title: "Policy"
+        title: "SCTO Computerized Systems Validation Policy for R"
       - href: sop/policy.qmd
 
 

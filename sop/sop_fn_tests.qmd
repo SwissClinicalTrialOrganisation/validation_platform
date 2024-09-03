@@ -1,5 +1,5 @@
 ---
-title: "Writing function tests"
+title: "Function testing"
 editor_options:
   markdown:
     wrap: 72

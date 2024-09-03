@@ -83,10 +83,10 @@ the package need to be tested (function/unit testing) for the package's
 intended use in a specific R product. The documentation of any actions
 following the initial risk assessment is listed separately.
 
-This document is part of the **SCTO Computerized Systems Validation
-Policy for R** [(LOCATION -- VERSION)]{.mark} and refers to the standard
-operation procedure for Function testing (SCTO SOP -- Function testing
-(in the SCTO statistics' platform; [LOCATION)]{.mark} of the SCTO
+This document is part of the [**SCTO Computerized Systems Validation
+Policy for R**](../index.qmd) and refers to the standard
+operation procedure for Function testing ([SCTO SOP -- Function testing](sop_fn_tests.qmd)
+(in the SCTO statistics' platform) of the SCTO
 statistics platform.
 
 Based on the principals below, the table in the addendum provides the
@@ -218,6 +218,8 @@ listed in Appendix-1 below. Here we provide a precise definition:
 
 
 ```{r}
+#| warn: false
+#| message: false
 n <- 0:30
 library(validation)
 library(ggplot2)
@@ -340,13 +342,9 @@ while performing the assessment on the platform.
 
 ## References {#sec-references}
 
--   R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y,
-    Milliman E, Manitz J (2023). \_riskmetric: Risk Metrics to
-    Evaluating R Packages\_. R package version 0.2.3,
-    \<https://CRAN.R-project.org/package=riskmetric\>.
+R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). \_riskmetric: Risk Metrics to Evaluating R Packages\_. R package version 0.2.3, [https://CRAN.R-project.org/package=riskmetric](https://CRAN.R-project.org/package=riskmetric){target="blank"}
 
--   ISO 31073:2022(en) Risk management --- Vocabulary:
-    https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3
+ISO 31073:2022(en) Risk management --- Vocabulary: [https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3](https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3){target="blank"}
 
 ## Appendix 1: The SCTO R package risk metrics
 
