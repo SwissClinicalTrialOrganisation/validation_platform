@@ -160,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SCTO Validation Policy</span></a>
+ <span class="menu-text">SCTO Computerized Systems Validation Policy for R</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -175,7 +175,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing function tests</span></a>
+ <span class="menu-text">Function testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -437,7 +437,7 @@ Document development, review and version history
 <p>This document describes the metrics used by members of the Swiss Clinical Trial Organization for the evaluation of add-on packages for the statistical software R and provides guidelines for their application. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.</p>
 <p>Assessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the <strong>SCTO R-validation policy</strong>. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.</p>
 <p>Following this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific R product. The documentation of any actions following the initial risk assessment is listed separately.</p>
-<p>This document is part of the <strong>SCTO Computerized Systems Validation Policy for R</strong> <mark>(LOCATION – VERSION)</mark> and refers to the standard operation procedure for Function testing (SCTO SOP – Function testing (in the SCTO statistics’ platform; <mark>LOCATION)</mark> of the SCTO statistics platform.</p>
+<p>This document is part of the <a href="../index.html"><strong>SCTO Computerized Systems Validation Policy for R</strong></a> and refers to the standard operation procedure for Function testing (<a href="../sop/sop_fn_tests.html">SCTO SOP – Function testing</a> (in the SCTO statistics’ platform) of the SCTO statistics platform.</p>
 <p>Based on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.</p>
 </section>
 <section id="abbreviations-and-definitions" class="level2">
@@ -495,7 +495,7 @@ Note that whether an author is ‘well-known’ in the community is a subjective
 <li><p><strong>Number of dependencies</strong> (<code>n_dependencies</code>): This metric assesses the level of risk associated with the number of dependencies a package relies on. Dependencies are other packages or processes that the evaluated package depends on, as listed in CRAN under “depends” and/or “imports”. The risk of unexpected behaviour increases with the number of dependencies, since there is a greater likelihood of issues on a specific routine if updates are performed on a dependent package. Great care should be considered while using packages involving many dependencies.<br>
 The listed number is converted into a [0, 1] score, with 0 representing low number of dependencies (= low risk) and 1 representing many dependencies (= high risk). Taking a similar approach for the transforming the number to a score as the ‘riskmetric’ package (R validation hub, 2023), we use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> as a scoring function. A sigmoid midpoint is 4 dependencies, ie., x[0] = 4 and logistic growth rate of k = 0.5.</p></li>
 </ol>
-<div class="cell">
+<div class="cell" data-warn="false">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'validation' was built under R version 4.3.3</code></pre>
 </div>
@@ -552,10 +552,8 @@ Note that test functions are often listed in ‘test’ folder in the package’
 </section>
 <section id="sec-references" class="level2">
 <h2 class="anchored" data-anchor-id="sec-references">References</h2>
-<ul>
-<li><p>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, &lt;https://CRAN.R-project.org/package=riskmetric&gt;.</p></li>
-<li><p>ISO 31073:2022(en) Risk management — Vocabulary: https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3</p></li>
-</ul>
+<p>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, <a href="https://CRAN.R-project.org/package=riskmetric" target="blank">https://CRAN.R-project.org/package=riskmetric</a></p>
+<p>ISO 31073:2022(en) Risk management — Vocabulary: <a href="https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3" target="blank">https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3</a></p>
 </section>
 <section id="appendix-1-the-scto-r-package-risk-metrics" class="level2">
 <h2 class="anchored" data-anchor-id="appendix-1-the-scto-r-package-risk-metrics">Appendix 1: The SCTO R package risk metrics</h2>
