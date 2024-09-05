@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Statistics and Methodology - R package validation"
+  title: "Statistics and Methodology - R validation"
   page-footer: CC-BY SCTO Statistics and Methodology
   favicon: fig/SCTO_Platforms.png
   navbar:
@@ -26,8 +26,8 @@ website:
 
       - section: "SOPs"
         contents:
-          - href: sop/sop_fn_tests.qmd
           - href: sop/risk_metrics.qmd
+          - href: sop/sop_fn_tests.qmd
 
 
       - section: "Work Intructions"
