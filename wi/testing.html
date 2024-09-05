@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Writing function tests – Statistics and Methodology - R package validation</title>
+<title>Writing function tests – Statistics and Methodology - R validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -179,14 +179,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing</span></a>
+  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk metrics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
+  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function testing</span></a>
   </div>
 </li>
       </ul>
@@ -283,7 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#core-principles" id="toc-core-principles" class="nav-link active" data-scroll-target="#core-principles">Core principles</a></li>
+  <li><a href="#high-level-summary" id="toc-high-level-summary" class="nav-link active" data-scroll-target="#high-level-summary">High level summary</a></li>
+  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles">Core principles</a></li>
   <li><a href="#test_skeleton-helps-build-the-structure" id="toc-test_skeleton-helps-build-the-structure" class="nav-link" data-scroll-target="#test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</a></li>
   <li><a href="#writing-tests" id="toc-writing-tests" class="nav-link" data-scroll-target="#writing-tests">Writing tests</a>
   <ul class="collapse">
@@ -331,6 +332,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The <code>validation</code> package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the <a href="www.github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests</a> repository. The results of the tests are then published as issues in the <a href="www.github.com/SwissClinicalTrialOrganisation/pkg_validation">pkg_validation</a> repository.</p>
 <p>Tests are written using functions from the <a href="https://testthat.r-lib.org/">testthat</a> package, and can be downloaded, run, and reported using the functions in the <code>validation</code> package.</p>
+<section id="high-level-summary" class="level2">
+<h2 class="anchored" data-anchor-id="high-level-summary">High level summary</h2>
+<p>This section gives a very high level overview of the steps in the process. Refer to the following sections for more in depth information.</p>
+<ol type="1">
+<li>fork the validation_tests repository to your own GitHub account</li>
+<li>clone the forked repository to your local machine</li>
+<li>use <code>validation::test_skeleton()</code> to create the necessary files for testing a new package or function</li>
+<li>write the tests using the <code>testthat</code> package</li>
+<li>test your new tests with <code>validation::test()</code></li>
+<li>commit your changes to git and push them to your GitHub fork</li>
+<li>create a pull request to the validation_tests repository</li>
+<li>address any issues highlighted by the reviewer</li>
+</ol>
+</section>
 <section id="core-principles" class="level2">
 <h2 class="anchored" data-anchor-id="core-principles">Core principles</h2>
 <ul>
@@ -351,6 +366,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="test_skeleton-helps-build-the-structure" class="level2">
 <h2 class="anchored" data-anchor-id="test_skeleton-helps-build-the-structure"><code>test_skeleton</code> helps build the structure</h2>
 <p>The <code>test_skeleton</code> function can be used to create the relevant folder structure for testing a new package, or adding a file for testing additional functions. In the code below, substitute <code>pkg</code> with the name of the package to be tested and add the names of the function(s) you want to test in the <code>funs</code> argument.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_skeleton</span>(<span class="st">"pkg"</span>, <span class="at">funs =</span> <span class="fu">c</span>(<span class="st">"fun"</span>, <span class="st">"fun2"</span>, <span class="st">"etc"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This will create a set of files in your working directory:</p>
 <pre><code>-- pkg
    +- info.txt
@@ -364,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>for each function in the <code>funs</code> argument, a <code>test-function.R</code> file is created, which will contain the actual testing code.</li>
 </ul>
 <p>In the event that the package already has tests, the <code>test_skeleton</code> function will not overwrite the existing files, only adding any necessary <code>test-function.R</code> files.</p>
-<p>Add the relevant tests to the <code>test-function.R</code> files and check that they work as expected (run <code>devtools::load_all()</code> followed by <code>test("package")</code>).</p>
+<p>Add the relevant tests to the <code>test-function.R</code> files and check that they work as expected (run <code>test("package", download = FALSE)</code>).</p>
 </section>
 <section id="writing-tests" class="level2">
 <h2 class="anchored" data-anchor-id="writing-tests">Writing tests</h2>
@@ -428,9 +446,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="worked-example">Worked example</h2>
 <p>Theory is all well and good, but it’s always useful to see how that would be in practice.</p>
 <p>Assume that we want to check that the <code>lm</code> function from the <code>stats</code> package works as expected. We can write a test file that checks that the function returns the expected coefficients and standard errors.</p>
-<p>The following assumes that we have cloned the validation repository to our computer and we are within that project.</p>
-<p>To begin with, we construct the testing files, specifically the <code>test_skeleton</code> function. We only want to test the <code>lm</code> function, so we only pass that to the second argument:</p>
-<p>This will have created a <code>stats</code> folder within inst/tests. Within that folder, there will be files called <code>info.txt</code>, <code>setup-stats.R</code>, and <code>test-lm.R</code>.</p>
+<p>The following assumes that we have cloned the validation_tests repository to our computer and we are within that project.</p>
+<p>To begin with, we construct the testing files, specifically the <code>test_skeleton</code> function. We only want to test the <code>lm</code> function, so we only pass that to the second argument. We also specify the <code>dir</code> argument to tell R where to create the new files:</p>
+<p>This will have created a <code>stats</code> folder within tests. Within that folder, there will be files called <code>info.txt</code>, <code>setup-stats.R</code>, and <code>test-lm.R</code>.</p>
 <section id="test-lm.r" class="level3">
 <h3 class="anchored" data-anchor-id="test-lm.r"><code>test-lm.R</code></h3>
 <p>First we will write the actual tests that we want to run. Tests are entered into the <code>test-lm.R</code> file. Opening that file, we see that there are just a few comments at the top of the file, with some reminders.</p>
@@ -613,7 +631,7 @@ withr::defer({
 <section id="testing-that-the-tests-work" class="level3">
 <h3 class="anchored" data-anchor-id="testing-that-the-tests-work">Testing that the tests work</h3>
 <p>Assuming the tests are in a folder called <code>stats</code>, which is within our current working directory, we can run the tests with:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We specify <code>download = FALSE</code> because <code>validation::test</code> will download the files from GitHub and run those tests by default. <code>download = FALSE</code> tells it to use the local copy of the files instead.</p>
 <p>The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after “Copy and paste the following…”) provides summary information that should be copied into a github issue :</p>
 <pre><code>✔ | F W  S  OK | Context
