@@ -29,7 +29,9 @@ Tests are written using functions from the [testthat](https://testthat.r-lib.org
 
 The `test_skeleton` function can be used to create the relevant folder structure for testing a new package, or adding a file for testing additional functions. In the code below, substitute `pkg` with the name of the package to be tested and add the names of the function(s) you want to test in the `funs` argument. 
 
-```{r, eval = FALSE}
+```{r}
+#| echo: true
+#| eval: false
 test_skeleton("pkg", funs = c("fun", "fun2", "etc"))
 ```
 
@@ -50,7 +52,7 @@ This will create a set of files in your working directory:
 
 In the event that the package already has tests, the `test_skeleton` function will not overwrite the existing files, only adding any necessary `test-function.R` files. 
 
-Add the relevant tests to the `test-function.R` files and check that they work as expected (run `devtools::load_all()` followed by `test("package")`). 
+Add the relevant tests to the `test-function.R` files and check that they work as expected (run `test("package", download = FALSE)`). 
 
 
 ## Writing tests
@@ -243,15 +245,15 @@ Theory is all well and good, but it's always useful to see how that would be in 
 
 Assume that we want to check that the `lm` function from the `stats` package works as expected. We can write a test file that checks that the function returns the expected coefficients and standard errors. 
 
-The following assumes that we have cloned the validation repository to our computer and we are within that project. 
+The following assumes that we have cloned the validation_tests repository to our computer and we are within that project. 
 
-To begin with, we construct the testing files, specifically the `test_skeleton` function. We only want to test the `lm` function, so we only pass that to the second argument:
+To begin with, we construct the testing files, specifically the `test_skeleton` function. We only want to test the `lm` function, so we only pass that to the second argument. We also specify the `dir` argument to tell R where to create the new files:
 
 ```{r, eval = FALSE}
-test_skeleton("stats", "lm")
+test_skeleton("stats", "lm", dir = "tests")
 ```
 
-This will have created a `stats` folder within inst/tests. Within that folder, there will be files called `info.txt`, `setup-stats.R`, and `test-lm.R`. 
+This will have created a `stats` folder within tests. Within that folder, there will be files called `info.txt`, `setup-stats.R`, and `test-lm.R`. 
 
 ### `test-lm.R`
 
