@@ -1,7 +1,37 @@
 ---
 title: "Business Processes Risk Assessment"
-downloads: pdf
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
+  - text: Risk assessment
+    href: fig/RiskAssessment_SCTO_Statistics_20230502.xlsx
+    icon: file-spreadsheet
+    target: "_blank"
 ---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name           | Date           |
+|---------------------|----------------|----------------|
+| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
+| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
+| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+:::
 
 
 This is an explanation and ‘dictionary’ for the High Level Risk Assessment tool of the platform.
