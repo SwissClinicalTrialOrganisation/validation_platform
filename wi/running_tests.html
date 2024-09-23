@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/highlevel_ra.html" class="sidebar-item-text sidebar-link">
+  <a href="../sop/businessproc_ra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Business Processes Risk Assessment</span></a>
   </div>
 </li>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#running-tests-from-within-a-package" id="toc-running-tests-from-within-a-package" class="nav-link active" data-scroll-target="#running-tests-from-within-a-package">Running tests from within a package</a></li>
   <li><a href="#running-tests-from-within-the-scto-framework" id="toc-running-tests-from-within-the-scto-framework" class="nav-link" data-scroll-target="#running-tests-from-within-the-scto-framework">Running tests from within the SCTO framework</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="running_tests.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -310,6 +310,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled" title="Document development, review and version history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Document development, review and version history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><em>Development and Review</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Name</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Authored/Revised by</td>
+<td>XXXXXXXXXX</td>
+<td>xxxx-xx-xx</td>
+</tr>
+<tr class="even">
+<td>Reviewed by</td>
+<td>YYYYYYYYYY</td>
+<td>xxxx-xx-xx</td>
+</tr>
+<tr class="odd">
+<td>Released by</td>
+<td>ZZZZZZZZZZ</td>
+<td>xxxx-xx-xx</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Version History</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.1</td>
+<td>xxxx-xx-xx</td>
+<td>XXXXXXXXXX</td>
+<td>Initial draft</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <p>Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.</p>
 <p>We distinguish between two types of tests:</p>
 <ul>
@@ -322,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="running-tests-from-within-a-package">Running tests from within a package</h2>
 <p>The easiest way to run tests from within a package is by using the same approach that the package developer uses. In the majority of cases (especially those using the testthat package), this involves downloading the package to your local machine and running the tests using the <code>devtools</code> package.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Downloading from GitHub">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -331,7 +392,7 @@ Downloading from GitHub
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>On the package GitHub page, click on the green “Code” button and select “Download ZIP”. Unpack the ZIP file.</p>
 <p>If you have git installed, you could clone the repository to your computer instead of downloading the ZIP file.</p>
@@ -339,7 +400,7 @@ Downloading from GitHub
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Downloading from CRAN">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -348,7 +409,7 @@ Downloading from CRAN
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the downloads section of the package CRAN page, download the package source (<code>.tar.gz</code> file) and unpack it using 7zip. Open the file in 7zip and you should see a .tar folder, go into that and extract the contents to a folder.</p>
 </div>
@@ -385,7 +446,7 @@ logical.return = TRUE, : there is no package called 'accrualPlot'</code></pre>
 <pre><code>package 'accrualPlot' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\runneradmin\AppData\Local\Temp\RtmpY77pdv\downloaded_packages</code></pre>
+    C:\Users\runneradmin\AppData\Local\Temp\RtmpOEUAQb\downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'accrualPlot' was built under R version 4.3.3</code></pre>
@@ -448,7 +509,7 @@ CRAN (R 4.3.3)
 NA 
 
 ### When was this package tested? 
-2024-09-05 
+2024-09-23 
 
 ### What was tested? 
 Tests for package accrualPlot 
@@ -499,14 +560,14 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] rappdirs_0.3.3    utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
  [5] stringi_1.8.4     hms_1.1.3         digest_0.6.37     magrittr_2.0.3   
- [9] grid_4.3.0        evaluate_0.24.0   timechange_0.3.0  pkgload_1.4.0    
-[13] fastmap_1.2.0     rprojroot_2.0.4   jsonlite_1.8.8    sessioninfo_1.2.2
+ [9] grid_4.3.0        evaluate_1.0.0    timechange_0.3.0  pkgload_1.4.0    
+[13] fastmap_1.2.0     rprojroot_2.0.4   jsonlite_1.8.9    sessioninfo_1.2.2
 [17] cranlogs_2.1.1    brio_1.1.5        httr_1.4.7        validation_0.3.7 
-[21] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.3      
+[21] purrr_1.0.2       fansi_1.0.6       scales_1.3.0      httr2_1.0.4      
 [25] cli_3.6.3         rlang_1.1.4       crayon_1.5.3      gitcreds_0.1.2   
 [29] munsell_0.5.1     withr_3.0.1       yaml_2.3.10       tools_4.3.0      
 [33] accrualPlot_1.0.7 tzdb_0.4.0        dplyr_1.1.4       colorspace_2.1-1 
-[37] ggplot2_3.5.1     curl_5.2.2        vctrs_0.6.5       R6_2.5.1         
+[37] ggplot2_3.5.1     curl_5.2.3        vctrs_0.6.5       R6_2.5.1         
 [41] lifecycle_1.0.4   stringr_1.5.1     htmlwidgets_1.6.4 waldo_0.5.3      
 [45] pkgconfig_2.0.3   desc_1.4.3        gtable_0.3.5      pillar_1.9.0     
 [49] glue_1.7.0        gh_1.4.1          xfun_0.47         tibble_3.2.1     
@@ -518,7 +579,7 @@ loaded via a namespace (and not attached):
 SwissClinicalTrialOrganisation/validation_tests
 
 ### Where the test code is located in a git repository, add the git commit SHA
-a696e6b665e9e8ea761c00d4126e86cc3defc816</code></pre>
+8109ba97752735e9949c347518ebc9234ca8edad</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
