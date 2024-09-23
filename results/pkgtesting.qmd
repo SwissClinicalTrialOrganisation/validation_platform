@@ -22,7 +22,6 @@ library(validation)
 library(gtExtras)
 library(purrr)
 library(dplyr)
-pkgs <- load_pkg_table()
 
 tests <- load_tests_table() |> 
   mutate(
