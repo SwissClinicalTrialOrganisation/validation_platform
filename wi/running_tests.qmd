@@ -1,6 +1,33 @@
 ---
 title: "Running function tests"
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 ---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name           | Date           |
+|---------------------|----------------|----------------|
+| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
+| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
+| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+:::
 
 Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.
 

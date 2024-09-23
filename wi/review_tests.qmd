@@ -1,6 +1,33 @@
 ---
 title: "Reviewing tests"
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 ---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name           | Date           |
+|---------------------|----------------|----------------|
+| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
+| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
+| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+:::
 
 Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.
 

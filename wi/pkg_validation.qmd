@@ -3,11 +3,37 @@ title: "Risk assessing packages"
 editor_options:
   markdown:
     wrap: 72
-
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 execute:
   echo: false
   message: false
 ---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name           | Date           |
+|---------------------|----------------|----------------|
+| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
+| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
+| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+:::
 
 This page functions as the work instruction for the risk assessment of R 
 packages within the SCTO Statistics & Methodology Platform framework. 
@@ -42,7 +68,7 @@ flowchart TD
   C3 --> D
   D --Yes--> E[The associated risk level of the package]
   D --No--> F(Perform a risk assessment following the instructions on <a href='https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new/choose'>GitHub</a>)
-  F --> G(Open a new issue with the 'New package validation' template)
+  F --> G(Open a new issue with the 'New package risk assessment' template)
   G --> H(Fill out the form following the instructions provided)
   H --> J(Submit the issue and wait for the automated risk assessment)
   J --> E

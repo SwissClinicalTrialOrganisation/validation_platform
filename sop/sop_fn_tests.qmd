@@ -3,7 +3,17 @@ title: "Function testing"
 editor_options:
   markdown:
     wrap: 72
-    
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 execute:
   echo: false
   message: false

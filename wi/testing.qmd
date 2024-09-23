@@ -3,12 +3,38 @@ title: "Writing function tests"
 editor_options:
   markdown:
     wrap: 72
-    
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  typst: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 execute:
   echo: false
   message: false
   warning: false
 ---
+
+::: {.callout-note collapse="true" title="Document development, review and version history"}
+***Development and Review***
+
+|                     | Name           | Date           |
+|---------------------|----------------|----------------|
+| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
+| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
+| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
+
+***Version History***
+
+| Version | Date       | Author      | Summary of Changes |
+|---------|------------|-------------|--------------------|
+| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+:::
 
 The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [pkg_validation](www.github.com/SwissClinicalTrialOrganisation/pkg_validation) repository.
 
