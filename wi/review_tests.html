@@ -69,9 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -342,25 +339,17 @@ Document development, review and version history
 </div>
 </div>
 <p>Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  a[Tests written] --&gt; b[Pull request to incorporate]
-  b --&gt; c[Reviewers chosen] 
-  c --&gt; d[Code reviewed]
-  d --&gt; e[Review approved]
-  d --&gt; f[Suggested improvements]
-  f --&gt; g[Author improves tests]
-  g --&gt; d
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<!-- ```{mermaid} -->
+<!-- DOUBLE ARROWS CONVERTED TO SINGLE ARROWS -->
+<!-- flowchart LR -->
+<!--   a[Tests written] -> b[Pull request to incorporate] -->
+<!--   b -> c[Reviewers chosen]  -->
+<!--   c -> d[Code reviewed] -->
+<!--   d -> e[Review approved] -->
+<!--   d -> f[Suggested improvements] -->
+<!--   f -> g[Author improves tests] -->
+<!--   g -> d -->
+<!-- ``` -->
 <section id="who-reviews" class="level2">
 <h2 class="anchored" data-anchor-id="who-reviews">Who reviews?</h2>
 <p>All pull requests are by default automatically assigned to one individual per unit. These individuals should agree among themselves who can perform the review, potentially nominating someone else from their unit. Those that will not be performing the review can be removed from the list of assignees.</p>
