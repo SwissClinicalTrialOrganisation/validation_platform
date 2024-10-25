@@ -21,6 +21,7 @@ execute:
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
+
 ***Development and Review***
 
 |                     | Name           | Date           |
@@ -34,6 +35,7 @@ execute:
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
 | 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+
 :::
 
 The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [pkg_validation](www.github.com/SwissClinicalTrialOrganisation/pkg_validation) repository.
