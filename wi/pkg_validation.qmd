@@ -56,6 +56,8 @@ In order to perform a risk assessment:
   - Once you have completed the form, click the green "Submit new issue" button at the bottom of the page.
   - Submitting the form will trigger an automated job that will calculate the risk based on the information you entered into the form and post a comment on the issue. 
   
+::: {.content-visible when-format="html"}
+  
 ```{mermaid}
 flowchart TD
   A[Identify the package that may need risk assessment] --> B(Check whether the package has already been risk assessed)
@@ -87,3 +89,4 @@ flowchart TD
   
 ```
 
+:::
