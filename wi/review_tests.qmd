@@ -33,16 +33,18 @@ format-links:
 
 Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.
 
-```{mermaid}
-flowchart LR
-  a[Tests written] --> b[Pull request to incorporate]
-  b --> c[Reviewers chosen] 
-  c --> d[Code reviewed]
-  d --> e[Review approved]
-  d --> f[Suggested improvements]
-  f --> g[Author improves tests]
-  g --> d
-```
+
+<!-- ```{mermaid} -->
+<!-- DOUBLE ARROWS CONVERTED TO SINGLE ARROWS -->
+<!-- flowchart LR -->
+<!--   a[Tests written] -> b[Pull request to incorporate] -->
+<!--   b -> c[Reviewers chosen]  -->
+<!--   c -> d[Code reviewed] -->
+<!--   d -> e[Review approved] -->
+<!--   d -> f[Suggested improvements] -->
+<!--   f -> g[Author improves tests] -->
+<!--   g -> d -->
+<!-- ``` -->
 
 ## Who reviews?
 
