@@ -15,7 +15,7 @@ This page currently requires manually rebuilding the site to show the newest pac
 :::
 
 ```{r}
-#| output: false
+#| message: false
 # install.packages('validation', 
 #                  repos = c('https://ctu-bern.r-universe.dev', 
 #                            'https://cloud.r-project.org'), 
