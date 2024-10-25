@@ -5,7 +5,7 @@ editor_options:
     wrap: 72
 format: 
   html: default
-  docx: default
+  # docx: default
   # pdf: default
   typst: default
 format-links:
@@ -20,6 +20,7 @@ execute:
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
+
 ***Development and Review***
 
 |                     | Name           | Date           |
@@ -33,6 +34,7 @@ execute:
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
 | 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+
 :::
 
 This page functions as the work instruction for the risk assessment of R 
