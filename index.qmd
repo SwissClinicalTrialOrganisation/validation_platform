@@ -7,10 +7,10 @@ format:
   html: default
   docx: default
   # pdf: default
-  # typst: default
+  sctotypst-typst: default
 format-links:
   - html
-  - format: typst
+  - format: sctotypst-typst
     text: PDF
     icon: file-pdf
     target: "_blank"
@@ -18,12 +18,13 @@ execute:
   echo: false
   message: false
 ---
-
 <!-- Taken from Validation_taskforce\Documents_For_Review/SCTO_CSV policy R_DRAFT_20240724.docx -->
 <!-- quarto pandoc -s -o "sop/policy.md" "sop/SCTO_CSV policy R_DRAFT_20240724.docx" -->
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
 ***Development and Review***
+
+`#set align(center)`{=typst}
 
 |                     | Name | Date |
 |---------------------|------|------|
@@ -31,11 +32,18 @@ execute:
 | Reviewed by         |      |      |
 | Released by         |      |      |
 
+`#set align(left)`{=typst}
+
 ***Version History***
+
+`#set align(center)`{=typst}
 
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
 | 0.1     | 2024-04-18 | Alan Haynes | Initial draft      |
+
+`#set align(left)`{=typst}
+
 :::
 
 ## Introduction

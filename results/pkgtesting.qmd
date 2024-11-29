@@ -3,14 +3,25 @@ title: "Package tests"
 editor_options:
   markdown:
     wrap: 72
+format: 
+  html: default
+  # docx: default
+  # pdf: default
+  sctotypst-typst:
+    keep-md: true
     
+format-links:
+  - html
+  - format: sctotypst-typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 execute:
   echo: false
   message: false
   warning: false
+prefer-html: true
 ---
-
-
 
 ```{r}
 #| output: false
@@ -37,27 +48,23 @@ tests |>
   mutate(test_tab = NA,
          )
 
-
 ```
 
 `r nrow(tests)` packages or package versions have been tested by the SCTO Statistics & Methodology Platform so far.
 
 ```{r}
-
 test_res <- unique(tests$test_result) |> na.omit()
 tests_palette <- c(PASS = "#91cf60", "FAIL" = "#fc8d59")
 tests_observed <- tests_palette[test_res]
 
-tests |> 
+test_df <- tests |> 
   mutate(
     url = purrr::map(issue_url, gt_hyperlink, text = "View on GitHub"),
     url = purrr::map(url, html)
   ) |> 
-  select(package, version, test_result, r_version, os, url) |> 
+  select(package, version, test_result, r_version, os, url)  |> 
   gt() |> 
   opt_table_font(font = "Source Sans Pro") |> 
-  opt_interactive(use_filters = TRUE,
-                  use_sorting = FALSE) |>
   cols_label(package = "Package",
              version = "Package version",
              test_result = "Result",
@@ -69,6 +76,20 @@ tests |>
   sub_missing(missing_text = "") |> 
   gt_badge(test_result, 
            palette = tests_observed, alpha = 1)
-  
 ```
+
+
+```{r }
+#| eval: !expr knitr::is_html_output()
+test_df |> 
+  opt_interactive(use_filters = TRUE,
+                  use_sorting = FALSE)
+```
+
+```{r}
+#| eval: !expr knitr::is_html_output() == FALSE
+test_df
+```
+
+
 

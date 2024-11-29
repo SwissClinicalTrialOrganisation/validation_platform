@@ -4,10 +4,10 @@ format:
   html: default
   docx: default
   # pdf: default
-  typst: default
+  sctotypst-typst: default
 format-links:
   - html
-  - format: typst
+  - format: sctotypst-typst
     text: PDF
     icon: file-pdf
     target: "_blank"
@@ -17,17 +17,25 @@ format-links:
 
 ***Development and Review***
 
+`#set align(center)`{=typst}
+
 |                     | Name           | Date           |
 |---------------------|----------------|----------------|
 | Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
 | Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
 | Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
 
+`#set align(left)`{=typst}
+
 ***Version History***
+
+`#set align(center)`{=typst}
 
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
 | 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
+
+`#set align(left)`{=typst}
 
 :::
 

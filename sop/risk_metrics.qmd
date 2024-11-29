@@ -3,7 +3,15 @@ title: "Risk metrics"
 editor_options:
   markdown:
     wrap: 72
-
+format: 
+  html: default
+  sctotypst-typst: default
+format-links:
+  - html
+  - format: sctotypst-typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 execute:
   echo: false
   message: false

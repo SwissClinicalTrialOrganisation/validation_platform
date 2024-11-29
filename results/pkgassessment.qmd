@@ -8,6 +8,17 @@ execute:
   echo: false
   message: false
   warning: false
+format: 
+  html: default
+  docx: default
+  # pdf: default
+  sctotypst-typst: default
+format-links:
+  - html
+  - format: sctotypst-typst
+    text: PDF
+    icon: file-pdf
+    target: "_blank"
 ---
 
 :::{.callout-note}
@@ -135,7 +146,7 @@ tests_observed <- tests_palette[test_res]
 # plot_risk(.1)
 # plot_risk(.99)
 
-tmp |> 
+pkgdf <- tmp |> 
   gt() |> 
   cols_label(package = "Package",
              version = "Version",
@@ -146,8 +157,6 @@ tmp |>
              # functions = "Functions tested",
              test_result = "Test results"
              ) |> 
-  opt_interactive(use_filters = TRUE,
-                  use_sorting = TRUE) |>
   # harmonize table font to quarto default
   opt_table_font(font = "Source Sans Pro") |> 
   # data_color(final_score_cat, palette = c("#91cf60", "#ffffbf", "#fc8d59")) |> 
@@ -167,6 +176,21 @@ tmp |>
   #   }
   # )
 ```
+
+
+
+```{r }
+#| eval: !expr knitr::is_html_output()
+pkgdf |> 
+  opt_interactive(use_filters = TRUE,
+                  use_sorting = FALSE)
+```
+
+```{r}
+#| eval: !expr knitr::is_html_output() == FALSE
+pkgdf
+```
+
 
 ```{r}
 # Check for updates of installed packages
@@ -188,7 +212,8 @@ outdated_pkgs <- pkgs |>
 
 ### Packages with potentially outdated risk assessments:
 
-```{r}
+```{r }
+#| eval: !expr knitr::is_html_output()
 outdated_pkgs |> 
   gt() |> 
   opt_interactive(use_filters = TRUE,
@@ -196,5 +221,10 @@ outdated_pkgs |>
   opt_table_font(font = "Source Sans Pro") 
 ```
 
-
+```{r}
+#| eval: !expr knitr::is_html_output() == FALSE
+outdated_pkgs |> 
+  gt() |> 
+  opt_table_font(font = "Source Sans Pro") 
+```
 

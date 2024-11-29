@@ -7,10 +7,10 @@ format:
   html: default
   docx: default
   # pdf: default
-  typst: default
+  sctotypst-typst: default
 format-links:
   - html
-  - format: typst
+  - format: sctotypst-typst
     text: PDF
     icon: file-pdf
     target: "_blank"
@@ -21,7 +21,10 @@ execute:
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
+
 ***Development and Review***
+
+`#set align(center)`{=typst}
 
 |                     | Name | Date |
 |---------------------|------|------|
@@ -29,12 +32,19 @@ execute:
 | Reviewed by         |      |      |
 | Released by         |      |      |
 
+`#set align(left)`{=typst}
+
 ***Version History***
+
+`#set align(center)`{=typst}
 
 | Version | Date       | Author      | Summary of Changes |
 |---------|------------|-------------|--------------------|
 | 0.1     | 2024-08-24 | Alan Haynes, Elio Carreras, Lisa Hofer, Michael Coslovsky, Christina
 Huf, Christine Otieno | Initial draft      |
+
+`#set align(left)`{=typst}
+
 :::
 
 
