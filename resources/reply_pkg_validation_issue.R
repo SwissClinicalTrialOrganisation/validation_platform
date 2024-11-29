@@ -6,14 +6,14 @@
 # path to json with info on the triggering issue
 issuenum <- Sys.getenv("NUMBER")
 
-library(validation)
+library(SCTORvalidation)
 
-issue <- validation:::get_issue(issuenum)
+issue <- SCTORvalidation:::get_issue(issuenum)
 
 cat("Package issue\n")
-score <- validation:::calculate_pkg_score(list(issue))
+score <- SCTORvalidation:::calculate_pkg_score(list(issue))
 
-val <- validation:::validate_pkg_issue(score)
+val <- SCTORvalidation:::validate_pkg_issue(score)
 
 if(val$score_ok){
   cat("  input validation - OK\n")
@@ -25,28 +25,28 @@ if(val$score_ok){
   can_close <- TRUE
 
   cat("  Github labels\n")
-  validation:::add_label(issuenum, paste(as.character(score$final_score_cat), "risk")) |>
+  SCTORvalidation:::add_label(issuenum, paste(as.character(score$final_score_cat), "risk")) |>
     try() |>
     print()
-  validation:::add_label(issuenum, ":sparkles: approved :sparkles:") |>
+  SCTORvalidation:::add_label(issuenum, ":sparkles: approved :sparkles:") |>
     try() |>
     print()
-  validation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
+  SCTORvalidation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
     try() |>
     print()
-  # validation:::close_issue(issuenum)
+  # SCTORvalidation:::close_issue(issuenum)
 
   cat("  Posting comment\n")
-  validation:::post_comment(issuenum, gh_message)
+  SCTORvalidation:::post_comment(issuenum, gh_message)
 
   if(can_close){
     cat("  Closing issue\n")
-    validation:::close_issue(issuenum)
+    SCTORvalidation:::close_issue(issuenum)
   }
 
   cat("  Updating table\n")
   Sys.sleep(10)
-  pkgs <- validation::update_pkg_table()
+  pkgs <- SCTORvalidation::update_pkg_table()
 
   cat("  Writing table\n")
   readr::write_csv(pkgs, "tables/validated_packages.csv", na = "")
@@ -56,7 +56,7 @@ if(val$score_ok){
   cat("  input validation - FAILED\n")
   gh_message <- val$message
   cat(gh_message)
-  validation:::post_comment(issuenum, gh_message)
+  SCTORvalidation:::post_comment(issuenum, gh_message)
 
 }
 

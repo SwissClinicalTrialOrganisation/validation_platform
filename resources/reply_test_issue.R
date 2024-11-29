@@ -6,15 +6,15 @@
 # path to json with info on the triggering issue
 issuenum <- Sys.getenv("NUMBER")
 
-library(validation)
+library(SCTORvalidation)
 
-issue <- validation:::get_issue(issuenum)
+issue <- SCTORvalidation:::get_issue(issuenum)
 
 cat("Test issue\n")
 tmp <- issue |>
-  validation:::extract_elements_test()
+  SCTORvalidation:::extract_elements_test()
 
-val <- validation:::validate_test_issue(tmp)
+val <- SCTORvalidation:::validate_test_issue(tmp)
 
 if(val$ok){
 
@@ -27,12 +27,12 @@ if(val$ok){
 
     if(is_(list(issue), "FAIL") & tmp$test_result == "PASS"){
       cat("  Remove older FAIL label\n")
-      validation:::remove_label(issuenum, "FAIL") |>
+      SCTORvalidation:::remove_label(issuenum, "FAIL") |>
         try() |>
         print()
     }
 
-    validation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
+    SCTORvalidation:::remove_label(issuenum, ":alarm_clock: triage :alarm_clock:") |>
       try() |>
       print()
     can_close <- TRUE
@@ -55,19 +55,19 @@ if(val$ok){
 
   }
 
-  validation:::add_label(issuenum, tmp$test_result) |>
+  SCTORvalidation:::add_label(issuenum, tmp$test_result) |>
     try() |>
     print()
 
-  validation:::post_comment(issuenum, gh_message)
+  SCTORvalidation:::post_comment(issuenum, gh_message)
 
   if(can_close){
     cat("Closing issue\n")
-    validation:::close_issue(issuenum)
+    SCTORvalidation:::close_issue(issuenum)
   }
 
   cat("Updating table\n")
-  tests <- validation::update_tests_table()
+  tests <- SCTORvalidation::update_tests_table()
 
   cat("Writing table\n")
   readr::write_csv(tests, "tables/package_tests.csv", na = "")
@@ -76,7 +76,7 @@ if(val$ok){
 
   cat("  input validation - FAILED\n")
   gh_message <- val$message
-  validation:::post_comment(issuenum, gh_message)
+  SCTORvalidation:::post_comment(issuenum, gh_message)
 
 }
 

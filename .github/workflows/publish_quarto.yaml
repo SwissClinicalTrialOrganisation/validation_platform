@@ -25,10 +25,10 @@ jobs:
           r-version: '4.3.0'
 
       - name: Install R Dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "gt", "gtExtras", "ggplot2", "pkgsearch"))'
+        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "gt", "gtExtras", "ggplot2", "pkgsearch", "conflicted"))'
 
       - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
+        run: Rscript -e 'install.packages("SCTORvalidation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

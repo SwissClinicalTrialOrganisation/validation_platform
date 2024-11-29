@@ -1,6 +1,6 @@
 # test packages on GHA
 
-library(validation)
+library(SCTORvalidation)
 # tests <- load_tests_table()
 
 # issuenum <- Sys.getenv("NUMBER")
@@ -21,7 +21,7 @@ texts <- test_to_text(xx)
 
 cat("Texts prepared\n")
 
-issue <- validation:::post_comment(issuenum, texts$issue_body)
+issue <- SCTORvalidation:::post_comment(issuenum, texts$issue_body)
 
 cat("issue updated\n")
 

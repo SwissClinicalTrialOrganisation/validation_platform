@@ -24,11 +24,11 @@ jobs:
         if: startsWith(github.event.issue.title, '[Package validation]') || startsWith(github.event.issue.title, '[Package test]')
 
       - name: Install dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch"))'
+        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch", "conflicted"))'
         if: steps.setupR.outcome == 'success'
 
       - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = c("https://ctu-bern.r-universe.dev", "https://cloud.r-project.org"), dependencies = TRUE)'
+        run: Rscript -e 'install.packages("SCTORvalidation", repos = c("https://ctu-bern.r-universe.dev", "https://cloud.r-project.org"), dependencies = TRUE)'
         if: steps.setupR.outcome == 'success'
 
       - name: Run script to calculate risk and post comment
@@ -108,10 +108,10 @@ jobs:
           use-public-rspm: true
 
       - name: Install dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch"))'
+        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch", "conflicted"))'
 
-      - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
+      - name: Install SCTORvalidation
+        run: Rscript -e 'install.packages("SCTORvalidation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
 
       - name: Run script to test package
         id: pkgtest
@@ -138,10 +138,10 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
 
       - name: Install dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch"))'
+        run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch", "conflicted"))'
 
-      - name: Install validation
-        run: Rscript -e 'install.packages("validation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
+      - name: Install SCTORvalidation
+        run: Rscript -e 'install.packages("SCTORvalidation", repos = "https://ctu-bern.r-universe.dev", dependencies = TRUE)'
 
       - name: Run script to calculate risk and post comment
         id: pkgtest
