@@ -229,9 +229,9 @@ listed in Appendix-1 below. Here we provide a precise definition:
 #| warn: false
 #| message: false
 n <- 0:30
-library(validation)
+library(SCTORvalidation)
 library(ggplot2)
-data.frame(n = n, score = validation:::convert_deps_to_score(n)) |> 
+data.frame(n = n, score = SCTORvalidation:::convert_deps_to_score(n)) |> 
   ggplot(aes(x = n, y = score)) +
   geom_line() +
   theme_minimal() +
@@ -276,7 +276,7 @@ data.frame(n = n, score = validation:::convert_deps_to_score(n)) |>
 
 ```{r}
 n <- seq(0, 500000, length.out = 100)
-data.frame(n = n, score = validation:::convert_downloads_to_score(n)) |> 
+data.frame(n = n, score = SCTORvalidation:::convert_downloads_to_score(n)) |> 
   ggplot(aes(x = n, y = score)) +
   geom_line() +
   theme_minimal() +
