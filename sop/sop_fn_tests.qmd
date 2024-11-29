@@ -3,6 +3,11 @@ title: "Function testing"
 editor_options:
   markdown:
     wrap: 72
+    
+execute:
+  echo: false
+  message: false
+  warning: false
 format: 
   html: default
   docx: default
@@ -11,17 +16,12 @@ format:
 format-links:
   - html
   - format: sctotypst-typst
-    text: PDF
+    text: "PDF"
     icon: file-pdf
     target: "_blank"
-execute:
-  echo: false
-  message: false
-  warning: false
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
-
 ***Development and Review***
 
 `#set align(center)`{=typst}
@@ -193,7 +193,7 @@ outputs with the necessary documentation of meta-data (Box H).
 
 The working instructions for the testing process are found under the
 relevant SCTO GitHub page
-(https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html).
+(https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/articles/contribute.html).
 A copy of the vignette is an associated document to this SOP. Below we
 provide only a bullet-point description of the relevant steps:
 
@@ -244,7 +244,7 @@ the tests are provided in the validation R package.
 
 Instructions for writing tests and incorporating them into the
 validation_tests repository are provided
-[here](https://swissclinicaltrialorganisation.github.io/validation/articles/contribute.html){target="_blank"}.
+[here](https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/articles/contribute.html){target="_blank"}.
 Prior to incorporation, the test(s) will be reviewed according to the
 criteria below.
 
@@ -281,10 +281,10 @@ reviewer, the function will be listed as tested on the SCTO platform.
 ## Documentation:
 
 Test reports are made on the pkg_validation repository at
-[https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues){target="_blank"}
+[https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues](https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues){target="_blank"}
 . Select "New issue". Select the "Add package/function testing results".
 Fill out the predefined form, using the output from R
-(validation::test("packagename")).
+(`SCTORvalidation::test("packagename")`).
 
 +----------------+-----------------------------------------------------+
 | What to report | Details                                             |

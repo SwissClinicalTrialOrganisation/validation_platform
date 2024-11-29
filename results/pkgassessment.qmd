@@ -27,11 +27,11 @@ This page currently requires manually rebuilding the site to show the newest pac
 
 ```{r}
 #| message: false
-# install.packages('validation', 
+# install.packages('SCTORvalidation', 
 #                  repos = c('https://ctu-bern.r-universe.dev', 
 #                            'https://cloud.r-project.org'), 
 #                  quiet = TRUE, verbose = FALSE)
-library(validation)
+library(SCTORvalidation)
 library(gtExtras)
 library(purrr)
 library(dplyr)

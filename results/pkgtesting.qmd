@@ -25,11 +25,11 @@ prefer-html: true
 
 ```{r}
 #| output: false
-# install.packages('validation', 
+# install.packages('SCTORvalidation', 
 #                  repos = c('https://ctu-bern.r-universe.dev', 
 #                            'https://cloud.r-project.org'), 
 #                  quiet = TRUE, verbose = FALSE)
-library(validation)
+library(SCTORvalidation)
 library(gtExtras)
 library(purrr)
 library(dplyr)
