@@ -21,7 +21,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
         id: setupR
-        if: startsWith(github.event.issue.title, '[Package validation]') || startsWith(github.event.issue.title, '[Package test]')
+        if: startsWith(github.event.issue.title, '[Package risk assessment]') || startsWith(github.event.issue.title, '[Package test]')
 
       - name: Install dependencies
         run: Rscript -e 'install.packages(c("jsonlite", "cranlogs", "crayon", "dplyr", "glue", "lubridate", "sessioninfo", "testthat", "rmarkdown", "knitr", "kableExtra", "magrittr", "devtools", "readr", "tidyr", "pkgsearch", "conflicted"))'
@@ -32,7 +32,7 @@ jobs:
         if: steps.setupR.outcome == 'success'
 
       - name: Run script to calculate risk and post comment
-        if: startsWith(github.event.issue.title, '[Package validation]')
+        if: startsWith(github.event.issue.title, '[Package risk assessment]')
         id: pkgrisk
         run: Rscript -e 'source("resources/reply_pkg_validation_issue.R")'
 

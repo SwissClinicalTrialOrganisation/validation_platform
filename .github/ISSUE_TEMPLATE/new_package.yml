@@ -1,12 +1,12 @@
-name: New package validation
-description: Add a new package validation report to the repo
-title: "[Package validation]: XXX version YYY"
+name: New package risk assessment
+description: Add a new package risk assessment report to the repo
+title: "[Package risk assessment]: XXX version YYY"
 labels: ["package", ":alarm_clock: triage :alarm_clock:"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this validation report!
+        Thanks for taking the time to fill out this risk assessment report!
         Please replace XXX in the issue title with the package name, and YYY with the package version.
         We have developed an R package to assist in filling out this form. It is available via xxxxx
   - type: input
