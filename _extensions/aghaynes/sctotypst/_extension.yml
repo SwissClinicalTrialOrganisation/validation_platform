@@ -1,0 +1,9 @@
+title: Typst Template
+author: Alan Haynes
+version: 0.0.1
+contributes:
+  formats:
+    typst:
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
