@@ -1,1 +1,1 @@
-Sitemap: https://SwissClinicalTrialOrganisation.github.io/pkg_validation/sitemap.xml
+Sitemap: https://SwissClinicalTrialOrganisation.github.io/validation_platform/sitemap.xml

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/wi/testing.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/wi/testing.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/wi/review_tests.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/wi/review_tests.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/sop/sop_fn_tests.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/sop/sop_fn_tests.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/sop/businessproc_ra.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/sop/businessproc_ra.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/results/pkgassessment.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/results/pkgassessment.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/index.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/index.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/results/pkgtesting.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/results/pkgtesting.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/sop/risk_metrics.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/sop/risk_metrics.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/wi/pkg_validation.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/wi/pkg_validation.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
   <url>
-    <loc>https://SwissClinicalTrialOrganisation.github.io/pkg_validation/wi/running_tests.html</loc>
-    <lastmod>2024-10-25T09:36:05.847Z</lastmod>
+    <loc>https://SwissClinicalTrialOrganisation.github.io/validation_platform/wi/running_tests.html</loc>
+    <lastmod>2024-11-29T15:30:31.769Z</lastmod>
   </url>
 </urlset>
