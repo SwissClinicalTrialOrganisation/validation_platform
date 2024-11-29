@@ -68,7 +68,7 @@ Where packages use the testthat framework, all tests can be run via `devtools::t
 
 If they do not use testthat, you will need to explore the package to find how it's tests are run.
 
-Test results should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test_internal.yml&title=%5BPackage+selftest%5D%3A+XXX+version+YYY){target="blank"}. Fill out the form with the appropriate information. 
+Test results should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test_internal.yml&title=%5BPackage+selftest%5D%3A+XXX+version+YYY){target="blank"}. Fill out the form with the appropriate information. 
 
 ## Running tests from within the SCTO framework
 
@@ -85,7 +85,7 @@ options(repos = c(
 ```{r}
 #| eval: false
 #| label: test
-validation::test("accrualPlot")
+SCTORvalidation::test("accrualPlot")
 ```
 
 The function will download the testing files from GitHub, run the tests and format the results for easier copy/pasting into a reporting issue on GitHub.
