@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: "Statistics and Methodology - R validation"
+  title: "Statistics and Methodology - Validation Platform"
   page-footer: CC-BY SCTO Statistics and Methodology
   favicon: fig/SCTO_Platforms.png
   navbar:
-    title: "SCTO Stats and Methodology - R package validation"
+    title: "SCTO Stats and Methodology - Validation Platform"
     right:
       # - text: "Home"
       #   href: index.html
@@ -46,13 +46,13 @@ website:
       - section: "Useful links"
         contents:
          - text: "Report an assessment or test"
-           href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues"
+           href: "https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues"
            target: "_blank"
          - href: "https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues"
            text: "Tests repository"
            target: "_blank"
-         - href: "https://swissclinicaltrialorganisation.github.io/validation/"
-           text: "Validation R package"
+         - href: "https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/"
+           text: "SCTORvalidation R package"
            target: "_blank"
     # logo: SCTO_Platforms.png
 
