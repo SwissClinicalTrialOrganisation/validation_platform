@@ -17,6 +17,8 @@ format-links:
 execute:
   echo: false
   message: false
+number-sections: true
+keep-typ: false
 ---
 <!-- Taken from Validation_taskforce\Documents_For_Review/SCTO_CSV policy R_DRAFT_20240724.docx -->
 <!-- quarto pandoc -s -o "sop/policy.md" "sop/SCTO_CSV policy R_DRAFT_20240724.docx" -->
@@ -29,8 +31,6 @@ execute:
 |                     | Name | Date |
 |---------------------|------|------|
 | Authored/Revised by |      |      |
-| Reviewed by         |      |      |
-| Released by         |      |      |
 
 `#set align(left)`{=typst}
 
@@ -46,27 +46,34 @@ execute:
 
 :::
 
-## Introduction
 
-This policy provides the framework for validating R and R add-on
-packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO
-network members[^1] for the purpose of creating R products in the
-context of clinical research. Validation may be executed on SCTO or CTU
-level, where the SCTO provides
+# Executive summary {#sec-executive-summary}
+
+The typical guiding line of computerised system validation consists, in
+simple terms, of the following steps:
+
+1.  Define what you need
+2.  Plan how you confirm that you have what you need
+3.  Test that you have what you need
+4.  Document all steps from planning to test results.
+
+Based on this concept, this policy provides a framework for member organizations of Swiss-Clinical Trial Organization (SCTO) to validate the language and environment "R". In @sec-detailed-approach of this policy we list and explain the documents that constitute a "validation documentation set", as expected by regulatory entities examining or auditing computerised systems. We outline which of these documents are required and provide justification for those that are not required and, whenever possible, provide examples of relevant steps. Local adaptations to the principles outlined in this policy are required.
+
+As explained in @sec-background, Using R under a validated environment touches on four different levels: infrastructure, R system level (primarily baseline installation), R-add on packages and the product generated using R. We provide guidance to the different levels. Risk assessment and management underlies all the decisions to the specifics required
+
+The level of R add-on packages (@sec-r-package-val) is the most challenging level, and potentially requires the most resources. To increase efficiency, we suggest here a unified process to first, assess an add-on package's baseline risk, and second, to perform testing of functions that are part of R add-on packages. Together with the policy, we construct an online package inventory collecting these assessments and tests and making them available to all SCTO network members. As suggested in @sec-risk-management, the decision whether testing a function of an R add-on package is needed depends on the combined assessment of the add-on package's baseline risk and of the risk associated with the specific product to be generated.
+
+# Introduction {#sec-introduction}
+
+This policy provides the framework for validating R and R add-on packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO network members[^1] for the purpose of creating R products in the context of clinical research. Validation may be executed on SCTO or CTU level, where the SCTO provides
 
 -   recommendations for R base installation validation,
 -   processes for R add-on package validation and
--   a platform to serve as an inventory for documentation of all R
-    add-on package validation performed by the SCTO and its network
-    members according to this policy.
+-   a platform to serve as an inventory for documentation of all R add-on package validation performed by the SCTO and its network members according to this policy.
 
-Validation activities in general ensure that computerised systems (CS)
-can be relied upon to consistently produce a product that meets
-predetermined specifications of accuracy. The formal process of
-validation results in a validation (documentation) package[^2].
+Validation activities in general ensure that computerised systems can be relied upon to consistently produce a product that meets predetermined specifications of accuracy. The formal process of validation results in a validation documentation set[^2].
 
-The validation of a computerised system consists of the following
-elements:
+The validation of a computerised system consists of the following elements:
 
 -   Infrastructure
 -   Hardware
@@ -74,615 +81,1292 @@ elements:
 -   Processes
 -   Training
 
-The validation activities focus on verifying that the software
-consistently fulfills the specified requirements. Processes must be in
-place to ensure that the infrastructure and hardware required for the
-functionality of the software are qualified and changes controlled.
-Additionally, all users and (if applicable) support personnel must be
-trained to use the software and follow related business processes.
+The validation activities focus on verifying that the software consistently fulfills the specified requirements. Processes must be in place to ensure that the infrastructure and hardware required for the functionality of the software are qualified and changes controlled. Additionally, all users and (if applicable) support personnel must be trained to use the software and follow related business processes.
 
-Any GxP critical system supporting activities such as statistical
-analysis (e.g., in the context of clinical trials) should be validated
-according to the following international standards and guidelines:
+According to international standards and guidelines listed below, any GxP[^3] critical system supporting activities such as statistical analysis (e.g., in the context of clinical studies) should be validated:
 
--   [ICH E6: Guideline for Good Clinical
-    Practice](https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf)
--   [GAMP 5: A Risk Based Approach to Compliant GxP Computerized
-    systems](http://www.ispe.org/gamp-5)
--   [FDA 21 CFR part 11: Electronic Records; Electronic
-    Signatures](https://www.ecfr.gov/cgi-bin/text-idx?SID=bb609049963efdb7e40b991244ba59e1&mc=true&tpl=/ecfrbrowse/Title21/21cfr11_main_02.tpl)
--   [FDA 21 CFR part 11: Guidance for
-    Industry](http://www.fda.gov/downloads/RegulatoryInformation/Guidances/ucm125125.pdf)
--   [FDA: General Principles of Software
-    Validation](https://www.fda.gov/media/73141/download)
--   [Eudralex 4 Good Manufacturing Practice Guidelines, Annex 11:
-    Computerised
-    Systems](https://ec.europa.eu/health/sites/health/files/files/eudralex/vol-4/annex11_01-2011_en.pdf)
+-   [EMA Guideline on computerised systems and electronic data in clinical     trials](https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-computerised-systems-and-electronic-data-clinical-trials_en.pdf)
+-   [ICH E6: Guideline for Good Clinical     Practice](https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf)
+-   [Eudralex 4 Good Manufacturing Practice Guidelines, Annex 11: Computerised     Systems](https://ec.europa.eu/health/sites/health/files/files/eudralex/vol-4/annex11_01-2011_en.pdf)
+-   [GAMP 5: A Risk Based Approach to Compliant GxP Computerized systems](http://www.ispe.org/gamp-5)
+-   [FDA 21 CFR part 11: Electronic Records; Electronic Signatures](https://www.ecfr.gov/cgi-bin/text-idx?SID=bb609049963efdb7e40b991244ba59e1&mc=true&tpl=/ecfrbrowse/Title21/21cfr11_main_02.tpl)
+-   [FDA: General Principles of Software Validation](https://www.fda.gov/media/73141/download)
 
-This SCTO policy is based on the ICH E6 guideline for Good Clinical
-Practice. FDA regulations and guidelines (US) and Eudralex 4 (EU)
-represent additional best practices for validation of computerised
-systems in the industry and may serve as a guideline for academical
-purposes.
+This SCTO policy is based on the ICH E6 guideline for Good Clinical Practice and the EMA guideline on computerised systems and electronic data in clinical trials. FDA regulations and guidelines (US) and Eudralex 4 (EU) represent additional best practices for validation of computerised systems in the industry and may serve as a guideline for academical purposes.
 
-## Background
+This policy is based on a business processes risk assessment provided by the [SCTO statistics' platform](https://swissclinicaltrialorganisation.github.io/validation_platform/sop/highlevel_ra.html).
 
-R is a 'language and environment for statistical computing and graphics'
-(source: the R file). It is an official part of the Free Software
-Foundation's GNU project and is released under the [Free Software
-Foundation's GNU Public
-License](https://www.gnu.org/licenses/gpl-3.0.html) . CTUs use R
-primarily, but not exclusively, in the preparation and analysis of data
-from supported studies. Internal use for other reporting, visualisation
-and business management might also take place, according to individual
-CTU needs, but is not the focus of this policy.
+# Background  {#sec-background}
+
+R is a 'language and environment for statistical computing and graphics' (source: [r-project.org](https://www.r-project.org/about.html)). It is an official part of the Free Software Foundation's GNU[^4] project and is released under the [Free Software Foundation's GNU Public License](https://www.gnu.org/licenses/gpl-3.0.html) . Clinical Trial Units (CTU; see definition below) use R primarily, but not exclusively, in the framework of clinical research for tasks including sample size estimation and statistical design consideration, as well as the preparation and analysis of data from supported studies. Internal use for other reporting, visualisation and business management might also take place, according to individual CTU needs, but is not the focus of this policy.
 
 Installation and use of R is based on several levels and sources:
 
-1)  The "official R distribution" (referred to as 'R base installation'
-    in this document), which includes the R base and recommended
-    packages (as defined in the R-foundation declaration with regards to
-    validation and compliance, 2021) and is available via the Central R
-    Archive Network (CRAN).
-2)  Distribution of contributed R add-on packages provided by the
-    community and available via CRAN.
-3)  Distribution of R add-on packages provided by the community via
-    other sources than CRAN (e.g., Bioconductor, Github, and various
-    websites).
+1)  The "official R distribution" (referred to as 'R base installation' in this document), which includes the R base and recommended R packages (as defined in the [R: Regulatory compliance and validation issues -- a guidance document, 2021](https://www.r-project.org/doc/R-FDA.pdf)) and is available via the Central R Archive Network ([CRAN](https://cran.r-project.org/)).
+2)  Distribution of contributed R add-on packages provided by the community and available via CRAN.
+3)  Distribution of R add-on packages provided by the community via other sources than CRAN (e.g., Bioconductor, Github, and various websites).
 
-Additionally, R packages may be developed in-house for internal use only
-and not distributed via any of the channels mentioned above. If such
-packages or some of their functions are used in the GxP context (e.g.,
-clinical trials), they must also be validated. This validation should,
-whenever feasible, follow the process outlined in this document and
-associated SOPs even if the R package is not shared with the SCTO
-community.
+Additionally, R add-on packages may be developed in-house for internal use only and not distributed via any of the channels mentioned above. If such R add-on packages, or any of their functions, are used in the GxP context (e.g., clinical research), they must also be validated. This validation should, whenever feasible, follow the process outlined in this document and associated SOPs even if the R add-on package is not shared with the SCTO community.
 
-## Scope
+# Glossary of Terms & Abbreviations  {#sec-glossary}
 
-### In Scope {#sec-in-scope}
+CTU
+: Clinicial Trial Unit. 
 
--   Recommendations for R base installation validation (the final
-    process and all documentation has to be defined and prepared by each
-    CTU according to their local processes)
--   Processes for R add-on \"intended for use" packages validation
-    (incl. package risk assessment & functional testing)
+For the purposes of this document, all SCTO network members.
 
-:::{.callout-note}
-Processes for R add-on package validation described in this document are to be 
-considered minimum requirements as shared by the SCTO platform. Individual 
-organizations (CTUs) can define stricter processes.
-:::
+CRAN
+: Comprehensive R Archive Network 
 
-### Out of Scope {#sec-out-of-scope}
+EMA
+: European Medicine Agency  
 
--   Standards for IT infrastructure (*to be defined on local level by
-    the CTUs, see @sec-generalapproach*)
--   R add-on package management to ensure traceability and
-    reproducibility on R product level (*to be defined on local level by
-    the CTUs, see @sec-pkgvalidation)*
--   Risk assessment and management of R products (*to be defined on
-    local level by the CTUs, see @sec-r-product-validation):* 
-    Products are always CTU and clinical trial specific -- a high-risk product 
-    may result in the need for additional validation activities for an R package, 
-    even if that package/ required function is available as "validated" on the
-    SCTO platform.
--   In general: any additional internal, organization specific,
-    processes of CTUs.
+FDA
+: US Food and Drug Administration
 
-## Abbreviations & Definitions
+GxP
+: Good "x" Practice where "x" stands for the relevant area, e.g,: C = Clinical, M = Manufacturing, L = Laboratory 
 
-+--------------------+-------------------------------------------------+
-| **Terminology**    | **Definition**                                  |
-+====================+=================================================+
-| CTU                | Clinical Trial Unit.                            |
-|                    |                                                 |
-|                    | For purposes of this document: all SCTO network |
-|                    | members.                                        |
-+--------------------+-------------------------------------------------+
-| CRAN               | Comprehensive R Archive Network                 |
-+--------------------+-------------------------------------------------+
-| EMA                | European Medicine Agency                        |
-+--------------------+-------------------------------------------------+
-| FDA                | Food and Drug Administration                    |
-+--------------------+-------------------------------------------------+
-| HLRA               | High-Level Risk Assessment                      |
-+--------------------+-------------------------------------------------+
-| HRA                | (Swiss) Human Research Act                      |
-+--------------------+-------------------------------------------------+
-| Intended for use   | \"Intended for use" packages are add-on         |
-| package            | packages that comprise the functions required   |
-|                    | for a specific product and are typically loaded |
-|                    | directly by the user during an R session.       |
-+--------------------+-------------------------------------------------+
-| Product            | Any deliverable produced using R via the        |
-|                    | processes below. Typical statistical products   |
-|                    | include sample size estimation, statistical     |
-|                    | analysis plan, an analysis report etc.          |
-+--------------------+-------------------------------------------------+
-| QMS                | Quality Management System                       |
-+--------------------+-------------------------------------------------+
-| R add-on package   | -   Provided by members of the R community      |
-|                    | -   available via CRAN and other distribution   |
-|                    |     repositories                                |
-+--------------------+-------------------------------------------------+
-| R Base             | -   Provided as part of the official R          |
-| Installation       |     distribution released by the R Foundation   |
-|                    | -   available via CRAN                          |
-|                    | -   includes Base R and recommended packages    |
-+--------------------+-------------------------------------------------+
-| SCTO               | Swiss Clinical Trial Organization               |
-+--------------------+-------------------------------------------------+
-| SOP                | Standard Operation Procedure                    |
-+--------------------+-------------------------------------------------+
-| Validation Package | A set of documents that is prepared for         |
-|                    | documentation of the validation process.        |
-+--------------------+-------------------------------------------------+
+HLRA
+: High-Level Risk Assessment 
 
-## General R Validation Approach {#sec-generalapproach}
+HRA
+: (Swiss) Human Research Act
+
+Intended for use package
+: \"Intended for use" packages are add-on packages that comprise the functions required for a specific R product and are typically loaded directly by the user during an R session. 
+
+In this policy, when discussing the validation of an R add on package we refer to "intended for use" packages.  
+
+R Product
+: Any deliverable produced using R via the processes below. Typical statistical R products include sample size estimation, statistical analysis plan, an analysis report etc.
+
+QMS
+: Quality Management System
+
+R add-on package 
+: -   Provided by members of the R community   
+  -   available via CRAN and other distribution repositories
+  -   excludes Base R and R recommended packages
+
+R Base Installation
+: -   Provided as part of the official R distribution released by the R Foundation
+  -   available via CRAN
+  -   includes Base R and R recommended packages
+
+R recommended packages
+: A collection of packages, developed and validated by members of the R Development Core Team, and listed as ‘recommended’ in the document [R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments](https://www.r-project.org/doc/R-FDA.pdf).
+
+SCTO
+: Swiss Clinical Trial Organisation
+
+SOP
+: Standard Operating Procedure
+
+Traceability
+: Refers to the ability to trace the development and validation processes a product underwent to understand its development history and make sure it fits its intended purpose. In detail, include the fulfillment of tests showing adherence to requirements, tracking software and package version and changes in product, the ability to reproduce results and documentation of protocols, scripts and results.
+
+Validation documentation set
+: A set of documents that is prepared to plan and to provide evidence for the validation process.
+
+
+# General R Validation Approach   {#sec-general-approach}
 
 The SCTO follows a risk-based approach to the validation of R. For the
 validation and assessment of risks, we differentiate between the
-following levels:
+following levels, which build on each other:
 
--   IT infrastructure qualification (*according to local CTU processes,
-    see @sec-it-inf*)[^3]
--   System level (R base installation, incl. recommended packages,
-    *according to local CTU processes, recommendations and examples
-    provided by SCTO, see @sec-r-base-installation-validation*)
--   Package level (R add-on packages/ functions used within those
-    packages, *according to SCTO processes, see @sec-pkgvalidation*)
--   Product level ("intended use"/ outcome, *according to by local CTU
-    processes, see @sec-r-product-validation*)
+-   **IT Infrastructure level** (IT infrastructure qualification
+    *according to **local CTU processes**, see @sec-it-iq*[^5]):
 
-**Important:** To produce a product in R, under a [validated
-environment]{.underline}, it must be ensured that R is running using a
-validated base installation version and qualified IT infrastructure with
-proper documentation, to ensure consistent and reliable results on all
-levels. The different levels build on each other:
+    -   A qualified IT infrastructure provides the basis for the
+        validation of the R base installation and any R packages running
+        on that installation.
 
--   **Qualified infrastructure** provides the basis for the validation
-    of the R base installation and any packages running on that
-    installation.
--   **R base installation validation** ensures that the basic
-    installation of R (including recommended packages) provides a
-    reliable framework on which additional packages can be installed
-    (add-on packages) and functions from those packages executed.
--   **R add-on package validation** ensures that all functions within an
-    add-on package required for a specific product are sufficiently
-    tested in relation to the package and product risk (see R Product
-    Risk Assessment Metrics for details). This takes place by evaluating
-    the base risk associated with an R package, and, upon necessity,
-    performing specific function tests to ensure that functions required
-    for a specific product (within an add-on package) produce consistent
-    and reliable results from a statistical perspective (see **R
-    Function Testing SOP** for details).
+-   **R System level** (R base installation, incl. recommended R
+    packages, *according to **local CTU processes**, recommendations and
+    examples provided by SCTO, see @sec-r-base-install*):
 
-### IT Infrastructure Qualification {#sec-it-inf}
+    -   R base installation validation ensures that the basic
+        installation of R (including recommended R packages) has been
+        performed correctly and, thus, it provides a reliable framework
+        on which additional R add-on packages can be installed and
+        functions from those R add-on packages be executed.
 
-The IT infrastructure qualification is managed at CTU level according to
-local IT processes. The risk associated with IT infrastructure
-components is usually low.
+-   **R Package level** (R add-on packages/ functions used within those
+    packages, *according to **SCTO processes**, see @sec-r-package-val*):
+
+    -   R add-on package/ function validation ensures that all functions
+        within an R add-on package required for a specific R product are
+        sufficiently tested in relation to the R add-on package and R
+        product risk (see **SCTO R** **add-on** **Package Risk
+        Assessment SOP** for details). This takes place by evaluating
+        the base risk associated with an R add-on package, and, upon
+        necessity, performing specific function tests to ensure that
+        functions (within an R add-on package) required for a specific R
+        product produce consistent and reliable results from a
+        statistical perspective (see **SCTO** **R** **add-on Package**
+        **Function Testing SOP** for details).
+
+-   **R Product level** ("intended use"/ outcome, *according to by
+    **local CTU processes**, see @sec-r-product-val*)
+
+**Important note:** when creating an R product under a validated
+environment, the creator must ensure that
+
+-   R is running using a validated base installation version, and
+-   a qualified IT infrastructure
+-   with proper documentation
+
+to ensure consistency and reliability of results at all levels mentioned
+above.
+
+# Scope of this SCTO Validation Policy  {#sec-scope}
+
+## In Scope {#sec-in-scope}
+
+-   **Recommendations for R base installation validation** and periodic
+    review of the R base installation validation documentation set
+    (@sec-r-base-install).
+
+> ***Note:*** The final validation documentation set and periodic review
+> have to be defined and prepared by each CTU according to their local
+> processes.
+
+-   **Processes for R add-on packages validation** (\"intended for use")
+    , incl. R add-on package risk assessment & functional testing as
+    well as periodic review (@sec-r-package-val).
+
+> ***Note:*** Processes for R add-on package validation described in
+> this document are to be considered minimum requirements as shared by
+> the SCTO platform. Any CTU providing input to the SCTO's R add-on
+> package validation repository has to follow at least those processes.
+> Individual organizations (CTUs) can define stricter processes.
+
+-   **Recommendations for user training** (@sec-training).
+
+## Out of Scope {#sec-out-of-scope}
+
+-   **Standards for IT infrastructure** (*to be defined on local level
+    by the CTUs, see @sec-it-iq)
+
+-   **R add-on package management** to ensure traceability and
+    reproducibility on **R product level** (*to be defined on local
+    level by the CTUs, see @sec-r-package-val*)
+
+-   **Risk assessment and management of R products** (*to be defined on
+    local level by the CTUs, see @sec-r-product-val:* R Products are always CTU project
+    specific (e.g., a CTU's clinical trial project) -- a high-risk R
+    product may result in the need for additional validation activities
+    for an R add-on package, even if that R add-on package/required
+    function is available as "validated" on the SCTO platform.
+
+-   **Internal, organization specific, processes of CTUs.**
+
+# Detailed R Validation Approach  {#sec-detailed-approach}
+
+The following sections provide details on the required validation
+activities and documentation on all levels:
+
+- [-@sec-it-iq] IT Infrastructure Level: IT Infrastructure Qualification
+
+- [-@sec-r-base-install] R System Level: R Base Installation Validation
+
+- [-@sec-r-package-val] R Package Level: R Add-on Package Validation
+
+- [-@sec-r-product-val] R Product Level: R Product Validation
+
+@tbl-docs summarizes the required documents and activities for @sec-r-base-install and @sec-r-package-val.
+
+```{r}
+#| label: tbl-docs
+#| tbl-caption: Summary of Required Documents & Activities
+#| message: false
+#| warning: false
+library(gt)
+library(dplyr)
+tibble::tribble(
+  ~document, ~base, ~package,
+  "HLRA", "required - SCTO recommendation", "required",
+  "Vendor assessment", "required - SCTO recommendation", "not required",
+  "Validation plan + Test plan", "required", "not required",
+  "(User) requirements specification", "required", "not required",
+  "(Functional) risk assessment", "required - SCTO recommendation", "required",
+  "Software installation plan/ instruction", "not required", "not required",
+  "Test protocol (\"User Acceptance Tests\") / Test script", "required", "required",
+  "Installation Verification document (TEST)", "required", "not required",
+  "Executed test protocols (\"User Acceptance Tests\") / test scripts", "required", "required",
+  "Traceability Matrix", "required", "required",
+  "Validation & Test Report", "required", "required",
+  "Software Installation Verification document (PROD)", "required", "not required"
+) |> 
+  mutate(across(c(base, package), ~ factor(.x, c("not required", "required - SCTO recommendation", "required")))) |> 
+  gt() |> 
+  cols_label(document = "Document/activity", 
+             base = "**R Base installation (local CTU process)**", 
+             package = "**R add-on Package validation**") |> 
+  tab_spanner(
+    label = "Process",
+    columns = c(base, package)
+  ) |> 
+  data_color(
+    columns = c(base, package),
+    fn = scales::col_factor(
+      domain = c("not required", "required - SCTO recommendation", "required"),
+      palette = c("#668271", "#f3923e", "#f39b95"),
+      ordered = TRUE
+    )
+  ) |> 
+  tab_style(
+    locations = cells_column_labels(),
+    style = cell_fill(color = "#a1a0b4")
+  ) |> 
+  tab_style(
+    locations = cells_column_spanners(),
+    style = cell_fill(color = "#a1a0b4")
+  ) |> 
+  # tab_style(
+  #   locations = cells_column_labels(),
+  #   style = cell_fill(color = "#d0ced9")
+  # )
+  tab_options(table.font.size = px(9)) |> 
+  tab_caption("R Base Installation Validation and R add-on Package Validation: Summary of Required Documents & Activities")
+```
+
+
+## IT Infrastructure Level: IT Infrastructure Qualification {#sec-it-iq}
+
+The IT infrastructure qualification is managed at a local, institutional
+level, by the CTU or its organizational entity according to local IT
+processes.
 
 For the reliable use of R and statistical traceability it is important
 to note which IT infrastructure (specifically which operating system
 software and version) R is installed on and to ensure that the
 infrastructure on which R is running is qualified.
 
-### R Base Installation Validation {#sec-r-base-installation-validation}
+## R System Level: R Base Installation Validation {#sec-r-base-install}
 
-Every CTU must define:
+We recommend, that every CTU defines:
 
 -   The minimal (validated) software version of the R Base Installation
     to be used at the CTU and a process of handling version changes.
--   The R base installation validation package documenting the
-    validation activities (see table below for recommendations).
+-   The R base installation validation documentation set, providing
+    evidence for the R base installation validation activities (see
+    Table 3for recommendations).
 
-The R base installation validation package is a set of documents that
-should be prepared to document the validation process. The following
-table lists all documentation that is typically prepared during a
-computerised system validation process according to global standards and
-guidelines. It additionally provides recommendations how this
-documentation may be covered when preparing an R base installation
-validation package. The exact content of the R base installation
-validation package (i.e., the required documentation) at a CTU should
-follow the local processes and all documentation must be prepared and
-approved by the CTU. For some of the documents listed below, the SCTO
-provides examples (as indicated under "Detailed Description").
+Table 3 [lists]{.mark} all documentation that is typically
+prepared during a computerised system validation process according to
+global standards and guidelines. It additionally provides
+recommendations how this documentation may be covered when preparing an
+R base installation validation documentation set. The exact content of
+the R base installation validation documentation set (i.e., the required
+documentation) at a CTU should follow the local processes and all
+documentation must be prepared and approved by the CTU. For some of the
+documents listed below, the SCTO provides examples (as indicated under
+"Detailed Description").
 
-+----------------+-----------------------------------------------------+
-| **Document**   | **Detailed Description**                            |
-+================+=====================================================+
-| R Base         | The HLRA is usually created once, with the first    |
-| installation   | validation of an R base installation version and is |
-| High-Level     | valid for all future validated versions. It must be |
-| Risk           | updated in case the scope/ intended use/ content of |
-| Assessment     | the software changes.                               |
-| (HLRA; also    |                                                     |
-| known as       | The HLRA usually also documents the GxP relevance   |
-| System Risk    | of the system and therefore the need to validate    |
-| Assessment,    | the system.                                         |
-| SRA)           |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Vendor         | Vendor assessments are usually conducted with the   |
-| Assessment     | first validation of a software version. Since R is  |
-|                | an open-source software managed by a consortium, a  |
-|                | traditional vendor assessment/ audit approach is    |
-|                | not feasible. A critical review of "R: Regulatory   |
-|                | Compliance and Validation Issues - A Guidance       |
-|                | Document for the Use of R in Regulated Clinical     |
-|                | Trial Environments" may suffice as vendor           |
-|                | assessment and should be documented together with   |
-|                | any gaps identified that may require attention      |
-|                | during the validation of R and its packages.        |
-|                |                                                     |
-|                | The assessment of this document should be repeated  |
-|                | with a publication of a new article version, or in  |
-|                | case the R consortium replaces the existing         |
-|                | document, or periodically according to each CTU's   |
-|                | local periodic review processes.                    |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Validation     | The Validation Plan describes the details of the    |
-| Plan & Test    | planned validation process, including required      |
-| Plan           | documentation and acceptance criteria for           |
-|                | productive use.                                     |
-|                |                                                     |
-|                | The Test Plan describes the testing strategy and    |
-|                | testing process and may contain details on the      |
-|                | tests to be executed.                               |
-|                |                                                     |
-|                | The exact content of both documents depends on the  |
-|                | CTU's local processes. The content of the two       |
-|                | documents may also be covered in one "Validation &  |
-|                | Test Plan".                                         |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| (User)         | This document is usually created for the first      |
-| Requirements   | validation of an R base installation version and    |
-| Specification  | should be reviewed, and if required updated, for    |
-|                | future validated versions.                          |
-|                |                                                     |
-|                | It specifies the user requirements and intended use |
-|                | for the R base installation. It may also contain    |
-|                | any compliance (e.g., data integrity), regulatory   |
-|                | (e.g., personal data protection) and safety         |
-|                | requirements (e.g., controlled access).             |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Base           | This document is usually created with the first     |
-| installation   | validation of an R base installation version based  |
-| (Functional)   | on the user requirements or system functions        |
-| Risk           | supporting these requirements and should be         |
-| Assessment     | reviewed and, if required, updated for future       |
-|                | validated version.                                  |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Software       | Typically, either the vendor or the local IT        |
-| installation   | department provides a software installation plan/   |
-| plan/          | instructions to follow when installing new          |
-| instruction    | software.                                           |
-|                |                                                     |
-|                | In case of R, a specific "R software installation   |
-|                | plan/ instruction" is **not** required. It should   |
-|                | be sufficient to follow the instructions on CRAN    |
-|                | when downloading and installing the new R base      |
-|                | installation version.                               |
-|                |                                                     |
-|                | Important is that the installation of the R base    |
-|                | installation and version management follow the      |
-|                | CTU's local processes for validated systems and     |
-|                | that all versions installed are documented,         |
-|                | including the date/ time of installation (see       |
-|                | Installation Verification Document below).          |
-+----------------+-----------------------------------------------------+
-| Test scripts   | Test scripts are usually created with the first     |
-| ("User         | validated R base installation version and should be |
-| Acceptance     | reviewed, and if required updated and/or new test   |
-| Tests")        | scripts created, for future validated version.      |
-|                |                                                     |
-|                | The tests must verify the functions of the R base   |
-|                | installation supporting the user requirements. Test |
-|                | scripts provided by R may be used as-is or adapted/ |
-|                | extended as required. The scope of testing must be  |
-|                | defined according to the CTU's local processes and  |
-|                | defined user requirements.                          |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Installation   | The purpose of this document is to provide evidence |
-| Verification   | of the installation of a specific system version on |
-| document       | an environment/ machine that is used for testing    |
-| (TEST)         | purposes before the new system version is released  |
-|                | to production.                                      |
-|                |                                                     |
-|                | In case of R this may be a separate document or an  |
-|                | entry in an R repository or other "version tracker" |
-|                | (depending on your local IT processes). The         |
-|                | following information should be captured:           |
-|                |                                                     |
-|                | -   R base installation version installed           |
-|                | -   Date and time of installation                   |
-|                | -   Person performing the installation (may be      |
-|                |     someone from your local IT department)          |
-|                | -   Outcome of installation: successful, successful |
-|                |     with deviations, not successful                 |
-|                | -   If applicable: Any actions taken in addition to |
-|                |     the regular "download and install from CRAN"    |
-|                |     process (e.g., uninstalling an older version)   |
-|                |                                                     |
-|                | **Note:** depending on your local processes it may  |
-|                | not be feasible or even possible to do a            |
-|                | preliminary "test installation" and perform tests   |
-|                | before productive use of the new R base             |
-|                | installation version (e.g., if R is distributed     |
-|                | remotely by your local IT department). In this      |
-|                | case, we recommend you still execute the tests      |
-|                | after the installation and document the test        |
-|                | execution. Should any issues be detected during     |
-|                | testing, please inform your local IT department     |
-|                | immediately. Ideally you implement a process that   |
-|                | would ensure nobody is using the new R version for  |
-|                | productive use before the tests are completed       |
-|                | successfully (i.e., without major issues) and the   |
-|                | validation & test report is approved (see           |
-|                | "Validation & Test Report" below).                  |
-+----------------+-----------------------------------------------------+
-| Executed test  | Execute the pre-defined test scripts for each new R |
-| scripts ("User | base installation version (i.e., follow the steps   |
-| Acceptance     | described in the test scripts) and document the     |
-| Tests")        | outcome according to the CTU's local processes.     |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Traceability   | Traceability between requirements and tests can be  |
-| Matrix         | achieved by creating a separate document            |
-|                | (traceability matrix) or by linking requirements    |
-|                | and tests within the requirements and tests         |
-|                | themselves. It is important, that whatever means is |
-|                | used, it is feasible to proof that all requirements |
-|                | are verified with a test (or if not tested          |
-|                | formally, a rationale why the test is not required, |
-|                | e.g., low risk requirements which can be considered |
-|                | "verified" based on the experience by the user      |
-|                | community).                                         |
-+----------------+-----------------------------------------------------+
-| Test Report    | The Test Report and Validation Report are usually   |
-| and Validation | created (or at least updated to a new version) with |
-| Report         | every new R base installation version to be         |
-|                | released for productive use. The main purpose is    |
-|                |                                                     |
-|                | 1)  to summarize the testing activities and         |
-|                |     results, including any deviations from the      |
-|                |     expected results                                |
-|                | 2)  to document all completed validation            |
-|                |     activities, including any deviations from the   |
-|                |     original plan (see Validation & Test Plan).     |
-|                |     Deviations should be justified and assessed for |
-|                |     criticality.                                    |
-|                | 3)  to document the acceptance for productive use   |
-|                |     (with or without restrictions)                  |
-|                |                                                     |
-|                | The exact content of this report/ these reports     |
-|                | depends on the CTU's local processes.               |
-|                |                                                     |
-|                | -   Example available on the SCTO platform          |
-+----------------+-----------------------------------------------------+
-| Installation   | The purpose of this document is to provide evidence |
-| Verification   | of the installation of a specific system version on |
-| document       | an environment/ machine that is used for productive |
-| (PROD)         | purposes.                                           |
-|                |                                                     |
-|                | In case of R, this may be a separate document or an |
-|                | entry in an R repository or other "version tracker" |
-|                | (depending on your local IT processes). The         |
-|                | following information should be captured:           |
-|                |                                                     |
-|                | -   R base installation version installed           |
-|                | -   Date and time of installation                   |
-|                | -   Person performing the installation (may be      |
-|                |     someone from your local IT department)          |
-|                | -   Outcome of installation: successful, successful |
-|                |     with deviations, not successful                 |
-|                | -   If applicable: Any actions taken in addition to |
-|                |     the regular "download and install from CRAN"    |
-|                |     process (e.g., uninstalling an older version)   |
-|                |                                                     |
-|                | See also **note** under "Installation Verification  |
-|                | document (TEST)": In case of R base installation,   |
-|                | the installation may only be documented once and    |
-|                | not separately on "TEST" and "PROD". **Important**  |
-|                | is, that any version changes of the R base          |
-|                | installation are managed and documented according   |
-|                | to your CTU's local IT change management processes. |
-+----------------+-----------------------------------------------------+
++--------------------+-------------------------------+----------------------------+
+| **Document or      | ***Detailed Description:***   | ***Requirements***         |
+| activity**         |                               |                            |
+|                    |                               |                            |
+| R Base             |                               |                            |
+| installation       |                               |                            |
++:===================+:==============================+:===========================+
+|                    | - *Purpose of the document/   | - *If the document/        |
+|                    |   activity and how this       |   activity is NOT          |
+|                    |   aspect can be covered for   |   required for R: a        |
+|                    |   R (suggested R specific     |   rationale, why this      |
+|                    |   document/ activity)*        |   document/activity can    |
+|                    |                               |   be omitted*              |
+|                    | - *Link to example            |                            |
+|                    |   document*                   | - *Recommended frequency   |
+|                    |                               |   of update*               |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **High-Level       | document is to assess and     | - Yes                      |
+| Risk Assessment**  | document the risk of a system |                            |
+| (HLRA; also        | on a high level. It typically | **Frequency of update:**   |
+| referred to as     | specifies at least the        |                            |
+| System Risk        | software category and the     | - Created before/ with     |
+| Assessment)        | intended use of the software, |   the first R base         |
+|                    | including if it is used for   |   installation             |
+|                    | GxP processes. The outcome of |   validation.              |
+|                    | the HLRA (GxP relevance       |                            |
+|                    | assessment) defines, if a     | - Updated, if any of the   |
+|                    | system needs to be validated  |   assessed aspects         |
+|                    | or not.                       |   change.                  |
+|                    |                               |                            |
+|                    | **Example:**                  | - Reviewed during          |
+|                    |                               |   periodic review          |
+|                    | -   Example available on the  |   cycles. The review       |
+|                    |     SCTO platform             |   process should be        |
+|                    |                               |   documented even if no    |
+|                    |                               |   updates are required.    |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Vendor           | document is to assess the     | - Yes                      |
+| Assessment**       | reliability of a system       |                            |
+|                    | vendor. This may be done      | **Frequency of update:**   |
+|                    | based on an audit or review   |                            |
+|                    | of relevant vendor            | - Created before/ with     |
+|                    | documentation.                |   the first R base         |
+|                    |                               |   installation             |
+|                    | ***R base validation specific |   validation.              |
+|                    | approach***: Since R is an    |                            |
+|                    | open-source software managed  | - Updated, if any of the   |
+|                    | by a consortium, a            |   assessed aspects         |
+|                    | traditional vendor            |   change, specifically,    |
+|                    | assessment/ audit approach is |   with a publication of    |
+|                    | not feasible. A critical      |   a new article version    |
+|                    | review of "[R: Regulatory     |   of the article           |
+|                    | Compliance and Validation     |   mentioned above, or in   |
+|                    | Issues - A Guidance Document  |   case the R consortium    |
+|                    | for the Use of R in Regulated |   replaces the existing    |
+|                    | Clinical Trial                |   document.                |
+|                    | Environments](https://www.    |                            |
+|                    | r-project.org/doc/R-FDA.pdf)" | - Reviewed during          |
+|                    | may suffice as vendor         |   periodic review cycles   |
+|                    | assessment and should be      |   and review documented,   |
+|                    | documented together with any  |   if no updates are        |
+|                    | gaps identified that may      |   required.                |
+|                    | require attention during the  |                            |
+|                    | validation of R and its R     |                            |
+|                    | add-on packages.              |                            |
+|                    |                               |                            |
+|                    | **Example:**                  |                            |
+|                    |                               |                            |
+|                    | -   Example available on the  |                            |
+|                    |     SCTO platform             |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Validation       | document is to define the     | - Yes                      |
+| Plan & Test Plan** | details of the planned        |                            |
+|                    | validation process, including | **Frequency of update:**   |
+|                    | required documentation and    |                            |
+|                    | acceptance criteria for       | - Based on each CTU's      |
+|                    | productive use (Validation    |   validation approach,     |
+|                    | Plan). The Test Plan may be   |   either:                  |
+|                    | included in the Validation    |                            |
+|                    | Plan or prepared as a         |     - *Created with the    |
+|                    | separate document. The        |       first R base         |
+|                    | purpose of a Test Plan is to  |       installation         |
+|                    | define the testing strategy   |       validation and       |
+|                    | and testing process and may   |       updated only, if     |
+|                    | contain details on the tests  |       any aspects          |
+|                    | to be executed (if created    |       described in the     |
+|                    | for every new version         |       plan change* (in     |
+|                    | validated). The exact content |       this case the plan   |
+|                    | of such a document depends on |       would NOT contain    |
+|                    | the CTU's local processes.    |       any details about    |
+|                    |                               |       tests to be          |
+|                    | **Example:**                  |       executed or          |
+|                    |                               |       specific document    |
+|                    | -   Example available on the  |       updates required     |
+|                    |     SCTO platform             |       for a newly          |
+|                    |                               |       released version.    |
+|                    |                               |       Instead, it would    |
+|                    |                               |       contain generic      |
+|                    |                               |       rules for test       |
+|                    |                               |       execution and        |
+|                    |                               |       document updates).   |
+|                    |                               |       If this approach     |
+|                    |                               |       is followed:         |
+|                    |                               |                            |
+|                    |                               |       - Release-specific   |
+|                    |                               |           validation       |
+|                    |                               |           activities       |
+|                    |                               |           should be        |
+|                    |                               |           documented       |
+|                    |                               |           elsewhere        |
+|                    |                               |           (e.g., in a      |
+|                    |                               |           Change Plan)     |
+|                    |                               |                            |
+|                    |                               |         - The document     |
+|                    |                               |           is only          |
+|                    |                               |           updated, if      |
+|                    |                               |           the validation   |
+|                    |                               |           and/or testing   |
+|                    |                               |           strategy         |
+|                    |                               |           changes.         |
+|                    |                               |                            |
+|                    |                               |         - The document     |
+|                    |                               |           is reviewed      |
+|                    |                               |           during           |
+|                    |                               |           periodic         |
+|                    |                               |           review cycles    |
+|                    |                               |           and review       |
+|                    |                               |           documented, if   |
+|                    |                               |           no updates are   |
+|                    |                               |           required.        |
+|                    |                               |                            |
+|                    |                               |     - *Created or at       |
+|                    |                               |       least updated to a   |
+|                    |                               |       new document         |
+|                    |                               |       version with every   |
+|                    |                               |       validation of a      |
+|                    |                               |       new R base           |
+|                    |                               |       installation         |
+|                    |                               |       version* (in this    |
+|                    |                               |       case the plan        |
+|                    |                               |       would contain all    |
+|                    |                               |       relevant details     |
+|                    |                               |       to plan and          |
+|                    |                               |       execute the          |
+|                    |                               |       release-specific     |
+|                    |                               |       validation). If      |
+|                    |                               |       this approach is     |
+|                    |                               |       followed             |
+|                    |                               |                            |
+|                    |                               |         - An additional    |
+|                    |                               |           release-specific |
+|                    |                               |           change plan      |
+|                    |                               |           may not be       |
+|                    |                               |           required.        |
+|                    |                               |                            |
+|                    |                               |         - A new            |
+|                    |                               |           Validation &     |
+|                    |                               |           Test Plan or     |
+|                    |                               |           at least a new   |
+|                    |                               |           document         |
+|                    |                               |           version is       |
+|                    |                               |           created with     |
+|                    |                               |           every new R      |
+|                    |                               |           base             |
+|                    |                               |           installation     |
+|                    |                               |           version          |
+|                    |                               |           validation.      |
+|                    |                               |                            |
+|                    |                               |         - No periodic      |
+|                    |                               |           review           |
+|                    |                               |           required.        |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **(User)           | document is to specify the    | -   Yes                    |
+| Requirements       | user requirements and         |                            |
+| Specification**    | intended use for the R base   | **Frequency of update:**   |
+|                    | installation. It may also     |                            |
+|                    | contain any compliance (e.g., | - Created with the first   |
+|                    | data integrity), regulatory   |   R base installation      |
+|                    | (e.g., personal data          |   validation.              |
+|                    | protection) and safety        |                            |
+|                    | requirements (e.g.,           | - Updated, if any new      |
+|                    | controlled access).           |   requirements need to     |
+|                    |                               |   be added to cover the    |
+|                    | **Example:**                  |   full scope of the        |
+|                    |                               |   current intended use     |
+|                    | -   Example available on the  |   OR if any of the         |
+|                    |     SCTO platform             |   existing requirements    |
+|                    |                               |   need to be updated or    |
+|                    |                               |   removed.                 |
+|                    |                               |                            |
+|                    |                               | - Reviewed during          |
+|                    |                               |   periodic review cycles   |
+|                    |                               |   and review documented,   |
+|                    |                               |   if no updates are        |
+|                    |                               |   required.                |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **(Functional)     | document is to document the   | - Yes                      |
+| Risk Assessment**  | risk of system functionality  |                            |
+|                    | based on the user             | **Frequency of update:**   |
+|                    | requirements and/ or          |                            |
+|                    | processes related to these    | - Created with the first   |
+|                    | requirements.                 |   R base installation      |
+|                    |                               |   validation.              |
+|                    | **Example:**                  |                            |
+|                    |                               | - Updated, if any new      |
+|                    | -   You may use the SCTO      |   functions or processes   |
+|                    |     Statistics Business       |   are added to the scope   |
+|                    |     processes risk assessment |   of the intended use      |
+|                    |     document as a basis for   |   of R. If new             |
+|                    |     this document ([link to   |   requirements are added   |
+|                    |     document]{.mark})         |   to the User              |
+|                    |                               |   Requirements             |
+|                    |                               |   Specification, this is   |
+|                    |                               |   a good indicator to      |
+|                    |                               |   also review the          |
+|                    |                               |   Functional Risk          |
+|                    |                               |   Assessment document.     |
+|                    |                               |                            |
+|                    |                               | - Reviewed during          |
+|                    |                               |   periodic review cycles   |
+|                    |                               |   [and review              |
+|                    |                               |   documented, if no        |
+|                    |                               |   updates are              |
+|                    |                               |   required.]{.mark}        |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Software         | document would be to provide  | - No (see above for how    |
+| Installation       | a process to follow during    |   this is covered)         |
+| Plan/Instruction** | the installation of a         |                            |
+|                    | software. It is typically     | **Frequency of update:**   |
+|                    | provided either by the vendor |                            |
+|                    | or prepared by local IT       | - N/A                      |
+|                    | departments.                  |                            |
+|                    |                               |                            |
+|                    | ***R base validation specific |                            |
+|                    | approach:*** It should be     |                            |
+|                    | sufficient to follow the      |                            |
+|                    | instructions on CRAN when     |                            |
+|                    | downloading and installing    |                            |
+|                    | the new R base installation   |                            |
+|                    | version.                      |                            |
+|                    |                               |                            |
+|                    | **Important** is that the     |                            |
+|                    | installation of the R base    |                            |
+|                    | installation and version      |                            |
+|                    | management follow the CTU's   |                            |
+|                    | local processes for validated |                            |
+|                    | systems and that all versions |                            |
+|                    | installed are documented,     |                            |
+|                    | including the date/ time of   |                            |
+|                    | installation (see             |                            |
+|                    | Installation Verification     |                            |
+|                    | Document below).              |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Test             | document is to verify the     | - Yes                      |
+| protocol           | functions of the R base       |                            |
+| ("User Acceptance  | installation supporting the   | **Frequency of update:**   |
+| Tests")**          | user requirements.            |                            |
+|                    |                               | - Created with the first   |
+|                    | ***R base validation specific |   R base installation      |
+|                    | approach***: Test protocols   |   validation.              |
+|                    | provided by R may be used     |                            |
+|                    | as-is or adapted/ extended as | - Updated, if any new      |
+|                    | required. The scope of        |   functions or processes   |
+|                    | testing must be defined       |   are added to the scope   |
+|                    | according to the CTU's local  |   of the intended use      |
+|                    | processes and defined user    |   of R. If new             |
+|                    | requirements.                 |   requirements are added   |
+|                    |                               |   to the User              |
+|                    | **Example:**                  |   Requirements             |
+|                    |                               |   Specification, this is   |
+|                    | -   Example available on the  |   a good indicator to      |
+|                    |     SCTO platform             |   also review the          |
+|                    |                               |   existing test            |
+|                    |                               |   protocols.               |
+|                    |                               |                            |
+|                    |                               | - Reviewed during          |
+|                    |                               |   periodic review cycles   |
+|                    |                               |   [and review              |
+|                    |                               |   documented, if no        |
+|                    |                               |   updates are              |
+|                    |                               |   required.]{.mark}        |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Software         | document is to provide        | - Yes                      |
+| Installation       | evidence of the installation  |                            |
+| Verification       | of a specific system version  | **Frequency of update:**   |
+| document (TEST)**  | on an environment/ machine    |                            |
+|                    | that is used for testing      | - To be created with       |
+|                    | purposes before the new       |   every new R base         |
+|                    | system version is released to |   installation version     |
+|                    | production.                   |   to be validated for      |
+|                    |                               |   productive use           |
+|                    | ***R base validation specific |                            |
+|                    | approach***: In case of R     | - No periodic review       |
+|                    | this may be a separate        |   required                 |
+|                    | document or an entry in an R  |                            |
+|                    | repository or other "version  |                            |
+|                    | tracker" (depending on your   |                            |
+|                    | local IT processes). The      |                            |
+|                    | following information should  |                            |
+|                    | be captured:                  |                            |
+|                    |                               |                            |
+|                    | -   R base installation       |                            |
+|                    |     version installed         |                            |
+|                    |                               |                            |
+|                    | -   Date and time of          |                            |
+|                    |     installation              |                            |
+|                    |                               |                            |
+|                    | -   Person performing the     |                            |
+|                    |     installation (may be      |                            |
+|                    |     someone from your local   |                            |
+|                    |     IT department)            |                            |
+|                    |                               |                            |
+|                    | -   Outcome of installation:  |                            |
+|                    |     successful, successful    |                            |
+|                    |     with deviations, not      |                            |
+|                    |     successful                |                            |
+|                    |                               |                            |
+|                    | -   If applicable: Any        |                            |
+|                    |     actions taken in addition |                            |
+|                    |     to the regular "download  |                            |
+|                    |     and install from CRAN"    |                            |
+|                    |     process (e.g.,            |                            |
+|                    |     uninstalling an older     |                            |
+|                    |     version)                  |                            |
+|                    |                               |                            |
+|                    | **Note:** depending on your   |                            |
+|                    | local processes it may not be |                            |
+|                    | feasible or even possible to  |                            |
+|                    | do a preliminary "test        |                            |
+|                    | installation" and perform     |                            |
+|                    | tests before productive use   |                            |
+|                    | of the new R base             |                            |
+|                    | installation version (e.g.,   |                            |
+|                    | if R is distributed remotely  |                            |
+|                    | by your local IT department). |                            |
+|                    | In this case, we recommend    |                            |
+|                    | you still execute the tests   |                            |
+|                    | after the installation and    |                            |
+|                    | document the test execution.  |                            |
+|                    | Should any issues be detected |                            |
+|                    | during testing, please inform |                            |
+|                    | your local IT department      |                            |
+|                    | immediately. Ideally you      |                            |
+|                    | implement a process that      |                            |
+|                    | would ensure nobody is using  |                            |
+|                    | the new R version for         |                            |
+|                    | productive use before the     |                            |
+|                    | tests are completed           |                            |
+|                    | successfully (i.e., without   |                            |
+|                    | major issues) and the         |                            |
+|                    | validation & test report is   |                            |
+|                    | approved (see "Validation &   |                            |
+|                    | Test Report" below).          |                            |
+|                    |                               |                            |
+|                    | **Example:**                  |                            |
+|                    |                               |                            |
+|                    | -   *[see Example for         |                            |
+|                    |     Validation & Test Report  |                            |
+|                    |     available on SCTO         |                            |
+|                    |     platform]{.mark}*         |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Executed test    | document is to provide        | - Yes                      |
+| protocols ("User   | evidence for the execution of |                            |
+| Acceptance         | the pre-defined test          | **Frequency of update:**   |
+| Tests")**          | protocols for each new R base |                            |
+|                    | installation version (i.e.,   | - To be created with       |
+|                    | follow the steps described in |   every validation of a    |
+|                    | the test protocols and        |   new R base               |
+|                    | document the outcome          |   installation version.    |
+|                    | according to the CTU's local  |                            |
+|                    | processes).                   | - No periodic review       |
+|                    |                               |   required                 |
+|                    | **Example:**                  |                            |
+|                    |                               |                            |
+|                    | - Example available on the    |                            |
+|                    |   SCTO platform               |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Traceability     | document is to ensure and     | - Yes                      |
+| Matrix**           | provide evidence that all     |                            |
+|                    | user requirements are tested  | **Frequency of update:**   |
+|                    | during the validation         |                            |
+|                    | process. You may omit testing | - Created with the first   |
+|                    | low risk requirements, if     |   R base installation      |
+|                    | such an approach is described |   validation.              |
+|                    | in the Validation & Test Plan |                            |
+|                    | and complies to your CTU's    | - Updated, if the user     |
+|                    | processes.                    |   requirements             |
+|                    |                               |   specification and or     |
+|                    | Traceability between          |   the test protocols are   |
+|                    | requirements and tests may be |   updated.                 |
+|                    | achieved by creating a        |                            |
+|                    | separate document             | - Reviewed during          |
+|                    | (traceability matrix) or by   |   periodic review cycles   |
+|                    | linking requirements and      |   and review documented,   |
+|                    | tests within the requirements |   if no updates are        |
+|                    | and tests themselves. It is   |   required.                |
+|                    | important, that whatever      |                            |
+|                    | means is used, it is feasible |                            |
+|                    | to proof that all             |                            |
+|                    | requirements are verified     |                            |
+|                    | with a test (or if not tested |                            |
+|                    | formally, a rationale why the |                            |
+|                    | test is not required, e.g.,   |                            |
+|                    | low risk requirements which   |                            |
+|                    | can be considered "verified"  |                            |
+|                    | based on the experience by    |                            |
+|                    | the user community).          |                            |
+|                    |                               |                            |
+|                    | **[Example:]{.mark}**         |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Validation       | document is to                | - Yes                      |
+| & Test Report**    |                               |                            |
+|                    | -   summarize the testing     | **Frequency of update:**   |
+|                    |     activities and results,   |                            |
+|                    |     including any deviations  | - To be created with       |
+|                    |     from the expected results |   every new R base         |
+|                    |                               |   installation version     |
+|                    | -   document all completed    |   validated for            |
+|                    |     validation activities,    |   productive use           |
+|                    |     including any deviations  |                            |
+|                    |     from the original plan    | - No periodic review       |
+|                    |     (see Validation & Test    |   required                 |
+|                    |     Plan). Deviations should  |                            |
+|                    |     be justified and assessed |                            |
+|                    |     for criticality.          |                            |
+|                    |                               |                            |
+|                    | -   document the acceptance   |                            |
+|                    |     for productive use (with  |                            |
+|                    |     or without restrictions)  |                            |
+|                    |                               |                            |
+|                    | The exact content of this     |                            |
+|                    | report depends on the CTU's   |                            |
+|                    | local processes. Separate     |                            |
+|                    | documents may be created to   |                            |
+|                    | summarize the testing         |                            |
+|                    | activities and results        |                            |
+|                    | (Test Report) and the         |                            |
+|                    | overall executed validation   |                            |
+|                    | against the plan, incl. a     |                            |
+|                    | statement of acceptance of    |                            |
+|                    | an R base installation        |                            |
+|                    | version for productive use    |                            |
+|                    | (Validation Report).          |                            |
+|                    |                               |                            |
+|                    | **Example:**                  |                            |
+|                    |                               |                            |
+|                    | -   Example available on the  |                            |
+|                    |     SCTO platform             |                            |
++--------------------+-------------------------------+----------------------------+
+| R Base             | **Purpose:**                  | **Required for R base      |
+| installation       |                               | installation validation:** |
+|                    | The purpose of such a         |                            |
+| **Software         | document is to provide        | - Yes                      |
+| Installation       | evidence of the installation  |                            |
+| Verification       | of a specific system version  | **Frequency of update:**   |
+| document (PROD)**  | on an environment/ machine    |                            |
+|                    | that is used for productive   | - To be created with       |
+|                    | purposes.                     |   every new R base         |
+|                    |                               |   installation version     |
+|                    | ***R base validation specific |   validated for            |
+|                    | approach***: In case of R,    |   productive use           |
+|                    | this may be a separate        |                            |
+|                    | document or an entry in an R  | - No periodic review       |
+|                    | repository or other "version  |   required                 |
+|                    | tracker" (depending on your   |                            |
+|                    | local IT processes). The      |                            |
+|                    | following information should  |                            |
+|                    | be captured:                  |                            |
+|                    |                               |                            |
+|                    | - R base installation         |                            |
+|                    |   version installed           |                            |
+|                    |                               |                            |
+|                    | - Date and time of            |                            |
+|                    |   installation                |                            |
+|                    |                               |                            |
+|                    | - Person performing the       |                            |
+|                    |   installation (may be        |                            |
+|                    |   someone from your local     |                            |
+|                    |   IT department)              |                            |
+|                    |                               |                            |
+|                    | - Outcome of installation:    |                            |
+|                    |   successful, successful      |                            |
+|                    |   with deviations, not        |                            |
+|                    |   successful                  |                            |
+|                    |                               |                            |
+|                    | - If applicable: Any          |                            |
+|                    |   actions taken in addition   |                            |
+|                    |   to the regular "download    |                            |
+|                    |   and install from CRAN"      |                            |
+|                    |   process (e.g.,              |                            |
+|                    |   uninstalling an older       |                            |
+|                    |   version)                    |                            |
+|                    |                               |                            |
+|                    | See also **note** under       |                            |
+|                    | "Installation Verification    |                            |
+|                    | document (TEST)": In case of  |                            |
+|                    | R base installation, the      |                            |
+|                    | installation may only be      |                            |
+|                    | documented once and not       |                            |
+|                    | separately on "TEST" and      |                            |
+|                    | "PROD". **Important** is,     |                            |
+|                    | that any version changes of   |                            |
+|                    | the R base installation are   |                            |
+|                    | managed and documented        |                            |
+|                    | according to your CTU's local |                            |
+|                    | IT change management          |                            |
+|                    | processes.                    |                            |
++--------------------+-------------------------------+----------------------------+
 
-### R Add-on Package Validation {#sec-pkgvalidation}
-
-The R Add-on Package validation package is a set of documents that
-should be prepared for the documentation of the validation process of an
-R add-on package following this policy and associated SOPs. The
-following table lists all documentation that is typically prepared
-during a computerised system validation process. It additionally
-provides details on how this documentation is covered for an R add-on
-package validation according to this policy.
+: Table 3: R Base Installation Validation: Detailed Description of
+Required Documents and Activities {#tbl-r-base-install-docs}
 
 
-+----------------+-----------------------------------------------------+
-| **Document/    | **Detailed Description**                            |
-| Activity**     |                                                     |
-+================+=====================================================+
-| Validation &   | **No separate document is created.**                |
-| Test Plan      |                                                     |
-|                | **Rationale:** The content typically contained in a |
-|                | Validation & Test Plan is determined, with respect  |
-|                | to R add on packages, in the various steps of this  |
-|                | policy and the associated SOPs and its              |
-|                | documentation is specified therein as follows:      |
-|                |                                                     |
-|                | 1.  Determine the product associated risk (local    |
-|                |     CTU SOP)                                        |
-|                | 2.  Determine the package associated risk (based on |
-|                |     SCTO Risk Metrics)                              |
-|                | 3.  Determine, if testing is required (see @sec-rm) |
-|                | 4.  Perform and document testing, if required (SCTO |
-|                |     Function Testing SOP)                           |
-|                | 5.  Document compliance with this policy and        |
-|                |     above-mentioned SOPs (local CTU process, e.g.,  |
-|                |     in metadata or in a document)                   |
-+----------------+-----------------------------------------------------+
-| Package        | The add-on package risk depends on factors          |
-| High-Level     | described in the                                    |
-| Risk           |[**SCTO Risk metrics**](sop/risk_metrics.qmd).       |
-| Assessment     |                                                     |
-|                | The R add-on package high-level risk assessment     |
-|                | should be documented according to the **SCTO        |
-|                | R-Package Risk Metrics** on the SCTO designated     |
-|                | platform.                                           |
-+----------------+-----------------------------------------------------+
-| (User)         | **No dedicated (User) Requirements document is      |
-| Requirements   | created.**                                          |
-| Specification  |                                                     |
-|                | **Rationale:** The requirements and intended use of |
-|                | an R package and its functions can only be defined  |
-|                | in relation to a product and the required outcome   |
-|                | ("intended use") of a specific function for that    |
-|                | product. Therefore, the requirements can only be    |
-|                | documented when planning the R product.             |
-|                |                                                     |
-|                | **Requirements shall be documented in** the         |
-|                | Statistical Analysis Plan or a Statistical Protocol |
-|                | or in other, similar documentation[^4]. It is       |
-|                | important that this "plan" indicates the intended   |
-|                | use and what is required of the functions planned   |
-|                | to be used within the R package.                    |
-+----------------+-----------------------------------------------------+
-| Function Risk  | The risk of separate functions within a package can |
-| Assessment     | only be assessed in relation to a product and the   |
-|                | required outcome ("intended use") of a specific     |
-|                | function for that product (see @sec-rm).            |
-+----------------+-----------------------------------------------------+
-| Package        | There is **no** need for a separate installation    |
-| installation   | plan or instruction. The installation follows a     |
-| plan/          | standard procedure using R base installation        |
-| instruction    | functions.                                          |
-|                |                                                     |
-|                | One of the following procedures is followed:        |
-|                |                                                     |
-|                | -   R add-on packages may be installed for          |
-|                |     functional testing after the high-level package |
-|                |     risk and the product related requirements and   |
-|                |     functional risk are documented and the testing  |
-|                |     is planned, if the initial assessment shows     |
-|                |     that the required package is not yet            |
-|                |     sufficiently tested by one of the SCTO members  |
-|                |     providing input to the R add-on validation      |
-|                |     package repository.                             |
-|                | -   R add-on packages may be installed for          |
-|                |     productive use/ used to create R products after |
-|                |     the functional tests are completed and no       |
-|                |     deviations were detected that would raise       |
-|                |     concerns against using the tested package       |
-|                |     functions for a given R product OR if the       |
-|                |     initial assessment shows that the required      |
-|                |     package was already sufficiently tested and the |
-|                |     respective validation package is available in   |
-|                |     the SCTO R add-on package validation            |
-|                |     repository.                                     |
-+----------------+-----------------------------------------------------+
-| Test scripts   | The process of writing and executing tests for the  |
-|                | R add-on packages is covered in the **SCTO Function |
-|                | Testing SOP**.                                      |
-+----------------+-----------------------------------------------------+
-| Software       | **No separate document is created.**                |
-| installation   |                                                     |
-| verification   | **Rationale:**                                      |
-| (TEST)         |                                                     |
-|                | The purpose of this document would be to provide    |
-|                | evidence of the installation of a specific add-on   |
-|                | package (version) for testing purposes. In the      |
-|                | context of R add-on package validation it is        |
-|                | **not** feasible to create a separate document. The |
-|                | tested R add-on package (version) functions are     |
-|                | documented when following the **SCTO Function       |
-|                | Testing SOP**.                                      |
-+----------------+-----------------------------------------------------+
-| Executed test  | Execute the pre-defined test scripts and document   |
-| scripts        | the outcome of each step as well as the overall     |
-|                | outcome of the test script (see **SCTO Function     |
-|                | Testing SOP**).                                     |
-+----------------+-----------------------------------------------------+
-| Validation &   | The purpose of this document is to summarize all    |
-| Test Report    | executed validation activities and their outcome,   |
-|                | including testing and any defects found and/or any  |
-|                | deviations from the original plan with a rationale. |
-|                | It documents the decision, if specific functions    |
-|                | from an R add-on package (version) can be accepted  |
-|                | for productive use or not and if there are any      |
-|                | restrictions, specifies these restrictions (see     |
-|                | **SCTO Function Testing SOP**).                     |
-+----------------+-----------------------------------------------------+
-| Software       | **No separate document is created.**                |
-| installation   |                                                     |
-| verification   | **Rationale:**                                      |
-| (PROD)         |                                                     |
-|                | The purpose of this document would be to provide    |
-|                | evidence of the installation of a specific add-on   |
-|                | package (version) for productive use. In case of an |
-|                | R add-on package and its functions the "productive  |
-|                | use" is determined by the product upon calling      |
-|                | library(). Therefore, it is **not** feasible to     |
-|                | create a separate installation verification         |
-|                | document.                                           |
-|                |                                                     |
-|                | What needs to be ensured when using a specific      |
-|                | function within an R add-on package:                |
-|                |                                                     |
-|                | -   Documentation of package risk assessment based  |
-|                |     on the **SCTO risk metrics**, and of function   |
-|                |     testing according to **SCTO Function Testing    |
-|                |     SOP**                                           |
-|                | -   Documentation of package use (meta-data/session |
-|                |     info)                                           |
-+----------------+-----------------------------------------------------+
+## R Package Level: R Add-on Package Validation {#sec-r-package-val}
 
-### R Product Validation {#sec-r-product-validation}
+The R add-on package validation documentation set provides evidence of
+the validation process of an "intended for use" R add-on package
+following this policy and associated SOPs. @tbl-r-package-val-docs lists all
+documentation that is typically prepared during a computerised system
+validation process. It additionally provides details on how this
+documentation is covered for an R add-on package validation according to
+this policy.
+
+**NOTE on dependencies**: R add-on packages often come with
+'dependencies', namely additional add-on packages required for the
+proper utilization of the specified R add-on package. Package dependency
+'trees' can be very large and complex, raising the challenge of
+validation of the dependencies as well. Validating at a single step a
+specific R add-on package with all its dependencies is thus almost
+unfeasible. Hence, in this policy, when referring to the validation of
+an add-on package, the meaning is the "intended for use" R add-on
+package itself and its main functions, leaving dependencies unvalidated.
+
++--------------------+-------------------------------+----------------------------+
+| **Document or      | ***Detailed Description:***   | ***Requirements***         |
+| activity**         |                               |                            |
+|                    |                               |                            |
+| R add-on package   |                               |                            |
++:===================+:==============================+:===========================+
+|                    | - *Purpose of the             | - *If the document/        |
+|                    |   document/ activity and      |   activity is NOT          |
+|                    |   how this aspect can be      |   required for R: a        |
+|                    |   covered for R (suggested    |   rationale, why this      |
+|                    |   R specific document/        |   document/ activity can   |
+|                    |   activity)*                  |   be omitted*              |
+|                    |                               |                            |
+|                    | - *Link to                    | - *Recommended frequency   |
+|                    |   example/relevant SCTO       |   of update*               |
+|                    |   document*                   |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **High-Level Risk  | *See Table 3: R Base          |                            |
+| Assessment**       | Installation Validation:      | - Yes (see above for how   |
+| (HLRA; also        | Detailed Description of       |   this is covered)         |
+| referred to as     | Required Documents and        |                            |
+| System Risk        | Activities.*                  | **Frequency of update:**   |
+| Assessment)        |                               |                            |
+|                    | ***R add-on package specific  | - *See                     |
+|                    | approach***: The R add-on     |   @sec-periodic-review*    |
+|                    | package risk depends on       |                            |
+|                    | factors described in the      |                            |
+|                    | SCTO R add-on Package Risk    |                            |
+|                    | Assessment SOP. Accordingly,  |                            |
+|                    | the R add-on package          |                            |
+|                    | high-level risk assessment    |                            |
+|                    | should be documented          |                            |
+|                    | according to the SCTO R       |                            |
+|                    | Package Risk Assessment SOP   |                            |
+|                    | on the SCTO designated        |                            |
+|                    | platform**.**                 |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | -   SCTO R add-on Package     |                            |
+|                    |     Risk Assessment SOP       |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Vendor           | *See Table 3: R Base          |                            |
+| Assessment**       | Installation Validation:      | - No (see above for how    |
+|                    | Detailed Description of       |   this is covered)         |
+|                    | Required Documents and        |                            |
+|                    | Activities .*                 | **Frequency of update:**   |
+|                    |                               |                            |
+|                    | ***R add-on package specific  | - *See section*            |
+|                    | approach***: Covered by the   |   [10]{.mark} Periodic     |
+|                    | Vendor Assessment created     |   Review                   |
+|                    | for the R Base Installation   |                            |
+|                    | and the SCTO R add-on         |                            |
+|                    | Package Risk Assessment SOP.  |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - SCTO R Validation Policy    |                            |
+|                    |   (this document)             |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Risk Assessment SOP         |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Validation &     | The purpose of such a         |                            |
+| Test Plan**        | document would be to define   | - No (see above for how    |
+|                    | the details of the planned    |   this is covered)         |
+|                    | validation process,           |                            |
+|                    | including required            | **Frequency of update:**   |
+|                    | documentation and acceptance  |                            |
+|                    | criteria for productive use   | - *See section*            |
+|                    | (Validation Plan). The Test   |   [10]{.mark} Periodic     |
+|                    | Plan may be included in the   |   Review                   |
+|                    | Validation Plan or prepared   |                            |
+|                    | as a separate document. The   |                            |
+|                    | purpose of a Test Plan is to  |                            |
+|                    | define the testing strategy   |                            |
+|                    | and testing process and may   |                            |
+|                    | contain details on the tests  |                            |
+|                    | to be executed (if created    |                            |
+|                    | for every new version         |                            |
+|                    | validated).                   |                            |
+|                    |                               |                            |
+|                    | ***R add-on package specific  |                            |
+|                    | approach***: The content      |                            |
+|                    | typically contained in a      |                            |
+|                    | Validation & Test Plan is     |                            |
+|                    | determined, with respect to   |                            |
+|                    | R add-on packages, in the     |                            |
+|                    | various steps of this policy  |                            |
+|                    | and the associated SOPs and   |                            |
+|                    | its documentation is          |                            |
+|                    | specified therein as          |                            |
+|                    | follows:                      |                            |
+|                    |                               |                            |
+|                    | 1. Determine the R product    |                            |
+|                    |    associated risk (local     |                            |
+|                    |    CTU SOP)                   |                            |
+|                    |                               |                            |
+|                    | 2. Determine the R add-on     |                            |
+|                    |    package associated risk    |                            |
+|                    |    (based on SCTO R Package   |                            |
+|                    |    Risk Assessment SOP)       |                            |
+|                    |                               |                            |
+|                    | 3. Determine, if testing is   |                            |
+|                    |    required (see Table 5:     |                            |
+|                    |    Assessment of Combined     |                            |
+|                    |    Risk R add-on Package      |                            |
+|                    |    and R Product)             |                            |
+|                    |                               |                            |
+|                    | 4. Perform and document       |                            |
+|                    |    testing, if required       |                            |
+|                    |    (SCTO R add-on Package     |                            |
+|                    |    Function Testing SOP)      |                            |
+|                    |                               |                            |
+|                    | 5. Document compliance with   |                            |
+|                    |    this policy and            |                            |
+|                    |    above-mentioned SOPs       |                            |
+|                    |    (local CTU process,        |                            |
+|                    |    e.g., in metadata or in    |                            |
+|                    |    a document)                |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO               |                            |
+|                    | Documentation:**              |                            |
+|                    |                               |                            |
+|                    | - SCTO R Validation Policy    |                            |
+|                    |   (this document)             |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Risk Assessment SOP         |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Function Testing SOP        |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+|                    | *See Table 3: R Base          |                            |
+| **(User)           | Installation Validation:      | - No (see above for how    |
+| Requirements       | Detailed Description of       |   this is covered)         |
+| Specification**    | Required Documents and        |                            |
+|                    | Activities.*                  | **Frequency of update:**   |
+|                    |                               |                            |
+|                    | ***R add-on package specific  | - Upon changes or          |
+|                    | approach***: The              |   deviations from the      |
+|                    | requirements and intended     |   originally intended      |
+|                    | use of an R add-on package    |   use/ requirements        |
+|                    | and its functions can only    |   defined in the plan      |
+|                    | be defined in relation to an  |   for an R product         |
+|                    | R product and the required    |   change.                  |
+|                    | outcome ("intended use") of   |                            |
+|                    | a specific function for that  |                            |
+|                    | R product. Therefore, the     |                            |
+|                    | requirements can only be      |                            |
+|                    | documented when planning the  |                            |
+|                    | R product.                    |                            |
+|                    |                               |                            |
+|                    | Requirements shall be         |                            |
+|                    | documented in the             |                            |
+|                    | Statistical Analysis Plan, a  |                            |
+|                    | Statistical Protocol or in    |                            |
+|                    | other, similar                |                            |
+|                    | documentation[^6]. This       |                            |
+|                    | document must indicate the    |                            |
+|                    | intended use and              |                            |
+|                    | requirements of the           |                            |
+|                    | functions planned to be used  |                            |
+|                    | within the R product from     |                            |
+|                    | the R add-on package.         |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO               |                            |
+|                    | Documentation:**              |                            |
+|                    |                               |                            |
+|                    | -   N/A *(processes for       |                            |
+|                    |     planning R products and   |                            |
+|                    |     defining their intended   |                            |
+|                    |     use have to be defined    |                            |
+|                    |     on CTU level)*            |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Function Risk    | The purpose of such a         |                            |
+| Assessment**       | document is to specify the    | - Yes (see above for how   |
+|                    | risks related to a specific   |   this is covered)         |
+|                    | function.                     |                            |
+|                    |                               | **Frequency of update:**   |
+|                    | ***R add-on package specific  |                            |
+|                    | approach***: The risk of      | - Only upon change or      |
+|                    | separate functions within an  |   deviation from the       |
+|                    | R add-on package can only be  |   originally intended      |
+|                    | assessed in relation to an R  |   use/ requirements        |
+|                    | product and the required      |   defined in the plan      |
+|                    | outcome ("intended use") of   |   occur during the         |
+|                    | a specific function for that  |   process, and if these    |
+|                    | R product (see section 8      |   changes result in the    |
+|                    | Risk Management).             |   use of different         |
+|                    |                               |   functions or different   |
+|                    | **Relevant SCTO SOP:**        |   intended use of a        |
+|                    |                               |   function.                |
+|                    | - SCTO R Validation Policy    |                            |
+|                    |   (this document)             |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Software         | *See Table 3: R Base          |                            |
+| Installation       | Installation Validation:      | - No (see above for how    |
+| Plan/Instruction** | Detailed Description of       |   this is covered)         |
+|                    | Required Documents and        |                            |
+|                    | Activities.*                  | **Frequency of update:**   |
+|                    |                               |                            |
+|                    | ***R add-on package specific  | - N/A for standard R       |
+|                    | approach***: The              |   process                  |
+|                    | installation follows a        |                            |
+|                    | standard procedure using R    | - According to             |
+|                    | base installation functions.  |   CTU-specific periodic    |
+|                    |                               |   review cycle             |
+|                    | - ***R add-on packages may    |                            |
+|                    |   be installed for            |                            |
+|                    |   functional testing***       |                            |
+|                    |   after the high-level R      |                            |
+|                    |   add-on package risk and     |                            |
+|                    |   the R product related       |                            |
+|                    |   requirements and            |                            |
+|                    |   functional risk are         |                            |
+|                    |   documented and the          |                            |
+|                    |   testing is planned, if      |                            |
+|                    |   the initial assessment      |                            |
+|                    |   shows that the required     |                            |
+|                    |   R add-on package is not     |                            |
+|                    |   yet sufficiently tested     |                            |
+|                    |   by one of the SCTO          |                            |
+|                    |   members providing input     |                            |
+|                    |   to the R add-on package     |                            |
+|                    |   validation repository.      |                            |
+|                    |                               |                            |
+|                    | - ***R add-on packages may    |                            |
+|                    |   be installed for            |                            |
+|                    |   productive use/ used to     |                            |
+|                    |   create R products***        |                            |
+|                    |   after the functional        |                            |
+|                    |   tests are completed and     |                            |
+|                    |   no deviations were          |                            |
+|                    |   detected that would         |                            |
+|                    |   raise concerns against      |                            |
+|                    |   using the tested R          |                            |
+|                    |   add-on package functions    |                            |
+|                    |   for a given R product OR    |                            |
+|                    |   if the initial              |                            |
+|                    |   assessment shows that       |                            |
+|                    |   the required R add-on       |                            |
+|                    |   package was already         |                            |
+|                    |   sufficiently tested and     |                            |
+|                    |   the respective              |                            |
+|                    |   validation documentation    |                            |
+|                    |   set is available in the     |                            |
+|                    |   SCTO R add-on package       |                            |
+|                    |   validation repository.      |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO               |                            |
+|                    | Documentation:**              |                            |
+|                    |                               |                            |
+|                    | - N/A *(standard R            |                            |
+|                    |   process,* *CTU specific     |                            |
+|                    |   IT operations SOPs may      |                            |
+|                    |   exist to cover local        |                            |
+|                    |   specifics of                |                            |
+|                    |   installation)*              |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Test scripts**   | The purpose of such a         |                            |
+|                    | document is to verify the     | - Yes (see above for how   |
+|                    | functions of the R add-on     |   this is covered)         |
+|                    | package work as expected.     |                            |
+|                    |                               | **Frequency of update:**   |
+|                    | ***R add-on package specific  |                            |
+|                    | approach***: The process of   | - See SCTO R add-on        |
+|                    | writing and executing tests   |   Package Function         |
+|                    | for the R add-on packages is  |   Testing SOP *(check of   |
+|                    | covered in the SCTO R add-on  |   appropriateness and      |
+|                    | Package Function Testing      |   sufficiency of an        |
+|                    | SOP.                          |   existing test script)*   |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Function Testing SOP        |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Executed         | The purpose of such a         |                            |
+| Software           | document would be to provide  | - No (see above for how    |
+| installation       | evidence of the installation  |   this is covered)         |
+| verification       | of a specific R add-on        |                            |
+| (TEST)**           | package (version) for         | **Frequency of update:**   |
+|                    | testing purposes.             |                            |
+|                    |                               | - NA                       |
+|                    | ***R add-on package specific  |                            |
+|                    | approach***: In the context   |                            |
+|                    | of R add-on package           |                            |
+|                    | validation it is **not**      |                            |
+|                    | feasible to create a          |                            |
+|                    | separate document. The        |                            |
+|                    | tested R add-on package       |                            |
+|                    | (version) functions are       |                            |
+|                    | documented when following     |                            |
+|                    | the SCTO R add-on Package     |                            |
+|                    | Function Testing SOP.         |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Function Testing SOP        |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Executed Test    | The purpose of such a         |                            |
+| Scripts**          | document is to provide        | - Yes (see above for how   |
+|                    | evidence for the execution    |   this is covered)         |
+|                    | of the pre-defined test       |                            |
+|                    | scripts.                      | **Frequency of update:**   |
+|                    |                               |                            |
+|                    | ***R add-on package specific  | - N/A *(test executions    |
+|                    | approach***: Execute the      |   are never updated.       |
+|                    | pre-defined test scripts and  |   Test scripts may be      |
+|                    | document the outcome of each  |   re-executed, if          |
+|                    | step as well as the overall   |   required)*               |
+|                    | outcome of the test script    |                            |
+|                    | according to SCTO R add-on    |                            |
+|                    | Package Function Testing      |                            |
+|                    | SOP.                          |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - SCTO R add-on Package       |                            |
+|                    |   Function Testing SOP        |                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Traceability     | The purpose of such a         |                            |
+| Matrix**           | document is to ensure and     | - Yes (Documentation of    |
+|                    | provide evidence that all     |   function testing         |
+|                    | functions in scope are        |   according to SCTO R      |
+|                    | tested during the validation  |   add-on Package           |
+|                    | process. You may omit         |   Function Test SOP        |
+|                    | testing low risk functions.   |   includes info on the     |
+|                    |                               |   tested function)         |
+|                    | ***R add-on package specific  |                            |
+|                    | approach***: Covered by SCTO  | **Frequency of update:**   |
+|                    | R add-on Package Risk         |                            |
+|                    | Assessment SOP and SCTO R     | - Depends on the update    |
+|                    | add-on Package Function Test  |   and execution of tests   |
+|                    | SOP.                          |   for specific             |
+|                    |                               |   functions.               |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Risk Assessment SOP]{.mark} |                            |
+|                    |                               |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP]{.mark}|                            |
++--------------------+-------------------------------+----------------------------+
+| R add-on Package   | **Purpose:**                  | **Required for R add-on    |
+|                    |                               | package validation:**      |
+| **Validation       | The purpose of such a         |                            |
+| & Test Report**    | document is to summarise all  | - Yes                      |
+|                    | executed validation           |                            |
+|                    | activities and their          | **Frequency of update:**   |
+|                    | outcome, including testing    |                            |
+|                    | and any defects found and/or  | - See process described    |
+|                    | any deviations from the       |   in SCTO R add-on         |
+|                    | original plan with a          |   Package Function         |
+|                    | rationale. It documents the   |   Testing SOP              |
+|                    | acceptance for productive     |                            |
+|                    | use (with or without          |                            |
+|                    | *restrictions)* of specific   |                            |
+|                    | functions from an R add-on    |                            |
+|                    | package (version) (see SCTO   |                            |
+|                    | R add-on Package Function     |                            |
+|                    | Testing SOP).                 |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    |                               |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP]{.mark}|                            |
++--------------------+-------------------------------+----------------------------+
+
+: R add-on Package Validation: Detailed Description of Required
+Documents and Activities {#tbl-r-package-val-docs}
+
+
+
+## R Product Level: R Product Validation {#sec-r-product-val}
 
 To be covered by local SOPs for statistical analysis execution at the
 CTUs. The R product validation should cover at minimum:
 
 -   Assessment of risk associated with the R product
+
 -   Assess the tools used within the R product
+
 -   Documentation for reproducibility and traceability
 
-##  Risk Management {#sec-rm}
+# Risk Management  {#sec-risk-management}
 
 Given the different validation levels, also the risk needs to be
 assessed and managed on all those levels, specifically on:
 
--   System level (R base installation, *recommendations provided in this
-    policy, documentation according to local CTU processes, see     @sec-r-base-installation-validation*)
--   Package level (R add-on packages, *see R Package Risk Assessment*)
--   Product level (*according to local CTU processes, see @sec-r-product-validation*)
+-   **IT infrastructure level:** The risk associated with IT
+    infrastructure components can generally assumed to be low.
 
-Depending on the outcome of the R add-on package risk assessment, the
-validation activities are adapted to be stricter for high-risk, or more
-high-level for low-risk packages. Thus, the testing of specific
-functions required for a specific product will be adapted depending on
-the combined risks from the package risk and product risk (defined on a
-local level):
+-   **R System level** (R base installation and R recommended packages,
+    *recommendations provided in this policy, documentation according to
+    local CTU processes, see @sec-r-base-install)
+
+-   **R Package level** (R add-on packages, *see* [**SCTO R add-on
+    Package Risk Assessment SOP**]{.mark})
+
+-   **R Product level** (*according to local CTU processes, see @sec-r-product-val)
+
+The actions required from a user, with respect to a specific product,
+depend on the combined risk of the R add-on package (baseline risk) and
+the product risk. More intensive, low-level, actions, such as specific
+function testing, are required for higher risk combinations. The
+requirements for testing a function of an add-on R package are defined
+in Table 5.
 
 ```{r}
 #| message: false
 #| warning: false
-library(gt)
-library(dplyr)
-d <- data.frame(prod = "Product\nrisk", 
+d <- data.frame(prod = "R\nProduct\nrisk", 
            prod_risk = c("Low", "Medium", "High"),
            pkg_low = "No function testing required",
            pkg_medium = c("No function testing required", 
@@ -694,7 +1378,7 @@ d <- data.frame(prod = "Product\nrisk",
 d |> 
   gt(groupname_col = "prod", id = "mygt") |> 
   tab_spanner(columns  = c(pkg_low, pkg_medium, pkg_high), 
-              label = "R – package risk (baseline risk)") |> 
+              label = "R add-on Package Risk (Baseline)") |> 
   cols_label(pkg_low = "Low", 
              pkg_medium = "Medium", 
              pkg_high = "High",
@@ -739,69 +1423,53 @@ d |>
 
 
 
-::: {.content-visible when-format="typst"}
 
-```{=typst}
+# User Training  {#sec-training}
 
-#let notest = table.cell(fill: rgb("#91cf60"))[No functuion testing required]
-#let test = table.cell(fill: rgb("#fc8d59"))[Function testing required]
-#align(center, [
-#table(
-  columns: 5,
-  
-  stroke: (x, y) => (
-    left: 0pt,
-    right: 0pt,
-    top: if y == 2 { 1pt } else { if y == 1 and x > 1 { 1pt } else { 0pt }},
-    bottom: 1pt
-  ),
-  
-  [], [], table.cell(colspan: 3, [Package risk]),
-  [],[],[Low],[Medium],[High],
-  table.cell(rowspan: 3, align: horizon, [Product risk]), [Low], notest, notest, notest,
-  [Medium], notest, notest , test,
-  [High], notest, test , test,
-)
-])
-
-```
-
-:::
-
-##  User Training
-
-All users performing statistical analysis and/or developing packages and
-creating products with R need to be qualified and trained according to
-their CTU's guidelines.
+All users performing statistical analysis and/or developing R add-on
+packages and creating R products need to be qualified and trained
+according to their CTU's guidelines.
 
 All users (potentially) involved in validation activities (e.g., risk
 assessments, testing) must additionally be trained on this policy and
 the associated SOPs.
 
-##  Periodic Review
+## Periodic Review  {#sec-periodic-review}
 
-Every 3 years the validation status of the R add-on packages in the SCTO
-validated package inventory should be reviewed if packages and/or
-functions were not updated and re-tested within that period. The review
-needs to be documented, even if no updates are required.
+Every 3 years the validation status of the **R add-on packages in the
+SCTO** **validation inventory** should be reviewed, if R add-on packages
+and/or functions were not updated and re-tested within that period. The
+review needs to be documented, even if no updates are required.
 
-The periodic review of the R base installation validation package has to
-be defined and managed according to the CTU's processes.
+The periodic review of the **R base installation validation
+documentation set** has to be defined and managed according to the CTU's
+processes. We recommend including a review of the currently defined
+minimum R base installation version in the periodic review process.
 
-## Associated Documents
+## Associated Documents  {#sec-associated-documents}
 
-[R Package Risk Metrics](sop/risk_metrics.qmd)
-: This document describes the metrics defining the risk of R add-on packages ([development version](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_R_Package_metrics/SCTO_R_Package_Metrics_DRAFT_20240319.docx?d=w1f651453facf4acfa11e55d9f9448011&csf=1&web=1&e=hPIyUc)).
+R add-on Package Risk Assessment SOP 
+: This document describes the process and metrics defining the risk of R add-on packages.
 
-[R Function Testing SOP](sop/sop_fn_tests.qmd)
-: This document describes the standard process for testing specific functions within an R add-on package ([development version](https://unibe365-my.sharepoint.com/:w:/r/personal/marie_roumet_unibe_ch/Documents/SCTO_platform/Validation_taskforce/SCTO_Stats_Standardized_Procedures/scto_STAT_Function_testing.docx?d=w4d3c0c5c5d5d4799a5711efadc62de93&csf=1&web=1&e=DccKtz)).
+R add-on Package Function Testing SOP
+: This document describes the standard process for testing specific functions within an R add-on package.
 
+**Note:** Documents to be prepared at CTU level are not listed here. When possible, examples for selected documents are listed in relevant sections.
 
-## References
+# References  {#sec-references}
 
 +-----------------------------------+-----------------------------------+
 | **Reference Title**               | **Description**                   |
 +===================================+===================================+
+| [Guideline on computerised        | European Medicines Agency:        |
+| systems and electronic data in    | Guideline on computerised systems |
+| clinical trials](https://www.ema. | and electronic data in clinical   |
+| europa.eu/en/                     | trials (2023)                     |
+| documents/regulatory-procedural-  |                                   |
+| guideline/guideline-computerised- |                                   |
+| systems-and-electronic-data-      |                                   |
+| clinical-trials_en.pdf)           |                                   |
++-----------------------------------+-----------------------------------+
 | [ICH E6: Guideline for Good       | International Council for         |
 | Clinical                          | Harmonisation, E6 Good Clinical   |
 | Practice                          | Practice (1997) and Integrated    |
@@ -824,12 +1492,7 @@ be defined and managed according to the CTU's processes.
 | res](https://www.ecfr.gov/cgi-bin | of Health and Human Services,     |
 | /text-idx?SID=bb609049963efdb7e40 | Subchapter A - General, Part 11   |
 | b991244ba59e1&mc=true&tpl=/ecfrbr | --- Electronic Records;           |
-| owse/Title21/21cfr11_main_02.tpl) | Electronic Signatures (1997)      |
-+-----------------------------------+-----------------------------------+
-| [FDA 21 CFR part 11: Guidance for | FDA guidance for Industry, Part   |
-| Industry](http://ww               | 11, Electronic Records;           |
-| w.fda.gov/downloads/RegulatoryInf | Electronic Signatures - Scope and |
-| ormation/Guidances/ucm125125.pdf) | Application (2003)                |
+| owse/Title21/21cfr11_main_02.tpl) | Electronic Signatures             |
 +-----------------------------------+-----------------------------------+
 | [General Principles of Software   | FDA guidance paper for            |
 | Validation; Final Guidance for    | computerised system validation.   |
@@ -859,14 +1522,31 @@ be defined and managed according to the CTU's processes.
 | s/R-FDA.pdf?csf=1&web=1&e=84DLAN) |                                   |
 +-----------------------------------+-----------------------------------+
 
+: References {#tbl-refs}
+
 [^1]: for purposes of this document referred to as CTUs = Clinical Trial
     Units
 
-[^2]: A validation package is a set of documents prepared for the
-    documentation of the validation process itself.
+[^2]: A validation documentation set is prepared to provide evidence of
+    the validation process.
 
-[^3]: For example, standards set by the local IT department.
+[^3]: GxP processes refer to Good Practice standards, including Good
+    Clinical Practice (GCP), Good Manufacturing Practices (GMP), Good
+    Laboratory Practice (GLP) etc. GxP critical computerised systems are
+    all systems that manage GxP data (e.g., clinical study data) and
+    therefore support and/or provide input for GxP processes.
 
-[^4]: User requirements for sample size estimation or power analyses are
-    inherently the sample size or the power or a combination of both and
-    do not need to be documented in a separate plan.
+[^4]: The GNU Project is a free software, mass collaboration project
+    announced by Richard Stallman on September 27, 1983. Its goal is to
+    give computer users freedom and control in their use of their
+    computers and computing devices by collaboratively developing and
+    publishing software that gives everyone the rights to freely run the
+    software, copy and distribute it, study it, and modify it. GNU
+    software grants these rights in its license
+    (https://en.wikipedia.org/wiki/GNU_Project).
+
+[^5]: For example, standards set by the local IT department.
+
+[^6]: Examples of such other documents could be the defined research
+    question when planning a sample-size/power estimation, description
+    of data-base/shiny-app user requirements, etc.

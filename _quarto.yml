@@ -66,3 +66,4 @@ format:
       dark: darkly
     css: styles.css
     toc: true
+    linkcolor: "#ba1e2b"
