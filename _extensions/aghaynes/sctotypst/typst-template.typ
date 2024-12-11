@@ -93,8 +93,10 @@
   v(0.01fr)
 
   // set text(size: 10pt)
-  text("Date: ")
-  date.display("[month repr:long] [day], [year]")
+
+  // Create a date object
+  text("Release date: ")
+  text(date)
   v(0.05fr)
   // First horizontal line
   line(length: 100%)

@@ -13,6 +13,7 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
+date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst

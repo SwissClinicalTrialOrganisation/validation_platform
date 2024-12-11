@@ -8,6 +8,9 @@ $endif$
 $if(toc)$
   toc: $toc$,
 $endif$
+$if(date)$
+  date: "$date$",
+$endif$
 $if(paper-size)$
   paper-size: "$paper-size$",
 $endif$
