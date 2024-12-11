@@ -26,7 +26,7 @@ website:
 
       - section: "SOPs"
         contents:
-          - href: sop/risk_metrics.qmd
+          - href: sop/sop_pkg_risk_assess.qmd
           - href: sop/sop_fn_tests.qmd
 
 
