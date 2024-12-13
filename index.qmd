@@ -1503,7 +1503,7 @@ minimum R base installation version in the periodic review process.
 
 +-----------------------------------+-----------------------------------+
 | **Reference Title**               | **Description**                   |
-+===================================+===================================+
++:==================================+:==================================+
 | [Guideline on computerised        | European Medicines Agency:        |
 | systems and electronic data in    | Guideline on computerised systems |
 | clinical trials](https://www.ema. | and electronic data in clinical   |
