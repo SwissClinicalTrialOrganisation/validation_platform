@@ -19,6 +19,8 @@ execute:
   echo: false
   message: false
   warning: false
+code-block-bg: true
+code-block-border-left: "#31BAE9"
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
@@ -271,7 +273,7 @@ On occasion, it may be desirable to restrict the tests to specific package versi
 
 For example, the pivot functions we introduced to tidyr in version 1.0.0. If we have tests on those functions, we can restrict them to versions 1.0.0 and above with the following code:
 
-```
+```r
 skip_if(packageVersion("tidyr") < "1.0.0")
 ```
 
@@ -279,13 +281,13 @@ This line can be placed at the top of the test file, before any tests are run. T
 
 It might be suitable to stop tests from being run if the internet is not available:
 
-```
+```r
 skip_if_offline()
 ```
 
 Or if a package can only be run on a specific operating system:
 
-```
+```r
 skip_on_os("mac")
 ```
 
@@ -318,7 +320,7 @@ This will have created a `stats` folder within tests. Within that folder, there 
 
 First we will write the actual tests that we want to run. Tests are entered into the `test-lm.R` file. Opening that file, we see that there are just a few comments at the top of the file, with some reminders.
 
-```
+```r
 # Write relevent tests for the function in here
 # Consider the type of function:
 #   - is it deterministic or statistic?
@@ -327,7 +329,7 @@ First we will write the actual tests that we want to run. Tests are entered into
 
 We decide that we will use the mtcars dataset as our basis for testing `lm`, so we can load the dataset. We want to test both the linear effect of the number of cylinders on the miles per gallon, and the effect of the number of cylinders (`cyl`), as well as when `cyl` is treated as a factor.
 
-```
+```r
 # Write relevent tests for the function in here
 # Consider the type of function:
 #   - is it deterministic or statistic?
@@ -349,7 +351,7 @@ tapply(mtcars$mpg, mtcars$cyl, mean)
 
 We can also define the models that we want to test:
 
-```
+```r
 cmod <- lm(mpg ~ cyl, data = mtcars)
 fmod <- lm(mpg ~ cyl_f, data = mtcars)
 ```
@@ -360,7 +362,7 @@ We do not include the model definitions within a test_that call because we will 
 
 Suppose that we know that the coefficient for `mpg ~ cyl` is known (-2.88 for the linear effect). We can write a test that checks that expectation:
 
-```
+```r
 test_that("lm returns the expected coefficients", {
   expect_equal(coef(cmod)[2], -2.88)
 })
@@ -368,7 +370,7 @@ test_that("lm returns the expected coefficients", {
 
 Due to floating point precision, this is probably insufficient - R will not return exactly -2.88. We can use the `tolerance` argument to check that the coefficient is within a certain range (we could also round the coefficient). We also need to tell `expect_equal` to ignore the names attribute of the vector, otherwise it compares the whole object, attributes and all:
 
-```
+```r
 test_that("lm returns the expected coefficients", {
   expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
 })
@@ -376,7 +378,7 @@ test_that("lm returns the expected coefficients", {
 
 We can do the same for the coefficients from the model with `cyl_f`. This time, we can derive the values from the `tapply` function as, in this case, the coefficients are just the means:
 
-```
+```r
 test_that("lm returns the expected coefficients", {
   means <- tapply(mtcars$mpg, mtcars$cyl, mean)
   coefs <- coef(fmod)
@@ -388,7 +390,7 @@ test_that("lm returns the expected coefficients", {
 
 We have now performed 4 tests (the expectations) in two `test_that` calls. We can also combine them together:
 
-```
+```r
 test_that("lm returns the expected coefficients", {
   expect_equal(coef(cmod)[2], -2.88, tolerance = 0.01, check.attributes = FALSE)
   
@@ -414,7 +416,7 @@ Generally speaking, values that are easy to calculate should probably have a low
 
 Suppose that we have used Stata as a reference software for the standard errors. We include the commands used in the reference software in comments in the script, including the output and the information of the version of the reference software.
 
-```
+```r
 # write.csv(mtcars, "mtcars.csv", row.names = FALSE)
 # reference software: Stata 17.0 (revision 2024-02-13)
 # import delimited "mtcars.csv"
@@ -433,7 +435,7 @@ Suppose that we have used Stata as a reference software for the standard errors.
 
 We can then use the SE values from Stata in the tests, specifying a suitable tolerance (it's pretty simple to calculate, so we can be quite stringent):
 
-```
+```r
 test_that("Standard errors from LM are correct", {
   expect_equal(summary(cmod)$coefficients[2, 2], 0.322408, 
                tolerance = 0.00001)
@@ -449,7 +451,7 @@ test_that("Standard errors from LM are correct", {
 
 The test file including the tests above is then:
 
-```
+```r
 # Write relevent tests for the function in here
 # Consider the type of function:
 #   - is it deterministic or statistic?
@@ -526,13 +528,13 @@ It is easiest to write the `info.txt` file once all tests have been written. It 
 
 The default text the file contains a single line: 
 
-```
+```r
 Tests for package stats
 ```
 
 Extra details on the tests that we have performed should be added. In this case, we might modify it to:
 
-```
+```r
 Tests for package stats
 - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.
 ```
@@ -547,7 +549,7 @@ The testthat package is always needed. In general, loading the package is necess
 
 We also try to leave the environment as we found it, so we detach the packages via the `withr::defer` function. Again, in this case, we don't want to detach it, as it is a standard package.
 
-```
+```r
 if(!require(stats)) install.packages("stats")
 library(stats)
 library(testthat)
@@ -569,7 +571,7 @@ We specify `download = FALSE` because `validation::test` will download the files
 
 The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after "Copy and paste the following...") provides summary information that should be copied into a github issue :
 
-```
+```r
 ✔ | F W  S  OK | Context
 ✔ |          7 | lm                                                                          
 
