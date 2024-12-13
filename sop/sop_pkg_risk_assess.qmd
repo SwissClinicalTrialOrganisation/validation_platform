@@ -8,7 +8,7 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-date: "2025-01-01"
+release_date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst
@@ -26,9 +26,9 @@ keep-typ: false
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
 ***Development and Review***
 
-`#set align(center)`{=typst}
-
 Authored/revised by:
+
+`#set align(center)`{=typst}
 
 +-----------------------+------------+
 | Name                  | Date       |
@@ -39,7 +39,7 @@ Authored/revised by:
 | Julien Sauser,[^3]    |            |
 | Christina Huf,[^4]    |            |
 | Christine Otieno,[^5] |            |
-| Elio Carreras,[^6]    |            |
+| Elio Carreras[^6]     |            |
 +-----------------------+------------+
 
 [^1]: Head data-analysis, Department Clinical Research, University of Basel
@@ -245,10 +245,10 @@ form:
     scoring function. A sigmoid midpoint is 4 dependencies, ie., x\[0\]
     = 4 and logistic growth rate of k = 0.5.
 
-
 ```{r}
 #| warn: false
 #| message: false
+#| label: fig-dep-score
 n <- 0:30
 library(SCTORvalidation)
 library(ggplot2)
@@ -294,6 +294,7 @@ data.frame(n = n, score = SCTORvalidation:::convert_deps_to_score(n)) |>
     downloads (log(x)). The midpoint lying at log(100,000 downloads).
 
 ```{r}
+#| label: fig-download-score
 n <- seq(0, 500000, length.out = 100)
 data.frame(n = n, score = SCTORvalidation:::convert_downloads_to_score(n)) |> 
   ggplot(aes(x = n, y = score)) +
@@ -362,8 +363,8 @@ R add-on package assessments are done as "issues" on the GitHub platform
 
 The platform allows performing the assessment and calculating the final
 risk based on the above metrics, while recording and documenting the
-assessment. Apart from the metrics themselves (Appendix 1), the
-additional points listed in Appendix 2 are collected and documented
+assessment. Apart from the metrics themselves (@sec-appendix1), the
+additional points listed in (@sec-appendix2) are collected and documented
 while performing the assessment on the platform.
 
 # References
@@ -377,7 +378,7 @@ R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y,
     
 [R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021](https://www.r-project.org/doc/R-FDA.pdf)
 
-# Appendix 1 = The SCTO R add-on package risk metrics
+# Appendix 1: The SCTO R add-on package risk metrics {#sec-appendix1}
 
 +------------------------+-------------------------------+---------------------+------------+
 | Parameter              | Explanation                   | Possible values     | Risk level*|
@@ -453,7 +454,7 @@ R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y,
 > and high = 1. 'medium risk' takes a value of 0.5. Continuous metrics
 > such as 'nr of downloads' are transformed to a value \[0, 1\].
 
-#  Appendix 2 = The SCTO R add-on package documentation
+#  Appendix 2: The SCTO R add-on package documentation {#sec-appendix2}
 
 +-------------------------------+-------------------------------------------------+
 | Parameter                     | Explanation                                     |
