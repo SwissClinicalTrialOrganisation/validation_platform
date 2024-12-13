@@ -5,7 +5,7 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-date: "2025-01-01"
+release_date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst
@@ -18,13 +18,19 @@ format-links:
 
 ***Development and Review***
 
+Authored/revised by:
+
 `#set align(center)`{=typst}
 
-|                     | Name           | Date           |
-|---------------------|----------------|----------------|
-| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
-| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
-| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
++-----------------------+------------+
+| Name                  | Date       |
+|                       |            |
++:======================+:===========+
+| Alan Haynes,[^1]      | 2025-01-01 |
++-----------------------+------------+
+
+[^1]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+
 
 `#set align(left)`{=typst}
 
@@ -32,12 +38,13 @@ format-links:
 
 `#set align(center)`{=typst}
 
-| Version | Date       | Author      | Summary of Changes |
-|---------|------------|-------------|--------------------|
-| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
++---------+------------+--------------------+-------------------------------------+
+| Version | Date       | Author(s)          | Summary of Changes                  |
++:========+:===========+:===================+:====================================+
+| 1.0     | 2025-01-01 | Alan Haynes,       | Initial version                     |
++---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
-
 :::
 
 Although the unit of testing is the function, for organisational purposes, the tests are grouped by package. This is because the tests are run in the context of the package, and eases the process of running and reporting tests.

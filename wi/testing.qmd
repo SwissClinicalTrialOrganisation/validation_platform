@@ -8,7 +8,7 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-date: "2025-01-01"
+release_date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst
@@ -25,13 +25,21 @@ execute:
 
 ***Development and Review***
 
+Authored/revised by:
+
 `#set align(center)`{=typst}
 
-|                     | Name           | Date           |
-|---------------------|----------------|----------------|
-| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
-| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
-| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
++-----------------------+------------+
+| Name                  | Date       |
+|                       |            |
++:======================+:===========+
+| Alan Haynes,[^1]      | 2025-01-01 |
+| Elio Carreras[^2]     |            |
++-----------------------+------------+
+
+[^1]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+
+[^2]: Senior Statistical Programmer, SAKK
 
 `#set align(left)`{=typst}
 
@@ -39,12 +47,13 @@ execute:
 
 `#set align(center)`{=typst}
 
-| Version | Date       | Author      | Summary of Changes |
-|---------|------------|-------------|--------------------|
-| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
++---------+------------+--------------------+-------------------------------------+
+| Version | Date       | Author(s)          | Summary of Changes                  |
++:========+:===========+:===================+:====================================+
+| 1.0     | 2025-01-01 | Alan Haynes,       | Initial version                     |
++---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
-
 :::
 
 The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [pkg_validation](www.github.com/SwissClinicalTrialOrganisation/pkg_validation) repository.
