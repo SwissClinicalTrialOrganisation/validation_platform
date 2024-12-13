@@ -68,5 +68,5 @@ format:
     theme:
       light: [flatly, style.scss]
       dark: [darkly, style.scss]
-    css: styles.css
+    css: [styles.css, style.scss]
     toc: true
