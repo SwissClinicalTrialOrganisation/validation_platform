@@ -5,17 +5,20 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-date: "2025-01-01"
+release_date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst
     text: PDF
     icon: file-pdf
     target: "_blank"
+other-links:
   - text: Risk assessment
     href: fig/RiskAssessment_SCTO_Statistics_20230502.xlsx
     icon: file-spreadsheet
     target: "_blank"
+language:
+  other-links-title: "Example documents"
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
