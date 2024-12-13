@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Function testing – Statistics and Methodology - Validation Platform</title>
+<title>R add-on Package Function testing – Statistics and Methodology - Validation Platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-184cd5062a76d4d6b50eab97a110a3a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3282a3cdbf41a4af440af15af7b0e259.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f3c81c9aa6c21f82a0adea98507e5e88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-16add709d16b5677f5771e4fcfd65ab4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_fn_tests.html">Function testing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_pkg_fn_testing.html">R add-on Package Function testing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,14 +145,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
+  <a href="../sop/sop_pkg_risk_assess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Risk Assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Function testing</span></a>
+  <a href="../sop/sop_pkg_fn_testing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">R add-on Package Function testing</span></a>
   </div>
 </li>
       </ul>
@@ -221,20 +221,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Report an assessment or test</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=package%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_package.yml&amp;title=%5BPackage+risk+assessment%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package risk assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Tests repository</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test.yml&amp;title=%5BPackage+test%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package test report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Package tests repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">SCTORvalidation R package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Give us feedback or ask a question</span></a>
   </div>
 </li>
       </ul>
@@ -249,30 +261,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
-  <li><a href="#abbreviations-definitions" id="toc-abbreviations-definitions" class="nav-link" data-scroll-target="#abbreviations-definitions">Abbreviations &amp; Definitions</a></li>
-  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
-  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">Process</a></li>
-  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline">Guideline</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a></li>
+  <li><a href="#abbreviations-definitions" id="toc-abbreviations-definitions" class="nav-link" data-scroll-target="#abbreviations-definitions"><span class="header-section-number">2</span> Abbreviations &amp; Definitions</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">3</span> Scope</a></li>
+  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process"><span class="header-section-number">4</span> Process</a></li>
+  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline"><span class="header-section-number">5</span> Guideline</a>
   <ul class="collapse">
-  <li><a href="#working-instructions" id="toc-working-instructions" class="nav-link" data-scroll-target="#working-instructions">Working instructions</a>
+  <li><a href="#working-instructions" id="toc-working-instructions" class="nav-link" data-scroll-target="#working-instructions"><span class="header-section-number">5.1</span> Working instructions</a>
   <ul class="collapse">
-  <li><a href="#submitting-the-test-for-incorporation-into-the-framework" id="toc-submitting-the-test-for-incorporation-into-the-framework" class="nav-link" data-scroll-target="#submitting-the-test-for-incorporation-into-the-framework">Submitting the test for incorporation into the framework</a></li>
-  <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests">Running tests</a></li>
+  <li><a href="#submitting-the-test-for-incorporation-into-the-framework" id="toc-submitting-the-test-for-incorporation-into-the-framework" class="nav-link" data-scroll-target="#submitting-the-test-for-incorporation-into-the-framework"><span class="header-section-number">5.1.1</span> Submitting the test for incorporation into the framework</a></li>
+  <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests"><span class="header-section-number">5.1.2</span> Running tests</a></li>
   </ul></li>
-  <li><a href="#approving-the-test" id="toc-approving-the-test" class="nav-link" data-scroll-target="#approving-the-test">Approving the test</a></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation:</a></li>
+  <li><a href="#sec-approving-test" id="toc-sec-approving-test" class="nav-link" data-scroll-target="#sec-approving-test"><span class="header-section-number">5.2</span> Approving the test</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">5.3</span> Documentation:</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sop_fn_tests.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sop_pkg_fn_testing.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_fn_tests.html">Function testing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_pkg_fn_testing.html">R add-on Package Function testing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Function testing</h1>
+<h1 class="title">R add-on Package Function testing</h1>
 </div>
 
 
@@ -302,30 +313,23 @@ Document development, review and version history
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong><em>Development and Review</em></strong></p>
+<p>Authored/revised by:</p>
 <p></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 18%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>Name</th>
-<th>Date</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Authored/Revised by</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Reviewed by</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Released by</td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Michael Coslovsky,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Alan Haynes,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Lisa Hofer,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Christina Huf,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Christine Otieno,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Elio Carreras,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></td>
+<td style="text-align: left;">2025-01-01</td>
 </tr>
 </tbody>
 </table>
@@ -334,31 +338,25 @@ Document development, review and version history
 <p></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 22%">
-<col style="width: 24%">
-<col style="width: 37%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 25%">
+<col style="width: 45%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Version</th>
-<th>Date</th>
-<th>Author</th>
-<th>Summary of Changes</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Author(s)</th>
+<th style="text-align: left;">Summary of Changes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.1</td>
-<td>2024-08-24</td>
-<td>Alan Haynes, Elio Carreras, Lisa Hofer, Michael Coslovsky, Christina</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Huf, Christine Otieno</td>
-<td>Initial draft</td>
-<td></td>
-<td></td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">Michael Coslovsky, Alan Haynes, Lisa Hofer, Christina Huf, Christine Otieno, Elio Carreras</td>
+<td style="text-align: left;">Initial version</td>
 </tr>
 </tbody>
 </table>
@@ -366,136 +364,153 @@ Document development, review and version history
 </div>
 </div>
 </div>
-<section id="purpose" class="level1">
-<h1>Purpose</h1>
-<p>This SOP defines the process and steps that need to be followed when testing the performance of specific program functions within the SCTO-Statistics’ platform computer system validation. The process is written to serve as a standardized approach for function testing. A standardized process will allow different organizations to rely on results of tests performed also outside of the internal unit, improving efficiency overall. The centralized process can then be implemented in all associated units as the minimal procedure. Organizations may go beyond the process described herein, as long as they do not contradict the central process.</p>
-<p>In lay words, the process should allow a member (with focus on statisticians and data-scientists) of any participating institution (SCTO associated organization, including SAKK, the biostatistics’ department of the university of Zurich etc.) to understand and reproduce function tests saved and documented on the designated SCTO platform infrastructure. In addition, the process ensures that updates of packages or functions can re-run the tests in a fast and straightforward manner, so that package updates can be validated easily.</p>
+<section id="purpose" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
+<p>This SOP defines the process and steps that need to be followed when testing the performance of specific functions of R add-on packages within the SCTO-Statistics’ platform computerized systems validation policy for R. The process is written to serve as a standardized approach for function testing. A standardized process will allow different organizations to rely on results of tests performed also outside of the internal organizational unit, improving efficiency overall. The centralized process can then be implemented in all associated units as the minimal procedure. Organizations may go beyond the process described herein, as long as they do not contradict the central process.</p>
+<p>In lay words, the process should allow a member (with focus on statisticians and data-scientists) of any participating institution (SCTO associated organization, including SAKK, the Department of Biostatistics of the University of Zurich etc.) to understand and reproduce function tests saved and documented on the designated SCTO platform infrastructure. In addition, the process ensures that re-run of tests can be done in a fast and straightforward manner once package updates or function updates occur, so that package updates can be validated easily.</p>
 </section>
-<section id="abbreviations-definitions" class="level1">
-<h1>Abbreviations &amp; Definitions</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"><strong>Abbreviation or term</strong></th>
-<th style="text-align: left;"><strong>Definition</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><em>SOP</em></td>
-<td style="text-align: left;">Standard operating procedure</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>R</em></td>
-<td style="text-align: left;">The R computer program</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><em>Unit testing</em></td>
-<td style="text-align: left;">definition</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>Function</em></td>
-<td style="text-align: left;">definition</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><em>Test author</em></td>
-<td style="text-align: left;">any employee of an SCTO associated organization writing a function test according to this SOP</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>Tester</em></td>
-<td style="text-align: left;">any employee of an SCTO associated organization executing and documenting a function test according to this SOP</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><em>Reviewer</em></td>
-<td style="text-align: left;">any employee of an SCTO associated organization reviewing a function test from a different test author according to this SOP</td>
-</tr>
-</tbody>
-</table>
+<section id="abbreviations-definitions" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Abbreviations &amp; Definitions</h1>
+<dl>
+<dt>SOP</dt>
+<dd>
+Standard operating procedure
+</dd>
+<dt>R</dt>
+<dd>
+The R statistical programming language and environment
+</dd>
+<dt>Unit testing</dt>
+<dd>
+The testing of one particular element of a program. A function can have multiple units; for example, R’s lm() function provides several units as outcome: the coefficients, the standard errors, the coefficient of determination etc.
+</dd>
+<dt>Function</dt>
+<dd>
+A specific program within the R language
+</dd>
+<dt>Function test</dt>
+<dd>
+Any action that allows a function to be considered a tested function
+</dd>
+<dt>Test author</dt>
+<dd>
+Any employee of an SCTO associated organization writing a function test according to this SOP
+</dd>
+<dt>Tested function</dt>
+<dd>
+A function that underwent the process described in this SOP to assert with determined certainty that it provides the intended outcome
+</dd>
+<dt>Tester</dt>
+<dd>
+Any employee of an SCTO associated organization executing and documenting a function test according to this SOP
+</dd>
+<dt>Reviewer</dt>
+<dd>
+Any employee of an SCTO associated organization reviewing a function test from a different test author according to this SOP
+</dd>
+</dl>
 </section>
-<section id="scope" class="level1">
-<h1>Scope</h1>
+<section id="scope" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Scope</h1>
 <p>This SOP defines the process for:</p>
 <ol type="1">
-<li><p>Unit testing</p></li>
-<li><p>Self-written functions stored on the SCTO platform infrastructure.</p></li>
-<li><p>Specific functions from software used in the institutes that have been determined as requiring testing.</p></li>
+<li>Unit testing</li>
+<li>Self-written functions stored on the SCTO platform infrastructure.</li>
+<li>Specific functions from software used in the institutes that have been determined as requiring testing.</li>
 </ol>
-<p>In scope are functions of the R computing environment, written within or out of the organization, for which the necessity of unit functional testing was determined by a member of a participating institute according to the SCTO R-validation policy. The process may be adapted for other statistical packages. The SOP focuses primarily on functions used for statistical reporting and data-wrangling.</p>
-<p>The appropriate level of testing required is determined within the SOP, but the decision to test the function is out of scope. According to the SCTO R validation policy, this decision is determined from the risk associated with the intended use of the function within a specific product or project, future use and the software packages being used for the product. The SCTO statistics’ platform’s high level risk assessment as well as the SCTO policy for the use of R in a validated environment describe the processes to follow in assessing this risk and in determining whether specific function testing should be performed.</p>
+<p>In scope are functions of the R computing environment, written within or out of the organization, for which the necessity of unit functional testing was determined by a member of a participating institute according to the SCTO computerized systems validation policy for R. The process may be adapted for other statistical software. The SOP focuses primarily on functions used for statistical reporting and data-wrangling.</p>
+<p>The appropriate level of testing required is determined within the SOP, but the decision to test the function is out of scope. According to the <a href="../index.html">SCTO R computerized systems validation policy</a>, this decision is determined from the risk associated with the intended use of the function within a specific R product or project, future use and the software packages being used for the R product. The <a href="../sop/businessproc_ra.html">SCTO statistics’ platform’s business process risk assessment</a> as well as the SCTO computerized systems validation policy for R describe the processes to follow in assessing this risk and in determining whether specific function testing should be performed.</p>
 </section>
-<section id="process" class="level1">
-<h1>Process</h1>
-<p>The decision tree below describes the process a test author undergoes when testing a function output. The process starts after the test author determined that a function requires testing. More specifically, the test author determines which outputs of the function require testing. A function test is performed on output level. This means that each output requires its own test.</p>
+<section id="process" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Process</h1>
+<p>The decision tree depicted in <a href="#fig-test-flow" class="quarto-xref">Figure&nbsp;1</a> describes the process a test author undergoes when testing a function output. For purposes of this SOP, the resulting outcome of following the decision tree is considered a “function test” once implemented and documented.</p>
+<p>The process starts after the test author determined that a function requires testing. More specifically, the test author determines which outputs of the function require testing. A function test is performed on output level. This means that each output requires its own test.</p>
 <p>The decision tree has five levels of complexity:</p>
 <ol type="1">
-<li><p>The function output of interest has already been tested on the SCTO platform.</p></li>
-<li><p>There is already test code available in the function package.</p></li>
-<li><p>The function output can be compared to a known result.</p></li>
-<li><p>The function output can be compared to the output of another implementation/program.</p></li>
-<li><p>The function output needs to be validated based on simulations.</p></li>
+<li>The function output of interest has already been tested on the SCTO platform.</li>
+<li>There is already test code available in the function package.</li>
+<li>The function output can be compared to a known result.</li>
+<li>The function output can be compared to the output of another implementation/program.</li>
+<li>The function output needs to be validated based on simulations.</li>
 </ol>
 <p>In all complexity levels, the test author must decide when a test is appropriate and sufficient. Since this depends on the purpose of the function output and on the risk level of the project, an existing function test might still need to be extended.</p>
-<p>Starting at level 1 Box (A), the test author goes through the decision tree as described in figure <mark>XX</mark> below. At level 1 it is examined whether the specific function output has already been appropriately tested on the SCTO platform, while ensuring that the tests are always updated on the newest package versions (Box B). All test code, written by the test author or external package test code used in level 2 (Box C), should follow standard guidelines for good programming practice, such as the <em>tidyverse</em> style guide (https://style.tidyverse.org/index.html). If a comparison to a known result in level 3 is needed (Box D), we can either use the solution from our ‘hands-on’ calculation within the test script or the result from a published dataset or analysis. If we compare with output from another implementation or another program, a prerequisite is that this other implementation or program has already been tested (E). Finally, in case simulations are used in the testing in level 5 (Box F), make sure to set a seed, to explain the simulation steps with suitable comments and to submit the simulation code together with the final test. The source of the data frame used for the test is irrelevant, i.e., could be simulated or published, as long as the source is documented. To this end, all datasets used for tests are required to be stored in a designated folder in the <em>validation_tests</em> package on GitHub. Published datasets can be stored directly (e.g., as .csv files) while simulated datasets require uploading the script that generated the data. To facilitate generating new tests, these stored datasets can be reused if they have the appropriate properties.</p>
+<p>Starting at level 1 Box (A), the test author goes through the decision tree as described in <a href="#fig-test-flow" class="quarto-xref">Figure&nbsp;1</a> below. At level 1 it is examined whether the specific function output has already been appropriately tested on the SCTO platform, while ensuring that the tests are always updated on the newest R add-on package version (Box B). All test code, written by the test author or external R add-on package test code used in level 2 (Box C), should follow standard guidelines for good programming practice, such as the <a href="https://style.tidyverse.org/index.html"><em>tidyverse</em> style guide</a>. If a comparison to a known result in level 3 is needed (Box D), the known result must be provided by the test author. This can be the solution from our ‘hands-on’ defined calculation of the expected outcome, without use of the function that is being tested (‘program from scratch’), within the test script, or the result from a published dataset or analysis. If we compare with output from another implementation or another program, a prerequisite is that this other implementation or program has already been tested (Box E). Note that if this comparison is due to the tested process being stochastic, with no deterministic solution, it should be defined what constitutes an acceptable similarity of results. Finally, in case simulations are used in the testing in level 5 (Box F), make sure to set a seed, to explain the simulation steps with suitable comments and to submit the simulation code together with the final test. A large number of simulations (replications), or several seeds (at least three) should be implemented. The source of the data frame used for the test is irrelevant, i.e., could be simulated or published, as long as the source is documented. To this end, all datasets used for tests are required to be stored in a designated folder in the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests"><em>validation_tests</em> SCTO GitHub repository</a>. Published datasets can be stored directly (e.g., as .csv files) while simulated datasets require uploading the script that generated the data. To facilitate generating new tests, these stored datasets can be reused if they have the appropriate properties.</p>
 <p>Function tests need to be reviewed by another SCTO member based on the 4-eye principle (Box G). Once the function (output) test is accepted by the reviewer, it will be added to the SCTO list of tested function outputs with the necessary documentation of meta-data (Box H).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig/test_flow.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<div id="fig-test-flow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-test-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig/test_flow.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-test-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Decision tree for deciding on the type of testing a function requires
+</figcaption>
 </figure>
 </div>
 </section>
-<section id="guideline" class="level1">
-<h1>Guideline</h1>
-<section id="working-instructions" class="level2">
-<h2 class="anchored" data-anchor-id="working-instructions">Working instructions</h2>
-<p>The working instructions for the testing process are found under the relevant SCTO GitHub page (https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/articles/contribute.html). A copy of the vignette is an associated document to this SOP. Below we provide only a bullet-point description of the relevant steps:</p>
+<section id="guideline" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Guideline</h1>
+<section id="working-instructions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="working-instructions"><span class="header-section-number">5.1</span> Working instructions</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Suggestion from Alan">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggestion from Alan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(to replace the paragraph just below, which is basically the same thing twice…)</p>
+<p>Detailed working instructions for <a href="../wi/testing.html">writing tests</a>, <a href="../wi/review_tests.html">reviewing tests</a>, and <a href="../wi/running_tests.html">running tests</a> can be found in the respective work instructions. A summary of the main steps is provided below.</p>
+</div>
+</div>
+<p>The working instructions for the unit testing process are found under the relevant <a href="../wi/testing.html">SCTO GitHub page</a>. The detailed working instructions can be found on the GitHub page; Below we provide only a bullet-point description of the relevant steps:</p>
 <ul>
-<li><p>Function tests are performed and stored on the SCTO’s statistics platform’s validation_tests repository</p></li>
-<li><p>The repository contains both the test script and the data frames used for the tests when relevant</p></li>
-<li><p>Approving the test is conditional on a review by a second SCTO statistician from a different CTU than the test author. Reviews are based on the “four eyes” principle.</p></li>
-<li><p>The SCTO function-tests platform collects relevant meta-data for the tests including:</p>
+<li>Unit tests of an R function are performed and stored on the SCTO’s statistics platform’s <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests GitHub repository</a></li>
+<li>The repository contains both the test script(s) and the data frames used for the tests when relevant</li>
+<li>Approving the test is conditional on a review by a second qualified SCTO R user, from a different organizational entity (ideally, a different CTU) than the test author. Reviews are based on the “four eyes” principle.</li>
+<li>The SCTO function-tests platform collects relevant meta-data for the tests including:
 <ul>
-<li><p>Test author</p></li>
-<li><p>Test timing (time of submitting the test to the repository)</p></li>
-<li><p>Who reviewed the test code</p></li>
-<li><p>When was the review performed</p></li>
-<li><p>Which function was tested: function name within package and package version</p></li>
-<li><p>Which output of the function was tested</p></li>
-<li><p>What type of testing was performed</p></li>
-<li><p>Test result (pass/fail)</p></li>
-<li><p>Evidence of test (copy of console output)</p></li>
-<li><p>Session information of the testing environment</p></li>
+<li>Test author</li>
+<li>Test timing (date of submitting the test to the repository)</li>
+<li>Who reviewed the test code</li>
+<li>When was the review performed</li>
+<li>Which function was tested: function name within package and package version</li>
+<li>Which output of the function was tested</li>
+<li>What type of testing was performed</li>
+<li>Test result (pass/fail)</li>
+<li>Evidence of test (copy of console output)</li>
+<li>Session information of the testing environment</li>
 </ul></li>
-<li><p>The SCTO develops a package that allows easy rerun of package tests upon change of R or package version, as well as generating a report for testing.</p></li>
+<li>The SCTO develops a package that allows easy rerun of package tests upon change of R or package version, as well as generating a report for testing.</li>
 </ul>
-<p>Function tests are stored in the validation_tests repository at <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" target="_blank">https://github.com/SwissClinicalTrialOrganisation/validation_tests</a>. Tools to create the testing structure for each tested package and run the tests are provided in the validation R package.</p>
-<section id="submitting-the-test-for-incorporation-into-the-framework" class="level3">
-<h3 class="anchored" data-anchor-id="submitting-the-test-for-incorporation-into-the-framework">Submitting the test for incorporation into the framework</h3>
-<p>Instructions for writing tests and incorporating them into the validation_tests repository are provided <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/articles/contribute.html" target="_blank">here</a>. Prior to incorporation, the test(s) will be reviewed according to the criteria below.</p>
+<p>Function tests are stored in the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests SCTO GitHub repository</a>. Tools to create the testing structure for each tested package and run the tests are provided in the designated <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/"><code>SCTORvalidation</code> R add-on package</a>. See the <a href="../wi/testing.html">work instruction on writing tests</a> for more information.</p>
+<section id="submitting-the-test-for-incorporation-into-the-framework" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="submitting-the-test-for-incorporation-into-the-framework"><span class="header-section-number">5.1.1</span> Submitting the test for incorporation into the framework</h3>
+<p>Instructions for writing tests and incorporating them into the validation_tests SCTO GitHub repository are provided <a href="../wi/testing.html#submitting-tests-to-the-platform">here</a>. Prior to incorporation, the test(s) will be reviewed according to the criteria below (“Approving the test”; <a href="#sec-approving-test" class="quarto-xref">Section&nbsp;5.2</a>).</p>
 </section>
-<section id="running-tests" class="level3">
-<h3 class="anchored" data-anchor-id="running-tests">Running tests</h3>
-<p>The output from test can then be used to complete the function test issue form on GitHub. All functions from a particular package can be reported together in a single report.</p>
-<p>Here, we distinguish between tests that are already implemented within a package, and those that have been developed as part of the SCTO framework.</p>
+<section id="running-tests" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="running-tests"><span class="header-section-number">5.1.2</span> Running tests</h3>
+<p>The output from test can then be used to complete the function test issue form on GitHub. All functions from a particular R add-on package can be reported together in a single report.</p>
+<p>Here, we distinguish between tests that are already implemented within an R add-on package, and those that have been developed as part of the SCTO framework.</p>
+<p>See the <a href="../wi/running_tests.html">work instruction on running tests</a> for more information.</p>
 </section>
 </section>
-<section id="approving-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="approving-the-test">Approving the test</h2>
+<section id="sec-approving-test" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-approving-test"><span class="header-section-number">5.2</span> Approving the test</h2>
 <p>A consistency review is performed based on the “four eyes” principle where the reviewer should be chosen from a different participating institution than the author of the test. The review should address the following points:</p>
 <ul>
-<li><p>Is the listed meta-data complete?</p></li>
-<li><p>Is the level of testing specified appropriately?</p></li>
-<li><p>Does the test follow the procedure described in this guideline?</p></li>
+<li>Is the listed meta-data complete?</li>
+<li>Is the level of testing specified appropriately?</li>
+<li>Does the test follow the procedure described in this guideline?</li>
 </ul>
-<p>This review is done in effect by approving the ‘pull request’ on GitHub.</p>
+<p>This review is done in effect by approving the ‘pull request’ on GitHub and following the working instructions listed under the <a href="../wi/review_tests.html">Reviewing tests work instruction</a>.</p>
 <p>The reviewer comments the function test. Only after approval by the reviewer, the function will be listed as tested on the SCTO platform.</p>
 </section>
-<section id="documentation" class="level2">
-<h2 class="anchored" data-anchor-id="documentation">Documentation:</h2>
-<p>Test reports are made on the pkg_validation repository at <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" target="_blank">https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues</a> . Select “New issue”. Select the “Add package/function testing results”. Fill out the predefined form, using the output from R (<code>SCTORvalidation::test("packagename")</code>).</p>
+<section id="documentation" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="documentation"><span class="header-section-number">5.3</span> Documentation:</h2>
+<p>Test reports are made on the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues">pkg_validation SCTO GitHub repository</a>. Select “New issue”. Select the appropriate issue type depending on whether you’re submitting tests from within the package itself or tests from within the SCTO framework. For packages testing using tests from the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests SCTO GitHub repository</a>, fill out the predefined form, using the output from R (<code>SCTORvalidation::test("packagename")</code>). Where packages from within the package itself are used, the <a href="../wi/running_tests.html.qmd#running-tests-from-within-a-package">work instruction</a> provides additional information.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -503,79 +518,75 @@ Document development, review and version history
 </colgroup>
 <thead>
 <tr class="header">
-<th>What to report</th>
-<th>Details</th>
+<th style="text-align: left;">What to report</th>
+<th style="text-align: left;">Details</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Who</td>
-<td>Who performed the test?</td>
+<td style="text-align: left;">Name of tester</td>
+<td style="text-align: left;">Who performed the test?</td>
 </tr>
 <tr class="even">
-<td>When</td>
-<td>When was the test performed (date)</td>
+<td style="text-align: left;">Test date</td>
+<td style="text-align: left;">When was the test performed (date)</td>
 </tr>
 <tr class="odd">
-<td>What</td>
-<td>Which function from which package and package version. If the function does not come from a package (e.g.&nbsp;it’s a script that is stored as a GitHub Gist), the link to the code should be provided.</td>
+<td style="text-align: left;">Tested function</td>
+<td style="text-align: left;">Which function from which R add-on package and package version. If the function does not come from a package (e.g.&nbsp;it’s a script that is stored as a GitHub Gist), the link to the code should be provided.</td>
 </tr>
 <tr class="even">
-<td>Test details</td>
-<td>What precisely was tested? This could be a link to the tests or a reference to the package and function containing the tests together with that packages version number.</td>
+<td style="text-align: left;">Test details</td>
+<td style="text-align: left;">What precisely was tested? This could be a link to the tests or a reference to the R add-on package and function containing the tests together with that package’s version number.</td>
 </tr>
 <tr class="odd">
-<td>Degree Type of testing</td>
-<td><p>Which pathway in the decision tree was followed:</p>
+<td style="text-align: left;">Degree Type of testing</td>
+<td style="text-align: left;"><p>Which pathway in the decision tree was followed:</p>
 <ol type="1">
-<li>“re-run prior test”</li>
-</ol>
-<!-- -->
-<ol start="2" type="1">
-<li>Review existing package test code</li>
-</ol>
-<!-- -->
-<ol start="3" type="1">
+<li>Re-run prior test</li>
+<li>Review existing R add-on package test code</li>
 <li>Deterministic process</li>
-</ol>
-<!-- -->
-<ol start="4" type="1">
 <li>Comparison to other implementation</li>
-</ol>
-<!-- -->
-<ol start="5" type="1">
 <li>Simulation Was the testing comprehensive, superficial, or something in between?</li>
 </ol></td>
 </tr>
 <tr class="even">
-<td>Test result</td>
-<td>Pass/fail</td>
+<td style="text-align: left;">Test result</td>
+<td style="text-align: left;">Pass/fail</td>
 </tr>
 <tr class="odd">
-<td>Evidence of test</td>
-<td>Copy/paste of the console output.</td>
+<td style="text-align: left;">Evidence of test</td>
+<td style="text-align: left;">Copy/paste of the console output</td>
 </tr>
 <tr class="even">
-<td>SessionInfo</td>
-<td><p>Relevant parts of <code>sessionInfo</code>:</p>
+<td style="text-align: left;">SessionInfo</td>
+<td style="text-align: left;"><p>Relevant parts of <code>sessionInfo()</code>:</p>
 <ul>
 <li>R version</li>
 <li>OS</li>
-<li>Which other packages and versions were loaded?</li>
+<li>Which other R add-on packages and versions were loaded?</li>
 </ul></td>
 </tr>
 </tbody>
 </table>
-<p>Failed tests should also be reported. When a test fails, a bug report should be posted via the appropriate route for that package (e.g.&nbsp;a github issue to the package repository, an email to a specific address). The bug report should also be noted alongside the test results, where possible providing a link to the report (e.g.&nbsp;to the GitHub issue), and followed up on by the individual discovering the bug. When the bug has been fixed, the tests can be run again and the successful test result recorded as above.</p>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<p>Failed tests should also be reported. When a test fails, a bug report should be posted via the appropriate route for that R add-on package (e.g.&nbsp;a github issue to the R add-on package repository, an email to a specific address). The bug report should also be noted alongside the test results, where possible providing a link to the report (e.g.&nbsp;to the GitHub issue), and followed up on by the individual discovering the bug. When the bug has been fixed, the tests can be run again and the successful test result recorded as above.</p>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Head data-analysis, Department Clinical Research, University of Basel<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Statistician, Department Clinical Research, University of Basel<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Head Quality Management, Department Clinical Research, University of Bern<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>IT Quality Manager, Department Clinical Research, University of Basel<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Senior Statistical Programmer, SAKK<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

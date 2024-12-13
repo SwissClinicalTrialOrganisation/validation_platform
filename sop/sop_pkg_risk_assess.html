@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Risk metrics – Statistics and Methodology - Validation Platform</title>
+<title>R add-on Package Risk Assessment – Statistics and Methodology - Validation Platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-184cd5062a76d4d6b50eab97a110a3a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3282a3cdbf41a4af440af15af7b0e259.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f3c81c9aa6c21f82a0adea98507e5e88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-16add709d16b5677f5771e4fcfd65ab4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,7 +137,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">Risk metrics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">R add-on Package Risk Assessment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -174,14 +174,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Risk metrics</span></a>
+  <a href="../sop/sop_pkg_risk_assess.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">R add-on Package Risk Assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing</span></a>
+  <a href="../sop/sop_pkg_fn_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Function testing</span></a>
   </div>
 </li>
       </ul>
@@ -250,20 +250,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Report an assessment or test</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=package%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_package.yml&amp;title=%5BPackage+risk+assessment%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package risk assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Tests repository</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test.yml&amp;title=%5BPackage+test%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package test report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Package tests repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">SCTORvalidation R package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Give us feedback or ask a question</span></a>
   </div>
 </li>
       </ul>
@@ -278,27 +290,27 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-objective" id="toc-sec-objective" class="nav-link active" data-scroll-target="#sec-objective">Purpose</a></li>
-  <li><a href="#abbreviations-and-definitions" id="toc-abbreviations-and-definitions" class="nav-link" data-scroll-target="#abbreviations-and-definitions">Abbreviations and definitions</a></li>
-  <li><a href="#sec-scope" id="toc-sec-scope" class="nav-link" data-scroll-target="#sec-scope">Scope</a></li>
-  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline">Guideline</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a></li>
+  <li><a href="#abbreviations-definitions" id="toc-abbreviations-definitions" class="nav-link" data-scroll-target="#abbreviations-definitions"><span class="header-section-number">2</span> Abbreviations &amp; Definitions</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">3</span> Scope</a></li>
+  <li><a href="#guideline" id="toc-guideline" class="nav-link" data-scroll-target="#guideline"><span class="header-section-number">4</span> Guideline</a>
   <ul class="collapse">
-  <li><a href="#the-r-package-risk-metrics-explained" id="toc-the-r-package-risk-metrics-explained" class="nav-link" data-scroll-target="#the-r-package-risk-metrics-explained">The R package risk metrics explained</a></li>
+  <li><a href="#the-r-package-risk-metrics-explained" id="toc-the-r-package-risk-metrics-explained" class="nav-link" data-scroll-target="#the-r-package-risk-metrics-explained"><span class="header-section-number">4.1</span> The R package risk metrics explained</a></li>
+  <li><a href="#calculation-of-the-final-risk-score" id="toc-calculation-of-the-final-risk-score" class="nav-link" data-scroll-target="#calculation-of-the-final-risk-score"><span class="header-section-number">4.2</span> Calculation of the final risk score</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">4.3</span> Documentation</a></li>
   </ul></li>
-  <li><a href="#sec-calculation-of-the-final-risk-score" id="toc-sec-calculation-of-the-final-risk-score" class="nav-link" data-scroll-target="#sec-calculation-of-the-final-risk-score">Calculation of the final risk score:</a></li>
-  <li><a href="#sec-documentation" id="toc-sec-documentation" class="nav-link" data-scroll-target="#sec-documentation">Documentation</a></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
-  <li><a href="#appendix-1-the-scto-r-package-risk-metrics" id="toc-appendix-1-the-scto-r-package-risk-metrics" class="nav-link" data-scroll-target="#appendix-1-the-scto-r-package-risk-metrics">Appendix 1: The SCTO R package risk metrics</a></li>
-  <li><a href="#appendix-2-the-scto-r-package-documentation" id="toc-appendix-2-the-scto-r-package-documentation" class="nav-link" data-scroll-target="#appendix-2-the-scto-r-package-documentation">Appendix 2: The SCTO R package documentation</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
+  <li><a href="#sec-appendix1" id="toc-sec-appendix1" class="nav-link" data-scroll-target="#sec-appendix1"><span class="header-section-number">6</span> Appendix 1: The SCTO R add-on package risk metrics</a></li>
+  <li><a href="#sec-appendix2" id="toc-sec-appendix2" class="nav-link" data-scroll-target="#sec-appendix2"><span class="header-section-number">7</span> Appendix 2: The SCTO R add-on package documentation</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="risk_metrics.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sop_pkg_risk_assess.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/risk_metrics.html">Risk metrics</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">SOPs</a></li><li class="breadcrumb-item"><a href="../sop/sop_pkg_risk_assess.html">R add-on Package Risk Assessment</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Risk metrics</h1>
+<h1 class="title">R add-on Package Risk Assessment</h1>
 </div>
 
 
@@ -328,120 +340,67 @@ Document development, review and version history
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong><em>Development and Review</em></strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Name</th>
-<th>Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Authored/Revised by</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Reviewed by</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Released by</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Authored/revised by:</p>
+<p></p>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 33%">
 <col style="width: 18%">
-<col style="width: 19%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Position</th>
-<th>Org anization</th>
-<th>Address</th>
-<th>email</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Michael Coslovsky, PhD</td>
-<td>Head da ta-analysis</td>
-<td>D epartment Clinical Research, U niversity of Basel</td>
-<td>Spit alstrasse 12, 4031, Basel</td>
-<td>Michael.c oslovsky@usb.ch</td>
-</tr>
-<tr class="even">
-<td>Nicole Graf</td>
-<td>S tatistician</td>
-<td>Clinical Trials Unit, Kant onsspital St. Gallen</td>
-<td><p>Haus 89,</p>
-<p>Rorschach erstrasse 95, 9007 St. Gallen</p></td>
-<td>Nico le.graf@kssg.ch</td>
-</tr>
-<tr class="odd">
-<td>Julien Sauser</td>
-<td>S tatistician</td>
-<td>CHUV</td>
-<td></td>
-<td>Julien .sauser@chuv.ch</td>
-</tr>
-<tr class="even">
-<td>Christina Huf</td>
-<td>Head Quality Management</td>
-<td>D epartment Clinical Research, U niversity of Bern</td>
-<td></td>
-<td>christi na.huf@unibe.ch</td>
-</tr>
-<tr class="odd">
-<td>Elio Carreras</td>
-<td>Senior Statistical Programmer</td>
-<td>SAKK</td>
-<td></td>
-<td>Elio.C arreras@sakk.ch</td>
+<td style="text-align: left;">Michael Coslovsky,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Nicole Graf,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Julien Sauser,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Christina Huf,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Christine Otieno,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Elio Carreras<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></td>
+<td style="text-align: left;">2025-01-01</td>
 </tr>
 </tbody>
 </table>
+<p></p>
 <p><strong><em>Version History</em></strong></p>
+<p></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 25%">
+<col style="width: 45%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Version</th>
-<th>Date</th>
-<th>Author</th>
-<th>Summary of Changes</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Author(s)</th>
+<th style="text-align: left;">Summary of Changes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">Michael Coslovsky, Nicole Graf, Julien Sauser, Christina Huf, Christine Otieno, Elio Carreras</td>
+<td style="text-align: left;">Initial version</td>
 </tr>
 </tbody>
 </table>
+<p></p>
 </div>
 </div>
 </div>
-<section id="sec-objective" class="level2">
-<h2 class="anchored" data-anchor-id="sec-objective">Purpose</h2>
+<section id="purpose" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
 <p>This document describes the metrics used by members of the Swiss Clinical Trial Organization for the evaluation of add-on packages for the statistical software R and provides guidelines for their application. It provides a table of the metrics and a short explanation of the considerations behind each of the metrics.</p>
-<p>Assessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the <strong>SCTO R-validation policy</strong>. The risk of (using) a package is the opposite of the confidence we have in the package’s delivered output: packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.</p>
-<p>Following this assessment, the assessor determines whether any parts of the package need to be tested (function/unit testing) for the package’s intended use in a specific R product. The documentation of any actions following the initial risk assessment is listed separately.</p>
-<p>This document is part of the <a href="../index.html"><strong>SCTO Computerized Systems Validation Policy for R</strong></a> and refers to the standard operation procedure for Function testing (<a href="../sop/sop_fn_tests.html">SCTO SOP – Function testing</a> (in the SCTO statistics’ platform) of the SCTO statistics platform.</p>
-<p>Based on the principals below, the table in the addendum provides the metrics’ values to be documented upon package evaluation for the SCTO platform statistics. Note that the evaluation is per package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.</p>
+<p>Assessing the risk associated with using a software package is one of the steps required for working under a validated environment, as determined in the <a href="../index.html"><strong>computerized systems validation policy for R</strong></a>. With respect to R add-on packages, the risk of (using) an R add-on package is the opposite of the confidence we have in the package’s delivered output: R add-on packages which we are confident in using are of low risk, and vice versa. The metrics described below are the building stones in determining this risk. A final risk score is determined based on a weighting scheme including these metrics.</p>
+<p>Following this assessment, the assessor determines whether any functions of the R add-on package need to be tested (function/unit testing) for the package’s intended use in a specific R product. The documentation of any actions following the initial risk assessment is listed separately.</p>
+<p>This document is part of the <strong><a href="../index.html">SCTO Computerized Systems Validation Policy for R</a></strong> and refers to the <a href="../sop/sop_pkg_fn_testing.html">SCTO’s standard operation procedure R add-on package Function testing procedure</a>.</p>
+<p>Based on the principals below, the table in the addendum provides the metrics’ values to be documented upon the evaluation of an R add-on package for the SCTO platform statistics. Note that the evaluation is per R add-on package with a specific version number. Package version changes and updates require re-assessment of the metrics for the new version.</p>
 </section>
-<section id="abbreviations-and-definitions" class="level2">
-<h2 class="anchored" data-anchor-id="abbreviations-and-definitions">Abbreviations and definitions</h2>
+<section id="abbreviations-definitions" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Abbreviations &amp; Definitions</h1>
 <dl>
 <dt>SOP</dt>
 <dd>
@@ -453,41 +412,61 @@ The R statistical programming language and environment
 </dd>
 <dt>R Package</dt>
 <dd>
-A collection of code and functions providing an extension to base R installation, provided by members of the R community, available via CRAN and other distribution repositories
+<ul>
+<li>A collection of code and functions providing an extension to base R installation<br>
+</li>
+<li>provided by members of the R community<br>
+</li>
+<li>available via CRAN and other distribution<br>
+repositories</li>
+</ul>
 </dd>
-<dt>R Product</dt>
+<dt>R add-on Package</dt>
+<dd>
+An R package that is not part of the base distribution of R or part of the “R recommended packages”
+</dd>
+<dt>R recommended packages</dt>
+<dd>
+The collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document <a href="https://www.r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021</a>.
+</dd>
+<dt>R product</dt>
 <dd>
 Any deliverable produced using R via the processes below. Typical statistical products include sample size estimation, statistical analysis plan, an analysis report etc.
 </dd>
 <dt>Risk</dt>
 <dd>
-As per ISO 31073 risk is defined as
+As per ISO 31073 risk is defined as:
 </dd>
 </dl>
+<blockquote class="blockquote">
 <p>The effect of uncertainty on objectives, where:</p>
 <ol type="1">
-<li>An effect is a deviation from the expected. It can be positive, negative or both, and can address, create or result in opportunities and threats.</li>
-<li>Objectives can have different aspects and categories, and can be applied at different levels.</li>
-<li>Risk is usually expressed in terms of risk sources, potential events, their consequences and their likelihood. In the context of risk assessments and risk metrics the focus is usually on negative effects.</li>
+<li>An effect is a deviation from the expected. It can be positive, negative or both, and can address, create or result in opportunities and threats.<br>
+</li>
+<li>Objectives can have different aspects and categories, and can be applied at different levels.<br>
+</li>
+<li>Risk is usually expressed in terms of risk sources, potential events, their consequences and their likelihood.</li>
 </ol>
+</blockquote>
+<p>In the context of risk assessments and risk metrics the focus is usually on negative effects.</p>
 </section>
-<section id="sec-scope" class="level2">
-<h2 class="anchored" data-anchor-id="sec-scope">Scope</h2>
-<p>This document describes the metrics to be used for assessing the risk of an R add-on package according to the <strong>SCTO</strong> <strong>Computerized Systems Validation Policy for R</strong> guidelines on R package validation. It is applicable to all R add-on packages.</p>
-<p>Out of scope are packages included in the official R-distribution including “Base R” packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document <strong>“R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021”</strong>. R-base and recommended packages are approved per definition, as stated in the policy document.</p>
+<section id="scope" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Scope</h1>
+<p>This document describes the metrics to be used for assessing the risk of an R add-on package according to the <a href="../index.html"><strong>SCTO Computerized Systems Validation Policy for R</strong></a> guidelines on R package validation. It is applicable to all R add-on packages.</p>
+<p>Out of scope are R packages included in the official R-distribution including Base R packages. Also out of scope is the collection of “recommended packages”, developed and validated by members of the R Development Core Team, as listed in the document <a href="https://www.r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021</a>. Base R packages and the “recommended packages” are considered validated with the R base installation, as stated in the policy document.</p>
 </section>
-<section id="guideline" class="level2">
-<h2 class="anchored" data-anchor-id="guideline">Guideline</h2>
-<section id="the-r-package-risk-metrics-explained" class="level3">
-<h3 class="anchored" data-anchor-id="the-r-package-risk-metrics-explained">The R package risk metrics explained</h3>
-<p>The following metrics are considered when assessing a package. These are listed in Appendix-1 below. Here we provide a precise definition:</p>
+<section id="guideline" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Guideline</h1>
+<section id="the-r-package-risk-metrics-explained" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-r-package-risk-metrics-explained"><span class="header-section-number">4.1</span> The R package risk metrics explained</h2>
+<p>The following metrics are considered when assessing an R add-on package. These are listed in Appendix-1 below. Here we provide a precise definition and, in parentheses, the name of the metric in the collection form:</p>
 <ol type="1">
-<li><p><strong>Package name, version, release date</strong>: version and release date of the specific version assessed at this moment. These are required for identifying the package and for documentation. Packages will be re-assessed upon update and version changes; documentation of older versions remains in the document. <u>These values are not included in the risk calculation.</u></p></li>
+<li><p><strong>Package name, version, release date</strong>: version and release date of the specific version being assessed. These are required for identifying the package and for documentation. Packages will be re-assessed upon update and version changes; documentation of older versions remains in the document. <u>These values are not included in the risk calculation.</u></p></li>
 <li><p><strong>Purpose</strong> (<code>statistical_package</code>) We define three risk levels for a package, depending on the package’s purpose and methodology:</p>
 <ol type="a">
 <li><p>“non-statistical” packages: packages that deal only with data-wrangling and manipulation (e.g., dplyr) or with reporting processes (e.g., Sweave, xtable). Such processes are of ‘low risk’ as no statistical calculations are performed, and data-errors are, comparatively, easy to detect. Similarly, packages associated with application interfaces such as Shiny application are considered “non-statistical”.</p></li>
-<li><p>“Statistical with published methods”: packages that perform statistical calculations based on known methods, or on methods that have been published in peer reviewed journals. These packages obtain a “medium risk” status.</p></li>
-<li><p>“Statistical non-published methods”: packages that perform statistical calculations, but the underlying methods have not been published in a peer reviewed journal. These packages obtain a status “high risk”.</p></li>
+<li><p>“Statistical with published methods”: packages that perform statistical calculations, the majority of which based on known methods, or on methods that have been published in peer reviewed journals. These packages obtain a “medium risk” status.</p></li>
+<li><p>“Statistical non-published methods”: packages that perform statistical calculations, but the majority of underlying methods have not been published in a peer reviewed journal. These packages obtain a status “high risk”.</p></li>
 </ol></li>
 <li><p><strong>Author</strong> (<code>author</code>): The author(s) of a package will be viewed as indicator for its trustworthiness. If package authors (noted as ‘aut’ in the package description, e.g., as listed on CRAN) are well-known within the statistical, data-science and R communities and have credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as low. If package authors have credentials based on their qualifications, education, present and past affiliations, but are not well-known within the statistical, data-science and R communities, the risk of the respective package will be scored as medium. If package authors are not well-known within the statistical, data-science and R communities and have no clear credentials based on their qualifications, education, present and past affiliations, the risk of the respective package will be scored as high.<br>
 Note that whether an author is ‘well-known’ in the community is a subjective assessment and accepted as such; in addition, groups of authors are evaluated as a collective.</p></li>
@@ -503,24 +482,34 @@ The listed number is converted into a [0, 1] score, with 0 representing low numb
 <pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="risk_metrics_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-dep-score" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dep-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="sop_pkg_risk_assess_files/figure-html/fig-dep-score-1.png" id="fig-dep-score" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-dep-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ol start="6" type="1">
-<li><p><strong>CRAN or Bioconductor</strong> (<code>on_cran</code>): CRAN and Bioconductor provide a procedure for evaluating the appropriateness and minimal requirements for a package to be released on their official platform. Having passed the tests implemented should guarantee, despite not statistical, a minimal quality. This metric assesses whether the package is on CRAN or Bioconductor. Being on CRAN/Bioconductor provides low risk (yes = 0) while not being on them represents high risk (no = 1).</p></li>
+<li><p><strong>CRAN or Bioconductor</strong> (<code>on_cran</code>): CRAN and Bioconductor impose a set of requirements that a package has to meet for it to be released on their official platform. Thus, they provide a procedure of evaluating a minimal quality standard for a technical, though not statistical, appropriateness of the package. This metric assesses whether the package is on CRAN or Bioconductor. Being on CRAN/Bioconductor provides low risk (yes = 0) while not being on them represents high risk (no = 1).</p></li>
 <li><p><strong>Documentation of source code</strong> (<code>source_code_documented</code>): Ideally, the source code is available (for example, on github) for examination and commented (yes = 0). Source code that is not commented or difficult to follow, or is not available, is considered not documented (no = 1).</p></li>
-<li><p><strong>Number of downloads in the last year</strong> (<code>nr_downloads_12_months</code>): More downloads suggest more extensive community and user testing and greater chances of bugs or errors being identified and reported. To fill in check the logs of CRAN’s or Bioconductor’s reporting systems and report the number of downloads for the package in the last 12 months. Using the cranlogs::cran_downloads() function to this end is acceptable.<br>
-The number of downloaded packages is converted to a score [0,1], with 0 representing low risk (many downloads) and 1 high risk (few downloads). For the conversion of the number into a score we follow a similar approach as approach taken by the ‘riskmetric’ package (R validation hub, 2023) and use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> with the logistic growth rate k = 0.5 and a log-scale for the number of downloads (log(x)). The midpoint lying at log(100,000 downloads).</p></li>
+<li><p><strong>Number of downloads in the last year</strong> (<code>nr_downloads_12_months</code>): More downloads suggest more extensive community and user testing and greater chances of bugs or errors being identified and reported. To fill in check the logs of CRAN’s or Bioconductor’s reporting systems and report the number of downloads for the package in the last 12 months. Using the <code>cranlogs::cran_downloads()</code> function to this end is acceptable.<br>
+The number of downloaded packages is converted to a score [0,1], with 0 representing low risk (many downloads) and 1 high risk (few downloads). For the conversion of the number into a score we follow a similar approach as approach taken by the ‘riskmetric’ package (R validation hub, 2023) and use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> with the logistic growth rate k = -0.5 and a log-scale for the number of downloads (log(x)). The midpoint lying at log(100,000 downloads).</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="risk_metrics_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-download-score" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-download-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="sop_pkg_risk_assess_files/figure-html/fig-download-score-1.png" id="fig-download-score" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-download-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
 </figure>
 </div>
 </div>
@@ -532,190 +521,183 @@ The number of downloaded packages is converted to a score [0,1], with 0 represen
 Note that test functions are often listed in ‘test’ folder in the package’s source files, e.g., on github.</p></li>
 </ol>
 </section>
-</section>
-<section id="sec-calculation-of-the-final-risk-score" class="level2">
-<h2 class="anchored" data-anchor-id="sec-calculation-of-the-final-risk-score">Calculation of the final risk score:</h2>
+<section id="calculation-of-the-final-risk-score" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="calculation-of-the-final-risk-score"><span class="header-section-number">4.2</span> Calculation of the final risk score</h2>
 <p>The final score is a weighted summary of all the measures above in the range [0, 1], with lower scores representing lower risk and higher scores higher risk. In this version of the guideline all measures are considered equally important, and the score is a simple arithmetic mean of the measures.</p>
-<p>The [0, 1] score is then categorized to low, medium and high-risk packages:</p>
+<p>The [0, 1] score is then categorized to low, medium and high-risk R add-on packages:</p>
 <ul>
-<li><p>Score ≤0.25: low risk</p></li>
-<li><p>0.25 &lt; score ≤ 0.75: medium risk</p></li>
-<li><p>Score &gt;0.75: high risk</p></li>
+<li><span style="color:green">Score ≤0.25: low risk</span></li>
+<li><span style="color:orange">0.25 &lt; score ≤ 0.75: medium risk</span></li>
+<li><span style="color:red">Score &gt;0.75: high risk</span></li>
 </ul>
-<p>As described in the SCTO validation policy, the risk associated with the package is evaluated alongside the risk associated with a specific project to determine which actions may be required to use the package. High risk packages, or medium risk packages in high-risk projects, for example, may need (project-) specific function testing.</p>
+<p>As described in the SCTO computerized systems validation policy for R, the risk associated with the R add-on package is evaluated alongside the risk associated with a specific project to determine which actions may be required to use the package. High risk R add-on packages, or medium risk packages in high-risk projects, for example, may need (project-) specific function testing.</p>
 </section>
-<section id="sec-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="sec-documentation">Documentation</h2>
-<p>The assessment of risk associated with a package should be documented and may be updated with time.</p>
-<p>The SCTO has developed a platform on GitHub, on which the risk assessment can be performed (<a href="https://swissclinicaltrialorganisation.github.io/pkg_validation/results/pkgassessment.html" class="uri">https://swissclinicaltrialorganisation.github.io/pkg_validation/results/pkgassessment.html</a>). Package assessments are done as “issues” on the GitHub platform (<a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues" class="uri">https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues</a>).</p>
-<p>The platform allows performing the assessment and calculating the final risk based on the above metrics, while recording and documenting the assessment. Apart from the metrics themselves (Appendix 1), the additional points listed in Appendix 2 are collected and documented while performing the assessment on the platform.</p>
+<section id="documentation" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="documentation"><span class="header-section-number">4.3</span> Documentation</h2>
+<p>The assessment of risk associated with an R add-on package should be documented and may be updated with time.</p>
+<p>The SCTO has developed a platform on GitHub, on which the risk assessment can be performed (<a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform" class="uri">https://github.com/SwissClinicalTrialOrganisation/validation_platform</a>). R add-on package assessments are done as “issues” on the GitHub platform (<a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" class="uri">https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues</a>).</p>
+<p>The platform allows performing the assessment and calculating the final risk based on the above metrics, while recording and documenting the assessment. Apart from the metrics themselves (<a href="#sec-appendix1" class="quarto-xref">Section&nbsp;6</a>), the additional points listed in (<a href="#sec-appendix2" class="quarto-xref">Section&nbsp;7</a>) are collected and documented while performing the assessment on the platform.</p>
 </section>
-<section id="sec-references" class="level2">
-<h2 class="anchored" data-anchor-id="sec-references">References</h2>
-<p>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, <a href="https://CRAN.R-project.org/package=riskmetric" target="blank">https://CRAN.R-project.org/package=riskmetric</a></p>
-<p>ISO 31073:2022(en) Risk management — Vocabulary: <a href="https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3" target="blank">https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3</a></p>
 </section>
-<section id="appendix-1-the-scto-r-package-risk-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="appendix-1-the-scto-r-package-risk-metrics">Appendix 1: The SCTO R package risk metrics</h2>
+<section id="references" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> References</h1>
+<p>R Validation Hub, Kelkhoff D, Gotti M, Miller E, K K, Zhang Y, Milliman E, Manitz J (2023). _riskmetric: Risk Metrics to Evaluating R Packages_. R package version 0.2.3, <a href="https://CRAN.R-project.org/package=riskmetric">https://CRAN.R-project.org/package=riskmetric</a>.</p>
+<p><a href="https://www.iso.org/obp/ui/en/#iso:std:iso:31073:ed-1:v1:en:term:3.1.3">ISO 31073:2022(en) Risk management - Vocabulary</a></p>
+<p><a href="https://www.r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues, The R Foundation for Statistical Computing, 2021</a></p>
+</section>
+<section id="sec-appendix1" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Appendix 1: The SCTO R add-on package risk metrics</h1>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 27%">
-<col style="width: 30%">
 <col style="width: 26%">
+<col style="width: 34%">
+<col style="width: 23%">
 <col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th style="text-align: left;"><strong>explanation</strong></th>
-<th style="text-align: left;"><strong>possible values</strong></th>
-<th style="text-align: left;"><strong>risk level*</strong></th>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Explanation</th>
+<th style="text-align: left;">Possible values</th>
+<th style="text-align: left;">Risk level*</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>package</td>
+<td style="text-align: left;"><code>package</code></td>
 <td style="text-align: left;">name of the package as called for installation</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>version</td>
+<td style="text-align: left;"><code>version</code></td>
 <td style="text-align: left;">Version number of the package evaluated</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td>release_date</td>
+<td style="text-align: left;"><code>release_date</code></td>
 <td style="text-align: left;">Date of release of the current evaluated version of the package</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>author</td>
+<td style="text-align: left;"><code>author</code></td>
 <td style="text-align: left;">name of the main author or developing group</td>
 <td style="text-align: left;">well-known or known credentials / has credentials / no clear credentials or group association</td>
 <td style="text-align: left;">low / med / high</td>
 </tr>
 <tr class="odd">
-<td>maintainer</td>
+<td style="text-align: left;"><code>maintainer</code></td>
 <td style="text-align: left;">Is there a maintainer listed for the package and are their contact details available?</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low/high</td>
 </tr>
 <tr class="even">
-<td>package_purpose</td>
-<td style="text-align: left;">Statistical packages implement statistical or machine learning algorithms. Non-statistical packages are used for reporting for example</td>
-<td style="text-align: left;">non-statistical / statistical-published / statistical non-published</td>
+<td style="text-align: left;"><code>package_purpose</code></td>
+<td style="text-align: left;">Statistical packages implement statistical or machine learning algorithms. Non- statistical packages are used for reporting for example</td>
+<td style="text-align: left;">non-statistical / statistical-published / statistical</td>
 <td style="text-align: left;">low / med / high</td>
 </tr>
 <tr class="odd">
-<td>n_dependencies</td>
-<td style="text-align: left;">The more packages a package depends on the more chance for errors/bugs to be found</td>
-<td style="text-align: left;">Nr of dependencies (transformed to [0-1])</td>
+<td style="text-align: left;"><code>n_dependencies</code></td>
+<td style="text-align: left;">Number of dependencies. The more packages a package depends on, the more chance for errors/bugs to be found</td>
+<td style="text-align: left;">Nr of dependencies (transformed to [0,1]</td>
 <td style="text-align: left;">0-1</td>
 </tr>
 <tr class="even">
-<td>on_cran</td>
-<td style="text-align: left;">is the package on available from CRAN or bioconductor</td>
+<td style="text-align: left;"><code>on_cran</code></td>
+<td style="text-align: left;">is the package on available from CRAN or bioconductor?</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="odd">
-<td>source_code_documented</td>
-<td style="text-align: left;">is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.</td>
+<td style="text-align: left;"><code>source_code_documented</code></td>
+<td style="text-align: left;">is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented?</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="even">
-<td>nr_downloads_12_months</td>
-<td style="text-align: left;">Checked using the CRAN logs package’s implementation– potentially the CRAN (/Bioconductor) reporting system</td>
-<td style="text-align: left;">Nr of downloads (transformed to [0-1])</td>
+<td style="text-align: left;"><code>nr_downloads_12_months</code></td>
+<td style="text-align: left;">Checked using the <code>cranlogs</code> packages implementation - potentially the CRAN (/biconductor) reporting system</td>
+<td style="text-align: left;">Nr of downloads (transformed to [0,1])</td>
 <td style="text-align: left;">0-1</td>
 </tr>
 <tr class="odd">
-<td>bug_reporting_active</td>
+<td style="text-align: left;"><code>bug_reporting_active</code></td>
 <td style="text-align: left;">address for bug reporting exists</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="even">
-<td>has_vignettes</td>
-<td style="text-align: left;">does the package have one/more vignettes</td>
+<td style="text-align: left;"><code>has_vignettes</code></td>
+<td style="text-align: left;">does the package have one/more vignettes?</td>
 <td style="text-align: left;">Yes / No</td>
 <td style="text-align: left;">low / high</td>
 </tr>
 <tr class="odd">
-<td>has_tests</td>
-<td style="text-align: left;">does the package have unit and/or function tests performed by the authors? are they comprehensive? are they well documented?</td>
+<td style="text-align: left;"><code>has_tests</code></td>
+<td style="text-align: left;">does the package have unit and/or function tests performed by the authors? are they comprehensive? are they well documented</td>
 <td style="text-align: left;">yes-comprehensive / yes-not-comprehensive / no</td>
 <td style="text-align: left;">low / med / high</td>
 </tr>
 <tr class="even">
-<td>final_risk</td>
+<td style="text-align: left;"><code>final_risk</code></td>
 <td style="text-align: left;">a global risk, based on and weighing in all the grading metrics. At version one, the weight of all metrics is the same, and the global risk is the average of all metrics.</td>
-<td style="text-align: left;">[0 – 1] with 0 = low risk and 1 = high risk. Cutpoints categorize into low / med / high</td>
-<td style="text-align: left;">Low / med / high</td>
+<td style="text-align: left;">[0,1] with 0 = low risk and 1 = high risk. Cutpoints categorize into low / medium / high</td>
+<td style="text-align: left;">low / med / high</td>
 </tr>
 </tbody>
 </table>
+<blockquote class="blockquote">
 <p>* Risk level is always a value [0, 1]. For binary metrics low = 0 and high = 1. ‘medium risk’ takes a value of 0.5. Continuous metrics such as ‘nr of downloads’ are transformed to a value [0, 1].</p>
+</blockquote>
 </section>
-<section id="appendix-2-the-scto-r-package-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="appendix-2-the-scto-r-package-documentation">Appendix 2: The SCTO R package documentation</h2>
+<section id="sec-appendix2" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Appendix 2: The SCTO R add-on package documentation</h1>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 47%">
-<col style="width: 30%">
-<col style="width: 20%">
+<col style="width: 39%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th style="text-align: left;">Parameter</th>
 <th style="text-align: left;">Explanation</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>package_name</td>
+<td style="text-align: left;"><code>package_name</code></td>
 <td style="text-align: left;">name of the package as called for installation</td>
-<td></td>
 </tr>
 <tr class="even">
-<td>version</td>
+<td style="text-align: left;"><code>version</code></td>
 <td style="text-align: left;">Version number of the package evaluated</td>
-<td></td>
 </tr>
 <tr class="odd">
-<td>release_date</td>
+<td style="text-align: left;"><code>release_date</code></td>
 <td style="text-align: left;">Date of release of the current package</td>
-<td></td>
 </tr>
 <tr class="even">
-<td>date_of_risk_assessment</td>
+<td style="text-align: left;"><code>date_of_risk_assessment</code></td>
 <td style="text-align: left;">The date on which the package risk was performed. Testing probably happens after (create_date).</td>
-<td></td>
 </tr>
 <tr class="odd">
-<td>final_risk</td>
+<td style="text-align: left;"><code>final_risk</code></td>
 <td style="text-align: left;">As calculated from the SCTO risk measures (table above)</td>
-<td></td>
 </tr>
 <tr class="even">
-<td>assessor_name</td>
+<td style="text-align: left;"><code>assessor_name</code></td>
 <td style="text-align: left;">Who did the risk assessment</td>
-<td></td>
 </tr>
 <tr class="odd">
-<td>scto_relationship</td>
+<td style="text-align: left;"><code>scto_relationship</code></td>
 <td style="text-align: left;">SCTO association</td>
-<td></td>
 </tr>
 <tr class="even">
-<td>comments</td>
-<td style="text-align: left;">for example, speciﬁc functions that are not recommended or speciﬁc issues</td>
-<td></td>
+<td style="text-align: left;"><code>comments</code></td>
+<td style="text-align: left;">for example, specific functions that are not recommended or specific issues</td>
 </tr>
 </tbody>
 </table>
@@ -723,7 +705,18 @@ Note that test functions are often listed in ‘test’ folder in the package’
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Head data-analysis, Department Clinical Research, University of Basel<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Statistician, Clinical Trials Unit, Kantonspital St.&nbsp;Gallen<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Statistician, CHUV<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Head Quality Management, Department Clinical Research, University of Bern<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>IT Quality Manager, Department Clinical Research, University of Basel<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Senior Statistical Programmer, SAKK<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

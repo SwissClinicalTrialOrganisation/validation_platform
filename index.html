@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-184cd5062a76d4d6b50eab97a110a3a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3282a3cdbf41a4af440af15af7b0e259.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f3c81c9aa6c21f82a0adea98507e5e88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-16add709d16b5677f5771e4fcfd65ab4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,14 +145,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
+  <a href="./sop/sop_pkg_risk_assess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Risk Assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing</span></a>
+  <a href="./sop/sop_pkg_fn_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Function testing</span></a>
   </div>
 </li>
       </ul>
@@ -221,20 +221,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Report an assessment or test</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=package%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_package.yml&amp;title=%5BPackage+risk+assessment%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package risk assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Tests repository</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test.yml&amp;title=%5BPackage+test%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package test report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Package tests repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">SCTORvalidation R package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Give us feedback or ask a question</span></a>
   </div>
 </li>
       </ul>
@@ -267,14 +279,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-r-product-val" id="toc-sec-r-product-val" class="nav-link" data-scroll-target="#sec-r-product-val"><span class="header-section-number">7.4</span> R Product Level: R Product Validation</a></li>
   </ul></li>
   <li><a href="#sec-risk-management" id="toc-sec-risk-management" class="nav-link" data-scroll-target="#sec-risk-management"><span class="header-section-number">8</span> Risk Management</a></li>
-  <li><a href="#sec-training" id="toc-sec-training" class="nav-link" data-scroll-target="#sec-training"><span class="header-section-number">9</span> User Training</a>
-  <ul class="collapse">
-  <li><a href="#sec-periodic-review" id="toc-sec-periodic-review" class="nav-link" data-scroll-target="#sec-periodic-review"><span class="header-section-number">9.1</span> Periodic Review</a></li>
-  <li><a href="#sec-associated-documents" id="toc-sec-associated-documents" class="nav-link" data-scroll-target="#sec-associated-documents"><span class="header-section-number">9.2</span> Associated Documents</a></li>
-  </ul></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">10</span> References</a></li>
+  <li><a href="#sec-training" id="toc-sec-training" class="nav-link" data-scroll-target="#sec-training"><span class="header-section-number">9</span> User Training</a></li>
+  <li><a href="#sec-periodic-review" id="toc-sec-periodic-review" class="nav-link" data-scroll-target="#sec-periodic-review"><span class="header-section-number">10</span> Periodic Review</a></li>
+  <li><a href="#sec-associated-documents" id="toc-sec-associated-documents" class="nav-link" data-scroll-target="#sec-associated-documents"><span class="header-section-number">11</span> Associated Documents</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">12</span> References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div><div class="quarto-other-links"><h2>Example documents</h2><ul><li><a href="fig/SCTO_R-Base_HighLevelRiskAssessment_EXAMPLE.docx" target="_blank"><i class="bi bi-file-word"></i>Example High Level Risk assessment</a></li><li><a href="fig/SCTO_R-Base_VendorAssessmentStatement_EXAMPLE.docx" target="_blank"><i class="bi bi-file-word"></i>Example Vendor Assessment Statement</a></li><li><a href="fig/SCTO_R-Base_Validation_and_TestPlan_EXAMPLE.docx" target="_blank"><i class="bi bi-file-word"></i>Example Validation plan and test plan</a></li><li><a href="fig/SCTO_R-Base_Validation_and_TestReport_EXAMPLE.docx" target="_blank"><i class="bi bi-file-word"></i>Example Validation plan and test report</a></li><li><a href="fig/SCTO_R-Base_UserRequirementSpecification_EXAMPLE.docx" target="_blank"><i class="bi bi-file-word"></i>Example User Requirement specification</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -315,18 +325,20 @@ Document development, review and version history
 <p><strong><em>Development and Review</em></strong></p>
 <p></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 18%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>Name</th>
-<th>Date</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Authored/Revised by</td>
-<td></td>
-<td></td>
+<td style="text-align: left;">Michael Coslovsky,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Christine Otieno,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Alan Haynes<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td style="text-align: left;">2025-01-01</td>
 </tr>
 </tbody>
 </table>
@@ -370,13 +382,13 @@ Document development, review and version history
 </section>
 <section id="sec-introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
-<p>This policy provides the framework for validating R and R add-on packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO network members<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for the purpose of creating R products in the context of clinical research. Validation may be executed on SCTO or CTU level, where the SCTO provides</p>
+<p>This policy provides the framework for validating R and R add-on packages in use by Swiss Clinical Trial Organization (SCTO) and its SCTO network members<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> for the purpose of creating R products in the context of clinical research. Validation may be executed on SCTO or CTU level, where the SCTO provides</p>
 <ul>
 <li>recommendations for R base installation validation,</li>
 <li>processes for R add-on package validation and</li>
 <li>a platform to serve as an inventory for documentation of all R add-on package validation performed by the SCTO and its network members according to this policy.</li>
 </ul>
-<p>Validation activities in general ensure that computerised systems can be relied upon to consistently produce a product that meets predetermined specifications of accuracy. The formal process of validation results in a validation documentation set<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Validation activities in general ensure that computerised systems can be relied upon to consistently produce a product that meets predetermined specifications of accuracy. The formal process of validation results in a validation documentation set<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <p>The validation of a computerised system consists of the following elements:</p>
 <ul>
 <li>Infrastructure</li>
@@ -386,7 +398,7 @@ Document development, review and version history
 <li>Training</li>
 </ul>
 <p>The validation activities focus on verifying that the software consistently fulfills the specified requirements. Processes must be in place to ensure that the infrastructure and hardware required for the functionality of the software are qualified and changes controlled. Additionally, all users and (if applicable) support personnel must be trained to use the software and follow related business processes.</p>
-<p>According to international standards and guidelines listed below, any GxP<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> critical system supporting activities such as statistical analysis (e.g., in the context of clinical studies) should be validated:</p>
+<p>According to international standards and guidelines listed below, any GxP<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> critical system supporting activities such as statistical analysis (e.g., in the context of clinical studies) should be validated:</p>
 <ul>
 <li><a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-computerised-systems-and-electronic-data-clinical-trials_en.pdf">EMA Guideline on computerised systems and electronic data in clinical trials</a></li>
 <li><a href="https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf">ICH E6: Guideline for Good Clinical Practice</a></li>
@@ -400,7 +412,7 @@ Document development, review and version history
 </section>
 <section id="sec-background" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Background</h1>
-<p>R is a ‘language and environment for statistical computing and graphics’ (source: <a href="https://www.r-project.org/about.html">r-project.org</a>). It is an official part of the Free Software Foundation’s GNU<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> project and is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">Free Software Foundation’s GNU Public License</a> . Clinical Trial Units (CTU; see definition below) use R primarily, but not exclusively, in the framework of clinical research for tasks including sample size estimation and statistical design consideration, as well as the preparation and analysis of data from supported studies. Internal use for other reporting, visualisation and business management might also take place, according to individual CTU needs, but is not the focus of this policy.</p>
+<p>R is a ‘language and environment for statistical computing and graphics’ (source: <a href="https://www.r-project.org/about.html">r-project.org</a>). It is an official part of the Free Software Foundation’s GNU<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> project and is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">Free Software Foundation’s GNU Public License</a> . Clinical Trial Units (CTU; see definition below) use R primarily, but not exclusively, in the framework of clinical research for tasks including sample size estimation and statistical design consideration, as well as the preparation and analysis of data from supported studies. Internal use for other reporting, visualisation and business management might also take place, according to individual CTU needs, but is not the focus of this policy.</p>
 <p>Installation and use of R is based on several levels and sources:</p>
 <ol type="1">
 <li>The “official R distribution” (referred to as ‘R base installation’ in this document), which includes the R base and recommended R packages (as defined in the <a href="https://www.r-project.org/doc/R-FDA.pdf">R: Regulatory compliance and validation issues – a guidance document, 2021</a>) and is available via the Central R Archive Network (<a href="https://cran.r-project.org/">CRAN</a>).</li>
@@ -501,7 +513,7 @@ A set of documents that is prepared to plan and to provide evidence for the vali
 <h1 data-number="5"><span class="header-section-number">5</span> General R Validation Approach</h1>
 <p>The SCTO follows a risk-based approach to the validation of R. For the validation and assessment of risks, we differentiate between the following levels, which build on each other:</p>
 <ul>
-<li><p><strong>IT Infrastructure level</strong> (IT infrastructure qualification <em>according to <strong>local CTU processes</strong>, see <a href="#sec-it-iq" class="quarto-xref">Section&nbsp;7.1</a></em><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>):</p>
+<li><p><strong>IT Infrastructure level</strong> (IT infrastructure qualification <em>according to <strong>local CTU processes</strong><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, see <a href="#sec-it-iq" class="quarto-xref">Section&nbsp;7.1</a></em>):</p>
 <ul>
 <li>A qualified IT infrastructure provides the basis for the validation of the R base installation and any R packages running on that installation.</li>
 </ul></li>
@@ -517,8 +529,8 @@ A set of documents that is prepared to plan and to provide evidence for the vali
 </ul>
 <p><strong>Important note:</strong> when creating an R product under a validated environment, the creator must ensure that</p>
 <ul>
-<li>R is running using a validated base installation version, and</li>
-<li>a qualified IT infrastructure</li>
+<li>R is running on a qualified IT infrastructure,</li>
+<li>using a validated base installation version, and</li>
 <li>with proper documentation</li>
 </ul>
 <p>to ensure consistency and reliability of results at all levels mentioned above.</p>
@@ -571,23 +583,23 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
 </figcaption>
 <div aria-describedby="tbl-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mkvmqvdanz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mkvmqvdanz table {
+<div id="klduyortvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#klduyortvf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mkvmqvdanz thead, #mkvmqvdanz tbody, #mkvmqvdanz tfoot, #mkvmqvdanz tr, #mkvmqvdanz td, #mkvmqvdanz th {
+#klduyortvf thead, #klduyortvf tbody, #klduyortvf tfoot, #klduyortvf tr, #klduyortvf td, #klduyortvf th {
   border-style: none;
 }
 
-#mkvmqvdanz p {
+#klduyortvf p {
   margin: 0;
   padding: 0;
 }
 
-#mkvmqvdanz .gt_table {
+#klduyortvf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -613,12 +625,12 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-left-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_caption {
+#klduyortvf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mkvmqvdanz .gt_title {
+#klduyortvf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -630,7 +642,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-width: 0;
 }
 
-#mkvmqvdanz .gt_subtitle {
+#klduyortvf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -642,7 +654,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-top-width: 0;
 }
 
-#mkvmqvdanz .gt_heading {
+#klduyortvf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -654,13 +666,13 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_bottom_border {
+#klduyortvf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_col_headings {
+#klduyortvf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -675,7 +687,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_col_heading {
+#klduyortvf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -695,7 +707,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   overflow-x: hidden;
 }
 
-#mkvmqvdanz .gt_column_spanner_outer {
+#klduyortvf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -707,15 +719,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 4px;
 }
 
-#mkvmqvdanz .gt_column_spanner_outer:first-child {
+#klduyortvf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mkvmqvdanz .gt_column_spanner_outer:last-child {
+#klduyortvf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mkvmqvdanz .gt_column_spanner {
+#klduyortvf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -727,11 +739,11 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   width: 100%;
 }
 
-#mkvmqvdanz .gt_spanner_row {
+#klduyortvf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mkvmqvdanz .gt_group_heading {
+#klduyortvf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -757,7 +769,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   text-align: left;
 }
 
-#mkvmqvdanz .gt_empty_group_heading {
+#klduyortvf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -772,15 +784,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   vertical-align: middle;
 }
 
-#mkvmqvdanz .gt_from_md > :first-child {
+#klduyortvf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mkvmqvdanz .gt_from_md > :last-child {
+#klduyortvf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mkvmqvdanz .gt_row {
+#klduyortvf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -799,7 +811,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   overflow-x: hidden;
 }
 
-#mkvmqvdanz .gt_stub {
+#klduyortvf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -812,7 +824,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#mkvmqvdanz .gt_stub_row_group {
+#klduyortvf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -826,15 +838,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   vertical-align: top;
 }
 
-#mkvmqvdanz .gt_row_group_first td {
+#klduyortvf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mkvmqvdanz .gt_row_group_first th {
+#klduyortvf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mkvmqvdanz .gt_summary_row {
+#klduyortvf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -844,16 +856,16 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#mkvmqvdanz .gt_first_summary_row {
+#klduyortvf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_first_summary_row.thick {
+#klduyortvf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mkvmqvdanz .gt_last_summary_row {
+#klduyortvf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -863,7 +875,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_grand_summary_row {
+#klduyortvf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -873,7 +885,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#mkvmqvdanz .gt_first_grand_summary_row {
+#klduyortvf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -883,7 +895,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-top-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_last_grand_summary_row_top {
+#klduyortvf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -893,11 +905,11 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_striped {
+#klduyortvf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mkvmqvdanz .gt_table_body {
+#klduyortvf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -906,7 +918,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_footnotes {
+#klduyortvf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -920,7 +932,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_footnote {
+#klduyortvf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -929,7 +941,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#mkvmqvdanz .gt_sourcenotes {
+#klduyortvf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -943,7 +955,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#mkvmqvdanz .gt_sourcenote {
+#klduyortvf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -951,72 +963,72 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#mkvmqvdanz .gt_left {
+#klduyortvf .gt_left {
   text-align: left;
 }
 
-#mkvmqvdanz .gt_center {
+#klduyortvf .gt_center {
   text-align: center;
 }
 
-#mkvmqvdanz .gt_right {
+#klduyortvf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mkvmqvdanz .gt_font_normal {
+#klduyortvf .gt_font_normal {
   font-weight: normal;
 }
 
-#mkvmqvdanz .gt_font_bold {
+#klduyortvf .gt_font_bold {
   font-weight: bold;
 }
 
-#mkvmqvdanz .gt_font_italic {
+#klduyortvf .gt_font_italic {
   font-style: italic;
 }
 
-#mkvmqvdanz .gt_super {
+#klduyortvf .gt_super {
   font-size: 65%;
 }
 
-#mkvmqvdanz .gt_footnote_marks {
+#klduyortvf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mkvmqvdanz .gt_asterisk {
+#klduyortvf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mkvmqvdanz .gt_indent_1 {
+#klduyortvf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mkvmqvdanz .gt_indent_2 {
+#klduyortvf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mkvmqvdanz .gt_indent_3 {
+#klduyortvf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mkvmqvdanz .gt_indent_4 {
+#klduyortvf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mkvmqvdanz .gt_indent_5 {
+#klduyortvf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mkvmqvdanz .katex-display {
+#klduyortvf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mkvmqvdanz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#klduyortvf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1121,11 +1133,11 @@ Process
 <li>The minimal (validated) software version of the R Base Installation to be used at the CTU and a process of handling version changes.</li>
 <li>The R base installation validation documentation set, providing evidence for the R base installation validation activities (see Table 3for recommendations).</li>
 </ul>
-<p>Table 3 <mark>lists</mark> all documentation that is typically prepared during a computerised system validation process according to global standards and guidelines. It additionally provides recommendations how this documentation may be covered when preparing an R base installation validation documentation set. The exact content of the R base installation validation documentation set (i.e., the required documentation) at a CTU should follow the local processes and all documentation must be prepared and approved by the CTU. For some of the documents listed below, the SCTO provides examples (as indicated under “Detailed Description”).</p>
+<p><a href="#tbl-r-base-install-docs" class="quarto-xref">Table&nbsp;2</a> lists all documentation that is typically prepared during a computerised system validation process according to global standards and guidelines. It additionally provides recommendations how this documentation may be covered when preparing an R base installation validation documentation set. The exact content of the R base installation validation documentation set (i.e., the required documentation) at a CTU should follow the local processes and all documentation must be prepared and approved by the CTU. For some of the documents listed below, the SCTO provides examples (as indicated under “Detailed Description”).</p>
 <div id="tbl-r-base-install-docs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-base-install-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of Required Documents and Activities
+Table&nbsp;2: R Base Installation Validation: Detailed Description of Required Documents and Activities
 </figcaption>
 <div aria-describedby="tbl-r-base-install-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1141,7 +1153,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><ul>
-<li><p><em>Purpose of the document/ activity and how this aspect can be covered for R (suggested R specific document/ activity)</em></p></li>
+<li><p><em>Purpose of the document/ activity and how this aspect can be covered for R (suggested R specific document/activity)</em></p></li>
 <li><p><em>Link to example document</em></p></li>
 </ul></td>
 <td style="text-align: left;"><ul>
@@ -1156,7 +1168,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p>The purpose of such a document is to assess and document the risk of a system on a high level. It typically specifies at least the software category and the intended use of the software, including if it is used for GxP processes. The outcome of the HLRA (GxP relevance assessment) defines, if a system needs to be validated or not.</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1177,7 +1189,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p><strong><em>R base validation specific approach</em></strong>: Since R is an open-source software managed by a consortium, a traditional vendor assessment/ audit approach is not feasible. A critical review of “<a href="https://www.%20r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments</a>” may suffice as vendor assessment and should be documented together with any gaps identified that may require attention during the validation of R and its R add-on packages.</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1197,7 +1209,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p>The purpose of such a document is to define the details of the planned validation process, including required documentation and acceptance criteria for productive use (Validation Plan). The Test Plan may be included in the Validation Plan or prepared as a separate document. The purpose of a Test Plan is to define the testing strategy and testing process and may contain details on the tests to be executed (if created for every new version validated). The exact content of such a document depends on the CTU’s local processes.</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1231,7 +1243,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p>The purpose of such a document is to specify the user requirements and intended use for the R base installation. It may also contain any compliance (e.g., data integrity), regulatory (e.g., personal data protection) and safety requirements (e.g., controlled access).</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1251,7 +1263,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p>The purpose of such a document is to document the risk of system functionality based on the user requirements and/ or processes related to these requirements.</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>You may use the SCTO Statistics Business processes risk assessment document as a basis for this document (<mark>link to document</mark>)</li>
+<li>You may use the SCTO Statistics <a href="./sop/businessproc_ra.html">Business processes risk assessment document</a> as a basis for this document</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1317,7 +1329,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p><strong>Note:</strong> depending on your local processes it may not be feasible or even possible to do a preliminary “test installation” and perform tests before productive use of the new R base installation version (e.g., if R is distributed remotely by your local IT department). In this case, we recommend you still execute the tests after the installation and document the test execution. Should any issues be detected during testing, please inform your local IT department immediately. Ideally you implement a process that would ensure nobody is using the new R version for productive use before the tests are completed successfully (i.e., without major issues) and the validation &amp; test report is approved (see “Validation &amp; Test Report” below).</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li><em><mark>see Example for Validation &amp; Test Report available on SCTO platform</mark></em></li>
+<li>see Example for Validation &amp; Test Report available</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1379,7 +1391,7 @@ Table&nbsp;2: Table 3: R Base Installation Validation: Detailed Description of R
 <p>The exact content of this report depends on the CTU’s local processes. Separate documents may be created to summarize the testing activities and results (Test Report) and the overall executed validation against the plan, incl.&nbsp;a statement of acceptance of an R base installation version for productive use (Validation Report).</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1432,11 +1444,6 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </figcaption>
 <div aria-describedby="tbl-r-package-val-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 38%">
-<col style="width: 34%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;"><p><strong>Document or activity</strong></p>
@@ -1465,7 +1472,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong><em>R add-on package specific approach</em></strong>: The R add-on package risk depends on factors described in the SCTO R add-on Package Risk Assessment SOP. Accordingly, the R add-on package high-level risk assessment should be documented according to the SCTO R Package Risk Assessment SOP on the SCTO designated platform<strong>.</strong></p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li>SCTO R add-on Package Risk Assessment SOP</li>
+<li><a href="./sop/sop_pkg_risk_assess.html">SCTO R add-on Package Risk Assessment SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1473,7 +1480,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </ul>
 <p><strong>Frequency of update:</strong></p>
 <ul>
-<li><em>See <a href="#sec-periodic-review" class="quarto-xref">Section&nbsp;9.1</a></em></li>
+<li><em>See <a href="#sec-periodic-review" class="quarto-xref">Section&nbsp;10</a></em></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1485,7 +1492,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
 <li><p>SCTO R Validation Policy (this document)</p></li>
-<li><p>SCTO R add-on Package Risk Assessment SOP</p></li>
+<li><p><a href="./sop/sop_pkg_risk_assess.html">SCTO R add-on Package Risk Assessment SOP</a></p></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1493,7 +1500,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </ul>
 <p><strong>Frequency of update:</strong></p>
 <ul>
-<li><em>See section</em> <mark>10</mark> Periodic Review</li>
+<li><em>See <a href="#sec-periodic-review" class="quarto-xref">Section&nbsp;10</a></em></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -1511,9 +1518,9 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </ol>
 <p><strong>Relevant SCTO Documentation:</strong></p>
 <ul>
-<li><p>SCTO R Validation Policy (this document)</p></li>
-<li><p>SCTO R add-on Package Risk Assessment SOP</p></li>
-<li><p>SCTO R add-on Package Function Testing SOP</p></li>
+<li>SCTO R Validation Policy (this document)</li>
+<li><a href="./sop/sop_pkg_risk_assess.html">SCTO R add-on Package Risk Assessment SOP</a></li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1521,7 +1528,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </ul>
 <p><strong>Frequency of update:</strong></p>
 <ul>
-<li><em>See section</em> <mark>10</mark> Periodic Review</li>
+<li><em>See <a href="#sec-periodic-review" class="quarto-xref">Section&nbsp;10</a></em></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1530,7 +1537,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <td style="text-align: left;"><p><strong>Purpose:</strong></p>
 <p><em>See Table 3: R Base Installation Validation: Detailed Description of Required Documents and Activities.</em></p>
 <p><strong><em>R add-on package specific approach</em></strong>: The requirements and intended use of an R add-on package and its functions can only be defined in relation to an R product and the required outcome (“intended use”) of a specific function for that R product. Therefore, the requirements can only be documented when planning the R product.</p>
-<p>Requirements shall be documented in the Statistical Analysis Plan, a Statistical Protocol or in other, similar documentation<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. This document must indicate the intended use and requirements of the functions planned to be used within the R product from the R add-on package.</p>
+<p>Requirements shall be documented in the Statistical Analysis Plan, a Statistical Protocol or in other, similar documentation<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. This document must indicate the intended use and requirements of the functions planned to be used within the R product from the R add-on package.</p>
 <p><strong>Relevant SCTO Documentation:</strong></p>
 <ul>
 <li>N/A <em>(processes for planning R products and defining their intended use have to be defined on CTU level)</em></li>
@@ -1595,7 +1602,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong><em>R add-on package specific approach</em></strong>: The process of writing and executing tests for the R add-on packages is covered in the SCTO R add-on Package Function Testing SOP.</p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li>SCTO R add-on Package Function Testing SOP</li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1614,7 +1621,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong><em>R add-on package specific approach</em></strong>: In the context of R add-on package validation it is <strong>not</strong> feasible to create a separate document. The tested R add-on package (version) functions are documented when following the SCTO R add-on Package Function Testing SOP.</p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li>SCTO R add-on Package Function Testing SOP</li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1633,7 +1640,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong><em>R add-on package specific approach</em></strong>: Execute the pre-defined test scripts and document the outcome of each step as well as the overall outcome of the test script according to SCTO R add-on Package Function Testing SOP.</p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li>SCTO R add-on Package Function Testing SOP</li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1652,8 +1659,8 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p><strong><em>R add-on package specific approach</em></strong>: Covered by SCTO R add-on Package Risk Assessment SOP and SCTO R add-on Package Function Test SOP.</p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li><p><mark>SCTO R add-on Package Risk Assessment SOP</mark></p></li>
-<li><p><mark>SCTO R add-on Package Function Testing SOP</mark></p></li>
+<li><a href="./sop/sop_pkg_risk_assess.html">SCTO R add-on Package Risk Assessment SOP</a></li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1671,7 +1678,7 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 <p>The purpose of such a document is to summarise all executed validation activities and their outcome, including testing and any defects found and/or any deviations from the original plan with a rationale. It documents the acceptance for productive use (with or without <em>restrictions)</em> of specific functions from an R add-on package (version) (see SCTO R add-on Package Function Testing SOP).</p>
 <p><strong>Relevant SCTO SOP:</strong></p>
 <ul>
-<li><mark>SCTO R add-on Package Function Testing SOP</mark></li>
+<li><a href="./sop/sop_pkg_fn_testing.html">SCTO R add-on Package Function Testing SOP</a></li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R add-on package validation:</strong></p>
 <ul>
@@ -1700,12 +1707,12 @@ Table&nbsp;3: R add-on Package Validation: Detailed Description of Required Docu
 </section>
 <section id="sec-risk-management" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Risk Management</h1>
-<p>Given the different validation levels, also the risk needs to be assessed and managed on all those levels, specifically on:</p>
+<p>Given the different validation levels, the risk also needs to be assessed and managed on all those levels, specifically on:</p>
 <ul>
 <li><p><strong>IT infrastructure level:</strong> The risk associated with IT infrastructure components can generally assumed to be low.</p></li>
 <li><p><strong>R System level</strong> (R base installation and R recommended packages, *recommendations provided in this policy, documentation according to local CTU processes, see <a href="#sec-r-base-install" class="quarto-xref">Section&nbsp;7.2</a>)</p></li>
-<li><p><strong>R Package level</strong> (R add-on packages, <em>see</em> <mark><strong>SCTO R add-on Package Risk Assessment SOP</strong></mark>)</p></li>
-<li><p><strong>R Product level</strong> (*according to local CTU processes, see <a href="#sec-r-product-val" class="quarto-xref">Section&nbsp;7.4</a>)</p></li>
+<li><p><strong>R Package level</strong> (R add-on packages, <em>see <a href="./sop/sop_pkg_risk_assess.html">SCTO R add-on Package Risk Assessment SOP</a></em>)</p></li>
+<li><p><strong>R Product level</strong> (<em>according to local CTU processes</em>, see <a href="#sec-r-product-val" class="quarto-xref">Section&nbsp;7.4</a>)</p></li>
 </ul>
 <p>The actions required from a user, with respect to a specific product, depend on the combined risk of the R add-on package (baseline risk) and the product risk. More intensive, low-level, actions, such as specific function testing, are required for higher risk combinations. The requirements for testing a function of an add-on R package are defined in Table 5.</p>
 <div class="cell">
@@ -2235,28 +2242,28 @@ risk prod_risk_3 pkg_high" class="gt_row gt_center" style="background-color: #FC
 <h1 data-number="9"><span class="header-section-number">9</span> User Training</h1>
 <p>All users performing statistical analysis and/or developing R add-on packages and creating R products need to be qualified and trained according to their CTU’s guidelines.</p>
 <p>All users (potentially) involved in validation activities (e.g., risk assessments, testing) must additionally be trained on this policy and the associated SOPs.</p>
-<section id="sec-periodic-review" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sec-periodic-review"><span class="header-section-number">9.1</span> Periodic Review</h2>
+</section>
+<section id="sec-periodic-review" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Periodic Review</h1>
 <p>Every 3 years the validation status of the <strong>R add-on packages in the SCTO</strong> <strong>validation inventory</strong> should be reviewed, if R add-on packages and/or functions were not updated and re-tested within that period. The review needs to be documented, even if no updates are required.</p>
 <p>The periodic review of the <strong>R base installation validation documentation set</strong> has to be defined and managed according to the CTU’s processes. We recommend including a review of the currently defined minimum R base installation version in the periodic review process.</p>
 </section>
-<section id="sec-associated-documents" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="sec-associated-documents"><span class="header-section-number">9.2</span> Associated Documents</h2>
+<section id="sec-associated-documents" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Associated Documents</h1>
 <dl>
-<dt>R add-on Package Risk Assessment SOP</dt>
+<dt><a href="./sop/sop_pkg_risk_assess.html">R add-on Package Risk Assessment SOP</a></dt>
 <dd>
 This document describes the process and metrics defining the risk of R add-on packages.
 </dd>
-<dt>R add-on Package Function Testing SOP</dt>
+<dt><a href="./sop/sop_pkg_fn_testing.html">R add-on Package Function Testing SOP</a></dt>
 <dd>
 This document describes the standard process for testing specific functions within an R add-on package.
 </dd>
 </dl>
 <p><strong>Note:</strong> Documents to be prepared at CTU level are not listed here. When possible, examples for selected documents are listed in relevant sections.</p>
 </section>
-</section>
-<section id="sec-references" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> References</h1>
+<section id="sec-references" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> References</h1>
 <div id="tbl-refs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2316,9 +2323,12 @@ Table&nbsp;4: References
 <li id="fn1"><p>for purposes of this document referred to as CTUs = Clinical Trial Units<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>A validation documentation set is prepared to provide evidence of the validation process.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>GxP processes refer to Good Practice standards, including Good Clinical Practice (GCP), Good Manufacturing Practices (GMP), Good Laboratory Practice (GLP) etc. GxP critical computerised systems are all systems that manage GxP data (e.g., clinical study data) and therefore support and/or provide input for GxP processes.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>The GNU Project is a free software, mass collaboration project announced by Richard Stallman on September 27, 1983. Its goal is to give computer users freedom and control in their use of their computers and computing devices by collaboratively developing and publishing software that gives everyone the rights to freely run the software, copy and distribute it, study it, and modify it. GNU software grants these rights in its license (https://en.wikipedia.org/wiki/GNU_Project).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>For example, standards set by the local IT department.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Examples of such other documents could be the defined research question when planning a sample-size/power estimation, description of data-base/shiny-app user requirements, etc.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>for purposes of this document referred to as CTUs = Clinical Trial Units<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A validation documentation set is prepared to provide evidence of the validation process.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>GxP processes refer to Good Practice standards, including Good Clinical Practice (GCP), Good Manufacturing Practices (GMP), Good Laboratory Practice (GLP) etc. GxP critical computerised systems are all systems that manage GxP data (e.g., clinical study data) and therefore support and/or provide input for GxP processes.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>The GNU Project is a free software, mass collaboration project announced by Richard Stallman on September 27, 1983. Its goal is to give computer users freedom and control in their use of their computers and computing devices by collaboratively developing and publishing software that gives everyone the rights to freely run the software, copy and distribute it, study it, and modify it. GNU software grants these rights in its license (https://en.wikipedia.org/wiki/GNU_Project).<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>For example, standards set by the local IT department.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Examples of such other documents could be the defined research question when planning a sample-size/power estimation, description of data-base/shiny-app user requirements, etc.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-184cd5062a76d4d6b50eab97a110a3a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3282a3cdbf41a4af440af15af7b0e259.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f3c81c9aa6c21f82a0adea98507e5e88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-16add709d16b5677f5771e4fcfd65ab4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,14 +145,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/risk_metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Risk metrics</span></a>
+  <a href="../sop/sop_pkg_risk_assess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Risk Assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sop/sop_fn_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Function testing</span></a>
+  <a href="../sop/sop_pkg_fn_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R add-on Package Function testing</span></a>
   </div>
 </li>
       </ul>
@@ -221,20 +221,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Report an assessment or test</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=package%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_package.yml&amp;title=%5BPackage+risk+assessment%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package risk assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Tests repository</span></a>
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&amp;labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&amp;projects=&amp;template=new_test.yml&amp;title=%5BPackage+test%5D%3A+XXX+version+YYY" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Report a package test report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Package tests repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/" class="sidebar-item-text sidebar-link" target="_blank">
  <span class="menu-text">SCTORvalidation R package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Give us feedback or ask a question</span></a>
   </div>
 </li>
       </ul>
@@ -282,30 +294,23 @@ Document development, review and version history
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong><em>Development and Review</em></strong></p>
+<p>Authored/revised by:</p>
 <p></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 18%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>Name</th>
-<th>Date</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Authored/Revised by</td>
-<td>XXXXXXXXXX</td>
-<td>xxxx-xx-xx</td>
-</tr>
-<tr class="even">
-<td>Reviewed by</td>
-<td>YYYYYYYYYY</td>
-<td>xxxx-xx-xx</td>
-</tr>
-<tr class="odd">
-<td>Released by</td>
-<td>ZZZZZZZZZZ</td>
-<td>xxxx-xx-xx</td>
+<td style="text-align: left;">Alan Haynes,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: left;">2025-01-01</td>
 </tr>
 </tbody>
 </table>
@@ -313,20 +318,26 @@ Document development, review and version history
 <p><strong><em>Version History</em></strong></p>
 <p></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 25%">
+<col style="width: 45%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Version</th>
-<th>Date</th>
-<th>Author</th>
-<th>Summary of Changes</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Author(s)</th>
+<th style="text-align: left;">Summary of Changes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.1</td>
-<td>xxxx-xx-xx</td>
-<td>XXXXXXXXXX</td>
-<td>Initial draft</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">Alan Haynes,</td>
+<td style="text-align: left;">Initial version</td>
 </tr>
 </tbody>
 </table>
@@ -348,7 +359,7 @@ Document development, review and version history
 <ul>
 <li>click the green “New issue” button (towards the top right)</li>
 <li>select the New package risk assessment template by clicking the green Get started button on the right</li>
-<li>fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the <a href="../sop/risk_metrics.html">Risk metrics page</a>.
+<li>fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the <a href="../sop/risk_metrics.qmd">Risk metrics page</a>.
 <ul>
 <li>Note that the <a href="https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/" target="_blank">R package <code>SCTORvalidation</code></a> contains various useful functions to help with the risk assessment process. Especially useful are:
 <ul>
@@ -364,7 +375,13 @@ Document development, review and version history
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
