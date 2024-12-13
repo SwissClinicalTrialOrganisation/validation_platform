@@ -58,6 +58,8 @@ website:
            target: "_blank"
            href: https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions
 
+      - href: acknowledge.qmd
+
     # logo: SCTO_Platforms.png
 
 resources:
