@@ -8,8 +8,6 @@ website:
   navbar:
     title: "SCTO Stats and Methodology - Validation Platform"
     right:
-      # - text: "Home"
-      #   href: index.html
       - icon: github
         href: "https://github.com/SwissClinicalTrialOrganisation/pkg_validation"
     background: white
@@ -27,7 +25,7 @@ website:
       - section: "SOPs"
         contents:
           - href: sop/sop_pkg_risk_assess.qmd
-          - href: sop/sop_fn_tests.qmd
+          - href: sop/sop_pkg_fn_testing.qmd
 
 
       - section: "Work Intructions"
@@ -42,18 +40,24 @@ website:
       - href: results/pkgassessment.qmd
       - href: results/pkgtesting.qmd
 
-
       - section: "Useful links"
         contents:
-         - text: "Report an assessment or test"
-           href: "https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues"
+         - text: Report a package risk assessment
+           href: https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&labels=package%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_package.yml&title=%5BPackage+risk+assessment%5D%3A+XXX+version+YYY
            target: "_blank"
-         - href: "https://github.com/SwissClinicalTrialOrganisation/validation_tests/issues"
-           text: "Tests repository"
+         - text: Report a package test report
+           href: https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test.yml&title=%5BPackage+test%5D%3A+XXX+version+YYY
            target: "_blank"
-         - href: "https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/"
-           text: "SCTORvalidation R package"
+         - text: Package tests repository
            target: "_blank"
+           href: https://github.com/SwissClinicalTrialOrganisation/validation_tests
+         - text: SCTORvalidation R package
+           target: "_blank"
+           href: https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/
+         - text: Give us feedback or ask a question
+           target: "_blank"
+           href: https://github.com/SwissClinicalTrialOrganisation/validation_platform/discussions
+
     # logo: SCTO_Platforms.png
 
 resources:
@@ -62,8 +66,7 @@ resources:
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, style.scss]
+      dark: [darkly, style.scss]
     css: styles.css
     toc: true
-    linkcolor: "#ba1e2b"
