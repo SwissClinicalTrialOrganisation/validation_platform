@@ -8,18 +8,41 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-date: "2023-12-05"
+release_date: "2023-12-05"
 format-links:
   - html
   - format: sctotypst-typst
     text: PDF
     icon: file-pdf
     target: "_blank"
+other-links:
+  - text: Example High Level Risk assessment
+    href: fig/SCTO_R-Base_HighLevelRiskAssessment_EXAMPLE.docx
+    icon: file-word
+    target: "_blank"
+  - text: Example Vendor Assessment Statement
+    href: fig/SCTO_R-Base_VendorAssessmentStatement_EXAMPLE.docx
+    icon: file-word
+    target: "_blank"
+  - text: Example Validation plan and test plan
+    href: fig/SCTO_R-Base_Validation_and_TestPlan_EXAMPLE.docx
+    icon: file-word
+    target: "_blank"
+  - text: Example Validation plan and test report
+    href: fig/SCTO_R-Base_Validation_and_TestReport_EXAMPLE.docx
+    icon: file-word
+    target: "_blank"
+  - text: Example User Requirement specification
+    href: fig/SCTO_R-Base_UserRequirementSpecification_EXAMPLE.docx
+    icon: file-word
+    target: "_blank"
 execute:
   echo: false
   message: false
 number-sections: true
 keep-typ: false
+language:
+  other-links-title: "Example documents"
 ---
 <!-- Taken from Validation_taskforce\Documents_For_Review/SCTO_CSV policy R_DRAFT_20240724.docx -->
 <!-- quarto pandoc -s -o "sop/policy.md" "sop/SCTO_CSV policy R_DRAFT_20240724.docx" -->
@@ -29,9 +52,20 @@ keep-typ: false
 
 `#set align(center)`{=typst}
 
-|                     | Name | Date |
-|---------------------|------|------|
-| Authored/Revised by |      |      |
++-----------------------+------------+
+| Name                  | Date       |
+|                       |            |
++:======================+:===========+
+| Michael Coslovsky,[^1]| 2025-01-01 |
+| Christine Otieno,[^2] |            |
+| Alan Haynes[^3]       |            |
++-----------------------+------------+
+
+[^1]: Head data-analysis, Department Clinical Research, University of Basel
+
+[^2]: IT Quality Manager, Department Clinical Research, University of Basel
+
+[^3]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
 
 `#set align(left)`{=typst}
 
@@ -178,7 +212,7 @@ validation and assessment of risks, we differentiate between the
 following levels, which build on each other:
 
 -   **IT Infrastructure level** (IT infrastructure qualification
-    *according to **local CTU processes**, see @sec-it-iq*[^5]):
+    *according to **local CTU processes**[^5], see @sec-it-iq*):
 
     -   A qualified IT infrastructure provides the basis for the
         validation of the R base installation and any R packages running
@@ -215,9 +249,9 @@ following levels, which build on each other:
 **Important note:** when creating an R product under a validated
 environment, the creator must ensure that
 
--   R is running using a validated base installation version, and
--   a qualified IT infrastructure
--   with proper documentation
+- R is running on a qualified IT infrastructure,
+- using a validated base installation version, and
+- with proper documentation
 
 to ensure consistency and reliability of results at all levels mentioned
 above.
@@ -356,7 +390,7 @@ We recommend, that every CTU defines:
     evidence for the R base installation validation activities (see
     Table 3for recommendations).
 
-Table 3 [lists]{.mark} all documentation that is typically
+@tbl-r-base-install-docs lists all documentation that is typically
 prepared during a computerised system validation process according to
 global standards and guidelines. It additionally provides
 recommendations how this documentation may be covered when preparing an
@@ -378,7 +412,7 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |   activity and how this       |   activity is NOT          |
 |                    |   aspect can be covered for   |   required for R: a        |
 |                    |   R (suggested R specific     |   rationale, why this      |
-|                    |   document/ activity)*        |   document/activity can    |
+|                    |   document/activity)*         |   document/activity can    |
 |                    |                               |   be omitted*              |
 |                    | - *Link to example            |                            |
 |                    |   document*                   | - *Recommended frequency   |
@@ -402,8 +436,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |                            |
 |                    | **Example:**                  | - Reviewed during          |
 |                    |                               |   periodic review          |
-|                    | -   Example available on the  |   cycles. The review       |
-|                    |     SCTO platform             |   process should be        |
+|                    | - Example available in the    |   cycles. The review       |
+|                    |   menu on the right           |   process should be        |
 |                    |                               |   documented even if no    |
 |                    |                               |   updates are required.    |
 +--------------------+-------------------------------+----------------------------+
@@ -441,8 +475,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |                            |
 |                    | **Example:**                  |                            |
 |                    |                               |                            |
-|                    | -   Example available on the  |                            |
-|                    |     SCTO platform             |                            |
+|                    | - Example available in the    |                            |
+|                    |   menu on the right           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -469,8 +503,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |       tests to be          |
 |                    | **Example:**                  |       executed or          |
 |                    |                               |       specific document    |
-|                    | -   Example available on the  |       updates required     |
-|                    |     SCTO platform             |       for a newly          |
+|                    | - Example available in the    |       updates required     |
+|                    |   menu on the right           |       for a newly          |
 |                    |                               |       released version.    |
 |                    |                               |       Instead, it would    |
 |                    |                               |       contain generic      |
@@ -564,8 +598,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |   be added to cover the    |
 |                    | **Example:**                  |   full scope of the        |
 |                    |                               |   current intended use     |
-|                    | -   Example available on the  |   OR if any of the         |
-|                    |     SCTO platform             |   existing requirements    |
+|                    | - Example available in the    |   OR if any of the         |
+|                    |   menu on the right           |   existing requirements    |
 |                    |                               |   need to be updated or    |
 |                    |                               |   removed.                 |
 |                    |                               |                            |
@@ -587,12 +621,12 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |   validation.              |
 |                    | **Example:**                  |                            |
 |                    |                               | - Updated, if any new      |
-|                    | -   You may use the SCTO      |   functions or processes   |
-|                    |     Statistics Business       |   are added to the scope   |
-|                    |     processes risk assessment |   of the intended use      |
-|                    |     document as a basis for   |   of R. If new             |
-|                    |     this document ([link to   |   requirements are added   |
-|                    |     document]{.mark})         |   to the User              |
+|                    | - You may use the SCTO        |   functions or processes   |
+|                    |   Statistics [Business        |   are added to the scope   |
+|                    |   processes risk assessment   |   of the intended use      |
+|                    |   document                    |   of R. If new             |
+|                    |   ](sop/businessproc_ra.qmd)  |   requirements are added   |
+|                    |   as a basis for this document|   to the User              |
 |                    |                               |   Requirements             |
 |                    |                               |   Specification, this is   |
 |                    |                               |   a good indicator to      |
@@ -658,8 +692,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |   to the User              |
 |                    | **Example:**                  |   Requirements             |
 |                    |                               |   Specification, this is   |
-|                    | -   Example available on the  |   a good indicator to      |
-|                    |     SCTO platform             |   also review the          |
+|                    | - Example available on the    |   a good indicator to      |
+|                    |   SCTO platform               |   also review the          |
 |                    |                               |   existing test            |
 |                    |                               |   protocols.               |
 |                    |                               |                            |
@@ -747,10 +781,9 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |                            |
 |                    | **Example:**                  |                            |
 |                    |                               |                            |
-|                    | -   *[see Example for         |                            |
-|                    |     Validation & Test Report  |                            |
-|                    |     available on SCTO         |                            |
-|                    |     platform]{.mark}*         |                            |
+|                    | - see Example for             |                            |
+|                    |   Validation & Test Report    |                            |
+|                    |   available                   |                            |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -846,8 +879,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |                            |
 |                    | **Example:**                  |                            |
 |                    |                               |                            |
-|                    | -   Example available on the  |                            |
-|                    |     SCTO platform             |                            |
+|                    | - Example available in the    |                            |
+|                    |   menu on the right           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -909,7 +942,7 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    | processes.                    |                            |
 +--------------------+-------------------------------+----------------------------+
 
-: Table 3: R Base Installation Validation: Detailed Description of
+: R Base Installation Validation: Detailed Description of
 Required Documents and Activities {#tbl-r-base-install-docs}
 
 
@@ -974,8 +1007,10 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    |                               |                            |
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
-|                    | -   SCTO R add-on Package     |                            |
-|                    |     Risk Assessment SOP       |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Risk Assessment SOP](       |                            |
+|                    |   sop/sop_pkg_risk_assess.qmd |                            |
+|                    |   )                           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -985,9 +1020,9 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | Required Documents and        |                            |
 |                    | Activities .*                 | **Frequency of update:**   |
 |                    |                               |                            |
-|                    | ***R add-on package specific  | - *See section*            |
-|                    | approach***: Covered by the   |   [10]{.mark} Periodic     |
-|                    | Vendor Assessment created     |   Review                   |
+|                    | ***R add-on package specific  | - *See                     |
+|                    | approach***: Covered by the   |   @sec-periodic-review*    |
+|                    | Vendor Assessment created     |                            |
 |                    | for the R Base Installation   |                            |
 |                    | and the SCTO R add-on         |                            |
 |                    | Package Risk Assessment SOP.  |                            |
@@ -997,8 +1032,10 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | - SCTO R Validation Policy    |                            |
 |                    |   (this document)             |                            |
 |                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Risk Assessment SOP         |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Risk Assessment SOP](       |                            |
+|                    |   sop/sop_pkg_risk_assess.qmd |                            |
+|                    |   )                           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1008,9 +1045,9 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | validation process,           |                            |
 |                    | including required            | **Frequency of update:**   |
 |                    | documentation and acceptance  |                            |
-|                    | criteria for productive use   | - *See section*            |
-|                    | (Validation Plan). The Test   |   [10]{.mark} Periodic     |
-|                    | Plan may be included in the   |   Review                   |
+|                    | criteria for productive use   | - *See                     |
+|                    | (Validation Plan). The Test   |   @sec-periodic-review*    |
+|                    | Plan may be included in the   |                            |
 |                    | Validation Plan or prepared   |                            |
 |                    | as a separate document. The   |                            |
 |                    | purpose of a Test Plan is to  |                            |
@@ -1065,12 +1102,13 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    |                               |                            |
 |                    | - SCTO R Validation Policy    |                            |
 |                    |   (this document)             |                            |
-|                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Risk Assessment SOP         |                            |
-|                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Function Testing SOP        |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Risk Assessment SOP](       |                            |
+|                    |   sop/sop_pkg_risk_assess.qmd |                            |
+|                    |   )                           |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1222,8 +1260,9 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    |                               |                            |
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Function Testing SOP        |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1248,8 +1287,9 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    |                               |                            |
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Function Testing SOP        |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1271,8 +1311,9 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    |                               |                            |
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
-|                    | - SCTO R add-on Package       |                            |
-|                    |   Function Testing SOP        |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1294,10 +1335,12 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
 |                    | - [SCTO R add-on Package      |                            |
-|                    |   Risk Assessment SOP]{.mark} |                            |
-|                    |                               |                            |
+|                    |   Risk Assessment SOP](       |                            |
+|                    |   sop/sop_pkg_risk_assess.qmd |                            |
+|                    |   )                           |                            |
 |                    | - [SCTO R add-on Package      |                            |
-|                    |   Function Testing SOP]{.mark}|                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1321,7 +1364,8 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | **Relevant SCTO SOP:**        |                            |
 |                    |                               |                            |
 |                    | - [SCTO R add-on Package      |                            |
-|                    |   Function Testing SOP]{.mark}|                            |
+|                    |   Function Testing SOP](      |                            |
+|                    |   sop/sop_pkg_fn_testing.qmd) |                            |
 +--------------------+-------------------------------+----------------------------+
 
 : R add-on Package Validation: Detailed Description of Required
@@ -1342,7 +1386,7 @@ CTUs. The R product validation should cover at minimum:
 
 # Risk Management  {#sec-risk-management}
 
-Given the different validation levels, also the risk needs to be
+Given the different validation levels, the risk also needs to be
 assessed and managed on all those levels, specifically on:
 
 -   **IT infrastructure level:** The risk associated with IT
@@ -1352,10 +1396,10 @@ assessed and managed on all those levels, specifically on:
     *recommendations provided in this policy, documentation according to
     local CTU processes, see @sec-r-base-install)
 
--   **R Package level** (R add-on packages, *see* [**SCTO R add-on
-    Package Risk Assessment SOP**]{.mark})
+-   **R Package level** (R add-on packages, *see [SCTO R add-on
+    Package Risk Assessment SOP](sop/sop_pkg_risk_assess.qmd)*)
 
--   **R Product level** (*according to local CTU processes, see @sec-r-product-val)
+-   **R Product level** (*according to local CTU processes*, see @sec-r-product-val)
 
 The actions required from a user, with respect to a specific product,
 depend on the combined risk of the R add-on package (baseline risk) and
@@ -1423,8 +1467,6 @@ d |>
 ```
 
 
-
-
 # User Training  {#sec-training}
 
 All users performing statistical analysis and/or developing R add-on
@@ -1435,7 +1477,7 @@ All users (potentially) involved in validation activities (e.g., risk
 assessments, testing) must additionally be trained on this policy and
 the associated SOPs.
 
-## Periodic Review  {#sec-periodic-review}
+# Periodic Review  {#sec-periodic-review}
 
 Every 3 years the validation status of the **R add-on packages in the
 SCTO** **validation inventory** should be reviewed, if R add-on packages
@@ -1447,12 +1489,12 @@ documentation set** has to be defined and managed according to the CTU's
 processes. We recommend including a review of the currently defined
 minimum R base installation version in the periodic review process.
 
-## Associated Documents  {#sec-associated-documents}
+# Associated Documents  {#sec-associated-documents}
 
-R add-on Package Risk Assessment SOP 
+[R add-on Package Risk Assessment SOP](sop/sop_pkg_risk_assess.qmd)
 : This document describes the process and metrics defining the risk of R add-on packages.
 
-R add-on Package Function Testing SOP
+[R add-on Package Function Testing SOP](sop/sop_pkg_fn_testing.qmd)
 : This document describes the standard process for testing specific functions within an R add-on package.
 
 **Note:** Documents to be prepared at CTU level are not listed here. When possible, examples for selected documents are listed in relevant sections.
