@@ -11,6 +11,12 @@ $endif$
 $if(date)$
   date: "$date$",
 $endif$
+$if(release_date)$
+  release_date: "$release_date$",
+$endif$
+$if(integral)$
+  integral: "$integral$",
+$endif$
 $if(paper-size)$
   paper-size: "$paper-size$",
 $endif$

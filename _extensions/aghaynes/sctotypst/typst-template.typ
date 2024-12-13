@@ -22,6 +22,8 @@
   // logo_size: percentage (for example, 80%) or auto
   logo_size: 100%,
   date: datetime.today(),
+  release_date: none,
+  integral: "true",
   paper-size: "a4",
   font-face: "Arial",
   heading-numbering: "1.1.1",
@@ -95,13 +97,25 @@
   // set text(size: 10pt)
 
   // Create a date object
-  text("Release date: ")
-  text(date)
+  if (release_date != none) {
+    text("Release date: ")
+    text(release_date)
+  } else {
+    text("Date: ")
+    date.display("[day] [month repr:long] [year]")
+  }
+
   v(0.05fr)
   // First horizontal line
   line(length: 100%)
 
-  text("This document is an integral component of the SCTO Validation Platform")
+  if integral == "true" {
+    text("This document is an integral component of the SCTO Validation Platform")
+
+  } else {
+    text("This is an accessory document of the SCTO Validation Platform. It is for documenting the current state of affairs.")
+
+  }
 
   line(length: 100%)
 
