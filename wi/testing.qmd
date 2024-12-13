@@ -20,7 +20,6 @@ execute:
   message: false
   warning: false
 code-block-bg: true
-code-block-border-left: "#31BAE9"
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
@@ -124,7 +123,7 @@ Each test is comprised of one or more expectations and a descriptive name.
 
 E.g. 
 
-```{r, eval = FALSE}
+```r
 test_that("some meaningful message about the tests", {
   expect_equal(1 + 1, 2)
   expect_true(is.numeric(1))
@@ -134,7 +133,7 @@ test_that("some meaningful message about the tests", {
 
 Where multiple tests are to be made on what could be a single object, it is often useful to create the object outside of the `test_that` function. This is particularly useful when different descriptive texts should be shown for the tests (e.g. perhaps the coefficients and standard errors from a model):
 
-```{r, eval = FALSE}
+```r
 obj <- some_function(params)
 test_that("test 1 on obj", {
   expect_equal(obj$value_to_test, expected_value)
@@ -147,7 +146,7 @@ test_that("test 2 on obj", {
 
 If objects are only useful to the test, they can be created within the `test_that` function.
 
-```{r, eval = FALSE}
+```r
 test_that("tests on obj", {
   obj <- some_function(params)
   expect_equal(obj$value_to_test, expected_value)
@@ -164,7 +163,7 @@ Making the description of the test meaningful is important, as it will help the 
 
 To test the computation of the function, the following code must be added to the testing file, for as many test cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f works", {
   expect_equal(f(x), y)
 })
@@ -178,7 +177,7 @@ Note that is/may be necessary/desirable to set a tolerance for floating point co
 
 To test whether, under certain conditions, the function returns an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns an error", {
   expect_error(f(x))
 })
@@ -194,7 +193,7 @@ test_that("function f returns a message", {
 
 Where f is the function to be tested, x are the arguments that define the conditions. Use the `regexp` argument to check for a particular error, warning or message.
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns an error", {
   expect_error(f(x), regexp = "some error message")
 })
@@ -202,7 +201,7 @@ test_that("function f returns an error", {
 
 In contrast, to test whether the function runs without returning an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f runs without error", {
   expect_no_error(f(x))
 })
@@ -222,7 +221,7 @@ test_that("function f runs without a message", {
 To test whether, under certain conditions, the function returns TRUE or FALSE, adapt the following code as appropriate:
 
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns TRUE", {
   expect_true(f(x))
 })
@@ -238,7 +237,7 @@ Where f is the function to be tested, x are the arguments that define the condit
 
 To test whether, under certain conditions, the function returns NULL, the following code can be adapted, for as many test cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns NULL", {
   expect_null(f(x))
 })
@@ -248,7 +247,7 @@ test_that("function f returns NULL", {
 
 To test whether, the function returns an object of a certain type, the following code can be adapted, for as many test cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns object of type XXX", {
   expect_type(f(x), type)
 })
@@ -259,7 +258,7 @@ Where f is the function to be tested, x are the arguments that define the condit
 ### Testing the class (s3) of an object
 To test whether, the function returns an object of class s3, the following code can be adapted, for as many cases as considered appropriate:
 
-```{r, eval = FALSE}
+```r
 test_that("function f returns object of class s3", {
   expect_s3_class(f(x), class)
 })
