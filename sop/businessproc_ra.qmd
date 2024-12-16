@@ -13,7 +13,7 @@ format-links:
     icon: file-pdf
     target: "_blank"
 other-links:
-  - text: Risk assessment
+  - text: Business Processes Risk Assessment
     href: fig/RiskAssessment_SCTO_Statistics_20230502.xlsx
     icon: file-spreadsheet
     target: "_blank"
@@ -24,13 +24,18 @@ language:
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
 ***Development and Review***
 
+Authored/revised by:
+
 `#set align(center)`{=typst}
 
-|                     | Name           | Date           |
-|---------------------|----------------|----------------|
-| Authored/Revised by | XXXXXXXXXX     | xxxx-xx-xx     |
-| Reviewed by         | YYYYYYYYYY     | xxxx-xx-xx     |
-| Released by         | ZZZZZZZZZZ     | xxxx-xx-xx     |
++-----------------------+------------+
+| Name                  | Date       |
+|                       |            |
++:======================+:===========+
+| Michael Coslovsky[^1] | 2025-01-01 |
++-----------------------+------------+
+
+[^1]: Head data-analysis, Department Clinical Research, University of Basel
 
 `#set align(left)`{=typst}
 
@@ -38,16 +43,18 @@ language:
 
 `#set align(center)`{=typst}
 
-| Version | Date       | Author      | Summary of Changes |
-|---------|------------|-------------|--------------------|
-| 0.1     | xxxx-xx-xx | XXXXXXXXXX  | Initial draft      |
++---------+------------+--------------------+-------------------------------------+
+| Version | Date       | Author(s)          | Summary of Changes                  |
++:========+:===========+:===================+:====================================+
+| 1.0     | 2025-01-01 | Michael Coslovsky  | Initial version                     |
++---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
 
 :::
 
 
-This is an explanation and ‘dictionary’ for the High Level Risk Assessment tool of the platform.
+This is an explanation and ‘dictionary’ for the Business Processes Risk Assessment tool of the platform.
 
 The file is structured as a process following the steps below:
 
@@ -56,7 +63,7 @@ The file is structured as a process following the steps below:
 The variables of decision are:
 
 ::: {style="color:#5b9bd5;"}
--	Risk area:
+-	Risk area
 -	Risk Subarea
 -	Impact of risk (A): 
     -	Minor (1 point)
@@ -98,4 +105,4 @@ The variables of decision are:
 -	Risk monitoring: TO BE FILLED per CTU according to local SOPs and guidelines (local QM) 
 :::
 
-The high level risk assessment is available [here {{< iconify material-symbols:download >}} ](fig/RiskAssessment_SCTO_Statistics_20230502.xlsx){target="blank"}.
+The business processes risk assessment is available [here {{< iconify material-symbols:download >}} ](fig/RiskAssessment_SCTO_Statistics_20230502.xlsx){target="blank"}.

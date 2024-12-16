@@ -636,10 +636,10 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |                            |
 |                    |                               | - Reviewed during          |
 |                    |                               |   periodic review cycles   |
-|                    |                               |   [and review              |
+|                    |                               |   and review               |
 |                    |                               |   documented, if no        |
 |                    |                               |   updates are              |
-|                    |                               |   required.]{.mark}        |
+|                    |                               |   required.                |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -692,17 +692,17 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |   to the User              |
 |                    | **Example:**                  |   Requirements             |
 |                    |                               |   Specification, this is   |
-|                    | - Example available on the    |   a good indicator to      |
-|                    |   SCTO platform               |   also review the          |
+|                    | - Example available in the    |   a good indicator to      |
+|                    |   menu on the right           |   also review the          |
 |                    |                               |   existing test            |
 |                    |                               |   protocols.               |
 |                    |                               |                            |
 |                    |                               | - Reviewed during          |
 |                    |                               |   periodic review cycles   |
-|                    |                               |   [and review              |
+|                    |                               |   and review               |
 |                    |                               |   documented, if no        |
 |                    |                               |   updates are              |
-|                    |                               |   required.]{.mark}        |
+|                    |                               |   required.                |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -801,8 +801,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                               |   required                 |
 |                    | **Example:**                  |                            |
 |                    |                               |                            |
-|                    | - Example available on the    |                            |
-|                    |   SCTO platform               |                            |
+|                    | - Example available in the    |                            |
+|                    |   menu on the right           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
@@ -838,7 +838,9 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    | based on the experience by    |                            |
 |                    | the user community).          |                            |
 |                    |                               |                            |
-|                    | **[Example:]{.mark}**         |                            |
+|                    | **Example:**                  |                            |
+|                    |                               |                            |
+|                    | - _Available soon_            |                            |
 +--------------------+-------------------------------+----------------------------+
 | R Base             | **Purpose:**                  | **Required for R base      |
 | installation       |                               | installation validation:** |
