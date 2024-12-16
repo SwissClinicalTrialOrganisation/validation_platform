@@ -280,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests"><span class="header-section-number">5.1.2</span> Running tests</a></li>
   </ul></li>
   <li><a href="#sec-approving-test" id="toc-sec-approving-test" class="nav-link" data-scroll-target="#sec-approving-test"><span class="header-section-number">5.2</span> Approving the test</a></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">5.3</span> Documentation:</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">5.3</span> Documentation</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sop_pkg_fn_testing.pdf"><i class="bi bi-file-pdf"></i>PDF (sctotypst)</a></li></ul></div></nav>
@@ -472,7 +472,7 @@ Suggestion from Alan
 <p>Detailed working instructions for <a href="../wi/testing.html">writing tests</a>, <a href="../wi/review_tests.html">reviewing tests</a>, and <a href="../wi/running_tests.html">running tests</a> can be found in the respective work instructions. A summary of the main steps is provided below.</p>
 </div>
 </div>
-<p>The working instructions for the unit testing process are found under the relevant <a href="../wi/testing.html">SCTO GitHub page</a>. The detailed working instructions can be found on the GitHub page; Below we provide only a bullet-point description of the relevant steps:</p>
+<p>The working instructions for the unit testing process are found under the relevant <a href="../wi/testing.html">work instruction</a>. The detailed working instructions can be found on the GitHub page; Below we provide only a bullet-point description of the relevant steps:</p>
 <ul>
 <li>Unit tests of an R function are performed and stored on the SCTO’s statistics platform’s <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests GitHub repository</a></li>
 <li>The repository contains both the test script(s) and the data frames used for the tests when relevant</li>
@@ -516,8 +516,8 @@ Suggestion from Alan
 <p>The reviewer comments the function test. Only after approval by the reviewer, the function will be listed as tested on the SCTO platform.</p>
 </section>
 <section id="documentation" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="documentation"><span class="header-section-number">5.3</span> Documentation:</h2>
-<p>Test reports are made on the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues">pkg_validation SCTO GitHub repository</a>. Select “New issue”. Select the appropriate issue type depending on whether you’re submitting tests from within the package itself or tests from within the SCTO framework. For packages testing using tests from the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests SCTO GitHub repository</a>, fill out the predefined form, using the output from R (<code>SCTORvalidation::test("packagename")</code>). Where packages from within the package itself are used, the <a href="../wi/running_tests.html.qmd#running-tests-from-within-a-package">work instruction</a> provides additional information.</p>
+<h2 data-number="5.3" class="anchored" data-anchor-id="documentation"><span class="header-section-number">5.3</span> Documentation</h2>
+<p>Test reports are made on the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues">pkg_validation SCTO GitHub repository</a>. Select “New issue”. Select the appropriate issue type depending on whether you’re submitting tests from within the package itself or tests from within the SCTO framework. For packages testing using tests from the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests SCTO GitHub repository</a>, fill out the predefined form, using the output from R (<code>SCTORvalidation::test("packagename")</code>). Where packages from within the package itself are used, the <a href="../wi/running_tests.html#running-tests-from-within-a-package">work instruction</a> provides additional information.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">

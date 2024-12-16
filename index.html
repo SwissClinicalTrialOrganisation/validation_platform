@@ -384,7 +384,7 @@ Document development, review and version history
 <li>Document all steps from planning to test results.</li>
 </ol>
 <p>Based on this concept, this policy provides a framework for member organizations of Swiss-Clinical Trial Organization (SCTO) to validate the language and environment “R”. In <a href="#sec-detailed-approach" class="quarto-xref">Section&nbsp;7</a> of this policy we list and explain the documents that constitute a “validation documentation set”, as expected by regulatory entities examining or auditing computerised systems. We outline which of these documents are required and provide justification for those that are not required and, whenever possible, provide examples of relevant steps. Local adaptations to the principles outlined in this policy are required.</p>
-<p>As explained in <a href="#sec-background" class="quarto-xref">Section&nbsp;3</a>, Using R under a validated environment touches on four different levels: infrastructure, R system level (primarily baseline installation), R-add on packages and the product generated using R. We provide guidance to the different levels. Risk assessment and management underlies all the decisions to the specifics required</p>
+<p>As explained in <a href="#sec-detailed-approach" class="quarto-xref">Section&nbsp;7</a>, using R under a validated environment touches on four different levels: infrastructure, R system level (primarily baseline installation), R-add on packages and the product generated using R. We provide guidance to the different levels. Risk assessment and management underlies all the decisions to the specifics required</p>
 <p>The level of R add-on packages (<a href="#sec-r-package-val" class="quarto-xref">Section&nbsp;7.3</a>) is the most challenging level, and potentially requires the most resources. To increase efficiency, we suggest here a unified process to first, assess an add-on package’s baseline risk, and second, to perform testing of functions that are part of R add-on packages. Together with the policy, we construct an online package inventory collecting these assessments and tests and making them available to all SCTO network members. As suggested in <a href="#sec-risk-management" class="quarto-xref">Section&nbsp;8</a>, the decision whether testing a function of an R add-on package is needed depends on the combined assessment of the add-on package’s baseline risk and of the risk associated with the specific product to be generated.</p>
 </section>
 <section id="sec-introduction" class="level1" data-number="2">
@@ -410,7 +410,7 @@ Document development, review and version history
 <li><a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-computerised-systems-and-electronic-data-clinical-trials_en.pdf">EMA Guideline on computerised systems and electronic data in clinical trials</a></li>
 <li><a href="https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf">ICH E6: Guideline for Good Clinical Practice</a></li>
 <li><a href="https://ec.europa.eu/health/sites/health/files/files/eudralex/vol-4/annex11_01-2011_en.pdf">Eudralex 4 Good Manufacturing Practice Guidelines, Annex 11: Computerised Systems</a></li>
-<li><a href="http://www.ispe.org/gamp-5">GAMP 5: A Risk Based Approach to Compliant GxP Computerized systems</a></li>
+<li><a href="https://ispe.org/topics/gamp">GAMP 5: A Risk Based Approach to Compliant GxP Computerized systems</a></li>
 <li><a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=bb609049963efdb7e40b991244ba59e1&amp;mc=true&amp;tpl=/ecfrbrowse/Title21/21cfr11_main_02.tpl">FDA 21 CFR part 11: Electronic Records; Electronic Signatures</a></li>
 <li><a href="https://www.fda.gov/media/73141/download">FDA: General Principles of Software Validation</a></li>
 </ul>
@@ -590,23 +590,23 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
 </figcaption>
 <div aria-describedby="tbl-docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wtayrgpmzk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wtayrgpmzk table {
+<div id="rvunmrywaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rvunmrywaz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wtayrgpmzk thead, #wtayrgpmzk tbody, #wtayrgpmzk tfoot, #wtayrgpmzk tr, #wtayrgpmzk td, #wtayrgpmzk th {
+#rvunmrywaz thead, #rvunmrywaz tbody, #rvunmrywaz tfoot, #rvunmrywaz tr, #rvunmrywaz td, #rvunmrywaz th {
   border-style: none;
 }
 
-#wtayrgpmzk p {
+#rvunmrywaz p {
   margin: 0;
   padding: 0;
 }
 
-#wtayrgpmzk .gt_table {
+#rvunmrywaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -632,12 +632,12 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-left-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_caption {
+#rvunmrywaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wtayrgpmzk .gt_title {
+#rvunmrywaz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -649,7 +649,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-width: 0;
 }
 
-#wtayrgpmzk .gt_subtitle {
+#rvunmrywaz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -661,7 +661,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-top-width: 0;
 }
 
-#wtayrgpmzk .gt_heading {
+#rvunmrywaz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -673,13 +673,13 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_bottom_border {
+#rvunmrywaz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_col_headings {
+#rvunmrywaz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -694,7 +694,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_col_heading {
+#rvunmrywaz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -714,7 +714,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   overflow-x: hidden;
 }
 
-#wtayrgpmzk .gt_column_spanner_outer {
+#rvunmrywaz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -726,15 +726,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 4px;
 }
 
-#wtayrgpmzk .gt_column_spanner_outer:first-child {
+#rvunmrywaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wtayrgpmzk .gt_column_spanner_outer:last-child {
+#rvunmrywaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wtayrgpmzk .gt_column_spanner {
+#rvunmrywaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -746,11 +746,11 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   width: 100%;
 }
 
-#wtayrgpmzk .gt_spanner_row {
+#rvunmrywaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wtayrgpmzk .gt_group_heading {
+#rvunmrywaz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -776,7 +776,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   text-align: left;
 }
 
-#wtayrgpmzk .gt_empty_group_heading {
+#rvunmrywaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -791,15 +791,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   vertical-align: middle;
 }
 
-#wtayrgpmzk .gt_from_md > :first-child {
+#rvunmrywaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wtayrgpmzk .gt_from_md > :last-child {
+#rvunmrywaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wtayrgpmzk .gt_row {
+#rvunmrywaz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -818,7 +818,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   overflow-x: hidden;
 }
 
-#wtayrgpmzk .gt_stub {
+#rvunmrywaz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -831,7 +831,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#wtayrgpmzk .gt_stub_row_group {
+#rvunmrywaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -845,15 +845,15 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   vertical-align: top;
 }
 
-#wtayrgpmzk .gt_row_group_first td {
+#rvunmrywaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wtayrgpmzk .gt_row_group_first th {
+#rvunmrywaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wtayrgpmzk .gt_summary_row {
+#rvunmrywaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -863,16 +863,16 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#wtayrgpmzk .gt_first_summary_row {
+#rvunmrywaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_first_summary_row.thick {
+#rvunmrywaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wtayrgpmzk .gt_last_summary_row {
+#rvunmrywaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -882,7 +882,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_grand_summary_row {
+#rvunmrywaz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -892,7 +892,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#wtayrgpmzk .gt_first_grand_summary_row {
+#rvunmrywaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -902,7 +902,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-top-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_last_grand_summary_row_top {
+#rvunmrywaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -912,11 +912,11 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_striped {
+#rvunmrywaz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wtayrgpmzk .gt_table_body {
+#rvunmrywaz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -925,7 +925,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-bottom-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_footnotes {
+#rvunmrywaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -939,7 +939,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_footnote {
+#rvunmrywaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -948,7 +948,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#wtayrgpmzk .gt_sourcenotes {
+#rvunmrywaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -962,7 +962,7 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   border-right-color: #D3D3D3;
 }
 
-#wtayrgpmzk .gt_sourcenote {
+#rvunmrywaz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -970,72 +970,72 @@ Table&nbsp;1: R Base Installation Validation and R add-on Package Validation: Su
   padding-right: 5px;
 }
 
-#wtayrgpmzk .gt_left {
+#rvunmrywaz .gt_left {
   text-align: left;
 }
 
-#wtayrgpmzk .gt_center {
+#rvunmrywaz .gt_center {
   text-align: center;
 }
 
-#wtayrgpmzk .gt_right {
+#rvunmrywaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wtayrgpmzk .gt_font_normal {
+#rvunmrywaz .gt_font_normal {
   font-weight: normal;
 }
 
-#wtayrgpmzk .gt_font_bold {
+#rvunmrywaz .gt_font_bold {
   font-weight: bold;
 }
 
-#wtayrgpmzk .gt_font_italic {
+#rvunmrywaz .gt_font_italic {
   font-style: italic;
 }
 
-#wtayrgpmzk .gt_super {
+#rvunmrywaz .gt_super {
   font-size: 65%;
 }
 
-#wtayrgpmzk .gt_footnote_marks {
+#rvunmrywaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wtayrgpmzk .gt_asterisk {
+#rvunmrywaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wtayrgpmzk .gt_indent_1 {
+#rvunmrywaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wtayrgpmzk .gt_indent_2 {
+#rvunmrywaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wtayrgpmzk .gt_indent_3 {
+#rvunmrywaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wtayrgpmzk .gt_indent_4 {
+#rvunmrywaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wtayrgpmzk .gt_indent_5 {
+#rvunmrywaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wtayrgpmzk .katex-display {
+#rvunmrywaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wtayrgpmzk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rvunmrywaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1193,7 +1193,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <p><strong>Vendor Assessment</strong></p></td>
 <td style="text-align: left;"><p><strong>Purpose:</strong></p>
 <p>The purpose of such a document is to assess the reliability of a system vendor. This may be done based on an audit or review of relevant vendor documentation.</p>
-<p><strong><em>R base validation specific approach</em></strong>: Since R is an open-source software managed by a consortium, a traditional vendor assessment/ audit approach is not feasible. A critical review of “<a href="https://www.%20r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments</a>” may suffice as vendor assessment and should be documented together with any gaps identified that may require attention during the validation of R and its R add-on packages.</p>
+<p><strong><em>R base validation specific approach</em></strong>: Since R is an open-source software managed by a consortium, a traditional vendor assessment/ audit approach is not feasible. A critical review of “<a href="https://www.r-project.org/doc/R-FDA.pdf">R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments</a>” may suffice as vendor assessment and should be documented together with any gaps identified that may require attention during the validation of R and its R add-on packages.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li>Example available in the menu on the right</li>
@@ -1205,7 +1205,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <p><strong>Frequency of update:</strong></p>
 <ul>
 <li><p>Created before/ with the first R base installation validation.</p></li>
-<li><p>Updated, if any of the assessed aspects change, specifically, with a publication of a new article version of the article mentioned above, or in case the R consortium replaces the existing document.</p></li>
+<li><p>Updated, if any of the assessed aspects change, specifically, with a publication of a new article version of the article mentioned above, or in case the R consortium replaces the existing document. |</p></li>
 <li><p>Reviewed during periodic review cycles and review documented, if no updates are required.</p></li>
 </ul></td>
 </tr>
@@ -1280,7 +1280,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <ul>
 <li><p>Created with the first R base installation validation.</p></li>
 <li><p>Updated, if any new functions or processes are added to the scope of the intended use of R. If new requirements are added to the User Requirements Specification, this is a good indicator to also review the Functional Risk Assessment document.</p></li>
-<li><p>Reviewed during periodic review cycles <mark>and review documented, if no updates are required.</mark></p></li>
+<li><p>Reviewed during periodic review cycles and review documented, if no updates are required.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1307,7 +1307,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <p><strong><em>R base validation specific approach</em></strong>: Test protocols provided by R may be used as-is or adapted/ extended as required. The scope of testing must be defined according to the CTU’s local processes and defined user requirements.</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1317,7 +1317,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <ul>
 <li><p>Created with the first R base installation validation.</p></li>
 <li><p>Updated, if any new functions or processes are added to the scope of the intended use of R. If new requirements are added to the User Requirements Specification, this is a good indicator to also review the existing test protocols.</p></li>
-<li><p>Reviewed during periodic review cycles <mark>and review documented, if no updates are required.</mark></p></li>
+<li><p>Reviewed during periodic review cycles and review documented, if no updates are required.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1355,7 +1355,7 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <p>The purpose of such a document is to provide evidence for the execution of the pre-defined test protocols for each new R base installation version (i.e., follow the steps described in the test protocols and document the outcome according to the CTU’s local processes).</p>
 <p><strong>Example:</strong></p>
 <ul>
-<li>Example available on the SCTO platform</li>
+<li>Example available in the menu on the right</li>
 </ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
@@ -1373,7 +1373,10 @@ Table&nbsp;2: R Base Installation Validation: Detailed Description of Required D
 <td style="text-align: left;"><p><strong>Purpose:</strong></p>
 <p>The purpose of such a document is to ensure and provide evidence that all user requirements are tested during the validation process. You may omit testing low risk requirements, if such an approach is described in the Validation &amp; Test Plan and complies to your CTU’s processes.</p>
 <p>Traceability between requirements and tests may be achieved by creating a separate document (traceability matrix) or by linking requirements and tests within the requirements and tests themselves. It is important, that whatever means is used, it is feasible to proof that all requirements are verified with a test (or if not tested formally, a rationale why the test is not required, e.g., low risk requirements which can be considered “verified” based on the experience by the user community).</p>
-<p><strong><mark>Example:</mark></strong></p></td>
+<p><strong>Example:</strong></p>
+<ul>
+<li><em>Available soon</em></li>
+</ul></td>
 <td style="text-align: left;"><p><strong>Required for R base installation validation:</strong></p>
 <ul>
 <li>Yes</li>
@@ -2327,9 +2330,9 @@ Table&nbsp;4: References
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>for purposes of this document referred to as CTUs = Clinical Trial Units<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>A validation documentation set is prepared to provide evidence of the validation process.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>GxP processes refer to Good Practice standards, including Good Clinical Practice (GCP), Good Manufacturing Practices (GMP), Good Laboratory Practice (GLP) etc. GxP critical computerised systems are all systems that manage GxP data (e.g., clinical study data) and therefore support and/or provide input for GxP processes.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Head data-analysis, Department Clinical Research, University of Basel<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>IT Quality Manager, Department Clinical Research, University of Basel<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>for purposes of this document referred to as CTUs = Clinical Trial Units<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>A validation documentation set is prepared to provide evidence of the validation process.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>GxP processes refer to Good Practice standards, including Good Clinical Practice (GCP), Good Manufacturing Practices (GMP), Good Laboratory Practice (GLP) etc. GxP critical computerised systems are all systems that manage GxP data (e.g., clinical study data) and therefore support and/or provide input for GxP processes.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
