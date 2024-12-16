@@ -248,7 +248,7 @@ Detailed working instructions for [writing tests](../wi/testing.qmd), [reviewing
 
 
 The working instructions for the unit testing process are found under
-the relevant [SCTO GitHub page](../wi/testing.qmd).
+the relevant [work instruction](../wi/testing.qmd).
 The detailed working instructions can be found on the GitHub page; Below
 we provide only a bullet-point description of the relevant steps:
 
@@ -322,12 +322,12 @@ and following the working instructions listed under the
 The reviewer comments the function test. Only after approval by the
 reviewer, the function will be listed as tested on the SCTO platform.
 
-## Documentation:
+## Documentation
 
 Test reports are made on the [pkg_validation SCTO GitHub repository](https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues). 
 Select "New issue". Select the appropriate issue type depending on whether you're submitting tests from within the package itself or tests from within the SCTO framework.
 For packages testing using tests from the [validation_tests SCTO GitHub repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests), fill out the predefined form, using the output from R
-(`SCTORvalidation::test("packagename")`). Where packages from within the package itself are used, the [work instruction](../wi/running_tests.html.qmd#running-tests-from-within-a-package) provides additional information.
+(`SCTORvalidation::test("packagename")`). Where packages from within the package itself are used, the [work instruction](../wi/running_tests.qmd#running-tests-from-within-a-package) provides additional information.
 
 +----------------+-----------------------------------------------------+
 | What to        | Details                                             |
