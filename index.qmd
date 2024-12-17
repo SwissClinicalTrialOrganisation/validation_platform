@@ -2,7 +2,7 @@
 title: "SCTO Computerized Systems Validation Policy for R"
 editor_options:
   markdown:
-    wrap: 72
+    wrap: 100
 format: 
   html: default
   docx: default
@@ -17,23 +17,23 @@ format-links:
     target: "_blank"
 other-links:
   - text: Example High Level Risk assessment
-    href: fig/SCTO_R-Base_HighLevelRiskAssessment_EXAMPLE.docx
+    href: fig/HighLevelRiskAssessment.docx
     icon: file-word
     target: "_blank"
   - text: Example Vendor Assessment Statement
-    href: fig/SCTO_R-Base_VendorAssessmentStatement_EXAMPLE.docx
+    href: fig/VendorAssessmentStatement.docx
     icon: file-word
     target: "_blank"
   - text: Example Validation plan and test plan
-    href: fig/SCTO_R-Base_Validation_and_TestPlan_EXAMPLE.docx
+    href: fig/ValidationAndTestPlan.docx
     icon: file-word
     target: "_blank"
   - text: Example Validation plan and test report
-    href: fig/SCTO_R-Base_Validation_and_TestReport_EXAMPLE.docx
+    href: fig/ValidationAndTestReport.docx
     icon: file-word
     target: "_blank"
   - text: Example User Requirement specification
-    href: fig/SCTO_R-Base_UserRequirementSpecification_EXAMPLE.docx
+    href: fig/UserRequirementSpecification.docx
     icon: file-word
     target: "_blank"
 execute:
@@ -424,6 +424,7 @@ documentation must be prepared and approved by the CTU. For some of the
 documents listed below, the SCTO provides examples (as indicated under
 "Detailed Description").
 
+
 +--------------------+------------------------------------------+----------------------------+
 | **Document or      | ***Detailed Description:***              | ***Requirements***         |
 | activity**         |                                          |                            |
@@ -432,10 +433,10 @@ documents listed below, the SCTO provides examples (as indicated under
 | installation       |                                          |                            |
 +:===================+:=========================================+:===========================+
 |                    | - *Purpose of the document/              | - *If the document/        |
-|                    |   activity and how this                  |   activity is NOT          |
-|                    |   aspect can be covered for              |   required for R: a        |
-|                    |   R (suggested R specific                |   rationale, why this      |
-|                    |   document/activity)*                    |   document/activity can    |
+|                    |   activity and how this aspect can be    |   activity is NOT          |
+|                    |    covered for R (suggested R specific   |   required for R: a        |
+|                    |    document/activity)*                   |   rationale, why this      |
+|                    |                                          |   document/activity can    |
 |                    |                                          |   be omitted*              |
 |                    | - *Link to example                       |                            |
 |                    |   document*                              | - *Recommended frequency   |
@@ -459,47 +460,40 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                                          |                            |
 |                    | **Example:**                             | - Reviewed during          |
 |                    |                                          |   periodic review          |
-|                    | - Example available in the               |   cycles. The review       |
-|                    |   menu on the right                      |   process should be        |
+|                    | - [Example](                             |   cycles. The review       |
+|                    |   fig/HighLevelRiskAssessment.docx)      |   process should be        |
 |                    |                                          |   documented even if no    |
 |                    |                                          |   updates are required.    |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Vendor           | document is to assess the                | - Yes                      |
-| Assessment**       | reliability of a system                  |                            |
-|                    | vendor. This may be done                 | **Frequency of update:**   |
-|                    | based on an audit or review              |                            |
-|                    | of relevant vendor                       | - Created before/ with     |
-|                    | documentation.                           |   the first R base         |
-|                    |                                          |   installation             |
-|                    | ***R base validation specific            |   validation.              |
-|                    | approach***: Since R is an               |                            |
-|                    | open-source software managed             | - Updated, if any of the   |
-|                    | by a consortium, a                       |   assessed aspects         |
-|                    | traditional vendor                       |   change, specifically,    |
-|                    | assessment/ audit approach is            |   with a publication of    |
-|                    | not feasible. A critical                 |   a new article version    |
-|                    | review of "[R: Regulatory                |   of the article           |
-|                    | Compliance and Validation                |   mentioned above, or in   |
-|                    | Issues - A Guidance Document             |   case the R consortium    |
-|                    | for the Use of R in Regulated            |   replaces the existing    |
-|                    | Clinical Trial                           |   document.                |
-|                    | Environments](                           |                          |
-|                    | https://www.r-project.org/doc/R-FDA.pdf)"| - Reviewed during          |
-|                    | may suffice as vendor                    |   periodic review cycles   |
-|                    | assessment and should be                 |   and review documented,   |
-|                    | documented together with any             |   if no updates are        |
-|                    | gaps identified that may                 |   required.                |
-|                    | require attention during the             |                            |
-|                    | validation of R and its R                |                            |
-|                    | add-on packages.                         |                            |
-|                    |                                          |                            |
-|                    | **Example:**                             |                            |
-|                    |                                          |                            |
-|                    | - Example available in the               |                            |
-|                    |   menu on the right                      |                            |
+|                    | The purpose of such a document is to     |                            |
+| **Vendor           | the assess reliability of a system       | - Yes                      |
+| Assessment**       | vendor. This may be done based on an     |                            |
+|                    | audit or review of relevant vendor       | **Frequency of update:**   |
+|                    | documentation.                           |                            |
+|                    |                                          | - Created before/ with     |
+|                    | ***R base validation specific            |   the first R base         |
+|                    | approach***: Since R is an open-source   |   installation             |
+|                    | software managed by a consortium, a      |   validation.              |
+|                    | traditional vendor assessment/ audit     |                            |
+|                    | approach is not feasible. A critical     | - Updated, if any of the   |
+|                    | review of "[R: Regulatory Compliance     |   assessed aspects         |
+|                    | and Validation Issues - A Guidance       |   change, specifically,    |
+|                    | Document for the Use of R in Regulated   |   with a publication of    |
+|                    | Clinical Trial Environments](            |   a new article version    |
+|                    | https://www.r-project.org/doc/R-FDA.pdf)"|   of the article           |
+|                    | may suffice as vendor assessment and     |   mentioned above, or in   |
+|                    | should be documented together with any   |   case the R consortium    |
+|                    | gaps identified that may require         |   replaces the existing    |
+|                    | attention during the validation of R and |   document.                |
+|                    | its R add-on packages.                   |                            |
+|                    |                                          | - Reviewed during          |
+|                    |                                          |   periodic review cycles   |
+|                    |  **Example:**                            |   and review documented,   |
+|                    |                                          |   if no updates are        |
+|                    |  - [Example](                            |   required.                |
+|                    |   fig/VendorAssessmentStatement.docx)    |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
@@ -526,8 +520,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                                          |       tests to be          |
 |                    | **Example:**                             |       executed or          |
 |                    |                                          |       specific document    |
-|                    | - Example available in the               |       updates required     |
-|                    |   menu on the right                      |       for a newly          |
+|                    | - [Example](                             |       updates required     |
+|                    | fig/ValidationAndTestPlan.docx)          |       for a newly          |
 |                    |                                          |       released version.    |
 |                    |                                          |       Instead, it would    |
 |                    |                                          |       contain generic      |
@@ -621,8 +615,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                                          |   be added to cover the    |
 |                    | **Example:**                             |   full scope of the        |
 |                    |                                          |   current intended use     |
-|                    | - Example available in the               |   OR if any of the         |
-|                    |   menu on the right                      |   existing requirements    |
+|                    | - [Example](                             |   OR if any of the         |
+|                    |  fig/UserRequirementSpecification.docx)  |   existing requirements    |
 |                    |                                          |   need to be updated or    |
 |                    |                                          |   removed.                 |
 |                    |                                          |                            |
@@ -666,34 +660,26 @@ documents listed below, the SCTO provides examples (as indicated under
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Software         | document would be to provide             | - No (see above for how    |
-| Installation       | a process to follow during               |   this is covered)         |
-| Plan/Instruction** | the installation of a                    |                            |
-|                    | software. It is typically                | **Frequency of update:**   |
-|                    | provided either by the vendor            |                            |
-|                    | or prepared by local IT                  | - N/A                      |
-|                    | departments.                             |                            |
+|                    | The purpose of such a document would be  |                            |
+| **Software         | to provide a process to follow during    | - No (see above for how    |
+| Installation       | the installation of a software. It is    |   this is covered)         |
+| Plan/Instruction** | typically provided either by the vendor  |                            |
+|                    | or prepared by local IT departments.     | **Frequency of update:**   |
 |                    |                                          |                            |
-|                    | ***R base validation specific            |                            |
-|                    | approach:*** It should be                |                            |
-|                    | sufficient to follow the                 |                            |
-|                    | instructions on CRAN when                |                            |
-|                    | downloading and installing               |                            |
-|                    | the new R base installation              |                            |
-|                    | version.                                 |                            |
+|                    |  ***R base validation specific           | - N/A                      |
+|                    |  approach:*** It should be sufficient to |                            |
+|                    |  follow the instructions on CRAN when    |                            |
+|                    |  downloading and installing the new R    |                            |
+|                    |  base installation version.              |                            |
 |                    |                                          |                            |
-|                    | **Important** is that the                |                            |
-|                    | installation of the R base               |                            |
-|                    | installation and version                 |                            |
-|                    | management follow the CTU's              |                            |
-|                    | local processes for validated            |                            |
-|                    | systems and that all versions            |                            |
-|                    | installed are documented,                |                            |
-|                    | including the date/ time of              |                            |
-|                    | installation (see                        |                            |
-|                    | Installation Verification                |                            |
-|                    | Document below).                         |                            |
+|                    | **Important** is that the installation   |                            |
+|                    | of the R base installation and version   |                            |
+|                    | management follow the CTU's local        |                            |
+|                    | processes for validated systems and that |                            |
+|                    | all versions installed are documented,   |                            |
+|                    | including the date/time of installation  |                            |
+|                    | (see Installation Verification Document  |                            |
+|                    | below).                                  |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
@@ -715,8 +701,8 @@ documents listed below, the SCTO provides examples (as indicated under
 |                    |                                          |   to the User              |
 |                    | **Example:**                             |   Requirements             |
 |                    |                                          |   Specification, this is   |
-|                    | - Example available in the               |   a good indicator to      |
-|                    |   menu on the right                      |   also review the          |
+|                    | - _An example will be available soon_    |   a good indicator to      |
+|                    |                                          |   also review the          |
 |                    |                                          |   existing test            |
 |                    |                                          |   protocols.               |
 |                    |                                          |                            |
@@ -729,183 +715,141 @@ documents listed below, the SCTO provides examples (as indicated under
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Software         | document is to provide                   | - Yes                      |
-| Installation       | evidence of the installation             |                            |
-| Verification       | of a specific system version             | **Frequency of update:**   |
-| document (TEST)**  | on an environment/ machine               |                            |
-|                    | that is used for testing                 | - To be created with       |
-|                    | purposes before the new                  |   every new R base         |
-|                    | system version is released to            |   installation version     |
-|                    | production.                              |   to be validated for      |
-|                    |                                          |   productive use           |
-|                    | ***R base validation specific            |                            |
-|                    | approach***: In case of R                | - No periodic review       |
-|                    | this may be a separate                   |   required                 |
-|                    | document or an entry in an R             |                            |
-|                    | repository or other "version             |                            |
-|                    | tracker" (depending on your              |                            |
-|                    | local IT processes). The                 |                            |
-|                    | following information should             |                            |
-|                    | be captured:                             |                            |
+|                    | The purpose of such a document is to     |                            |
+| **Software         | provide evidence of the installation     | - Yes                      |
+| Installation       | of a specific system version on an       |                            |
+| Verification       | environment/ machine that is used for    | **Frequency of update:**   |
+| document (TEST)**  | testing purposes before the new system   |                            |
+|                    | version is released to production.       | - To be created with       |
+|                    |                                          |   every new R base         |
+|                    | ***R base validation specific            |   installation version     |
+|                    | approach***: In case of R this may be a  |   to be validated for      |
+|                    | separate document or an entry in an R    |   productive use           |
+|                    | repository or other "version tracker"    |                            |
+|                    | (depending on your local IT processes).  | - No periodic review       |
+|                    | The following information should be      |   required                 |
+|                    | captured:                                |                            |
 |                    |                                          |                            |
-|                    | -   R base installation                  |                            |
-|                    |     version installed                    |                            |
+|                    | - R base installation version installed  |                            |
 |                    |                                          |                            |
-|                    | -   Date and time of                     |                            |
-|                    |     installation                         |                            |
+|                    | - Date and time of installation          |                            |
 |                    |                                          |                            |
-|                    | -   Person performing the                |                            |
-|                    |     installation (may be                 |                            |
-|                    |     someone from your local              |                            |
-|                    |     IT department)                       |                            |
+|                    | - Person performing the installation     |                            |
+|                    |   (may be someone from your local IT     |                            |
+|                    |   IT department)                         |                            |
 |                    |                                          |                            |
-|                    | -   Outcome of installation:             |                            |
-|                    |     successful, successful               |                            |
-|                    |     with deviations, not                 |                            |
-|                    |     successful                           |                            |
+|                    | - Outcome of installation: successful,   |                            |
+|                    |   successful with deviations, not        |                            |
+|                    |   successful                             |                            |
 |                    |                                          |                            |
-|                    | -   If applicable: Any                   |                            |
-|                    |     actions taken in addition            |                            |
-|                    |     to the regular "download             |                            |
-|                    |     and install from CRAN"               |                            |
-|                    |     process (e.g.,                       |                            |
-|                    |     uninstalling an older                |                            |
-|                    |     version)                             |                            |
+|                    | - If applicable: Any actions taken in    |                            |
+|                    |   addition to the regular "download and  |                            |
+|                    |   install from CRAN" process (e.g.,      |                            |
+|                    |   uninstalling an older version)         |                            |
 |                    |                                          |                            |
-|                    | **Note:** depending on your              |                            |
-|                    | local processes it may not be            |                            |
-|                    | feasible or even possible to             |                            |
-|                    | do a preliminary "test                   |                            |
-|                    | installation" and perform                |                            |
-|                    | tests before productive use              |                            |
-|                    | of the new R base                        |                            |
-|                    | installation version (e.g.,              |                            |
-|                    | if R is distributed remotely             |                            |
-|                    | by your local IT department).            |                            |
-|                    | In this case, we recommend               |                            |
-|                    | you still execute the tests              |                            |
-|                    | after the installation and               |                            |
-|                    | document the test execution.             |                            |
-|                    | Should any issues be detected            |                            |
-|                    | during testing, please inform            |                            |
-|                    | your local IT department                 |                            |
-|                    | immediately. Ideally you                 |                            |
-|                    | implement a process that                 |                            |
-|                    | would ensure nobody is using             |                            |
-|                    | the new R version for                    |                            |
-|                    | productive use before the                |                            |
-|                    | tests are completed                      |                            |
-|                    | successfully (i.e., without              |                            |
-|                    | major issues) and the                    |                            |
-|                    | validation & test report is              |                            |
-|                    | approved (see "Validation &              |                            |
+|                    | **Note:** depending on your local        |                            |
+|                    | processes it may not be feasible or even |                            |
+|                    | possible to do a preliminary "test       |                            |
+|                    | installation" and perform tests before   |                            |
+|                    | productive use of the new R base         |                            |
+|                    | installation version (e.g., if R is      |                            |
+|                    | distributed remotely by your local IT    |                            |
+|                    | department). In this case, we recommend  |                            |
+|                    | you still execute the tests after the    |                            |
+|                    | installation and document the test       |                            |
+|                    | execution. Should any issues be detected |                            |
+|                    | during testing, please inform your local |                            |
+|                    | IT department immediately. Ideally you   |                            |
+|                    | implement a process that would ensure    |                            |
+|                    | nobody is using the new R version for    |                            |
+|                    | productive use before the tests are      |                            |
+|                    | completed successfully (i.e., without    |                            |
+|                    | major issues) and the validation & test  |                            |
+|                    | report is approved (see "Validation &    |                            |
 |                    | Test Report" below).                     |                            |
 |                    |                                          |                            |
 |                    | **Example:**                             |                            |
 |                    |                                          |                            |
-|                    | - see Example for                        |                            |
-|                    |   Validation & Test Report               |                            |
-|                    |   available                              |                            |
+|                    | - see [Example for Validation & Test     |                            |
+|                    |   Report available](                     |                            |
+|                    |   fig/ValidationAndTestReport.docx)      |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Executed test    | document is to provide                   | - Yes                      |
-| protocols ("User   | evidence for the execution of            |                            |
-| Acceptance         | the pre-defined test                     | **Frequency of update:**   |
-| Tests")**          | protocols for each new R base            |                            |
-|                    | installation version (i.e.,              | - To be created with       |
-|                    | follow the steps described in            |   every validation of a    |
-|                    | the test protocols and                   |   new R base               |
-|                    | document the outcome                     |   installation version.    |
-|                    | according to the CTU's local             |                            |
-|                    | processes).                              | - No periodic review       |
+|                    | The purpose of such a document is to     |                            |
+| **Executed test    | provide evidence for the execution of    | - Yes                      |
+| protocols ("User   | the pre-defined test protocols for each  |                            |
+| Acceptance         | new R base installation version (i.e.,   | **Frequency of update:**   |
+| Tests")**          | follow the steps described in the test   |                            |
+|                    | protocols and document the outcome       | - To be created with       |
+|                    | according to the CTU's local processes). |   every validation of a    |
+|                    |                                          |   new R base               |
+|                    | **Example:**                             |   installation version.    |
+|                    |                                          |                            |
+|                    | - _An example will be available soon_    | - No periodic review       |
 |                    |                                          |   required                 |
-|                    | **Example:**                             |                            |
-|                    |                                          |                            |
-|                    | - Example available in the               |                            |
-|                    |   menu on the right                      |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Traceability     | document is to ensure and                | - Yes                      |
-| Matrix**           | provide evidence that all                |                            |
-|                    | user requirements are tested             | **Frequency of update:**   |
-|                    | during the validation                    |                            |
-|                    | process. You may omit testing            | - Created with the first   |
-|                    | low risk requirements, if                |   R base installation      |
-|                    | such an approach is described            |   validation.              |
-|                    | in the Validation & Test Plan            |                            |
-|                    | and complies to your CTU's               | - Updated, if the user     |
-|                    | processes.                               |   requirements             |
-|                    |                                          |   specification and or     |
-|                    | Traceability between                     |   the test protocols are   |
-|                    | requirements and tests may be            |   updated.                 |
-|                    | achieved by creating a                   |                            |
-|                    | separate document                        | - Reviewed during          |
-|                    | (traceability matrix) or by              |   periodic review cycles   |
-|                    | linking requirements and                 |   and review documented,   |
-|                    | tests within the requirements            |   if no updates are        |
-|                    | and tests themselves. It is              |   required.                |
-|                    | important, that whatever                 |                            |
-|                    | means is used, it is feasible            |                            |
-|                    | to proof that all                        |                            |
-|                    | requirements are verified                |                            |
-|                    | with a test (or if not tested            |                            |
-|                    | formally, a rationale why the            |                            |
-|                    | test is not required, e.g.,              |                            |
-|                    | low risk requirements which              |                            |
-|                    | can be considered "verified"             |                            |
-|                    | based on the experience by               |                            |
-|                    | the user community).                     |                            |
+|                    | The purpose of such a document is to     |                            |
+| **Traceability     | ensure and provide evidence that all     | - Yes                      |
+| Matrix**           | user requirements are tested during the  |                            |
+|                    | validation process. You may omit testing | **Frequency of update:**   |
+|                    | low risk requirements, if such an        |                            |
+|                    | approach is described in the Validation  | - Created with the first   |
+|                    | & Test Plan and complies to your CTU's   |   R base installation      |
+|                    | processes.                               |   validation.              |
+|                    |                                          |                            |
+|                    | Traceability between requirements and    | - Updated, if the user     |
+|                    | tests may be achieved by creating a      |   requirements             |
+|                    | separate document (traceability matrix)  |   specification and or     |
+|                    | or by linking requirements and tests     |   the test protocols are   |
+|                    | within the requirements and tests        |   updated.                 |
+|                    | themselves. It is important, that        |                            |
+|                    | whatever means is used, it is feasible   | - Reviewed during          |
+|                    | to proof that all requirements are       |   periodic review cycles   |
+|                    | verified with a test (or if not tested   |   and review documented,   |
+|                    | formally, a rationale why the test is not|   if no updates are        |
+|                    | required, e.g., low risk requirements    |   required.                |
+|                    | which can be considered "verified" based |                            |
+|                    | on the experience by the user community).|                            |
 |                    |                                          |                            |
 |                    | **Example:**                             |                            |
 |                    |                                          |                            |
-|                    | - _Available soon_                       |                            |
+|                    | - _An example will be available soon_    |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
-|                    | The purpose of such a                    |                            |
-| **Validation       | document is to                           | - Yes                      |
-| & Test Report**    |                                          |                            |
-|                    | -   summarize the testing                | **Frequency of update:**   |
-|                    |     activities and results,              |                            |
-|                    |     including any deviations             | - To be created with       |
-|                    |     from the expected results            |   every new R base         |
-|                    |                                          |   installation version     |
-|                    | -   document all completed               |   validated for            |
-|                    |     validation activities,               |   productive use           |
-|                    |     including any deviations             |                            |
-|                    |     from the original plan               | - No periodic review       |
-|                    |     (see Validation & Test               |   required                 |
-|                    |     Plan). Deviations should             |                            |
-|                    |     be justified and assessed            |                            |
-|                    |     for criticality.                     |                            |
+|                    | The purpose of such a document is to     |                            |
+| **Validation       |                                          | - Yes                      |
+| & Test Report**    | - summarize the testing activities and   |                            |
+|                    |   results, including any deviations      | **Frequency of update:**   |
+|                    |   from the expected results              |                            |
+|                    |                                          | - To be created with       |
+|                    | - document all completed validation      |   every new R base         |
+|                    |   activities, including any deviations   |   installation version     |
+|                    |   from the original plan (see Validation |   validated for            |
+|                    |   & Test Plan). Deviations should be     |   productive use           |
+|                    |   justified and assessed for             |                            |
+|                    |   criticality.                           | - No periodic review       |
+|                    |                                          |   required                 |
+|                    | - document the acceptance for productive |                            |
+|                    |   use (with or without restrictions)     |                            |
 |                    |                                          |                            |
-|                    | -   document the acceptance              |                            |
-|                    |     for productive use (with             |                            |
-|                    |     or without restrictions)             |                            |
-|                    |                                          |                            |
-|                    | The exact content of this                |                            |
-|                    | report depends on the CTU's              |                            |
-|                    | local processes. Separate                |                            |
-|                    | documents may be created to              |                            |
-|                    | summarize the testing                    |                            |
-|                    | activities and results                   |                            |
-|                    | (Test Report) and the                    |                            |
-|                    | overall executed validation              |                            |
-|                    | against the plan, incl. a                |                            |
-|                    | statement of acceptance of               |                            |
-|                    | an R base installation                   |                            |
-|                    | version for productive use               |                            |
+|                    | The exact content of this report depends |                            |
+|                    | on the CTU's local processes. Separate   |                            |
+|                    | documents may be created to summarize    |                            |
+|                    | the testing activities and results       |                            |
+|                    | (Test Report) and the overall executed   |                            |
+|                    | validation against the plan, incl. a     |                            |
+|                    | statement of acceptance of an R base     |                            |
+|                    | installation version for productive use  |                            |
 |                    | (Validation Report).                     |                            |
 |                    |                                          |                            |
 |                    | **Example:**                             |                            |
 |                    |                                          |                            |
-|                    | - Example available in the               |                            |
-|                    |   menu on the right                      |                            |
+|                    | - [Example](                             |                            |
+|                    |   fig/ValidationAndTestReport.docx)      |                            |
 +--------------------+------------------------------------------+----------------------------+
 | R Base             | **Purpose:**                             | **Required for R base      |
 | installation       |                                          | installation validation:** |
@@ -1406,9 +1350,7 @@ To be covered by local SOPs for statistical analysis execution at the
 CTUs. The R product validation should cover at minimum:
 
 -   Assessment of risk associated with the R product
-
 -   Assess the tools used within the R product
-
 -   Documentation for reproducibility and traceability
 
 # Risk Management  {#sec-risk-management}
