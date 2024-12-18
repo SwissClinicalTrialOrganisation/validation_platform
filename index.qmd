@@ -8,7 +8,7 @@ format:
   docx: default
   # pdf: default
   sctotypst-typst: default
-release_date: "2023-12-05"
+release_date: "2025-01-01"
 format-links:
   - html
   - format: sctotypst-typst
@@ -73,9 +73,13 @@ language:
 
 `#set align(center)`{=typst}
 
-| Version | Date       | Author      | Summary of Changes |
-|---------|------------|-------------|--------------------|
-| 0.1     | 2024-04-18 | Alan Haynes | Initial draft      |
++---------+------------+--------------------+--------------------+
+| Version | Date       | Author             | Summary of Changes |
+|:========|:===========|:===================|:===================|
+| 1.0     | 2025-01-01 | Michael Coslovsky, | Initial draft      |
+|         |            | Christine Otieno,  |                    |
+|         |            | Alan Haynes        |                    |
++---------+------------+--------------------+--------------------+
 
 `#set align(left)`{=typst}
 
