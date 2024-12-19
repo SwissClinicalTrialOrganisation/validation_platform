@@ -1113,7 +1113,7 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | documented in the Statistical |                            |
 |                    | Analysis Plan, a Statistical  |                            |
 |                    | Protocolor other, similar     |                            |
-|                    | documentation.                |                            |
+|                    | documentation[^10].           |                            |
 |                    |                               |                            |
 |                    | **Relevant SCTO               |                            |
 |                    | Documentation:**              |                            |
