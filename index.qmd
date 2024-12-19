@@ -1105,18 +1105,14 @@ package itself and its main functions, leaving dependencies unvalidated.
 |                    | documented when planning the  |                            |
 |                    | R product.                    |                            |
 |                    |                               |                            |
-|                    | Requirements shall be         |                            |
-|                    | documented in the             |                            |
-|                    | Statistical Analysis Plan, a  |                            |
-|                    | Statistical Protocol or in    |                            |
-|                    | other, similar                |                            |
-|                    | documentation[^10]. This      |                            |
-|                    | document must indicate the    |                            |
-|                    | intended use and              |                            |
-|                    | requirements of the           |                            |
-|                    | functions planned to be used  |                            |
-|                    | within the R product from     |                            |
-|                    | the R add-on package.         |                            |
+|                    | Requirements of the product,  |                            |
+|                    | which guide the selection     |                            |
+|                    | of R add-on packages and      |                            |
+|                    | functions therein, shall be   |                            |
+|                    | documented in the Statistical |                            |
+|                    | Analysis Plan, a Statistical  |                            |
+|                    | Protocolor other, similar     |                            |
+|                    | documentation.                |                            |
 |                    |                               |                            |
 |                    | **Relevant SCTO               |                            |
 |                    | Documentation:**              |                            |
@@ -1130,25 +1126,23 @@ package itself and its main functions, leaving dependencies unvalidated.
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
 | **Function Risk    | The purpose of such a         |                            |
-| Assessment**       | document is to specify the    | - Yes (see above for how   |
-|                    | risks related to a specific   |   this is covered)         |
-|                    | function.                     |                            |
-|                    |                               | **Frequency of update:**   |
-|                    | ***R add-on package specific  |                            |
-|                    | approach***: The risk of      | - Only upon change or      |
-|                    | separate functions within an  |   deviation from the       |
-|                    | R add-on package can only be  |   originally intended      |
-|                    | assessed in relation to an R  |   use/ requirements        |
-|                    | product and the required      |   defined in the plan      |
-|                    | outcome ("intended use") of   |   occur during the         |
-|                    | a specific function for that  |   process, and if these    |
-|                    | R product (see section 8      |   changes result in the    |
-|                    | Risk Management).             |   use of different         |
-|                    |                               |   functions or different   |
-|                    | **Relevant SCTO SOP:**        |   intended use of a        |
-|                    |                               |   function.                |
-|                    | - SCTO R Validation Policy    |                            |
-|                    |   (this document)             |                            |
+| Assessment**       | document would be to specify  | - No (covered by the R     |
+|                    | the risks related to a        |   add-on Package High-level|
+|                    | specific function.            |   Risk assessment)         |
+|                    |                               |                            |
+|                    | ***R add-on package specific  | **Frequency of update:**   |
+|                    | approach***: We take a        |                            |
+|                    | package level approach -      | - NA                       |
+|                    | the assessed baseline risk of |                            |
+|                    | the R add-on package defines  |                            |
+|                    | the risk of all functions     |                            |
+|                    | included within.              |                            |
+|                    |                               |                            |
+|                    | **Relevant SCTO SOP:**        |                            |
+|                    | - [SCTO R add-on Package      |                            |
+|                    |   Risk Assessment SOP](       |                            |
+|                    |   sop/sop_pkg_risk_assess.qmd |                            |
+|                    |   )                           |                            |
 +--------------------+-------------------------------+----------------------------+
 | R add-on Package   | **Purpose:**                  | **Required for R add-on    |
 |                    |                               | package validation:**      |
@@ -1360,7 +1354,7 @@ CTUs. The R product validation should cover at minimum:
 # Risk Management  {#sec-risk-management}
 
 Given the different validation levels, the risk also needs to be
-assessed and managed on all those levels, specifically on:
+assessed, documented, and managed on all those levels, specifically on:
 
 -   **IT infrastructure level:** The risk associated with IT
     infrastructure components can generally assumed to be low.
