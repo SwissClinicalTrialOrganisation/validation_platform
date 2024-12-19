@@ -39,6 +39,7 @@ other-links:
 execute:
   echo: false
   message: false
+  freeze: auto
 number-sections: true
 keep-typ: false
 language:

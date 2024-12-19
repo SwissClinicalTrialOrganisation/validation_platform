@@ -19,6 +19,8 @@ other-links:
     target: "_blank"
 language:
   other-links-title: "Example documents"
+execute:
+  freeze: auto
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}

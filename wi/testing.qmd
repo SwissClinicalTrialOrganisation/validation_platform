@@ -19,6 +19,7 @@ execute:
   echo: false
   message: false
   warning: false
+  freeze: auto
 code-block-bg: true
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: "Acknowledgments"
+execute:
+  freeze: auto
 ---
 
 Creating this validation platform has been a team effort, including representatives from SCTO affiliated units across Switzerland. There are many people that have contributed to its development, beyond those mentioned in the author lists of the individual documents, be it by testing, reviewing, or discussions. We would like to thank all of them for their contributions.

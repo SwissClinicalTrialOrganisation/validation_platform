@@ -18,6 +18,7 @@ format-links:
 execute:
   echo: false
   message: false
+  freeze: auto
 ---
 
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
