@@ -4,7 +4,7 @@ Alan Haynes,accrualPlot,1.0.7,2024-04-09,"Tests for package accrualPlot
  - `accrual_create_df` produces expected results 
   
  These tests are primarily for testing the validation infrastructure. accrualPlot 
- has extensive tests",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
+ has extensive tests ",PASS,"|file                     |context           |test                     | nb| passed|skipped |error | warning|
 |:------------------------|:-----------------|:------------------------|--:|------:|:-------|:-----|-------:|
 |test-accrual_create_df.R |accrual_create_df |monocentric              |  4|      4|FALSE   |FALSE |       0|
 |test-accrual_create_df.R |accrual_create_df |multicentric             |  4|      4|FALSE   |FALSE |       0|
@@ -37,7 +37,7 @@ loaded via a namespace (and not attached):
 [67] rmarkdown_2.25    httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [73] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11      
 [79] xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3     presize_0.3.7     rstudioapi_0.15.0
-[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09,NA,NA
+[85] jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",https://github.com/SwissClinicalTrialOrganisation/validation_tests,6813d68,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/34,34,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-04-09,2024-04-09,2024-04-09,,
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -73,7 +73,7 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/68,68,github-actions[bot],4.3.3,macOS Monterey 12.7.4,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,CRAN (R 4.3.0),NA
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/68,68,github-actions[bot],4.3.3,macOS Monterey 12.7.4,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,CRAN (R 4.3.0),NA
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -112,7 +112,7 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/69,69,github-actions[bot],4.3.3,Ubuntu 20.04.6 LTS,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/69,69,github-actions[bot],4.3.3,Ubuntu 20.04.6 LTS,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -151,7 +151,7 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/70,70,github-actions[bot],4.3.3,Ubuntu 22.04.4 LTS,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/70,70,github-actions[bot],4.3.3,Ubuntu 22.04.4 LTS,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -187,7 +187,7 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/71,71,github-actions[bot],4.3.3,macOS Ventura 13.6.6,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,CRAN (R 4.3.0),NA
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/71,71,github-actions[bot],4.3.3,macOS Ventura 13.6.6,FALSE,closed,2024-04-18,2024-04-25,2024-04-25,CRAN (R 4.3.0),NA
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -226,7 +226,7 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/72,72,github-actions[bot],4.3.3,Windows Server 2019 x64 (build 17763),FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/72,72,github-actions[bot],4.3.3,Windows Server 2019 x64 (build 17763),FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
 Unknown (probably GitHub Action bot),accrualPlot,1.0.7,2024-04-18,"Tests for package accrualPlot
 - `summary` produces expected results
 - `accrual_create_df` produces expected results
@@ -265,9 +265,9 @@ loaded via a namespace (and not attached):
 [33] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1    
 [37] pkgconfig_2.0.3   waldo_0.5.2       desc_1.4.3        pillar_1.9.0     
 [41] gtable_0.3.4      glue_1.7.0        gh_1.4.1          tibble_3.2.1     
-[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/73,73,github-actions[bot],4.3.3,Windows Server 2022 x64 (build 20348),FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
-AH,stats,4.3.3,2024-03-26,"Tests for package stats 
- - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
+[45] tidyselect_1.2.1  readr_2.1.5       pkgsearch_3.1.3   compiler_4.3.3   ",SwissClinicalTrialOrganisation/validation_tests,19c1e61812ff72b3e37465ba6889fd6738016d62,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/73,73,github-actions[bot],4.3.3,Windows Server 2022 x64 (build 20348),FALSE,closed,2024-04-18,2024-04-25,2024-04-25,Unknown - enter manually,NA
+AH ,stats,4.3.3,2024-03-26,"Tests for package stats 
+ - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. ",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
 |test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|
 |test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|","R version 4.3.1 (2023-06-16 ucrt)
@@ -302,7 +302,7 @@ loaded via a namespace (and not attached):
 [71] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.3      
 [76] gert_2.0.0        Rcpp_1.0.11       xtable_1.8-4      glue_1.7.0        xml2_1.3.5       
 [81] pkgload_1.3.3     vroom_1.6.5       rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1         
-[86] fs_1.6.3",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08,NA,NA
+[86] fs_1.6.3     ",SwissClinicalTrialOrganisation/validation_tests,a6cff9635541f2f85012e488d23b0d1022d23e55,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/21,21,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,closed,2024-03-26,2024-04-10,2024-04-08,,
 aghaynes,statsFail,NA,2024-04-16,"Tests for package stats
 - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -355,8 +355,8 @@ loaded via a namespace (and not attached):
 [50] readr_2.1.4       withr_2.5.2       prettyunits_1.2.0 waldo_0.5.1       promises_1.2.1    rappdirs_0.3.3    lubridate_1.9.3  
 [57] timechange_0.2.0  httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0       knitr_1.45       
 [64] miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        pkgload_1.3.3    
-[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,NA,Unknown - enter manually,NA
-aghaynes,statsFail,NA,2024-04-16,"Tests for package stats
+[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3         ",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,,Unknown - enter manually,NA
+aghaynes,statsFail,,2024-04-16,"Tests for package stats
 - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
 |test-lm.R |lm      |lm returns the expected coefficients |  2|      1|FALSE   |FALSE |       1|
@@ -408,7 +408,7 @@ loaded via a namespace (and not attached):
 [50] readr_2.1.4       withr_2.5.2       prettyunits_1.2.0 waldo_0.5.1       promises_1.2.1    rappdirs_0.3.3    lubridate_1.9.3  
 [57] timechange_0.2.0  httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0       knitr_1.45       
 [64] miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1       Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        pkgload_1.3.3    
-[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,NA,Unknown - enter manually,NA
+[71] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",please enter manually,"please enter manually, if relevant",https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/43,43,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-16,2024-04-16,,Unknown - enter manually,
 Alan Haynes,statsFail - issue to test machinery,NA,2024-04-15,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -465,8 +465,8 @@ loaded via a namespace (and not attached):
 [61] httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [66] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1      
 [71] Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3    
-[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,NA,Unknown - enter manually,NA
-Alan Haynes,statsFail - issue to test machinery,NA,2024-04-15,"Tests for package stats 
+[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,NA
+Alan Haynes,statsFail - issue to test machinery,,2024-04-15,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.",FAIL,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
 |test-lm.R |lm      |lm returns the expected coefficients |  2|      1|FALSE   |FALSE |       1|
@@ -522,4 +522,4 @@ loaded via a namespace (and not attached):
 [61] httr_1.4.7        gitcreds_0.1.2    hms_1.1.3         memoise_2.0.1     shiny_1.8.0      
 [66] evaluate_0.22     knitr_1.45        miniUI_0.1.1.1    profvis_0.3.8     rlang_1.1.1      
 [71] Rcpp_1.0.11       xtable_1.8-4      glue_1.6.2        xml2_1.3.5        pkgload_1.3.3    
-[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,NA,Unknown - enter manually,NA
+[76] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          fs_1.6.3",local,_No response_,https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/35,35,aghaynes,4.3.1,Windows 10 x64 (build 19045),FALSE,open,2024-04-15,2024-04-15,,Unknown - enter manually,
