@@ -8,7 +8,7 @@ body:
       value: |
         Thanks for taking the time to fill out this risk assessment report!
         Please replace XXX in the issue title with the package name, and YYY with the package version.
-        We have developed an R package to assist in filling out this form. It is available via xxxxx
+        We have developed an R package to assist in filling out this form. It is available via `install.packages('SCTORvalidation', repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org'))`
   - type: input
     id: contact
     attributes:
@@ -95,7 +95,7 @@ body:
     id: nr_dependencies
     attributes:
       label: Number of dependencies
-      description: Use `validation::get_n_deps(pkgname)` in R. If that does not work, check the depends and imports fields of the DESCRIPTION file.
+      description: Use `SCTORvalidation::get_n_deps(pkgname)` in R. If that does not work, check the depends and imports fields of the DESCRIPTION file.
       placeholder: e.g. 15
     validations:
       required: true
@@ -144,7 +144,7 @@ body:
     attributes:
       label: Number of downloads in the last 12 months
       description: |
-        Use `validation::get_12month_downloads(pkgname)` in R.
+        Use `SCTORvalidation::get_12month_downloads(pkgname)` in R.
         Note that download statistics are only available for packages on CRAN or Bioconductor.
         If download statistics are unavailable, leave it blank.
   - type: dropdown
