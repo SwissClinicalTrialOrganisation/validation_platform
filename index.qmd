@@ -1469,79 +1469,29 @@ minimum R base installation version in the periodic review process.
 
 # References  {#sec-references}
 
-+-----------------------------------+-----------------------------------+
-| **Reference Title**               | **Description**                   |
-+:==================================+:==================================+
-| [Guideline on computerised        | European Medicines Agency:        |
-| systems and electronic data in    | Guideline on computerised systems |
-| clinical trials](https://www.ema. | and electronic data in clinical   |
-| europa.eu/en/                     | trials (2023)                     |
-| documents/regulatory-procedural-  |                                   |
-| guideline/guideline-computerised- |                                   |
-| systems-and-electronic-data-      |                                   |
-| clinical-trials_en.pdf)           |                                   |
-+-----------------------------------+-----------------------------------+
-| [ICH E6: Guideline for Good       | International Council for         |
-| Clinical                          | Harmonisation, E6 Good Clinical   |
-| Practice                          | Practice (1997) and Integrated    |
-| ](https://database.ich.org/sites/ | Addendum to Good Clinical         |
-| default/files/E6_R2_Addendum.pdf) | Practice (GCP) (2016)             |
-+-----------------------------------+-----------------------------------+
-| [The Good Automated Manufacturing | Guideline for computerised        |
-| Practice (GAMP) Guide 5: A Risk   | systems validation in regulated   |
-| Based Approach to Compliant GxP   | environments issued by the        |
-| Computerized Systems (ISPE/GAMP,  | International Society for         |
-| 2                                 | Pharmaceutical Engineering        |
-| 008)](http://www.ispe.org/gamp-5) | (ISPE).                           |
-|                                   |                                   |
-|                                   | Note that the content of GAMP 5   |
-|                                   | is not available online.          |
-+-----------------------------------+-----------------------------------+
-| [FDA 21 CFR part 11: Electronic   | FDA regulation: Title 21---Food   |
-| Records; Electronic               | and Drugs, Chapter I - Food and   |
-| Signatu                           | Drug Administration, Department   |
-| res](https://www.ecfr.gov/cgi-bin | of Health and Human Services,     |
-| /text-idx?SID=bb609049963efdb7e40 | Subchapter A - General, Part 11   |
-| b991244ba59e1&mc=true&tpl=/ecfrbr | --- Electronic Records;           |
-| owse/Title21/21cfr11_main_02.tpl) | Electronic Signatures             |
-+-----------------------------------+-----------------------------------+
-| [General Principles of Software   | FDA guidance paper for            |
-| Validation; Final Guidance for    | computerised system validation.   |
-| Industry and FDA Staff            |                                   |
-| (2002)](http://ww                 |                                   |
-| w.fda.gov/downloads/RegulatoryInf |                                   |
-| ormation/Guidances/ucm125125.pdf) |                                   |
-+-----------------------------------+-----------------------------------+
-| [EudraLex Volume 4: Good          | European standard for             |
-| Manufacturing Practice (GMP)      | comupterised systems validation.  |
-| guidelines, Annex 11:             |                                   |
-| Computerised                      |                                   |
-| Syst                              |                                   |
-| ems](https://ec.europa.eu/health/ |                                   |
-| sites/health/files/files/eudralex |                                   |
-| /vol-4/annex11_01-%202011_en.pdf) |                                   |
-+-----------------------------------+-----------------------------------+
-| [R: Regulatory Compliance and     | R Foundation for Statistical      |
-| Validation Issues - A Guidance    | Computing guidance document for   |
-| Document for the Use of R in      | the validation of R for the use   |
-| Regulated Clinical Trial          | in regulated environments.        |
-| Environm                          |                                   |
-| ents](https://unibe365-my.sharepo |                                   |
-| int.com/:b:/r/personal/marie_roum |                                   |
-| et_unibe_ch/Documents/SCTO_platfo |                                   |
-| rm/Validation_taskforce/Reference |                                   |
-| s/R-FDA.pdf?csf=1&web=1&e=84DLAN) |                                   |
-+-----------------------------------+-----------------------------------+
-
-: References {#tbl-refs}
+[Guideline on computerised systems and electronic data in clinical trials](https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-computerised-systems-and-electronic-data-clinical-trials_en.pdf) 
+: European Medicines Agency: Guideline on computerised systems and electronic data in clinical trials (2023)
 
 
+[ICH E6: Guideline for Good Clinical Practice](https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf)
+: International Council for Harmonisation, E6 Good Clinical Practice (1997) and Integrated Addendum to Good Clinical Practice (GCP) (2016)
 
 
+[The Good Automated Manufacturing Practice (GAMP) Guide 5: A Risk Based Approach to Compliant GxP Computerized Systems (ISPE/GAMP, 2008)](https://ispe.org/publications/guidance-documents/gamp-5-guide-2nd-edition)
+: Guideline for computerised systems validation in regulated environments issued by the International Society for Pharmaceutical Engineering (ISPE).
 
+Note that the content of GAMP 5 is not available online. 
 
+[FDA 21 CFR part 11: Electronic Records; Electronic Signatures](https://www.ecfr.gov/cgi-bin/text-idx?SID=bb609049963efdb7e40b991244ba59e1&mc=true&tpl=/ecfrbrowse/Title21/21cfr11_main_02.tpl)
+: FDA regulation: Title 21---Food and Drugs, Chapter I - Food and Drug Administration, Department of Health and Human Services, Subchapter A - General, Part 11 --- Electronic Records; Electronic Signatures
 
+[General Principles of Software Validation; Final Guidance for Industry and FDA Staff (2002)](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/general-principles-software-validation)
+: FDA guidance paper for computerised system validation.
 
+[EudraLex Volume 4: Good Manufacturing Practice (GMP) guidelines, Annex 11: Computerised Systems](https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en#annexes) 
+: European standard for comupterised systems validation. 
+
+[R: Regulatory Compliance and Validation Issues - A Guidance Document for the Use of R in Regulated Clinical Trial Environments](https://www.r-project.org/doc/R-FDA.pdf)
 
 
 
