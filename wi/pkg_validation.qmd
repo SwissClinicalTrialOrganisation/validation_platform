@@ -68,7 +68,7 @@ In order to perform a risk assessment:
 - **if it has not been risk assessed**, go to the [package validation GitHub repository](https://www.github.com/SwissClinicalTrialOrganisation/validation_platform/issues){target="_blank"}
   - click the green "New issue" button (towards the top right)
   - select the New package risk assessment template by clicking the green Get started button on the right
-  - fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the [Risk metrics page](../sop/risk_metrics.qmd).
+  - fill in the form, following the instructions provided. Additional notes on the risk metrics can be found on the [Risk metrics page](../sop/sop_pkg_risk_assess.qmd).
     - Note that the [R package `SCTORvalidation`](https://swissclinicaltrialorganisation.github.io/SCTORvalidation_Rpackage/){target="_blank"} contains various useful functions to help with the risk assessment process. Especially useful are:
       - `get_n_deps`, which returns the number of dependencies of a package,
       - `get_12month_downloads` which returns the number of downloads of a package in the last 12 months, and 
