@@ -194,7 +194,7 @@ pkgdf
 # Check for updates of installed packages
 # pkgs <- load_pkg_table()
 # installed_packages <- installed.packages() |> as.data.frame()
-available_packages <- available.packages() |> 
+available_packages <- available.packages(contriburl = "https://cloud.r-project.org/") |> 
   as.data.frame()
 outdated_pkgs <- pkgs |> 
   dplyr::summarize(version = max(version), .by = package) |> 
