@@ -186,7 +186,8 @@ pkgdf |>
 
 ```{r}
 #| eval: !expr knitr::is_html_output() == FALSE
-pkgdf
+pkgdf |> 
+  tab_options(table.font.size = 10)
 ```
 
 
@@ -223,6 +224,7 @@ outdated_pkgs |>
 #| eval: !expr knitr::is_html_output() == FALSE
 outdated_pkgs |> 
   gt() |> 
+  tab_options(table.font.size = 10) |> 
   opt_table_font(font = "Source Sans Pro") 
 ```
 
