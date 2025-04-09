@@ -203,7 +203,7 @@ outdated_pkgs <- pkgs |>
   dplyr::filter(version < Version) |> 
   dplyr::select(package, version, Version) |> 
   dplyr::rename(Package = package,
-         `Validated version` = version,
+         `Risk assessed version` = version,
          `Available version` = Version
          )
 ```
