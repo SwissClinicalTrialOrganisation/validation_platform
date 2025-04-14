@@ -482,9 +482,6 @@ Note that whether an author is ‘well-known’ in the community is a subjective
 The listed number is converted into a [0, 1] score, with 0 representing low number of dependencies (= low risk) and 1 representing many dependencies (= high risk). Taking a similar approach for the transforming the number to a score as the ‘riskmetric’ package (R validation hub, 2023), we use a simplification of the classic logistic curve <span class="math inline">\(1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))\)</span> as a scoring function. A sigmoid midpoint is 4 dependencies, ie., x[0] = 4 and logistic growth rate of k = 0.5.</p></li>
 </ol>
 <div class="cell" data-warn="false">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'SCTORvalidation' was built under R version 4.3.3</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-dep-score" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
 <figure class="quarto-float quarto-float-fig figure">
