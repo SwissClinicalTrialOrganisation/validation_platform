@@ -23,28 +23,30 @@ prefer-html: true
 
 ```{r}
 #| output: false
-# install.packages('SCTORvalidation', 
-#                  repos = c('https://ctu-bern.r-universe.dev', 
-#                            'https://cloud.r-project.org'), 
+
+# install.packages('SCTORvalidation',
+#                  repos = c('https://ctu-bern.r-universe.dev',
+#                            'https://cloud.r-project.org'),
 #                  quiet = TRUE, verbose = FALSE)
 library(SCTORvalidation)
 library(gtExtras)
 library(purrr)
 library(dplyr)
 
-tests <- load_tests_table() |> 
-  mutate(
-         tested_funs = lapply(test_evidence, 
-                              function(x) parse_evidence_tab(x) |> 
-                                pull(context) |> 
-                                unique() |> 
-                                paste(collapse = ", ")) |> 
-           unlist()
-    
-  )
-tests |> 
-  mutate(test_tab = NA,
-         )
+tests <- load_tests_table() #|> 
+  # mutate(
+  #        tested_funs = lapply(test_evidence, 
+  #                             function(x) 
+  #                               parse_evidence_tab(x) |> 
+  #                                 pull(context) |> 
+  #                                 unique() |> 
+  #                                 paste(collapse = ", ")) |> 
+  #          unlist()
+  #   
+  # )
+# tests |> 
+#   mutate(test_tab = NA,
+#          )
 
 ```
 
