@@ -308,7 +308,7 @@ loaded via a namespace (and not attached):
 [81] conflicted_1.2.0       evaluate_1.0.3         shiny_1.10.0           lattice_0.22-6        
 [85] readr_2.1.5            memoise_2.0.1          httpuv_1.6.16          Rcpp_1.0.14           
 [89] nlme_3.1-167           mgcv_1.9-1             xfun_0.52              fs_1.6.6              
-[93] usethis_3.1.0          pkgconfig_2.0.3",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/144,144,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,open,2025-06-23,2025-06-23,,https://github.com/keaven/gsDesign.git,4f717c8
+[93] usethis_3.1.0          pkgconfig_2.0.3",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/144,144,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,closed,2025-06-23,2025-10-24,2025-10-24,https://github.com/keaven/gsDesign.git,4f717c8
 Ramon Locher,rstpm2,1.6.7,2025-08-20,"Tested functions: stpm2, pstmp2.
 Run test-files: [test_base.R](https://github.com/mclements/rstpm2/blob/master/tests/testthat/test_base.R), [test_missing.R](https://github.com/mclements/rstpm2/blob/master/tests/testthat/test_missing.R).",PASS,"> devtools::test(filter='base|missing')
 ℹ Testing rstpm2
@@ -359,7 +359,7 @@ loaded via a namespace (and not attached):
 [69] evaluate_1.0.3         knitr_1.50             miniUI_0.1.2           bbmle_1.0.25.1        
 [73] mgcv_1.9-1             profvis_0.4.0          rlang_1.1.6            Rcpp_1.0.14           
 [77] xtable_1.8-4           glue_1.8.0             pkgload_1.4.0          rstudioapi_0.17.1     
-[81] jsonlite_2.0.0         R6_2.6.1               fs_1.6.6          ",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/143,143,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,open,2025-06-20,2025-06-20,,https://github.com/mclements/rstpm2,6d98c35
+[81] jsonlite_2.0.0         R6_2.6.1               fs_1.6.6          ",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/143,143,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,closed,2025-06-20,2025-10-24,2025-10-24,https://github.com/mclements/rstpm2,6d98c35
 AH ,stats,4.3.3,2024-03-26,"Tests for package stats 
  - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata. ",PASS,"|file      |context |test                                 | nb| passed|skipped |error | warning|
 |:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
@@ -655,4 +655,4 @@ loaded via a namespace (and not attached):
 [71] glue_1.8.0          DBI_1.2.3           pkgload_1.4.0       minqa_1.2.8         rstudioapi_0.17.1  
 [76] R6_2.6.1            fs_1.6.6
 ```
-",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/142,142,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,open,2025-05-21,2025-05-22,,https://github.com/kaz-yos/tableone, e2e7ccc
+",,,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/142,142,dotton,4.4.3,Windows 11 x64 (build 26100),FALSE,closed,2025-05-21,2025-10-24,2025-10-24,https://github.com/kaz-yos/tableone, e2e7ccc
