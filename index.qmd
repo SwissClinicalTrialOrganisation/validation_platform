@@ -60,6 +60,10 @@ language:
 
 `#set align(left)`{=typst}
 
+[^1]: Statistician, Clinical Research Centre, Geneva University Hospitals
+
+[^2]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+
 ***Version History***
 
 `#set align(center)`{=typst}
