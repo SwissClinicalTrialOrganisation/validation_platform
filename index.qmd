@@ -53,20 +53,10 @@ language:
 
 `#set align(center)`{=typst}
 
-+-----------------------+------------+
-| Name                  | Date       |
-|                       |            |
-+:======================+:===========+
-| Michael Coslovsky,[^1]| 2025-01-01 |
-| Christine Otieno,[^2] |            |
-| Alan Haynes[^3]       |            |
-+-----------------------+------------+
-
-[^1]: Head data-analysis, Department Clinical Research, University of Basel
-
-[^2]: IT Quality Manager, Department Clinical Research, University of Basel
-
-[^3]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+|              | Name             | Date       |
+|--------------|------------------|------------|
+| Authored by: | Cyril Jaksic[^1] | 2026-05-07 |
+| Reviewed by: | Alan Haynes[^2]  | 2026-05-07 |
 
 `#set align(left)`{=typst}
 
@@ -74,13 +64,16 @@ language:
 
 `#set align(center)`{=typst}
 
-+---------+------------+--------------------+--------------------+
-| Version | Date       | Author             | Summary of Changes |
-+:========+:===========+:===================+:===================+
-| 1.0     | 2025-01-01 | Michael Coslovsky, | Initial draft      |
-|         |            | Christine Otieno,  |                    |
-|         |            | Alan Haynes        |                    |
-+---------+------------+--------------------+--------------------+
++-----------------------+-----------------------+-----------------------+-----------------------+
+| Version               | Date                  | Author                | Summary of Changes    |
++:======================+:======================+:======================+:======================+
+| 1.0                   | 2025-01-01            | Michael Coslovsky,    | Initial draft         |
+|                       |                       | Christine Otieno,     |                       |
+|                       |                       | Alan Haynes           |                       |
++-----------------------+-----------------------+-----------------------+-----------------------+
+| 1.1                   | 2026-05-07            | Cyril Jaksic, Alan    | Update in links and   |
+|                       |                       | Haynes                | documents version     |
++-----------------------+-----------------------+-----------------------+-----------------------+
 
 `#set align(left)`{=typst}
 
