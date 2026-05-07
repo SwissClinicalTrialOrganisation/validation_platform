@@ -75,8 +75,8 @@ language:
 |                       |                       | Christine Otieno,     |                       |
 |                       |                       | Alan Haynes           |                       |
 +-----------------------+-----------------------+-----------------------+-----------------------+
-| 1.1                   | 2026-05-07            | Cyril Jaksic, Alan    | Update in links and   |
-|                       |                       | Haynes                | documents version     |
+| 1.1                   | 2026-05-07            | Cyril Jaksic          | Update in links and   |
+|                       |                       |                       | documents version     |
 +-----------------------+-----------------------+-----------------------+-----------------------+
 
 `#set align(left)`{=typst}
