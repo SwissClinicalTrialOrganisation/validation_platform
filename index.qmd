@@ -53,34 +53,31 @@ language:
 
 `#set align(center)`{=typst}
 
-+-----------------------+------------+
-| Name                  | Date       |
-|                       |            |
-+:======================+:===========+
-| Michael Coslovsky,[^1]| 2025-01-01 |
-| Christine Otieno,[^2] |            |
-| Alan Haynes[^3]       |            |
-+-----------------------+------------+
-
-[^1]: Head data-analysis, Department Clinical Research, University of Basel
-
-[^2]: IT Quality Manager, Department Clinical Research, University of Basel
-
-[^3]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+|              | Name             | Date       |
+|--------------|------------------|------------|
+| Authored by: | Cyril Jaksic[^1] | 2026-05-07 |
+| Reviewed by: | Alan Haynes[^2]  | 2026-05-07 |
 
 `#set align(left)`{=typst}
+
+[^1]: Statistician, Clinical Research Centre, Geneva University Hospitals
+
+[^2]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
 
 ***Version History***
 
 `#set align(center)`{=typst}
 
-+---------+------------+--------------------+--------------------+
-| Version | Date       | Author             | Summary of Changes |
-+:========+:===========+:===================+:===================+
-| 1.0     | 2025-01-01 | Michael Coslovsky, | Initial draft      |
-|         |            | Christine Otieno,  |                    |
-|         |            | Alan Haynes        |                    |
-+---------+------------+--------------------+--------------------+
++-----------------------+-----------------------+-----------------------+-----------------------+
+| Version               | Date                  | Author                | Summary of Changes    |
++:======================+:======================+:======================+:======================+
+| 1.0                   | 2025-01-01            | Michael Coslovsky,    | Initial draft         |
+|                       |                       | Christine Otieno,     |                       |
+|                       |                       | Alan Haynes           |                       |
++-----------------------+-----------------------+-----------------------+-----------------------+
+| 1.1                   | 2026-05-07            | Cyril Jaksic          | Update in links and   |
+|                       |                       |                       | documents version     |
++-----------------------+-----------------------+-----------------------+-----------------------+
 
 `#set align(left)`{=typst}
 
@@ -146,7 +143,7 @@ According to international standards and guidelines listed below, any GxP[^7] cr
 
 This SCTO policy is based on the ICH E6 guideline for Good Clinical Practice and the EMA guideline on computerised systems and electronic data in clinical trials. FDA regulations and guidelines (US) and Eudralex 4 (EU) represent additional best practices for validation of computerised systems in the industry and may serve as a guideline for academical purposes.
 
-This policy is based on a business processes risk assessment provided by the [SCTO statistics' platform](https://swissclinicaltrialorganisation.github.io/validation_platform/sop/highlevel_ra.html).
+This policy is based on a business processes risk assessment provided by the [SCTO statistics' platform](https://swissclinicaltrialorganisation.github.io/validation_platform/sop/businessproc_ra.html).
 
 # Background  {#sec-background}
 
@@ -163,7 +160,7 @@ R is a 'language and environment for statistical computing and graphics' (source
 
 Installation and use of R is based on several levels and sources:
 
-1)  The "official R distribution" (referred to as 'R base installation' in this document), which includes the R base and recommended R packages (as defined in the [R: Regulatory compliance and validation issues -- a guidance document, 2021](https://www.r-project.org/doc/R-FDA.pdf)) and is available via the Central R Archive Network ([CRAN](https://cran.r-project.org/)).
+1)  The "official R distribution" (referred to as 'R base installation' in this document), which includes the R base and recommended R packages (as defined in the [R: Regulatory compliance and validation issues -- a guidance document, 2026](https://www.r-project.org/doc/R-FDA.pdf)) and is available via the Central R Archive Network ([CRAN](https://cran.r-project.org/)).
 2)  Distribution of contributed R add-on packages provided by the community and available via CRAN.
 3)  Distribution of R add-on packages provided by the community via other sources than CRAN (e.g., Bioconductor, Github, and various websites).
 
