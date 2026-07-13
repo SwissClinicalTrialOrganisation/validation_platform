@@ -35,9 +35,9 @@ Authored/revised by:
 `#set align(center)`{=typst}
 
 | Version | Date | Author(s) | Summary of Changes |
-|:---------------|:---------------|:---------------|:-----------------------|
-| 1.0 | 2025-01-01 | Alan Haynes, | Initial version |
-| 1.1 | 2026-07-13 | Charlotte Micheloud, | Adding the reviewer assignment process |
+|:-----------------|:---------------------|:---------------------------------------|
+| 1.0 | 2025-01-01 | Alan Haynes,         | Initial version                        |
+| 1.2 | 2026-07-13 | Charlotte Micheloud, | Adding the reviewer assignment process |
 
 `#set align(left)`{=typst}
 :::
