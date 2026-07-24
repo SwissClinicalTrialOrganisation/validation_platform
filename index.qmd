@@ -78,6 +78,9 @@ language:
 | 1.1                   | 2026-05-07            | Cyril Jaksic          | Update in links and   |
 |                       |                       |                       | documents version     |
 +-----------------------+-----------------------+-----------------------+-----------------------+
+| 1.2                   | 2026-07-13            | Charlotte Michelud    | Adding the reviewer   |
+|                       |                       |                       | assignment process    |
++-----------------------+-----------------------+-----------------------+-----------------------+
 
 `#set align(left)`{=typst}
 
