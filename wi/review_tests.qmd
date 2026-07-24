@@ -48,6 +48,17 @@ Authored/revised by:
 
 Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.
 
+## Abbreviations/Definitions 
+
+| Term | Definition |
+|------|------------|
+| CTU | Clinical trial unit |
+| RA | Reviewer assigner: member of the R Validation Steering Committee assigning the reviews to the CTUs |
+| Contact person | One person per CTU responsible for the reviewer assignment among their CTU |
+| Reviewer list | Randomized sequence of CTUs, weighted by the number of Statistics Platform members affiliated with each CTU |
+| Reviewer | Person performing the review |
+
+
 <!-- ```{mermaid} -->
 
 <!-- DOUBLE ARROWS CONVERTED TO SINGLE ARROWS -->
@@ -74,9 +85,10 @@ Once someone has prepared one or more tests for functions in a package and submi
 
 *Reviewer assignment process*
 
--   The reviewer assigner (RA), a member of the R Validation Steering Committee, maintains a reviewer list, a randomized sequence of CTUs, weighted by the number of Statistics Platform members affiliated with each CTU.
+-   The reviewer assigner (RA) maintains a reviewer list, a weighted randomized sequence of CTUs.
 
--   The RA is signed up as 'observer' on the [validation tests GitHub repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests) and received a notification every time a Pull Request is made.
+-   The RA is signed up as 'observer' on the [validation tests GitHub repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests)
+and received a notification every time a Pull Request is made.
 
 -   The RA then contacts the contact person of the next CTU on the reviewer list, asking them to assign a reviewer (among their team/CTU) to review the pull request with a deadline of one month. 
 
