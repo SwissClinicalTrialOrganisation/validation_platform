@@ -19,14 +19,12 @@ execute:
 ::: {.callout-note collapse="true" title="Document development, review and version history"}
 ***Development and Review***
 
-Authored/revised by:
-
 `#set align(center)`{=typst}
 
-| Name                     | Date       |
-|:-------------------------|:-----------|
-| Alan Haynes,[^1]         | 2025-01-01 |
-| Charlotte Micheloud,[^2] | 2026-07-13 |
+|                  | Name                     | Date     |
+|:---------------|:-------------------------|:-----------|
+|   Authored by: | Charlotte Micheloud[^1] | 2026-07-13 |
+|   Reviewed by: |  Alan Haynes[^2]        | 2026-07-13 |
 
 `#set align(left)`{=typst}
 
@@ -36,15 +34,16 @@ Authored/revised by:
 
 | Version | Date | Author(s) | Summary of Changes |
 |:-----------------|:---------------------|:---------------------------------------|
-| 1.0 | 2025-01-01 | Alan Haynes,         | Initial version                        |
-| 1.2 | 2026-07-13 | Charlotte Micheloud, | Adding the reviewer assignment process |
+| 1.0 | 2025-01-01 | Alan Haynes         | Initial version                        |
+| 1.1 | 2026-07-13 | Charlotte Micheloud | Adding the reviewer assignment process |
 
 `#set align(left)`{=typst}
 :::
 
-[^1]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+[^1]: Biostatistician, Swiss Cancer Institute, Bern
 
-[^2]: Biostatistician, Swiss Cancer Institute, Bern
+[^2]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
+
 
 Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.
 
@@ -102,13 +101,10 @@ and received a notification every time a Pull Request is made.
 
 -   If needed, the RA sends another email after the deadline has passed.  
 
-<!-- -->
-
 -   When the task is finished, the RA indicates it on the reviewer list and on the pull request. 
 
-<!-- All pull requests are by default automatically assigned to one individual per unit. These individuals should agree among themselves who can perform the review, potentially nominating someone else from their unit. Those that will not be performing the review can be removed from the list of assignees. -->
 
-::: callout-note
+::: {.callout-note}
 If you need a review urgently, reach out to someone by other means (e.g. email) and arrange that they perform the review for you.
 :::
 
