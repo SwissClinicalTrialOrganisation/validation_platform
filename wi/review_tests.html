@@ -433,7 +433,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#who-reviews" id="toc-who-reviews" class="nav-link active" data-scroll-target="#who-reviews">Who reviews?</a></li>
+  <li><a href="#abbreviationsdefinitions" id="toc-abbreviationsdefinitions" class="nav-link active" data-scroll-target="#abbreviationsdefinitions">Abbreviations/Definitions</a></li>
+  <li><a href="#who-reviews" id="toc-who-reviews" class="nav-link" data-scroll-target="#who-reviews">Who reviews?</a></li>
   <li><a href="#performing-the-review" id="toc-performing-the-review" class="nav-link" data-scroll-target="#performing-the-review">Performing the review</a></li>
   <li><a href="#incorporating-the-tests-in-the-repository" id="toc-incorporating-the-tests-in-the-repository" class="nav-link" data-scroll-target="#incorporating-the-tests-in-the-repository">Incorporating the tests in the repository</a></li>
   </ul>
@@ -475,23 +476,25 @@ Document development, review and version history
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong><em>Development and Review</em></strong></p>
-<p>Authored/revised by:</p>
 <p></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 18%">
-</colgroup>
 <thead>
 <tr class="header">
+<th style="text-align: left;"></th>
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Alan Haynes,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">Authored by:</td>
+<td style="text-align: left;">Charlotte Micheloud<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: left;">2026-07-13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reviewed by:</td>
+<td style="text-align: left;">Alan Haynes<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td style="text-align: left;">2026-07-13</td>
 </tr>
 </tbody>
 </table>
@@ -500,25 +503,27 @@ Document development, review and version history
 <p></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 25%">
-<col style="width: 45%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Version</th>
 <th style="text-align: left;">Date</th>
 <th style="text-align: left;">Author(s)</th>
-<th style="text-align: left;">Summary of Changes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1.0</td>
 <td style="text-align: left;">2025-01-01</td>
-<td style="text-align: left;">Alan Haynes,</td>
-<td style="text-align: left;">Initial version</td>
+<td style="text-align: left;">Alan Haynes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">2026-07-13</td>
+<td style="text-align: left;">Charlotte Micheloud</td>
 </tr>
 </tbody>
 </table>
@@ -527,6 +532,42 @@ Document development, review and version history
 </div>
 </div>
 <p>Once someone has prepared one or more tests for functions in a package and submitted them to be incorporated into the platform via a pull request. They should then be reviewed by another member of the platform, ideally from another unit, to check that the tests are programmed and documented appropriately.</p>
+<section id="abbreviationsdefinitions" class="level2">
+<h2 class="anchored" data-anchor-id="abbreviationsdefinitions">Abbreviations/Definitions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CTU</td>
+<td>Clinical trial unit</td>
+</tr>
+<tr class="even">
+<td>RA</td>
+<td>Reviewer assigner: member of the R Validation Steering Committee assigning the reviews to the CTUs</td>
+</tr>
+<tr class="odd">
+<td>Contact person</td>
+<td>One person per CTU responsible for the reviewer assignment among their CTU</td>
+</tr>
+<tr class="even">
+<td>Reviewer list</td>
+<td>Randomized sequence of CTUs, weighted by the number of Statistics Platform members affiliated with each CTU</td>
+</tr>
+<tr class="odd">
+<td>Reviewer</td>
+<td>Person performing the review</td>
+</tr>
+</tbody>
+</table>
 <!-- ```{mermaid} -->
 <!-- DOUBLE ARROWS CONVERTED TO SINGLE ARROWS -->
 <!-- flowchart LR -->
@@ -538,9 +579,21 @@ Document development, review and version history
 <!--   f -> g[Author improves tests] -->
 <!--   g -> d -->
 <!-- ``` -->
+</section>
 <section id="who-reviews" class="level2">
 <h2 class="anchored" data-anchor-id="who-reviews">Who reviews?</h2>
-<p>All pull requests are by default automatically assigned to one individual per unit. These individuals should agree among themselves who can perform the review, potentially nominating someone else from their unit. Those that will not be performing the review can be removed from the list of assignees.</p>
+<p><em>Reviewer assignment process</em></p>
+<ul>
+<li><p>The reviewer assigner (RA) maintains a reviewer list, a weighted randomized sequence of CTUs.</p></li>
+<li><p>The RA is signed up as ‘observer’ on the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation tests GitHub repository</a> and received a notification every time a Pull Request is made.</p></li>
+<li><p>The RA then contacts the contact person of the next CTU on the reviewer list, asking them to assign a reviewer (among their team/CTU) to review the pull request with a deadline of&nbsp;one month.&nbsp;</p></li>
+<li><p>If the contact person replies&nbsp;stating&nbsp;that they decline to assign a reviewer or the package comes from their CTU, the next CTU is contacted. The CTU which was skipped is set to the next on the list.&nbsp;</p></li>
+<li><p>The&nbsp;contact person&nbsp;replies with the name of the reviewer and their contact details.&nbsp;</p></li>
+<li><p>The RA indicates on the reviewer list (stored in Sharepoint) and on the pull request that the reviewer has been contacted.</p></li>
+<li><p>After&nbsp;three weeks, the RA&nbsp;sends a reminder to&nbsp;the reviewer&nbsp;with&nbsp;the contact person in CC.</p></li>
+<li><p>If needed, the RA sends another email after the deadline has passed.&nbsp;&nbsp;</p></li>
+<li><p>When the task is finished, the RA indicates it on the reviewer list and on the pull request.&nbsp;</p></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -604,7 +657,8 @@ Note
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Biostatistician, Swiss Cancer Institute, Bern<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
