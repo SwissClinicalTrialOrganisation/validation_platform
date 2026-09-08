@@ -31,17 +31,14 @@ Authored/revised by:
 
 `#set align(center)`{=typst}
 
-+-----------------------+------------+
-| Name                  | Date       |
-|                       |            |
-+:======================+:===========+
-| Alan Haynes,[^1]      | 2025-01-01 |
-| Elio Carreras[^2]     |            |
-+-----------------------+------------+
+|              | Name             | Date       |
+|--------------|------------------|------------|
+| Authored by: | Alan Haynes[^1]  | 2026-09-08 |
+| Reviewed by: | Cyril Jaksic[^2] | 2026-09-08 |
 
 [^1]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
 
-[^2]: Senior Statistical Programmer, SAKK
+[^2]: Statistician, Clinical Research Centre, Geneva University Hospitals
 
 `#set align(left)`{=typst}
 
@@ -52,15 +49,19 @@ Authored/revised by:
 +---------+------------+--------------------+-------------------------------------+
 | Version | Date       | Author(s)          | Summary of Changes                  |
 +:========+:===========+:===================+:====================================+
-| 1.0     | 2025-01-01 | Alan Haynes,       | Initial version                     |
+| 1.0     | 2025-01-01 | Alan Haynes        | Initial version                     |
++---------+------------+--------------------+-------------------------------------+
+| 1.1     | 2026-08-09 | Alan Haynes        | Correct references to               |
+|         |            |                    | SCTORvalidation package and main    |
+|         |            |                    | repo address                        |
 +---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
 :::
 
-The `validation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [pkg_validation](www.github.com/SwissClinicalTrialOrganisation/pkg_validation) repository.
+The `SCTORvalidation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [validation_platform](www.github.com/SwissClinicalTrialOrganisation/validation_platform) repository.
 
-Tests are written using functions from the [testthat](https://testthat.r-lib.org/) package, and can be downloaded, run, and reported using the functions in the `validation` package.
+Tests are written using functions from the [testthat](https://testthat.r-lib.org/) package, and can be downloaded, run, and reported using the functions in the `SCTORvalidation` package.
 
 ## High level summary
 
@@ -68,9 +69,9 @@ This section gives a very high level overview of the steps in the process. Refer
 
 1. fork the validation_tests repository to your own GitHub account
 2. clone the forked repository to your local machine
-3. use `validation::test_skeleton()` to create the necessary files for testing a new package or function
+3. use `SCTORvalidation::test_skeleton()` to create the necessary files for testing a new package or function
 4. write the tests using the `testthat` package
-5. test your new tests with `validation::test()`
+5. test your new tests with `SCTORvalidation::test()`
 6. commit your changes to git and push them to your GitHub fork
 7. create a pull request to the validation_tests repository
 8. address any issues highlighted by the reviewer
@@ -297,7 +298,7 @@ Once you have added the necessary tests, add the files to the [validation_tests 
 
 At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
 
-Once merged, the tests can be run via the validation package `validation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/pkg_validation](https://github.com/SwissClinicalTrialOrganisation/pkg_validation).
+Once merged, the tests can be run via the validation package `SCTORvalidation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/validation_platform](https://github.com/SwissClinicalTrialOrganisation/validation_platform).
 
 
 ## Worked example
@@ -564,10 +565,10 @@ withr::defer({
 Assuming the tests are in a folder called `stats`, which is within our current working directory, we can run the tests with:
 
 ```r
-validation::test("stats", download = FALSE)
+SCTORvalidation::test("stats", download = FALSE)
 ```
 
-We specify `download = FALSE` because `validation::test` will download the files from GitHub and run those tests by default. `download = FALSE` tells it to use the local copy of the files instead.
+We specify `download = FALSE` because `SCTORvalidation::test` will download the files from GitHub and run those tests by default. `download = FALSE` tells it to use the local copy of the files instead.
 
 The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after "Copy and paste the following...") provides summary information that should be copied into a github issue :
 
