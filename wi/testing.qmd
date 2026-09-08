@@ -298,7 +298,7 @@ Once you have added the necessary tests, add the files to the [validation_tests 
 
 At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
 
-Once merged, the tests can be run via the validation package `SCTORvalidation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/validation_platform](https://github.com/SwissClinicalTrialOrganisation/validation_platform).
+Once merged, the tests can be run via `SCTORvalidation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/validation_platform](https://github.com/SwissClinicalTrialOrganisation/validation_platform).
 
 
 ## Worked example
