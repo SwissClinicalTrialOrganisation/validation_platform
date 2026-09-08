@@ -24,15 +24,14 @@ Authored/revised by:
 
 `#set align(center)`{=typst}
 
-+-----------------------+------------+
-| Name                  | Date       |
-|                       |            |
-+:======================+:===========+
-| Alan Haynes,[^1]      | 2025-01-01 |
-+-----------------------+------------+
+|              | Name             | Date       |
+|--------------|------------------|------------|
+| Authored by: | Alan Haynes[^1]  | 2026-09-08 |
+| Reviewed by: | Cyril Jaksic[^2] | 2026-09-08 |
 
 [^1]: Senior Statistician, Department of Clinical Research (DCR), University of Bern
 
+[^2]: Statistician, Clinical Research Centre, Geneva University Hospitals
 
 `#set align(left)`{=typst}
 
@@ -44,6 +43,8 @@ Authored/revised by:
 | Version | Date       | Author(s)          | Summary of Changes                  |
 +:========+:===========+:===================+:====================================+
 | 1.0     | 2025-01-01 | Alan Haynes,       | Initial version                     |
++---------+------------+--------------------+-------------------------------------+
+| 1.1     | 2026-09-08 | Alan Haynes,       | Correction of a link                |
 +---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
@@ -113,4 +114,4 @@ It may be that the package being tested, or indeed functions in the testing infr
 One particular case is a change in attributes. For example, the `coef` method for a model object returns a named vector, but we might compare the individual coeffients to a vector of expected values. There is thus a potential mismatch in the attributes of the two vectors, which may cause the test to fail with a `names for target but not for current` message. Use of the third edition of `testthat` (v3.0.0) should help to avoid this issue.
 :::
 
-The results of the tests should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test.yml&title=%5BPackage+test%5D%3A+XXX+version+YYY){target="blank"}. Copy the information returned by R to the appropriate field on the report form. 
+The results of the tests should be reported [on the platform repository](https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/new?assignees=&labels=test%2C%3Aalarm_clock%3A+triage+%3Aalarm_clock%3A&projects=&template=new_test.yml&title=%5BPackage+test%5D%3A+XXX+version+YYY){target="blank"}. Copy the information returned by R to the appropriate field on the report form. 
