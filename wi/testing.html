@@ -532,20 +532,23 @@ Document development, review and version history
 <p>Authored/revised by:</p>
 <p></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 18%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Date</th>
+<th></th>
+<th>Name</th>
+<th>Date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Alan Haynes,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Elio Carreras<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
-<td style="text-align: left;">2025-01-01</td>
+<td>Authored by:</td>
+<td>Alan Haynes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td>2026-09-08</td>
+</tr>
+<tr class="even">
+<td>Reviewed by:</td>
+<td>Cyril Jaksic<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td>2026-09-08</td>
 </tr>
 </tbody>
 </table>
@@ -571,8 +574,14 @@ Document development, review and version history
 <tr class="odd">
 <td style="text-align: left;">1.0</td>
 <td style="text-align: left;">2025-01-01</td>
-<td style="text-align: left;">Alan Haynes,</td>
+<td style="text-align: left;">Alan Haynes</td>
 <td style="text-align: left;">Initial version</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">2026-08-09</td>
+<td style="text-align: left;">Alan Haynes</td>
+<td style="text-align: left;">Correct references to SCTORvalidation package and main repo address</td>
 </tr>
 </tbody>
 </table>
@@ -580,17 +589,17 @@ Document development, review and version history
 </div>
 </div>
 </div>
-<p>The <code>validation</code> package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the <a href="www.github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests</a> repository. The results of the tests are then published as issues in the <a href="www.github.com/SwissClinicalTrialOrganisation/pkg_validation">pkg_validation</a> repository.</p>
-<p>Tests are written using functions from the <a href="https://testthat.r-lib.org/">testthat</a> package, and can be downloaded, run, and reported using the functions in the <code>validation</code> package.</p>
+<p>The <code>SCTORvalidation</code> package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the <a href="www.github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests</a> repository. The results of the tests are then published as issues in the <a href="www.github.com/SwissClinicalTrialOrganisation/validation_platform">validation_platform</a> repository.</p>
+<p>Tests are written using functions from the <a href="https://testthat.r-lib.org/">testthat</a> package, and can be downloaded, run, and reported using the functions in the <code>SCTORvalidation</code> package.</p>
 <section id="high-level-summary" class="level2">
 <h2 class="anchored" data-anchor-id="high-level-summary">High level summary</h2>
 <p>This section gives a very high level overview of the steps in the process. Refer to the following sections for more in depth information.</p>
 <ol type="1">
 <li>fork the validation_tests repository to your own GitHub account</li>
 <li>clone the forked repository to your local machine</li>
-<li>use <code>validation::test_skeleton()</code> to create the necessary files for testing a new package or function</li>
+<li>use <code>SCTORvalidation::test_skeleton()</code> to create the necessary files for testing a new package or function</li>
 <li>write the tests using the <code>testthat</code> package</li>
-<li>test your new tests with <code>validation::test()</code></li>
+<li>test your new tests with <code>SCTORvalidation::test()</code></li>
 <li>commit your changes to git and push them to your GitHub fork</li>
 <li>create a pull request to the validation_tests repository</li>
 <li>address any issues highlighted by the reviewer</li>
@@ -751,7 +760,7 @@ Document development, review and version history
 <h2 class="anchored" data-anchor-id="submitting-tests-to-the-platform">Submitting tests to the platform</h2>
 <p>Once you have added the necessary tests, add the files to the <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests">validation_tests repository</a>. The easiest way is to create a fork of the repository, then navigate to the tests folder, click on “Add file” and then “Upload files”. Now you can simply drag the <code>pkg</code> folder into the browser window and commit the change. You can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.</p>
 <p>At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.</p>
-<p>Once merged, the tests can be run via the validation package <code>validation::test("packagename")</code> and documented in the repository at <a href="https://github.com/SwissClinicalTrialOrganisation/pkg_validation">https://github.com/SwissClinicalTrialOrganisation/pkg_validation</a>.</p>
+<p>Once merged, the tests can be run via <code>SCTORvalidation::test("packagename")</code> and documented in the repository at <a href="https://github.com/SwissClinicalTrialOrganisation/validation_platform">https://github.com/SwissClinicalTrialOrganisation/validation_platform</a>.</p>
 </section>
 <section id="worked-example" class="level2">
 <h2 class="anchored" data-anchor-id="worked-example">Worked example</h2>
@@ -941,8 +950,8 @@ Document development, review and version history
 <section id="testing-that-the-tests-work" class="level3">
 <h3 class="anchored" data-anchor-id="testing-that-the-tests-work">Testing that the tests work</h3>
 <p>Assuming the tests are in a folder called <code>stats</code>, which is within our current working directory, we can run the tests with:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>validation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We specify <code>download = FALSE</code> because <code>validation::test</code> will download the files from GitHub and run those tests by default. <code>download = FALSE</code> tells it to use the local copy of the files instead.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>SCTORvalidation<span class="sc">::</span><span class="fu">test</span>(<span class="st">"stats"</span>, <span class="at">download =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We specify <code>download = FALSE</code> because <code>SCTORvalidation::test</code> will download the files from GitHub and run those tests by default. <code>download = FALSE</code> tells it to use the local copy of the files instead.</p>
 <p>The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after “Copy and paste the following…”) provides summary information that should be copied into a github issue :</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>✔ <span class="sc">|</span> F W  S  OK <span class="sc">|</span> Context</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>✔ <span class="sc">|</span>          <span class="dv">7</span> <span class="sc">|</span> lm                                                                          </span>
@@ -1044,7 +1053,7 @@ Document development, review and version history
 
 <ol>
 <li id="fn1"><p>Senior Statistician, Department of Clinical Research (DCR), University of Bern<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Senior Statistical Programmer, SAKK<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Statistician, Clinical Research Centre, Geneva University Hospitals<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
