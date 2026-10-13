@@ -1,5 +1,5 @@
 name,package,version,test_date,tests,test_result,test_evidence,session_info,code_location,code_sha,issue_url,issue_num,user,r_version,os,approved,state,create_date,update_date,close_date,package_source,package_sha
-Samira Innocente,Epi,2.66,2026-10-09,"Tests for package Epi version 2.66
+SamiraInnocente,Epi,2.66,2026-10-09,"Tests for package Epi version 2.66
 Tests for the twoby2() function for the intended use:
 - estimation of the probability difference and its 95% confidence interval
 - estimation of the relative risk and its 95% Wald confidence interval
