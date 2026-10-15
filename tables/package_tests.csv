@@ -46,7 +46,7 @@ loaded via a namespace (and not attached):
 [49] stringr_1.6.0       MASS_7.3-65         waldo_0.6.2         desc_1.4.3          pkgconfig_2.0.3     pillar_1.11.1      
 [55] data.table_1.18.4   glue_1.8.1          gh_1.6.0            Rcpp_1.1.2          xfun_0.59           tibble_3.3.1       
 [61] tidyselect_1.2.1    rstudioapi_0.18.0   knitr_1.51          nlme_3.1-169        cmprsk_2.2-12       readr_2.2.0        
-[67] pkgsearch_3.1.5     compiler_4.6.1    ",https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/tests/Epi,307d02c1470bcc14be7a56817326e243a64394b8,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/326,326,Samirainnocente,4.6.1,Windows 11 x64 (build 26200),FALSE,open,2026-10-09,2026-10-14,,CRAN (R 4.6.1) ,NA
+[67] pkgsearch_3.1.5     compiler_4.6.1    ",https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/tests/Epi,307d02c1470bcc14be7a56817326e243a64394b8,https://github.com/SwissClinicalTrialOrganisation/validation_platform/issues/326,326,Samirainnocente,4.6.1,Windows 11 x64 (build 26200),FALSE,closed,2026-10-09,2026-10-14,2026-10-14,CRAN (R 4.6.1) ,NA
 Alan Haynes,accrualPlot,1.0.7,2024-04-09,"Tests for package accrualPlot 
  - `summary` produces expected results 
  - `accrual_create_df` produces expected results 
