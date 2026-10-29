@@ -71,6 +71,9 @@ Authored/revised by:
 |         |            | Christine Otieno,  |                                     |
 |         |            | Elio Carreras      |                                     |
 +---------+------------+--------------------+-------------------------------------+
+| 1.1     | 2026-09-22 | Jakob Heimer       | Metrics 5 and 8: formulas stated as |
+|         |            |                    | implemented. Calculation unchanged. |
++---------+------------+--------------------+-------------------------------------+
 
 `#set align(left)`{=typst}
 
@@ -240,11 +243,12 @@ form:
     representing low number of dependencies (= low risk) and 1
     representing many dependencies (= high risk). Taking a similar
     approach for the transforming the number to a score as the
-    'riskmetric' package (R validation hub, 2023), we use a
-    simplification of the classic logistic curve
-    $1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))$ as a
-    scoring function. A sigmoid midpoint is 4 dependencies, ie., x\[0\]
-    = 4 and logistic growth rate of k = 0.5.
+    'riskmetric' package (R validation hub, 2023), we use the classic
+    logistic curve
+    $s(x) = 1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))$ with
+    a sigmoid midpoint of 4 dependencies, i.e., x\[0\] = 4, and a
+    logistic growth rate of k = 0.5, rescaled so that 0 dependencies
+    give a score of 0: $score = (s(x) - s(0)) / (1 - s(0))$.
 
 ```{r}
 #| warn: false
@@ -287,12 +291,10 @@ data.frame(n = n, score = SCTORvalidation:::convert_deps_to_score(n)) |>
     The number of downloaded packages is converted to a score \[0,1\],
     with 0 representing low risk (many downloads) and 1 high risk (few
     downloads). For the conversion of the number into a score we follow
-    a similar approach as approach taken by the 'riskmetric' package (R
-    validation hub, 2023) and use a simplification of the classic
-    logistic curve
-    $1/\ (1 + exp( - k\left( x - x\lbrack 0\rbrack \right))$ with the
-    logistic growth rate k = -0.5 and a log-scale for the number of
-    downloads (log(x)). The midpoint lying at log(100,000 downloads).
+    the approach taken by the 'riskmetric' package (R validation hub,
+    2023) and use its simplification of the logistic curve
+    $score = 1.5\ /\ (x / 100000 + 1.5)$, where x is the number of
+    downloads in the last 12 months (score 0.5 at 150,000 downloads).
 
 ```{r}
 #| label: fig-download-score
