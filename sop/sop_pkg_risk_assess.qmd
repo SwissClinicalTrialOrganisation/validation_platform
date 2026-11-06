@@ -282,19 +282,17 @@ data.frame(n = n, score = SCTORvalidation:::convert_deps_to_score(n)) |>
     not documented (no = 1).
 
 8.  **Number of downloads in the last year** (`nr_downloads_12_months`):
-    More downloads suggest more extensive community and user testing and
-    greater chances of bugs or errors being identified and reported. To
-    fill in check the logs of CRAN's or Bioconductor's reporting systems
-    and report the number of downloads for the package in the last 12
-    months. Using the `cranlogs::cran_downloads()` function to this end is
-    acceptable.\
-    The number of downloaded packages is converted to a score \[0,1\],
-    with 0 representing low risk (many downloads) and 1 high risk (few
-    downloads). For the conversion of the number into a score we follow
-    the approach taken by the 'riskmetric' package (R validation hub,
-    2023) and use its simplification of the logistic curve
-    $score = 1.5\ /\ (x / 100000 + 1.5)$, where x is the number of
-    downloads in the last 12 months (score 0.5 at 150,000 downloads).
+    More downloads suggest more extensive community and user testing and greater 
+    chances of bugs or errors being identified and reported. To fill in check 
+    the logs of CRAN's or Bioconductor's reporting systems and report the number 
+    of downloads for the package in the last 12 months. Using the 
+    `cranlogs::cran_downloads()` function to this end is acceptable.\
+    The number of downloaded packages is converted to a score \[0,1\], with 0 
+    representing low risk (many downloads) and 1 high risk (few downloads). For 
+    the conversion of the number into a score we follow the approach taken by 
+    the 'riskmetric' package (R validation hub, 2023) and use its simplification
+    of the logistic curve $score = 1.5\ /\ (x / 100000 + 1.5)$, where x is the 
+    number of downloads in the last 12 months (score 0.5 at 150,000 downloads).
 
 ```{r}
 #| label: fig-download-score

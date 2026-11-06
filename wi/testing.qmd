@@ -59,7 +59,7 @@ Authored/revised by:
 `#set align(left)`{=typst}
 :::
 
-The `SCTORvalidation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [validation_platform](www.github.com/SwissClinicalTrialOrganisation/validation_platform) repository.
+The `SCTORvalidation` package contains a set of functions to assist in the running and reporting of tests that have been published on the SCTO platform. The tests themselves are located in the [validation_tests](https://www.github.com/SwissClinicalTrialOrganisation/validation_tests) repository. The results of the tests are then published as issues in the [validation_platform](https://www.github.com/SwissClinicalTrialOrganisation/validation_platform) repository.
 
 Tests are written using functions from the [testthat](https://testthat.r-lib.org/) package, and can be downloaded, run, and reported using the functions in the `SCTORvalidation` package.
 
